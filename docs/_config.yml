@@ -4,7 +4,7 @@ description: Personal academic Website
 baseurl: "" # Leave this empty for GitHub Pages, set to "/your-repo-name" if using a custom domain
 
 # Theme settings (if using the Architect theme)
-remote_theme: jasonlong/architect-theme
+remote_theme: pages-themes/architect
 
 # Build settings
 plugins:
