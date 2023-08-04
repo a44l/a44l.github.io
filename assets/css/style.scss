@@ -1,0 +1,18 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom font for headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Architects Daughter", sans-serif; /* Replace with your desired font family */
+}
+
+/* Custom style for the ::before pseudo-element of h1 */
+h1::before {
+  padding-right: 0.3em;
+  margin-left: -0.9em;
+  color: #9ddcff;
+  content: "/";
+}
+
