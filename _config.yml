@@ -4,12 +4,14 @@ description: Personal academic Website
 baseurl: "" # Leave this empty for GitHub Pages, set to "/your-repo-name" if using a custom domain
 
 # Theme settings (if using the Architect theme)
-remote_theme: pages-themes/architect
+remote_theme: pages-themes/architect@v0.2.0
 
 # Build settings
 plugins:
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-feed
   - jekyll-seo-tag
+
 
 # Exclude files and directories from the build
 exclude:
