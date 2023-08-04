@@ -1,0 +1,53 @@
+# Site settings
+title: Alexander Taveira Blomenhofer
+description: Personal academic Website
+baseurl: "" # Leave this empty for GitHub Pages, set to "/your-repo-name" if using a custom domain
+
+# Theme settings (if using the Architect theme)
+remote_theme: jasonlong/architect-theme
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files and directories from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - _site
+  - .sass-cache
+  - .jekyll-cache
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# URL settings
+url: "https://a44l.github.io" # Replace with your GitHub Pages URL
+
+# Navigation settings
+# Example navigation items, you can add more as needed
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+
+# Social media settings
+# Replace with your social media profiles
+social:
+  - title: GitHub
+    url: https://github.com/a44l
+
+# Build options
+# Set this to true when using GitHub Pages
+# Set this to false if you are building the site locally and want to preview drafts and unpublished posts
+published: true
+
