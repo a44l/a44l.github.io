@@ -1,6 +1,6 @@
 # Site settings
-title: "Alexander Taveira Blomenhofer"
-description: "Personal academic Website"
+title: Alexander Taveira Blomenhofer
+description: Personal academic Website
 baseurl: "" # Leave this empty for GitHub Pages, set to "/your-repo-name" if using a custom domain
 
 # Theme settings (if using the Architect theme)

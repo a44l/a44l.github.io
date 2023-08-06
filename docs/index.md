@@ -9,7 +9,7 @@ sidebar: toc
 
 ## About Me
 
-| ![portrait-louvre.jpg](https://cloud.uni-konstanz.de/index.php/s/AnwcsFdscpDXsEg) | 
+| ![portrait-louvre.jpg](https://cloud.uni-konstanz.de/index.php/apps/files_sharing/publicpreview/AnwcsFdscpDXsEg?file=/&fileId=129042088&x=3840&y=2160&a=true&etag=6f44fa9d42a13f683dbdb804deb76a79) | 
 |:--:| 
 | Me, in front of a simplex. |
 
