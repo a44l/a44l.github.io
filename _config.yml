@@ -1,6 +1,6 @@
 # Site settings
-title: Alexander Taveira Blomenhofer
-description: Personal academic Website
+title: "Alexander Taveira Blomenhofer"
+description: "Personal academic Website"
 baseurl: "" # Leave this empty for GitHub Pages, set to "/your-repo-name" if using a custom domain
 
 # Theme settings (if using the Architect theme)
@@ -11,7 +11,11 @@ plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-feed
   - jekyll-seo-tag
-
+  - jekyll-relative-links
+  
+relative_links:
+  enabled: true
+  collections: true
 
 # Exclude files and directories from the build
 exclude:
@@ -37,10 +41,14 @@ url: "https://a44l.github.io" # Replace with your GitHub Pages URL
 nav:
   - title: Home
     url: /
+  - title: CV
+    url: /cv
   - title: About
     url: /about
   - title: Contact
     url: /contact
+  
+
 
 # Social media settings
 # Replace with your social media profiles
