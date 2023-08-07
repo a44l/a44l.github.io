@@ -25,3 +25,92 @@ h6::before {
   content: "/";
 }
 
+/* Custom styling for the navigation bar */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 20px 30px; /* Increase the padding to make the buttons larger */
+  background-color: #c7e03b; /* Replace with your desired background color */
+  color: #fff; /* Replace with your desired text color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 38px; /* Increase the font size to make the text larger */
+}
+
+nav a:hover {
+  background-color: #5677fc; /* Replace with your desired background color on hover */
+}
+
+/* Add a white border around navigation buttons */
+nav a {
+  border: 2px solid #fff; /* Replace with your desired border color */
+}
+
+
+#sidebar figure {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  // border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+aside#sidebar img {
+  width: 100%; /* Scale the image to fill the figure container width */
+  height: auto; /* Maintain the image's aspect ratio */
+}
+
+
+
+
+// ================================
+// flip menu position to the left
+aside#sidebar {
+  float: left;
+  padding-right: 30px;
+  padding-left: 0px;
+}
+#main-content { float: right; }
+#sidebar .button { text-align: left; } //  text-align: center looks also good
+// ================================
+
+
+// ================================
+// danger zone: Scale the width of the entire webpage:
+.inner { position: relative; width: 65%; margin: 0 auto; }
+body {align-self: center; font-size: 18px}
+#main-content { float: right; width: 75%; margin-left: 10px; }
+aside#sidebar { float: left; width: 18%; }
+
+// ================================
+
+// #sidebar .button { align-self: left; }
+
+header .social-button-container { position: absolute; top: 0; right: 0; text-align: center; }
+header a.button { position: relative; display: inline-block; background: transparent url(../images/github-button.png) 0 0 no-repeat; }
+
+
+aside a.button { display: block; width: 138px; padding-left: 64px; text-indent: 10px; margin-bottom: 20px; margin-top: 20px; font-size: 21px; background: transparent url(../images/navigation-button-unhovered.png) 0 0 no-repeat; }
+
+aside a.button:hover {
+  background-image: url(../images/navigation-button-hovered.png); /* Replace with the path to the second hover graphic */
+}
+
