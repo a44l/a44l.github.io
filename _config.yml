@@ -40,13 +40,13 @@ nav:
   - title: Home
     url: /
   - title: cv
-    url: /cv/
+    url: /cv
   - title: Publications
-    url: /publications/
+    url: /publications
   - title: "Talks and Posters"
-    url: /talks/
+    url: /talks
   - title: Contact
-    url: /contact/
+    url: /contact
   
 # GitHub
 # repository: "a44l/a44l.github.io"
