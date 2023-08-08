@@ -36,7 +36,7 @@ It is particularly fascinating to me, how classical subjects of 19th and 20th ce
 
 ## Research Highlight
 
-You are very welcome to check out my new 
+My two most recent results prove recovery guarantees for mixtures of Gaussians. In [this preprint](http://arxiv.org/abs/2307.03850), recently presented at an [Oberwolfach workshop](/talks), I show that the parameters of a general mixture of $$ \Omega (n^4) $$ Gaussians can be recovered from the mixture moments of degree 4 and 6. [This other preprint](http://arxiv.org/abs/2305.06860), recently presented at [FOCM](/talks), develops an algorithm to algorithmically decompose the mixture moments of centered Gaussians, where sums-of-squares representations play a crucial role to find the decomposition. You can find presentations for both results in the [talks](/talks) section. 
 
 ## Research Networks
 
