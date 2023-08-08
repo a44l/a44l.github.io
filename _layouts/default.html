@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css"> -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" media="screen" type="text/css">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/images/favicon-16.png">
+
     <!-- <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css"> -->
 
     <!--[if lt IE 9]>
@@ -19,14 +22,31 @@
 
   <body>
     <header>
+      
       <div class="inner">
-        <a href="{{ '/' | absolute_url }}">
+        <nav class="navbar navbar-expand-lg navigation-container">
+          <!-- https://mycyberuniverse.com/jekyll-bootstrap-dynamic-navigation-highlighting-active-element.html  to highlight the current page --> 
+          <ul>
+            {% for item in site.nav %}
+              <li><a href="{{ item.url }}" >{{ item.title }}</a> </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <!-- <div class="navigation-container">
+          {% for item in site.nav %}
+            <a href="{{ item.url }}" class="button">{{ item.title }}</a>
+          {% endfor %}
+        </div> -->
+
+        <!-- <a href="{{ '/' | absolute_url }}">
           <h1>{{ page.title | default: site.title }}</h1>
         </a>
-        <h2>{{ page.description | default: site.description }}</h2>
+        <h2>{{ page.description | default: site.description }}</h2> -->
+
         <!-- {% if site.github.is_project_page %}
           <a href="{{ site.github.repository_url }}" class="button"><small>View project on</small> GitHub</a>
         {% endif %} -->
+        
         <!-- <div class="social-button-container">
           <a href="https://arxiv.org/search/?searchtype=author&query=Blomenhofer%2C+A+T" class="button" id="arxiv"><small>Find my papers on</small> Arxiv</a>
           <a href="https://github.com/a44l" class="button" id="github"><small>Follow me on</small> GitHub</a>
@@ -44,16 +64,16 @@
         </section>
         
         <aside id="sidebar">
-          <ul>
+          <!-- <ul>
             {% for item in site.nav %}
               <a href="{{ item.url }}" class="button">{{ item.title }}</a>
             {% endfor %}
-          </ul>
+          </ul> -->
           <figure id="profile-picture">
             <img src="https://cloud.uni-konstanz.de/index.php/apps/files_sharing/publicpreview/AnwcsFdscpDXsEg?file=/&fileId=129042088&x=3840&y=2160&a=true&etag=6f44fa9d42a13f683dbdb804deb76a79" alt="profile picture">
             <figcaption>{% capture profile_pic %}{% include profile.md %}{% endcapture %}
-              {{ profile_pic | markdownify }} </figcaption>
-          </figure>
+              {{ profile_pic | markdownify }}</figcaption>
+        </figure>
         
         <!-- {% if site.title == "Home" %}
                     
@@ -84,3 +104,7 @@
 
   </body>
 </html>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!-- <script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+<!-- <script id=”MathJax-script” src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  -->

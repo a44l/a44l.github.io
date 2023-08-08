@@ -97,20 +97,38 @@ aside#sidebar {
 // danger zone: Scale the width of the entire webpage:
 .inner { position: relative; width: 65%; margin: 0 auto; }
 body {align-self: center; font-size: 18px}
-#main-content { float: right; width: 75%; margin-left: 10px; }
-aside#sidebar { float: left; width: 18%; }
+#main-content { float: right; width: 73%; margin-left: 10px; }
+aside#sidebar { float: left; width: 22%; }
 
-// ================================
 
-// #sidebar .button { align-self: left; }
+// ========= Profile picture =======================================
 
-header .social-button-container { position: absolute; top: 0; right: 0; text-align: center; }
-header a.button { position: relative; display: inline-block; background: transparent url(../images/github-button.png) 0 0 no-repeat; }
+aside #profile-picture {font-size: large; font-style: normal;}
+
+
+// ========= Custom Banner   =======================================
+
+header {background-size: cover};
+
+
+// ======= Straight navigation menu style  =========================
 
 
 aside a.button { display: block; width: 138px; padding-left: 64px; text-indent: 10px; margin-bottom: 20px; margin-top: 20px; font-size: 21px; background: transparent url(../images/navigation-button-unhovered.png) 0 0 no-repeat; }
-
 aside a.button:hover {
   background-image: url(../images/navigation-button-hovered.png); /* Replace with the path to the second hover graphic */
 }
+
+
+// ======= Quer navigation menu style  =========================
+
+header .social-button-container { position: absolute; top: 0; right: 0; text-align: center; }
+// header a.button { position: relative; display: inline-block; background: transparent url(../images/github-button.png) 0 0 no-repeat; }
+header .navigation-container {position: relative; top: 0; float: right; transform-origin: right; transform: scale(1, 1);}
+nav a { position: relative; display: inline-flex; /* width: 138px; */ padding-left: 55px; text-indent: 10px; text-align: left; text-decoration: underline; margin-bottom: 0px; margin-top: -40px; font-size: 38px; border: none; background: transparent none no-repeat left center;   } // background: transparent url(../images/implication.png) no-repeat left center;  
+
+nav a:hover { background: transparent url(../images/implication.png) no-repeat left center; color: #c7e03b; } // #abe0f3
+
+// header a.button:hover {} //transform-origin: left; transform: rotate(90deg);
+
 
