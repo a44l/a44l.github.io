@@ -125,9 +125,10 @@ aside a.button:hover {
 header .social-button-container { position: absolute; top: 0; right: 0; text-align: center; }
 // header a.button { position: relative; display: inline-block; background: transparent url(../images/github-button.png) 0 0 no-repeat; }
 header .navigation-container {position: relative; top: 0; float: right; transform-origin: right; transform: scale(1, 1);}
-nav a { position: relative; display: inline-flex; /* width: 138px; */ padding-left: 55px; text-indent: 10px; text-align: left; text-decoration: underline; margin-bottom: 0px; margin-top: -40px; font-size: 38px; border: none; background: transparent none no-repeat left center;   } // background: transparent url(../images/implication.png) no-repeat left center;  
+nav a { position: relative; display: inline-flex; /* width: 138px; */ padding-left: 55px; text-indent: 10px; text-align: left; text-decoration: underline; margin-bottom: 0px; margin-top: -40px; font-size: 38px; border: none; background: transparent none no-repeat left center;
+} // background: transparent url(../images/implication.png) no-repeat left center;  
 
-nav a:hover { background: transparent url(../images/implication.png) no-repeat left center; color: #c7e03b; } // #abe0f3
+nav a:hover { background: transparent url(../images/implication.png) no-repeat left center; color: #c7e03b;  background-size: 48px 30px; } // #abe0f3
 
 // header a.button:hover {} //transform-origin: left; transform: rotate(90deg);
 
