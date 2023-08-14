@@ -17,7 +17,7 @@ description: Alexander Taveira Blomenhofer.
 
 ## About me 
 
-I am a Postdoctoral Researcher at [Centrum Wiskunde & Informatica (CWI)](www.cwi.nl) in Amsterdam, funded by the [OPTIMAL](https://optimal.uva.nl/?cb) project, and glad to be supervised by [Monique Laurent](https://homepages.cwi.nl/~monique/). 
+I am a Postdoctoral Researcher at [Centrum Wiskunde & Informatica (CWI)](https://www.cwi.nl/en/people/filipe-alexander-taveira-blomenhofer/) in Amsterdam, funded by the [OPTIMAL](https://optimal.uva.nl/consortium-researchers/post-doctoral-researchers/post-doctoral-researchers.html#Dr-Alexander-Taveira-Blomenhofer--CWI) project, and glad to be supervised by [Monique Laurent](https://homepages.cwi.nl/~monique/). 
 
 <!-- | ![gaussian mixture density](/assets/img/gmm-density.svg) | | ![pfp](/assets/img/portrait-gaudi.jpg) |
 |:--:|:--:|:--:|
@@ -43,7 +43,6 @@ My two most recent results prove recovery guarantees for mixtures of Gaussians. 
 [Optimization for and with Machine Learning (OPTIMAL)](https://optimal.uva.nl/?cb). ENW-GROOT research project funded by NWO. Collaboration between University of Amsterdam, CWI, Tilburg University, and Technical University Delft.  
 
 Part of the research group [Networks and Optimization](https://www.cwi.nl/research/groups/networks-and-optimization) at CWI.
-
 
 
 ## Organization & Service
