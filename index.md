@@ -21,16 +21,9 @@ Previously, I worked at [Centrum Wiskunde & Informatica (CWI)](https://www.cwi.n
 | | | | -->
 
 
-
-
-
-
 My research applies techniques from algebraic geometry and semidefinite optimization to tensor problems. Tensor geometry has a rich scope of applications, including algebraic statistics, polynomial optimization and quantum information theory.  
 
 On the side of pure mathematics, I am interested generic ranks and identifiability of secant varieties, and in algorithms for invariant tensor decomposition models. 
-
-
-On the side of applications, Gaussian mixtures have been a central theme in my research, and I am particularly interested in the problems of identifiability and parameter recovery for mixture distributions. It is particularly fascinating to me, how classical subjects of 19th and 20th century geometry, such as the theory of Waring decompositions and sum-of-squares representations, are applied in cutting-edge algorithms and recovery results for high-dimensional estimation problems. 
 
 
 | ![gaussian mixture density](/assets/img/gmm-density.svg) | 
@@ -39,20 +32,23 @@ On the side of applications, Gaussian mixtures have been a central theme in my r
 | |
 
 
+On the side of applications, Gaussian mixtures have been a central theme in my research, and I am particularly interested in the problems of identifiability and parameter recovery for mixture distributions. It is particularly fascinating to me, how classical subjects of 19th and 20th century geometry, such as the theory of Waring decompositions and sum-of-squares representations, are applied in cutting-edge algorithms and recovery results for high-dimensional estimation problems. 
+
+
+
 ## Research Highlight
 
-| ![secant identifiability gaps](/assets/img/segver-ranks.svg) | 
-|:--:| 
-| [Here](http://arxiv.org/abs/2312.12335), we showed that the distance between the generic $$X$$-rank $$m_g$$ and the maximum nondefective rank $$m_0$$ is bounded by $$m_g - m_0 \le \dim X - 1$$ for many tensor varieties $$X$$. In the figure, $$X$$ is a Segre-Veronese variety. |  
-| |
 
 
 <!-- | Figure illustrating the possible distance between the generic $$X$$-rank $$m_g$$ and the maximum nondefective rank $$m_0$$. Here, $$X$$ is a Segre-Veronese variety. We proved $$m_g - m_0 \le \dim X - 1$$ for many tensor varieties in [this work](http://arxiv.org/abs/2312.12335). |   -->
 <!-- | | -->
 
-My new preprint with Alex Casarotti is out! We solve many cases of the Baur-Draisma-de Graaf conjecture, show identifiability for a large class of tensor varieties and give bounds on the generic ranks, all by proving a simple bound on the gap between the generic rank and the maximum nondefective rank. You can find it [here](http://arxiv.org/abs/2312.12335).
+My new preprint with Alex Casarotti is out! We solve many cases of the Baur-Draisma-de Graaf conjecture, show identifiability for a large class of tensor varieties and give bounds on the generic ranks, all by proving a simple bound on the gap between the generic rank and the maximum nondefective rank. You can find it [here](http://arxiv.org/abs/2312.12335). The result was recently used as an ingredient by [Abo, Brambilla, Galuppi and Oneto](https://arxiv.org/abs/2406.20057) to prove that all secants of Segre-Veronese varieties have the expected dimension, as long as each Veronese power is at least of order 3. 
 
-<!-- In a more recent feat, Abo, Oneto ... managed to prove that all Segre-Veronese varieties with degrees have the expected dimension, as long as each Veronese power is at least of order 3.   -->
+| ![secant identifiability gaps](/assets/img/segver-ranks.svg) | 
+|:--:| 
+| [Here](http://arxiv.org/abs/2312.12335), we showed that the distance between the generic $$X$$-rank $$m_g$$ and the maximum nondefective rank $$m_0$$ is bounded by $$m_g - m_0 \le \dim X - 1$$ for many tensor varieties $$X$$. In the figure, $$X$$ is a Segre-Veronese variety. |  
+| |
 
 My other results of 2023 prove recovery guarantees for mixtures of Gaussians. In [this preprint](http://arxiv.org/abs/2307.03850), recently presented at an [Oberwolfach workshop](/talks), I show that the parameters of a general mixture of $$ \Omega (n^4) $$ Gaussians can be recovered from the mixture moments of degree 4 and 6. [This other preprint](http://arxiv.org/abs/2305.06860), recently presented at [FOCM](/talks), develops an algorithm to decompose the mixture moments of centered Gaussians, where sums-of-squares representations play a key role to find the decomposition. You can find presentations for both results in the [talks](/talks) section. 
 
