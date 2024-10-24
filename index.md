@@ -38,11 +38,6 @@ On the side of applications, Gaussian mixtures have been a central theme in my r
 
 ## Research Highlight
 
-
-
-<!-- | Figure illustrating the possible distance between the generic $$X$$-rank $$m_g$$ and the maximum nondefective rank $$m_0$$. Here, $$X$$ is a Segre-Veronese variety. We proved $$m_g - m_0 \le \dim X - 1$$ for many tensor varieties in [this work](http://arxiv.org/abs/2312.12335). |   -->
-<!-- | | -->
-
 My new preprint with Alex Casarotti is out! We solve many cases of the Baur-Draisma-de Graaf conjecture, show identifiability for a large class of tensor varieties and give bounds on the generic ranks, all by proving a simple bound on the gap between the generic rank and the maximum nondefective rank. You can find it [here](http://arxiv.org/abs/2312.12335). The result was recently used as an ingredient by [Abo, Brambilla, Galuppi and Oneto](https://arxiv.org/abs/2406.20057) to prove that all secants of Segre-Veronese varieties have the expected dimension, as long as each Veronese power is at least of order 3. 
 
 | ![secant identifiability gaps](/assets/img/segver-ranks.svg) | 
@@ -55,22 +50,19 @@ My other results of 2023 prove recovery guarantees for mixtures of Gaussians. In
 
 ## Organization & Service
 
-
 I am a reviewer for [zbMath](https://zbmath.org/) and for [SIAGA](https://epubs.siam.org/journal/siaga)
 
 
 ## Teaching 
 
-Commutative Algebra (Feb 2025), with Nidhi Kainsa
-
-<!-- With [Sander Borst](https://www.cwi.nl/en/people/sander-borst/), [Danish Kashaev](https://www.cwi.nl/en/people/danish-kashaev/) and [Hilde Verbeek](https://www.cwi.nl/en/people/hilde-verbeek/), I am organizing the biweekly [Networks and Optimization Seminar](https://www.cwi.nl/en/groups/networks-and-optimization/more-networks-and-optimization/aco-seminar/) at CWI.  -->
+Commutative Algebra (Feb 2025), with Nidhi Kaihnsa.
 
 
 
-
-## Research Networks
-
-### Formerly: 
+<!-- # Former Activities 
 [Optimization for and with Machine Learning (OPTIMAL)](https://optimal.uva.nl/?cb). ENW-GROOT research project funded by NWO. Collaboration between University of Amsterdam, CWI, Tilburg University, and Technical University Delft.  
 
 Former member of the research group [Networks and Optimization](https://www.cwi.nl/research/groups/networks-and-optimization) at CWI. 
+Former organiser of the  -->
+
+<!-- With [Sander Borst](https://www.cwi.nl/en/people/sander-borst/), [Danish Kashaev](https://www.cwi.nl/en/people/danish-kashaev/) and [Hilde Verbeek](https://www.cwi.nl/en/people/hilde-verbeek/), I am organizing the biweekly [Networks and Optimization Seminar](https://www.cwi.nl/en/groups/networks-and-optimization/more-networks-and-optimization/aco-seminar/) at CWI.  -->
