@@ -26,11 +26,18 @@ Check out my [CV](/cv/) for my other presentations at conferences.
 ## Posters
 
 
-| ![Poster](assets/img/gaussian-deg6ident-poster.png) |
+| ![Poster](assets/img/mega2024-poster.png) |
+|:--:|
+| My poster on [the dimension of invariant secant varieties](http://arxiv.org/abs/2312.12335), |
+| which I presented at Mega 2024 in Leipzig.  |
+| Also available as [**pdf download**](/assets/pdf/mega2024-poster.pdf). |
+
+
+<!-- | ![Poster](assets/img/gaussian-deg6ident-poster.png) |
 |:--:|
 | My new poster on [Gaussian identifiability](https://arxiv.org/abs/2307.03850), |
 | which I presented at FOCM 2023, Paris.  |
-| Also available as [**pdf download**](/assets/pdf/gaussian-deg6ident-poster.pdf). |
+| Also available as [**pdf download**](/assets/pdf/gaussian-deg6ident-poster.pdf). | -->
 
 <!-- |  | 
 |:--:|

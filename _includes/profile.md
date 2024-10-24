@@ -2,4 +2,4 @@
 Me, in front of a simplex.  
 
 **Alexander Taveira Blomenhofer**
-*Postdoctoral Researcher* at [CWI](https://www.cwi.nl/en/people/filipe-alexander-taveira-blomenhofer/), Amsterdam. Mail: [atb@cwi.nl](mailto:atb@cwi.nl)
+*Postdoctoral Researcher* at the [QMATH centre](https://qmath.ku.dk/) of the [Copenhagen University](https://www.ku.dk/english/). Mail: [atb@math.ku.dk](mailto:atb@math.ku.dk) 
