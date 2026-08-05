@@ -1,17 +1,7 @@
-
 |  |  |
-|:--:|:--:|
-| [![](/assets/img/qr/qr-casarotti-michalek-oneto.png)](https://doi.org/10.1112/blms.12871) | Blomenhofer, Alexander Taveira, Alex Casarotti, Mateusz Michałek, and Alessandro Oneto. 2023. “Identifiability for Mixtures of Centered Gaussians and Sums of Powers of Quadratics.” *Bulletin of the London Mathematical Society*. |
-| [![](/assets/img/qr/qr-vill-michalek.png)](https://www.sciencedirect.com/science/article/abs/pii/S0024379522001677) | Vill, Julian, Mateusz Michałek, and Alexander Taveira Blomenhofer. 2022. “Ideals of Spaces of Degenerate Matrices.” *Linear Algebra and Its Applications*. |
-
-
-
-<!-- Blomenhofer, Alexander Taveira, Alex Casarotti, Mateusz Michałek, and
-Alessandro Oneto. 2023. “Identifiability for Mixtures of Centered
-Gaussians and Sums of Powers of Quadratics.” *Bulletin of the London
-Mathematical Society*.
-<https://doi.org/10.1112/blms.12871>.
-
-Vill, Julian, Mateusz Michałek, and Alexander Taveira Blomenhofer. 2022.
-“Ideals of Spaces of Degenerate Matrices.” *Linear Algebra and Its
-Applications*. -->
+|:--:|:--|
+| <a href="https://arxiv.org/abs/2412.13191"><img class="publication-qr" src="/assets/img/qr/qr-laurent-qdf.png" alt="QR code for arXiv:2412.13191"></a> | Blomenhofer, Alexander Taveira, and Monique Laurent. 2026. “Moment-Sos and Spectral Hierarchies for Polynomial Optimization on the Sphere and Quantum de Finetti Theorems.” *SIAM Journal on Optimization* 36(1), 204–232. DOI: [10.1137/24M1717750](https://doi.org/10.1137/24M1717750). |
+| <a href="https://doi.org/10.2140/astat.2025.16.1"><img class="publication-qr" src="/assets/img/qr/qr-astat-gaussian-ident.png" alt="QR code for the Algebraic Statistics article"></a> | Blomenhofer, Alexander Taveira. 2025. “Gaussian Mixture Identifiability from Degree 6 Moments.” *Algebraic Statistics* 16(1), 1–28. DOI: [10.2140/astat.2025.16.1](https://doi.org/10.2140/astat.2025.16.1). |
+| <a href="https://arxiv.org/abs/2305.06860"><img class="publication-qr" src="/assets/img/qr/qr-paper-pof.png" alt="QR code for arXiv:2305.06860"></a> | Blomenhofer, Alexander Taveira. 2025. “On Uniqueness of Power Sum Decomposition.” *SIAM Journal on Applied Algebra and Geometry* 9(1), 211–234. DOI: [10.1137/23M1573355](https://doi.org/10.1137/23M1573355). |
+| <a href="https://doi.org/10.1112/blms.12871"><img class="publication-qr" src="/assets/img/qr/qr-casarotti-michalek-oneto.png" alt="QR code for the Bulletin of the London Mathematical Society article"></a> | Blomenhofer, Alexander Taveira, Alex Casarotti, Mateusz Michałek, and Alessandro Oneto. 2023. “Identifiability for Mixtures of Centered Gaussians and Sums of Powers of Quadratics.” *Bulletin of the London Mathematical Society* 55(5), 2407–2424. DOI: [10.1112/blms.12871](https://doi.org/10.1112/blms.12871). |
+| <a href="https://doi.org/10.1016/j.laa.2022.04.016"><img class="publication-qr" src="/assets/img/qr/qr-vill-michalek.png" alt="QR code for the Linear Algebra and its Applications article"></a> | Vill, Julian, Mateusz Michałek, and Alexander Taveira Blomenhofer. 2022. “Ideals of Spaces of Degenerate Matrices.” *Linear Algebra and its Applications* 648, 56–69. DOI: [10.1016/j.laa.2022.04.016](https://doi.org/10.1016/j.laa.2022.04.016). |

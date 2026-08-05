@@ -4,31 +4,42 @@ title: Talks and Posters
 description: Alexander Taveira Blomenhofer. 
 ---
 
-## Talks
+## Recorded talks
 
-This is a recording of a talk on the topic of my recent [preprint on powers of forms decomposition](https://arxiv.org/abs/2305.06860), which I gave at the Oberwolfach workshop [Real Algebraic Geometry with a View toward Koopman Operator Methods](https://www.mfo.de/occasion/2311/www_view).  
+Here are recordings of two talks on tensor decomposition and identifiability.
 
-
- <!-- These are recordings of talks, which I gave at recent conferences.  -->
-
-<figure> 
-          <center>
-          <video width="100%" height="auto" controls> <source src="/assets/videos/23-03-oberwolfach.mp4" type="video/mp4"> </video>
-          <figcaption>
-            Powers-of-forms decomposition via Sums of squares.  <br>
-            Oberwolfach, March 2023.  
-          </figcaption>
-          </center>
+<figure>
+  <video width="100%" height="auto" controls preload="metadata" playsinline>
+    <source src="/assets/videos/tenors-2025-tensor-decomposition.mp4" type="video/mp4">
+    Your browser does not support embedded MP4 video.
+  </video>
+  <figcaption>
+    <strong>Recent advances in tensor decomposition and identifiability.</strong><br>
+    TENORS Workshop, Universität Konstanz, September 2025.
+  </figcaption>
 </figure>
 
-Check out my [CV](/cv/) for my other presentations at conferences. 
+<figure> 
+  <video width="100%" height="auto" controls preload="metadata" playsinline>
+    <source src="/assets/videos/23-03-oberwolfach.mp4" type="video/mp4">
+    Your browser does not support embedded MP4 video.
+  </video>
+  <figcaption>
+    <strong>Powers-of-forms decomposition via sums of squares.</strong><br>
+    <a href="https://www.mfo.de/occasion/2311/www_view">Oberwolfach workshop</a>, March 2023. The associated work is now published as <a href="https://doi.org/10.1137/23M1573355">On Uniqueness of Power Sum Decomposition</a>.
+  </figcaption>
+</figure>
 
 ## Posters
 
+| ![Poster: The contraction variety of a tensor](assets/img/contraction-variety-poster.png) |
+|:--:|
+| In August 2025, I presented “The contraction variety of a tensor” at the Computations in Algebraic Geometry meeting at ETH Zürich. |
+| Also available as [**pdf download**](/assets/pdf/the-contraction-variety-of-a-tensor.pdf). |
 
 | ![Poster](assets/img/mega2024-poster.png) |
 |:--:|
-| My poster on [the dimension of invariant secant varieties](http://arxiv.org/abs/2312.12335), |
+| My poster on [nondefectivity of invariant secant varieties](https://arxiv.org/abs/2312.12335), |
 | which I presented at Mega 2024 in Leipzig.  |
 | Also available as [**pdf download**](/assets/pdf/mega2024-poster.pdf). |
 

@@ -6,16 +6,15 @@ description: Alexander Taveira Blomenhofer.
 
 ## Preprints
 
-Here are some of my recent preprints:
-{% capture bib-preprints %}{% include bib-preprints.md %}{% endcapture %}
-              {{ bib-preprints | markdownify }}
+Current research preprints:
+
+{% include bib-preprints.md %}
 
 ## Publications
 
-Some publications in peer-reviewed journals:
+Peer-reviewed journal publications:
 
-{% capture bib-publications %}{% include bib-publications.md %}{% endcapture %}
-              {{ bib-publications | markdownify }}
+{% include bib-publications.md %}
 
 ## Thesis
 

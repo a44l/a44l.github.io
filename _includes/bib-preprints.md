@@ -1,13 +1,5 @@
-
 |  |  |
-|:--:|:--:|
-| [![](/assets/img/qr/qr-casarotti-invariant-secants.png)](http://arxiv.org/abs/2312.12335) | Blomenhofer, Alexander Taveira and Alex Casarotti. “Dimensions of invariant secant varieties”, 2023. <http://arxiv.org/abs/2312.12335>.|
-| [![](/assets/img/qr/qr-noncentered-ident.png)](http://arxiv.org/abs/2307.03850) | Blomenhofer, Alexander Taveira. 2023. “Gaussian Mixture Identifiability from Degree 6 Moments.” <http://arxiv.org/abs/2307.03850>. |
-| [![](/assets/img/qr/qr-paper-pof.png)](http://arxiv.org/abs/2305.06860) | Blomenhofer, Alexander Taveira. 2023. “Unique Powers-of-Forms Decompositions from Simple Gram Spectrahedra.” <http://arxiv.org/abs/2305.06860>. |
-
-
-<!-- Blomenhofer, Alexander Taveira. 2023. “Gaussian Mixture Identifiability from Degree 6 Moments.”
-<http://arxiv.org/abs/2307.03850>.
-
-Blomenhofer, Alexander Taveira. 2023. “Unique Powers-of-Forms Decompositions from Simple Gram
-Spectrahedra.” <http://arxiv.org/abs/2305.06860>. -->
+|:--:|:--|
+| <a href="https://arxiv.org/abs/2509.10450"><img class="publication-qr" src="/assets/img/qr/qr-lovitz-chow-decompositions.png" alt="QR code for arXiv:2509.10450"></a> | Blomenhofer, Alexander Taveira, and Benjamin Lovitz. 2025. “A Linear-Time Algorithm for Chow Decompositions.” [arXiv:2509.10450](https://arxiv.org/abs/2509.10450). |
+| <a href="https://arxiv.org/abs/2509.10443"><img class="publication-qr" src="/assets/img/qr/qr-casarotti-defectivity-joins.png" alt="QR code for arXiv:2509.10443"></a> | Blomenhofer, Alexander, and Alex Casarotti. 2025. “On Defectivity of Joins, Reducible Secants and Fröberg’s Conjecture.” [arXiv:2509.10443](https://arxiv.org/abs/2509.10443). |
+| <a href="https://arxiv.org/abs/2312.12335"><img class="publication-qr" src="/assets/img/qr/qr-casarotti-invariant-secants.png" alt="QR code for arXiv:2312.12335"></a> | Blomenhofer, Alexander Taveira, and Alex Casarotti. 2023. “Nondefectivity of Invariant Secant Varieties.” [arXiv:2312.12335](https://arxiv.org/abs/2312.12335). Under review at *Selecta Mathematica*. |

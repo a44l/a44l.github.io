@@ -25,42 +25,6 @@ h6::before {
   content: "/";
 }
 
-/* Custom styling for the navigation bar */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav li:last-child {
-  margin-right: 0;
-}
-
-nav a {
-  display: inline-block;
-  padding: 20px 30px; /* Increase the padding to make the buttons larger */
-  background-color: #c7e03b; /* Replace with your desired background color */
-  color: #fff; /* Replace with your desired text color */
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 38px; /* Increase the font size to make the text larger */
-}
-
-nav a:hover {
-  background-color: #5677fc; /* Replace with your desired background color on hover */
-}
-
-/* Add a white border around navigation buttons */
-nav a {
-  border: 2px solid #fff; /* Replace with your desired border color */
-}
-
-
 #sidebar figure {
   float: left;
   width: 100%;
@@ -106,9 +70,19 @@ aside#sidebar { float: left; width: 22%; }
 aside #profile-picture {font-size: large; font-style: normal;}
 
 
-// ========= Custom Banner   =======================================
+// ========= Custom banner and responsive navigation ===============
 
-header {background-size: cover};
+header {
+  padding: 0;
+  background-size: cover;
+}
+
+header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+}
 
 
 // ======= Straight navigation menu style  =========================
@@ -120,16 +94,113 @@ aside a.button:hover {
 }
 
 
-// ======= Quer navigation menu style  =========================
+// ======= Horizontal navigation menu ==============================
 
 header .social-button-container { position: absolute; top: 0; right: 0; text-align: center; }
-// header a.button { position: relative; display: inline-block; background: transparent url(../images/github-button.png) 0 0 no-repeat; }
-header .navigation-container {position: relative; top: 0; float: right; transform-origin: right; transform: scale(1, 1);}
-nav a { position: relative; display: inline-flex; /* width: 138px; */ padding-left: 55px; text-indent: 10px; text-align: left; text-decoration: underline; margin-bottom: 0px; margin-top: -40px; font-size: 38px; border: none; background: transparent none no-repeat left center;
-} // background: transparent url(../images/implication.png) no-repeat left center;  
+header .navigation-container {
+  position: static;
+  float: none;
+  width: 100%;
+  transform: none;
+}
 
-nav a:hover { background: transparent url(../images/implication.png) no-repeat left center; color: #c7e03b;  background-size: 48px 30px; } // #abe0f3
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(8px, 1.5vw, 24px);
+  row-gap: 8px;
+  margin: 0;
+  padding: 12px 0;
+  list-style: none;
+}
 
-// header a.button:hover {} //transform-origin: left; transform: rotate(90deg);
+header nav li {
+  display: block;
+  margin: 0;
+}
+
+header nav a {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 14px 8px 36px;
+  color: #fff;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: underline;
+  text-indent: 0;
+  white-space: nowrap;
+  border: 0;
+  border-radius: 5px;
+  background: transparent none no-repeat left center;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: #c7e03b;
+  background-image: url(../images/implication.png);
+  background-size: 32px 20px;
+}
+
+header nav a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 900px) {
+  .inner {
+    width: 90%;
+  }
+
+  header .inner {
+    min-height: 72px;
+  }
+
+  header nav ul {
+    column-gap: 10px;
+    row-gap: 6px;
+    padding: 10px 0;
+  }
+
+  header nav a {
+    padding: 6px 10px 6px 28px;
+    font-size: clamp(20px, 3.5vw, 27px);
+  }
+
+  header nav a:hover,
+  header nav a:focus-visible {
+    background-size: 24px 15px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .inner {
+    width: 92%;
+  }
+
+  header nav ul {
+    column-gap: 6px;
+    row-gap: 4px;
+  }
+
+  header nav a {
+    padding: 5px 7px 5px 26px;
+  }
+}
 
 
+// ======= Publication QR codes ===================================
+
+#main-content img.publication-qr {
+  display: block;
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  max-width: 64px;
+  margin: 0 auto;
+  object-fit: contain;
+}

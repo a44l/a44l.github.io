@@ -26,6 +26,8 @@ exclude:
   - _site
   - .sass-cache
   - .jekyll-cache
+  - changelog.md
+  - assets/videos/25-09-16-Recent advances in tensor decomposition and identifiability - Alexander Taveira Blomenhofer.mp4
 
 # Markdown settings
 markdown: kramdown
@@ -39,14 +41,14 @@ url: "https://a44l.github.io" # Replace with your GitHub Pages URL
 nav:
   - title: Home
     url: /
-  - title: cv
-    url: /cv
+  - title: CV
+    url: /cv.html
   - title: Publications
-    url: /publications
+    url: /publications.html
   - title: Talks
-    url: /talks
+    url: /talks.html
   - title: Contact
-    url: /contact
+    url: /contact.html
   
 # GitHub
 # repository: "a44l/a44l.github.io"
@@ -62,4 +64,3 @@ social:
 # Set this to true when using GitHub Pages
 # Set this to false if you are building the site locally and want to preview drafts and unpublished posts
 published: false
-
