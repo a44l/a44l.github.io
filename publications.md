@@ -6,13 +6,9 @@ description: Alexander Taveira Blomenhofer.
 
 ## Preprints
 
-Current research preprints:
-
 {% include bib-preprints.md %}
 
 ## Publications
-
-Peer-reviewed journal publications:
 
 {% include bib-publications.md %}
 
