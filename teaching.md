@@ -26,6 +26,8 @@ With [Eliana Duarte](https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=
 
 [Live exercises Weeks 1-2](/slides/si-2026/weeks-1-2/exercises/)
 
+[Worksheet 1](/slides/si-2026/weeks-1-2/worksheets/Worksheet1.pdf)
+
 #### Weekly schedule
 
 We meet twice per week according to the following schedule.  <!-- Both meetings are classes of type TP. The first half of the course will be taught by me, the second half by Eliana Duarte. -->
