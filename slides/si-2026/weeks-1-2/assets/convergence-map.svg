@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 540" role="img" aria-labelledby="title desc">
+  <title id="title">Implications among modes of convergence</title>
+  <desc id="desc">Convergence in L infinity implies almost sure convergence and convergence in L q. Convergence in L q implies L p, which implies convergence in probability, which implies convergence in distribution. Almost sure convergence also implies convergence in probability.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#087f8c"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0b3442" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect x="20" y="18" width="1340" height="494" rx="26" fill="#fffdf8" filter="url(#shadow)"/>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g>
+      <rect x="66" y="290" width="210" height="100" rx="18" fill="#0b3442"/>
+      <text x="171" y="352" font-size="31" font-weight="700" fill="#fffdf8">L∞</text>
+    </g>
+    <g>
+      <rect x="330" y="290" width="210" height="100" rx="18" fill="#d9eeeb" stroke="#087f8c" stroke-width="3"/>
+      <text x="435" y="352" font-size="31" font-weight="700" fill="#17313b">Lq</text>
+    </g>
+    <g>
+      <rect x="594" y="290" width="210" height="100" rx="18" fill="#d9eeeb" stroke="#087f8c" stroke-width="3"/>
+      <text x="699" y="352" font-size="31" font-weight="700" fill="#17313b">Lp</text>
+    </g>
+    <g>
+      <rect x="858" y="290" width="210" height="100" rx="18" fill="#faedc8" stroke="#e2ae3a" stroke-width="3"/>
+      <text x="963" y="330" font-size="29" font-weight="700" fill="#17313b">in</text>
+      <text x="963" y="365" font-size="29" font-weight="700" fill="#17313b">probability</text>
+    </g>
+    <g>
+      <rect x="1122" y="290" width="210" height="100" rx="18" fill="#f7dfd8" stroke="#dc6b4f" stroke-width="3"/>
+      <text x="1227" y="330" font-size="29" font-weight="700" fill="#17313b">in</text>
+      <text x="1227" y="365" font-size="29" font-weight="700" fill="#17313b">distribution</text>
+    </g>
+    <g>
+      <rect x="724" y="88" width="250" height="100" rx="18" fill="#174b55"/>
+      <text x="849" y="128" font-size="29" font-weight="700" fill="#fffdf8">almost</text>
+      <text x="849" y="164" font-size="29" font-weight="700" fill="#fffdf8">surely</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#087f8c" stroke-width="6" marker-end="url(#arrow)">
+    <line x1="276" y1="340" x2="318" y2="340"/>
+    <line x1="540" y1="340" x2="582" y2="340"/>
+    <line x1="804" y1="340" x2="846" y2="340"/>
+    <line x1="1068" y1="340" x2="1110" y2="340"/>
+    <path d="M171 290 C171 208 448 138 712 138"/>
+    <path d="M850 188 C850 225 907 238 947 278"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#5d6d72" text-anchor="middle">
+    <text x="567" y="446" font-size="24">q &gt; p ≥ 1</text>
+    <text x="690" y="482" font-size="23">probability space has total mass 1</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 370" role="img" aria-labelledby="title desc">
+  <title id="title">Sampling and statistical inference</title>
+  <desc id="desc">Sampling produces an observed sample from a population with an unknown distribution. In the reverse direction, statistical inference uses the sample under a probability model to estimate distribution properties and predict new observations. Dots schematically represent population members and sampled observations.</desc>
+  <defs>
+    <marker id="sampling-arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L11 5L0 10Z" fill="#5d6d72"/>
+    </marker>
+    <marker id="inference-arrow" markerWidth="15" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L14 6L0 12Z" fill="#087f8c"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="24" width="310" height="310" rx="22" fill="#fffdf8" stroke="#cad3d1" stroke-width="2"/>
+  <rect x="1110" y="24" width="310" height="310" rx="22" fill="#d9eeeb" stroke="#087f8c" stroke-width="2"/>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#17313b">
+    <g font-size="34" font-weight="700">
+      <text x="175" y="78">Population</text>
+      <text x="1265" y="78">Sample</text>
+    </g>
+    <g font-size="25" fill="#5d6d72">
+      <text x="175" y="117">Unknown distribution</text>
+      <text x="1265" y="117">Observed data</text>
+    </g>
+
+    <text x="720" y="76" font-size="29" fill="#5d6d72">Sampling</text>
+    <path d="M375 104H1065" fill="none" stroke="#5d6d72" stroke-width="3" marker-end="url(#sampling-arrow)"/>
+
+    <text x="720" y="192" font-size="29" font-weight="700" fill="#087f8c">Inference under a probability model</text>
+    <path d="M1065 219H375" fill="none" stroke="#087f8c" stroke-width="4" marker-end="url(#inference-arrow)"/>
+    <g font-size="26">
+      <text x="720" y="265">Estimate distribution properties</text>
+      <text x="720" y="305">Predict new observations</text>
+    </g>
+  </g>
+
+  <g fill="#899c9b">
+    <circle cx="73" cy="169" r="7"/><circle cx="107" cy="169" r="7"/><circle cx="141" cy="169" r="7"/>
+    <circle cx="175" cy="169" r="7"/><circle cx="209" cy="169" r="7"/><circle cx="243" cy="169" r="7"/><circle cx="277" cy="169" r="7"/>
+    <circle cx="73" cy="207" r="7"/><circle cx="107" cy="207" r="7"/><circle cx="141" cy="207" r="7"/>
+    <circle cx="175" cy="207" r="7"/><circle cx="209" cy="207" r="7"/><circle cx="243" cy="207" r="7"/><circle cx="277" cy="207" r="7"/>
+    <circle cx="73" cy="245" r="7"/><circle cx="107" cy="245" r="7"/><circle cx="141" cy="245" r="7"/>
+    <circle cx="175" cy="245" r="7"/><circle cx="209" cy="245" r="7"/><circle cx="243" cy="245" r="7"/><circle cx="277" cy="245" r="7"/>
+    <circle cx="73" cy="283" r="7"/><circle cx="107" cy="283" r="7"/><circle cx="141" cy="283" r="7"/>
+    <circle cx="175" cy="283" r="7"/><circle cx="209" cy="283" r="7"/><circle cx="243" cy="283" r="7"/><circle cx="277" cy="283" r="7"/>
+  </g>
+  <g fill="#087f8c">
+    <circle cx="1215" cy="192" r="9"/><circle cx="1265" cy="192" r="9"/><circle cx="1315" cy="192" r="9"/>
+    <circle cx="1215" cy="253" r="9"/><circle cx="1265" cy="253" r="9"/><circle cx="1315" cy="253" r="9"/>
+  </g>
+</svg>

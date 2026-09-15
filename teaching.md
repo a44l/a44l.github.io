@@ -22,6 +22,10 @@ In the first semester at the University of Porto, I teach the following curricul
 
 With [Eliana Duarte](https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=668545). The two curricular units M4061 and M4169 are taught together. We will cover the basics of statistical inference, such as statistical models, point and interval estimation, confidence intervals, parametric and nonparametric hypothesis testing and Bayesian inference. The course also includes practical applications using the R programming language.
 
+[Lecture slides Weeks 1-2](/slides/si-2026/weeks-1-2/)
+
+[Live exercises Weeks 1-2](/slides/si-2026/weeks-1-2/exercises/)
+
 #### Weekly schedule
 
 We meet twice per week according to the following schedule.  <!-- Both meetings are classes of type TP. The first half of the course will be taught by me, the second half by Eliana Duarte. -->

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">The typewriter sequence of indicator functions</title>
+  <desc id="desc">Intervals sweep across zero to one in increasingly fine rows. Their lengths shrink, but every point is visited once in every row.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0b3442" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="22" y="18" width="1156" height="510" rx="24" fill="#fffdf8" filter="url(#shadow)"/>
+  <text x="90" y="82" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#17313b">dyadic level</text>
+  <text x="1080" y="510" font-family="Arial, sans-serif" font-size="25" fill="#5d6d72">u</text>
+
+  <g font-family="Arial, sans-serif" font-size="24" fill="#5d6d72">
+    <text x="105" y="151">0</text>
+    <text x="105" y="241">1</text>
+    <text x="105" y="331">2</text>
+    <text x="105" y="421">3</text>
+  </g>
+
+  <g stroke="#cad3d1" stroke-width="3">
+    <line x1="190" y1="140" x2="1070" y2="140"/>
+    <line x1="190" y1="230" x2="1070" y2="230"/>
+    <line x1="190" y1="320" x2="1070" y2="320"/>
+    <line x1="190" y1="410" x2="1070" y2="410"/>
+    <line x1="190" y1="455" x2="1070" y2="455"/>
+  </g>
+
+  <rect x="190" y="111" width="880" height="58" rx="9" fill="#087f8c" opacity="0.86"/>
+
+  <rect x="190" y="201" width="440" height="58" rx="9" fill="#087f8c" opacity="0.86"/>
+  <rect x="630" y="201" width="440" height="58" rx="9" fill="#e2ae3a" opacity="0.84"/>
+
+  <rect x="190" y="291" width="220" height="58" rx="9" fill="#087f8c" opacity="0.86"/>
+  <rect x="410" y="291" width="220" height="58" rx="9" fill="#e2ae3a" opacity="0.84"/>
+  <rect x="630" y="291" width="220" height="58" rx="9" fill="#dc6b4f" opacity="0.82"/>
+  <rect x="850" y="291" width="220" height="58" rx="9" fill="#5c91a1" opacity="0.86"/>
+
+  <g opacity="0.9">
+    <rect x="190" y="381" width="110" height="58" rx="9" fill="#087f8c"/>
+    <rect x="300" y="381" width="110" height="58" rx="9" fill="#e2ae3a"/>
+    <rect x="410" y="381" width="110" height="58" rx="9" fill="#dc6b4f"/>
+    <rect x="520" y="381" width="110" height="58" rx="9" fill="#5c91a1"/>
+    <rect x="630" y="381" width="110" height="58" rx="9" fill="#087f8c"/>
+    <rect x="740" y="381" width="110" height="58" rx="9" fill="#e2ae3a"/>
+    <rect x="850" y="381" width="110" height="58" rx="9" fill="#dc6b4f"/>
+    <rect x="960" y="381" width="110" height="58" rx="9" fill="#5c91a1"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="23" fill="#5d6d72">
+    <text x="181" y="492">0</text>
+    <text x="612" y="492">1/2</text>
+    <text x="1059" y="492">1</text>
+  </g>
+</svg>
+

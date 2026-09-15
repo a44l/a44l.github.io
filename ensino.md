@@ -23,6 +23,10 @@ Na Universidade do Porto, leciono as seguintes unidades curriculares.
 
 As duas unidades curriculares, M4061 e M4169, são lecionadas em conjunto por [Eliana Duarte](https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=668545) e por mim. Abordaremos os fundamentos da inferência estatística, incluindo modelos estatísticos, estimação pontual e intervalar, intervalos de confiança, testes de hipóteses paramétricos e não paramétricos e inferência bayesiana. As unidades curriculares incluem também aplicações práticas em R.
 
+[Slides das aulas das semanas 1-2](/slides/si-2026/weeks-1-2/)
+
+[Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/)
+
 #### Horário semanal
 
 As aulas decorrem duas vezes por semana, de acordo com o seguinte horário. <!-- Ambas as sessões são aulas TP. A primeira metade da unidade curricular será lecionada por mim e a segunda por Eliana Duarte. -->
