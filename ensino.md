@@ -27,6 +27,8 @@ As duas unidades curriculares, M4061 e M4169, são lecionadas em conjunto por [E
 
 [Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/)
 
+[Worksheet 1](/slides/si-2026/weeks-1-2/worksheets/Worksheet1-pt.pdf)
+
 #### Horário semanal
 
 As aulas decorrem duas vezes por semana, de acordo com o seguinte horário. <!-- Ambas as sessões são aulas TP. A primeira metade da unidade curricular será lecionada por mim e a segunda por Eliana Duarte. -->
