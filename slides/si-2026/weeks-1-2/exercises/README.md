@@ -7,7 +7,8 @@ A standalone practice page for the Statistical Inference course, hosted at
 
 - `index.html`: page wording, course navigation, and screen layout.
 - `js/exercises-bank-0.js`: the 40 Lecture 1 questions, restricted to slides 12–41.
-- `js/exercises-week-1-2.js`: the 40 questions, answer keys, explanations, and source notes.
+- `js/exercises-lecture-2.js`: the 40 Lecture 2 questions, answer keys, explanations, and slide references.
+- `js/exercises-week-1-2.js`: the original 40-question full Weeks 1–2 review.
 - `js/live-exercises.js`: session selection, answer checking, scoring, and browser storage.
 - `css/styles.css`: typography, colours, spacing, and mobile layout.
 
@@ -21,7 +22,17 @@ preceding proof steps; the page displays these above the missing-step question.
 Other questions can use the same field for a short setup. Each context entry has
 a `label` and plain-text `text` (newlines are preserved).
 
-The second choice, **Weeks 1–2**, retains the original 40 questions for a wider
+The second choice, **Lecture 2**, covers slides 42–69 of the current neighbouring
+deck (slide 42 is the section title). It covers joint CDFs, marginals, conditional
+probability, event and random-variable independence, generated σ-algebras, joint
+and conditional PMFs and densities, and the optional Bayes/Worksheet 1 recap.
+It does not include expectation, covariance, or transforms from later lectures.
+Its proof questions also state the theorem, assumptions, and preceding proof
+steps. Every question has an explanation and links to its supporting slide(s).
+Slide numbers describe the deck used during authoring; stable anchors keep links
+working if earlier slides are added. Check the ranges if the deck is reorganised.
+
+The third choice, **Weeks 1–2**, retains the original 40 questions for a wider
 review, including material from later lectures. Each session contains eight
 unique questions from the selected bank only, balancing topics and difficulties.
 Lecture 1 is the default. Use “Change practice set” after a session to switch.
@@ -29,8 +40,10 @@ Lecture 1 is the default. Use “Change practice set” after a session to switc
 Answers and progress stay in the browser; no server API or accounts are required.
 The existing Weeks 1–2 best score and session count retain the
 `statistical-inference-2026-practice` localStorage key. Lecture 1 uses the separate
-`statistical-inference-2026-practice-lecture-1` key. Progress is specific to the
-browser and website origin.
+`statistical-inference-2026-practice-lecture-1` key; Lecture 2 uses
+`statistical-inference-2026-practice-lecture-2`. Selecting a lecture never mixes
+in questions or scores from the other banks. Progress is specific to the browser
+and website origin.
 
 ## Preview and publish
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Um átomo corresponde a um salto da função de distribuição</title>
+  <desc id="desc">Uma função de distribuição discreta tem massas 0.55, 0.15 e 0.30 nos pontos um, dois e três. Na escala vertical linear de probabilidade entre zero e um, o salto em dois vai de 0.55 a 0.70. Os círculos abertos representam extremos excluídos e os círculos preenchidos representam extremos incluídos.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#17313b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="624" height="496" rx="22" fill="#fffdf8"/>
+  <g font-family="Arial, sans-serif" font-size="25" fill="#17313b">
+    <text x="60" y="55">F(x)</text>
+    <g stroke="#cad3d1" stroke-width="1.5" stroke-dasharray="5 7">
+      <path d="M100 102H580 M100 198H580 M100 246H580"/>
+      <path d="M310 182V422"/>
+    </g>
+    <g stroke="#17313b" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M80 422H598 M100 442V73"/>
+    </g>
+    <g text-anchor="end" fill="#5d6d72">
+      <text x="84" y="111">1</text>
+      <text x="84" y="207">0.70</text>
+      <text x="84" y="255">0.55</text>
+      <text x="84" y="431">0</text>
+    </g>
+    <g text-anchor="middle">
+      <text x="170" y="458">1</text>
+      <text x="310" y="458" font-weight="700">2</text>
+      <text x="450" y="458">3</text>
+    </g>
+    <text x="604" y="431">x</text>
+    <g fill="none" stroke="#087f8c" stroke-width="6">
+      <path d="M100 422H170 M170 246H310 M310 198H450 M450 102H580"/>
+    </g>
+    <path d="M310 246V198" fill="none" stroke="#dc6b4f" stroke-width="4" stroke-dasharray="5 5"/>
+    <g fill="#fffdf8" stroke="#087f8c" stroke-width="3">
+      <circle cx="170" cy="422" r="7"/><circle cx="450" cy="198" r="7"/>
+    </g>
+    <g fill="#087f8c">
+      <circle cx="170" cy="246" r="7"/><circle cx="450" cy="102" r="7"/>
+    </g>
+    <circle cx="310" cy="246" r="7" fill="#fffdf8" stroke="#dc6b4f" stroke-width="3"/>
+    <circle cx="310" cy="198" r="7" fill="#dc6b4f"/>
+    <path d="M320 230L355 285" fill="none" stroke="#dc6b4f" stroke-width="2"/>
+    <rect x="262" y="289" width="320" height="84" rx="14" fill="#f7dfd8"/>
+    <text x="422" y="323" text-anchor="middle" font-weight="700">P(X = 2)</text>
+    <text x="422" y="354" text-anchor="middle">0.70 − 0.55 = 0.15</text>
+  </g>
+</svg>
+

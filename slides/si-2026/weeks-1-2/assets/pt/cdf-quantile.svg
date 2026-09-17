@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 440" role="img" aria-labelledby="title desc">
+  <title id="title">Uma função de distribuição e a sua inversa generalizada</title>
+  <desc id="desc">O número de caras em dois lançamentos de uma moeda equilibrada tem probabilidades um quarto, um meio e um quarto em zero, um e dois. A sua função de distribuição é contínua à direita. A inversa generalizada é zero para 0 &lt; u ≤ 1/4, um para 1/4 &lt; u ≤ 3/4 e dois para 3/4 &lt; u &lt; 1. Os círculos preenchidos incluem os extremos. Os círculos abertos excluem-nos.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#17313b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="706" height="424" rx="22" fill="#fffdf8"/>
+  <rect x="738" y="8" width="734" height="424" rx="22" fill="#fffdf8"/>
+  <g font-family="Arial, sans-serif" font-size="27" fill="#17313b">
+    <text x="360" y="48" text-anchor="middle" font-size="29" font-weight="700">FD: F(x)</text>
+    <text x="1105" y="48" text-anchor="middle" font-size="29" font-weight="700">Quantil: F⁻¹(u)</text>
+    <g stroke="#cad3d1" stroke-width="1.5" stroke-dasharray="6 7">
+      <path d="M175 86H650 M175 150H650 M175 278H650"/>
+      <path d="M365 86V342 M555 86V342"/>
+      <path d="M830 98H1390 M830 220H1390"/>
+      <path d="M970 98V342 M1250 98V342 M1390 98V342"/>
+    </g>
+    <g stroke="#17313b" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M88 342H670 M175 357V66"/>
+      <path d="M815 342H1425 M830 357V66"/>
+    </g>
+    <text x="686" y="352">x</text>
+    <text x="1435" y="352">u</text>
+    <g text-anchor="end" fill="#5d6d72">
+      <text x="153" y="95">1</text>
+      <text x="153" y="159">¾</text>
+      <text x="153" y="287">¼</text>
+      <text x="808" y="107">2</text>
+      <text x="808" y="229">1</text>
+    </g>
+    <g text-anchor="middle">
+      <text x="175" y="383">0</text><text x="365" y="383">1</text><text x="555" y="383">2</text>
+      <text x="830" y="383">0</text><text x="970" y="383">¼</text><text x="1250" y="383">¾</text><text x="1390" y="383">1</text>
+    </g>
+    <g fill="none" stroke="#087f8c" stroke-width="6">
+      <path d="M90 342H175 M175 278H365 M365 150H555 M555 86H650"/>
+      <path d="M830 342H970 M1250 98H1390"/>
+    </g>
+    <path d="M970 220H1250" fill="none" stroke="#dc6b4f" stroke-width="7"/>
+    <path d="M365 278V150" fill="none" stroke="#dc6b4f" stroke-width="4" stroke-dasharray="6 6"/>
+    <g fill="#fffdf8" stroke="#087f8c" stroke-width="3.5">
+      <circle cx="175" cy="342" r="7"/><circle cx="365" cy="278" r="7"/>
+      <circle cx="555" cy="150" r="7"/>
+      <circle cx="830" cy="342" r="7"/><circle cx="1250" cy="98" r="7"/><circle cx="1390" cy="98" r="7"/>
+    </g>
+    <g fill="#087f8c">
+      <circle cx="175" cy="278" r="7"/><circle cx="365" cy="150" r="7"/><circle cx="555" cy="86" r="7"/>
+      <circle cx="970" cy="342" r="7"/>
+    </g>
+    <circle cx="970" cy="220" r="7" fill="#fffdf8" stroke="#dc6b4f" stroke-width="3.5"/>
+    <circle cx="1250" cy="220" r="7" fill="#dc6b4f"/>
+    <text x="391" y="223" fill="#a54b35" font-size="25">salto = ½</text>
+    <text x="1110" y="265" text-anchor="middle" fill="#a54b35" font-size="25">patamar: ¼ &lt; u ≤ ¾</text>
+  </g>
+</svg>
+

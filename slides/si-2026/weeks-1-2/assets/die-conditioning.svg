@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 216" role="img" aria-labelledby="title desc">
+  <title id="title">A = {2,4,6}, B = {1,2}, C = {1,2,3}</title>
+  <desc id="desc">P(A | B) = 1/2 = P(A). P(A | C) = 1/3 ≠ P(A) = 1/2.</desc>
+  <defs>
+    <marker id="die-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#087f8c"/></marker>
+    <g id="die-outcomes">
+      <rect width="156" height="104" fill="#fffdf8" stroke="#17313b" stroke-width="1.5"/>
+      <rect y="52" width="156" height="52" fill="#087f8c"/>
+      <path d="M52 0V104M104 0V104M0 52H156" stroke="#cad3d1" stroke-width="1.5"/>
+      <g font-family="Georgia, Times New Roman, serif" font-size="30" text-anchor="middle">
+        <g fill="#17313b"><text x="26" y="36">1</text><text x="78" y="36">3</text><text x="130" y="36">5</text></g>
+        <g fill="#fffdf8"><text x="26" y="88">2</text><text x="78" y="88">4</text><text x="130" y="88">6</text></g>
+      </g>
+    </g>
+  </defs>
+  <rect x="1" y="1" width="1498" height="214" rx="18" fill="#fffdf8" stroke="#cad3d1" stroke-width="2"/>
+  <path d="M750 20V196" stroke="#cad3d1" stroke-width="1.5"/>
+  <use href="#die-outcomes" x="105" y="48"/>
+  <use href="#die-outcomes" x="875" y="48"/>
+  <rect x="105" y="48" width="52" height="104" fill="none" stroke="#c58c10" stroke-width="4"/>
+  <path d="M875 48H979V100H927V152H875Z" fill="none" stroke="#c58c10" stroke-width="4"/>
+  <g stroke="#087f8c" stroke-width="3" marker-end="url(#die-arrow)">
+    <path d="M332 100H432"/><path d="M1102 100H1202"/>
+  </g>
+  <rect x="491" y="73" width="104" height="52" fill="#fffdf8"/>
+  <rect x="543" y="73" width="52" height="52" fill="#087f8c"/>
+  <rect x="491" y="73" width="104" height="52" fill="none" stroke="#c58c10" stroke-width="4"/>
+  <path d="M543 73V125" stroke="#cad3d1" stroke-width="1.5"/>
+  <rect x="1261" y="73" width="156" height="52" fill="#fffdf8"/>
+  <rect x="1313" y="73" width="52" height="52" fill="#087f8c"/>
+  <rect x="1261" y="73" width="156" height="52" fill="none" stroke="#c58c10" stroke-width="4"/>
+  <path d="M1313 73V125M1365 73V125" stroke="#cad3d1" stroke-width="1.5"/>
+  <g font-family="Georgia, Times New Roman, serif" font-size="30" text-anchor="middle">
+    <g fill="#17313b">
+      <text x="517" y="109">1</text><text x="1287" y="109">1</text><text x="1391" y="109">3</text>
+      <text x="382" y="28">B = {1,2}</text><text x="1152" y="28">C = {1,2,3}</text>
+      <text x="382" y="70" fill="#996a08" font-style="italic">B</text><text x="1152" y="70" fill="#996a08" font-style="italic">C</text>
+      <text x="382" y="193">P(A | B) = 1/2 = P(A)</text>
+      <text x="1152" y="193">P(A | C) = 1/3 ≠ 1/2 = P(A)</text>
+      <text x="77" y="132" fill="#087f8c" font-style="italic">A</text><text x="847" y="132" fill="#087f8c" font-style="italic">A</text>
+    </g>
+    <g fill="#fffdf8"><text x="569" y="109">2</text><text x="1339" y="109">2</text></g>
+  </g>
+</svg>

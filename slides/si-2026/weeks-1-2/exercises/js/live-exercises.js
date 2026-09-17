@@ -4,7 +4,11 @@
   const app = document.querySelector("[data-practice-app]");
   if (!app) return;
 
-  const banks = [window.BANK_0_EXERCISE_BANK, window.WEEK_1_2_EXERCISE_BANK].filter(
+  const banks = [
+    window.BANK_0_EXERCISE_BANK,
+    window.LECTURE_2_EXERCISE_BANK,
+    window.WEEK_1_2_EXERCISE_BANK,
+  ].filter(
     (candidate) => candidate && candidate.block &&
       Array.isArray(candidate.exercises) && candidate.exercises.length === 40,
   );

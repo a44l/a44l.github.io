@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 332" role="img" aria-labelledby="title desc">
+  <title id="title">π₁(x₁,x₂) = x₁</title>
+  <desc id="desc">P_X({(i,j)}) = 1/36, i,j ∈ {1,2,3,4,5,6}. P_X₁({i}) = 6/36 = 1/6.</desc>
+  <defs>
+    <marker id="projection-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#718086"/></marker>
+    <marker id="projection-gold-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#bb8800"/></marker>
+    <g id="joint-column" fill="#087f8c">
+      <circle cy="180" r="5"/><circle cy="155" r="5"/><circle cy="130" r="5"/>
+      <circle cy="105" r="5"/><circle cy="80" r="5"/><circle cy="55" r="5"/>
+    </g>
+  </defs>
+  <rect x="1" y="1" width="478" height="330" rx="18" fill="#fffdf8" stroke="#cad3d1" stroke-width="1.5"/>
+  <path d="M65 200V30M65 200H383" fill="none" stroke="#718086" stroke-width="1.7"/>
+  <g font-family="Georgia, Times New Roman, serif" font-size="24" fill="#17313b">
+    <text x="35" y="36" font-style="italic">x₂</text><text x="396" y="208" font-style="italic">x₁</text>
+    <text x="365" y="81">1/36</text>
+    <text x="411" y="239" fill="#996a08">π₁</text>
+  </g>
+  <g opacity="0.85">
+    <use href="#joint-column" x="100"/><use href="#joint-column" x="145"/>
+    <use href="#joint-column" x="190"/><use href="#joint-column" x="235"/>
+    <use href="#joint-column" x="280"/><use href="#joint-column" x="325"/>
+  </g>
+  <rect x="180" y="43" width="20" height="149" rx="10" fill="none" stroke="#bb8800" stroke-width="2.5"/>
+  <path d="M357 79H338" stroke="#718086" stroke-width="1.2" fill="none"/>
+  <g stroke="#718086" stroke-width="1.5" marker-end="url(#projection-arrow)">
+    <path d="M100 210V250"/><path d="M145 210V250"/>
+    <path d="M235 210V250"/><path d="M280 210V250"/><path d="M325 210V250"/>
+  </g>
+  <path d="M190 196V250" stroke="#bb8800" stroke-width="2.5" marker-end="url(#projection-gold-arrow)"/>
+  <path d="M65 265H383" stroke="#718086" stroke-width="1.7"/>
+  <g fill="#087f8c">
+    <circle cx="100" cy="265" r="6"/><circle cx="145" cy="265" r="6"/>
+    <circle cx="235" cy="265" r="6"/><circle cx="280" cy="265" r="6"/><circle cx="325" cy="265" r="6"/>
+  </g>
+  <circle cx="190" cy="265" r="7" fill="#bb8800"/>
+  <g font-family="Georgia, Times New Roman, serif" font-size="23" fill="#17313b" text-anchor="middle">
+    <text x="100" y="291">1</text><text x="145" y="291">2</text><text x="190" y="291">3</text>
+    <text x="235" y="291">4</text><text x="280" y="291">5</text><text x="325" y="291">6</text>
+    <text x="405" y="273" font-style="italic">x₁</text>
+    <text x="242" y="320">6 · (1/36) = 1/6</text>
+  </g>
+</svg>

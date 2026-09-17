@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 246" role="img" aria-labelledby="title desc">
+  <title id="title">Conditioning on an independent event</title>
+  <desc id="desc">Each of sixteen grid cells has probability one sixteenth. A consists of the upper two rows and B of the left two columns. Restricting to B leaves eight equally likely cells, four in A. Both the original probability of A and its conditional probability given B are one half.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#087f8c"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="1498" height="244" rx="18" fill="#fffdf8" stroke="#cad3d1" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" font-size="26" fill="#17313b" text-anchor="middle">
+    <text x="218" y="33">16 equally likely outcomes</text>
+    <text x="816" y="33">8 remaining outcomes</text>
+    <text x="1244" y="33">Independence</text>
+    <text x="518" y="91">Condition on B</text>
+  </g>
+  <g stroke="#cad3d1" stroke-width="2">
+    <rect x="95" y="54" width="224" height="128" fill="#fffdf8" stroke="#17313b"/>
+    <rect x="95" y="54" width="224" height="64" fill="#087f8c" stroke="none"/>
+    <path d="M151 54V182M207 54V182M263 54V182M95 86H319M95 118H319M95 150H319"/>
+    <rect x="760" y="54" width="112" height="128" fill="#fffdf8"/>
+    <rect x="760" y="54" width="112" height="64" fill="#087f8c" stroke="none"/>
+    <path d="M816 54V182M760 86H872M760 118H872M760 150H872"/>
+  </g>
+  <g fill="none" stroke="#c58c10" stroke-width="5">
+    <rect x="95" y="54" width="112" height="128"/>
+    <rect x="760" y="54" width="112" height="128"/>
+  </g>
+  <path d="M390 126H651" fill="none" stroke="#087f8c" stroke-width="4" marker-end="url(#arrow)"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#17313b">
+    <text x="62" y="74">Ω</text>
+    <text x="51" y="143" fill="#996a08" font-style="italic">B</text>
+    <text x="338" y="99" fill="#087f8c" font-style="italic">A</text>
+    <text x="713" y="143" fill="#996a08" font-style="italic">B</text>
+    <text x="894" y="99" fill="#087f8c" font-style="italic">A ∩ B</text>
+    <text x="207" y="222" text-anchor="middle">P(A) = 8/16 = 1/2</text>
+    <text x="816" y="222" text-anchor="middle">P(A | B) = 4/8 = 1/2</text>
+    <rect x="1040" y="75" width="420" height="64" rx="14" fill="#d9eeeb"/>
+    <text x="1250" y="118" text-anchor="middle">P(A | B) = P(A)</text>
+    <text x="1250" y="188" text-anchor="middle">P(A ∩ B) = P(A)P(B)</text>
+  </g>
+</svg>
