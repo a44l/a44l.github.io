@@ -25,7 +25,7 @@ As duas unidades curriculares, M4061 e M4169, são lecionadas em conjunto por [E
 
 [Slides das aulas das semanas 1-2](/slides/si-2026/weeks-1-2/pt/)
 
-[Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/)
+[Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/pt/)
 
 [Worksheet 1](/slides/si-2026/weeks-1-2/worksheets/Worksheet1-pt.pdf)
 

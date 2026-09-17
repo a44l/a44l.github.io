@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <meta name="description" content="Pratica a eliminação de Gauss, passo a passo. Transforma pequenas matrizes com operações elementares, frações exatas e pistas ao teu ritmo.">
+  <title>Eliminação de Gauss: Escalonar</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 7a7 7 0 0 1 11.5-1L20 9M4 15l2.4 3A7 7 0 0 0 17.9 17"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v15m0-15C8 2 4 3 2 4v15c3-1.5 6-1 10 1 4-2 7-2.5 10-1V4c-2-1-6-2-10 1Z"/></symbol>
+    <symbol id="i-add" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 7 7v3"/></symbol>
+    <symbol id="i-redo" viewBox="0 0 24 24"><path d="m16 4 5 5-5 5m5-5H11a7 7 0 0 0-7 7v3"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </svg>
+  <a class="skip-link" href="#workspace">Saltar para a matriz</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Escalonar, início"><img src="favicon.svg" alt="" width="37" height="37"><span>escalonar<span class="brand-dot">.</span></span></a>
+      <span class="header-label">PRÁTICA DE ÁLGEBRA LINEAR</span>
+      <button class="button button-quiet guide-trigger" data-open-guide><svg class="icon"><use href="#i-book"/></svg>Guia rápido</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow">MATRIZES E SISTEMAS LINEARES</div>
+        <h1 id="page-title">Eliminação de Gauss</h1>
+        <p id="exercise-instruction">Reduz a matriz, identifica as variáveis dependentes e determina o conjunto-solução.</p>
+      </div>
+      <div class="view-mode-control"><span class="eyebrow">MODO DE UTILIZAÇÃO</span><div class="view-mode-options" role="group" aria-label="Modo de utilização"><button type="button" data-view-mode="practice" aria-pressed="true">Praticar</button><button type="button" data-view-mode="demonstration" aria-pressed="false">Demonstração</button></div></div>
+    </section>
+
+    <section id="demo-source-controls" class="demo-source-controls" aria-label="Origem da demonstração" hidden>
+      <span class="eyebrow">ESCOLHER DEMONSTRAÇÃO</span>
+      <div class="view-mode-options" role="group" aria-label="Origem da matriz"><button type="button" data-demo-source="random" aria-pressed="true">Sistemas aleatórios</button><button type="button" data-demo-source="lecture" aria-pressed="false">Exemplos da aula</button></div>
+      <div id="lecture-settings" class="lecture-settings" hidden>
+        <label for="lecture-example">Exemplo do texto</label><span class="select-wrapper"><select id="lecture-example"><option value="1">Exemplo 1 (página 8)</option><option value="2">Exemplo 2 (página 8)</option><option value="3">Exemplo 3 (página 9)</option><option value="4">Exemplo 4 (página 9)</option><option value="5">Exemplo 5 (página 10)</option><option value="6">Exemplo 6 (página 11)</option></select></span>
+        <div id="lecture-cases" class="lecture-cases" hidden><span class="field-label">Caso do parâmetro a</span><div id="lecture-case-buttons" class="lecture-case-buttons" role="group" aria-label="Caso do parâmetro a"></div></div>
+      </div>
+    </section>
+
+    <section class="exercise-toolbar" aria-label="Configuração do exercício">
+      <div class="exercise-label"><span class="exercise-dot"></span><strong>O teu exercício</strong><span id="exercise-number">01</span></div>
+      <div class="exercise-settings">
+        <label for="difficulty">Nível</label>
+        <span class="select-wrapper"><select id="difficulty" aria-describedby="size-description"><option value="first" selected>Primeiros passos</option><option value="standard">Intermédio</option><option value="challenge">Desafio</option></select></span>
+        <button id="new-exercise" class="button button-outline"><svg class="icon"><use href="#i-refresh"/></svg>Novo sistema</button>
+      </div>
+    </section>
+    <section class="exercise-options" aria-label="Tipo e tamanho do exercício">
+      <div class="mode-options" role="group" aria-label="Tipo de exercício">
+        <button type="button" data-mode="homogeneous" aria-pressed="true">Sistema homogéneo</button>
+        <button type="button" data-mode="inhomogeneous" aria-pressed="false">Sistema não homogéneo</button>
+      </div>
+      <p id="size-description">2 × 2 ou 3 × 3</p>
+    </section>
+
+    <ol class="exercise-stages" aria-label="Etapas do exercício"><li id="stage-reduce" aria-current="step"><span>1</span>Reduzir a matriz</li><li id="stage-variables"><span>2</span>Identificar variáveis</li><li id="stage-solution"><span>3</span>Dar o conjunto-solução</li></ol>
+
+    <section id="demo-controls" class="demo-controls" aria-label="Controlos da demonstração" hidden>
+      <div class="demo-transport"><button id="demo-play" class="button button-primary" aria-pressed="false">Iniciar reprodução automática</button><button id="demo-step" class="button button-outline">Avançar um passo<svg class="icon"><use href="#i-arrow"/></svg></button><button id="demo-restart" class="text-button"><svg class="icon"><use href="#i-refresh"/></svg>Recomeçar</button><label class="demo-speed" for="demo-speed">Ritmo<span class="select-wrapper"><select id="demo-speed"><option value="1000">Rápido (1 s)</option><option value="2500" selected>Normal (2,5 s)</option><option value="5000">Lento (5 s)</option></select></span></label></div>
+      <p id="demo-explanation" aria-live="polite"></p><div id="demo-legend" class="demo-legend"><span><i class="pivot-key"></i>Pivô</span><span><i class="target-key"></i>Próximo elemento a anular</span></div>
+    </section>
+
+    <div class="workspace" id="lecture-workspace" tabindex="-1" hidden></div>
+    <div class="workspace" id="workspace" tabindex="-1">
+      <div class="main-column">
+        <section class="matrix-card card" aria-labelledby="matrix-title">
+          <div class="card-heading">
+            <div class="matrix-title-group"><h2 id="matrix-title">Matriz atual</h2><span class="dimension-tag" id="dimensions">3 × 3</span></div>
+            <span class="status-tag" id="matrix-status"><span></span>Em curso</span>
+          </div>
+          <p class="system-context" id="system-context" hidden></p>
+          <div class="matrix-canvas" id="matrix-canvas">
+            <div id="matrix-container" class="matrix-scroll" tabindex="0" role="region" aria-label="Matriz atual"></div>
+          </div>
+          <p class="matrix-scroll-note" id="matrix-scroll-note" hidden>Desliza horizontalmente para ver todas as colunas.</p>
+          <div class="matrix-context">
+            <div class="row-legend" id="row-legend"><span><i class="legend-target"></i>Destino</span><span><i class="legend-source"></i>Origem</span></div>
+            <button id="toggle-original" class="text-button" aria-expanded="false" aria-controls="original-panel"><svg class="icon"><use href="#i-eye"/></svg>Ver matriz inicial</button>
+          </div>
+          <div id="original-panel" class="original-panel" hidden><span class="eyebrow">MATRIZ INICIAL</span><div id="original-matrix" class="matrix-scroll" tabindex="0" role="region" aria-label="Matriz inicial"></div></div>
+          <div class="matrix-action-bar">
+            <div class="undo-group"><button class="button button-small" id="undo" disabled><svg class="icon"><use href="#i-undo"/></svg>Desfazer</button><button class="button button-small" id="redo" disabled><svg class="icon"><use href="#i-redo"/></svg>Refazer</button></div>
+            <button class="text-button reset-button" id="reset" disabled><svg class="icon"><use href="#i-refresh"/></svg>Recomeçar</button>
+          </div>
+        </section>
+
+
+        <section class="history-card card" aria-labelledby="history-title">
+          <div class="card-heading"><div class="history-title"><svg class="icon"><use href="#i-clock"/></svg><h2 id="history-title">Histórico de operações</h2></div><span id="step-count" class="count-tag">0 operações</span></div>
+          <div class="history-empty" id="history-empty"><span class="empty-path" aria-hidden="true"><i></i><i></i><i></i></span><p>Ainda não aplicaste nenhuma operação.<span>As operações aplicadas ficam registadas aqui.</span></p></div>
+          <ol id="history-list" class="history-list" aria-label="Histórico de operações" hidden></ol>
+        </section>
+
+        <details class="rref-card card" id="rref-rules">
+          <summary><span><span class="rule-icon" aria-hidden="true">?</span>Quando está na forma escalonada reduzida?</span><svg class="icon"><use href="#i-chevron"/></svg></summary>
+          <div class="rref-content"><p>A matriz está pronta quando cumpre estas quatro condições:</p><ul id="rref-checklist"></ul><button class="text-button" data-open-guide>Ver um exemplo<svg class="icon"><use href="#i-arrow"/></svg></button></div>
+        </details>
+      </div>
+
+      <aside class="side-column" aria-label="Operações e respostas">
+        <section id="success-panel" class="learning-card card" aria-labelledby="learning-title" hidden>
+          <div class="learning-heading"><span class="eyebrow" id="learning-step">ETAPA 2 DE 3</span><h2 id="learning-title" tabindex="-1">Quais são as variáveis dependentes?</h2><p id="learning-description">Assinala todas as variáveis cujas colunas têm pivô na matriz dos coeficientes.</p></div>
+          <div id="demonstrated-variables" hidden></div>
+          <div id="dependent-question">
+            <div id="dependent-choices" class="variable-choices" role="group" aria-label="Variáveis dependentes"></div>
+            <p id="dependent-feedback" class="answer-feedback" role="status" hidden></p>
+            <button id="check-dependent" class="button button-primary">Verificar variáveis<svg class="icon"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div id="solution-question" hidden>
+            <p id="identified-variables" class="identified-variables"></p>
+            <div class="solution-types" role="group" aria-label="Tipo de conjunto-solução"><button type="button" data-solution-kind="none" aria-pressed="false">Nenhuma solução</button><button type="button" data-solution-kind="unique" aria-pressed="false">Uma solução</button><button type="button" data-solution-kind="infinite" aria-pressed="false">Infinitas soluções</button></div>
+            <form id="solution-form" novalidate>
+              <div id="solution-fields"></div>
+              <div id="solution-preview" class="solution-preview" tabindex="0" role="region" aria-label="Conjunto-solução proposto" hidden></div>
+              <p id="solution-feedback" class="answer-feedback" role="status" hidden></p>
+              <button id="check-solution" type="submit" class="button button-primary">Verificar conjunto-solução<svg class="icon"><use href="#i-check"/></svg></button>
+            </form>
+          </div>
+          <div id="exercise-complete" hidden><p id="completion-description"></p><div id="accepted-solution" class="solution-preview" tabindex="0" role="region" aria-label="Conjunto-solução correto"></div><button id="next-exercise" class="button button-primary">Novo exercício<svg class="icon"><use href="#i-arrow"/></svg></button></div>
+        </section>
+
+        <section class="operation-card card" aria-labelledby="operation-title">
+          <div class="operation-heading"><span class="eyebrow">OPERAÇÕES ELEMENTARES</span><h2 id="operation-title">Operações sobre linhas</h2><p>Escolhe a operação e as linhas a alterar.</p></div>
+          <div class="operation-tabs" role="tablist" aria-label="Tipo de operação">
+            <button id="tab-add" role="tab" aria-selected="true" aria-controls="operation-fields" data-operation="add"><svg class="icon"><use href="#i-add"/></svg>Somar</button>
+            <button id="tab-scale" role="tab" aria-selected="false" aria-controls="operation-fields" tabindex="-1" data-operation="scale"><svg class="icon"><use href="#i-scale"/></svg>Multiplicar</button>
+            <button id="tab-swap" role="tab" aria-selected="false" aria-controls="operation-fields" tabindex="-1" data-operation="swap"><svg class="icon"><use href="#i-swap"/></svg>Trocar</button>
+          </div>
+          <form id="operation-form" novalidate>
+            <div id="operation-fields" role="tabpanel" aria-labelledby="tab-add">
+              <p id="operation-help" class="operation-help">Soma um múltiplo de uma linha a outra.</p>
+              <div class="row-fields">
+                <div class="field row-choice-field" id="target-field"><span class="field-label" id="target-label"><i class="legend-target"></i>Linha de destino</span><div class="row-choices" id="target-rows" role="radiogroup" aria-labelledby="target-label"></div></div>
+                <div class="field row-choice-field" id="source-field"><span class="field-label" id="source-label"><i class="legend-source"></i>Linha de origem</span><div class="row-choices" id="source-rows" role="radiogroup" aria-labelledby="source-label"></div></div>
+              </div>
+              <div class="field factor-field" id="factor-field"><label for="factor">Multiplicador</label><input id="factor" type="text" value="1" maxlength="64" autocomplete="off" spellcheck="false" aria-describedby="factor-help operation-error"><span class="field-help" id="factor-help">Um inteiro ou uma fração: −2, 3, 1/2…</span></div>
+              <div class="selection-note" id="selection-note">Também podes escolher as linhas na matriz.</div>
+              <p id="operation-error" class="field-error" role="alert" hidden></p>
+              <div class="preview" id="preview"><div class="preview-heading"><span class="eyebrow">PRÉ-VISUALIZAÇÃO</span><span id="preview-tag">Linha 2</span></div><div id="operation-notation" class="operation-notation"></div><div id="preview-result" class="preview-result" tabindex="0" role="region" aria-label="Resultado previsto da operação"></div></div>
+              <button type="submit" class="button button-primary apply-button" id="apply-operation">Aplicar operação<svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </form>
+        </section>
+
+        <section class="hint-card" aria-labelledby="hint-title">
+          <div class="hint-heading"><svg class="icon"><use href="#i-bulb"/></svg><h2 id="hint-title">Pista para a próxima operação</h2></div>
+          <p id="hint-intro">Obtém uma sugestão a partir da matriz atual.</p>
+          <button class="text-button" id="hint-button" aria-expanded="false" aria-controls="hint-content">Pedir uma pista<svg class="icon"><use href="#i-arrow"/></svg></button>
+          <div id="hint-content" hidden><p id="hint-reason"></p><button class="text-button" id="reveal-hint">Ver a operação sugerida<svg class="icon"><use href="#i-arrow"/></svg></button><div id="hint-detail" hidden><div id="hint-notation" class="operation-notation"></div><button id="prepare-hint" class="button button-outline button-small">Preparar esta operação</button><p class="hint-footnote">Confirma o resultado e aplica quando quiseres.</p></div></div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="page-footer"><span>Operações elementares e sistemas lineares.</span><span id="storage-status"><span class="save-dot"></span>O teu progresso fica guardado neste navegador.</span></footer>
+  </main>
+
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title"><div class="dialog-content"><div class="dialog-heading"><span class="eyebrow">GUIA RÁPIDO</span><button class="icon-button" data-close-dialog aria-label="Fechar o guia"><svg class="icon"><use href="#i-close"/></svg></button></div><h2 id="guide-title">Forma escalonada reduzida</h2><p>Usa operações elementares para chegar à <strong>forma escalonada reduzida por linhas</strong>. O primeiro elemento não nulo de cada linha é o seu pivô.</p><div class="guide-example"><div class="bracketed"><table class="matrix-table" aria-label="Exemplo de uma matriz na forma escalonada reduzida"><tbody><tr><td class="example-pivot">1</td><td>2</td><td>0</td><td>−1</td></tr><tr><td>0</td><td>0</td><td class="example-pivot">1</td><td>3</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><span>Os pivôs estão assinalados a verde.</span></div><ol class="guide-rules"><li>As linhas nulas ficam no fim.</li><li>O primeiro elemento não nulo de cada linha é <strong>1</strong>.</li><li>Cada pivô está à direita do pivô da linha anterior.</li><li>Os restantes elementos de cada coluna com pivô são zero.</li></ol><div class="guide-tip"><svg class="icon"><use href="#i-bulb"/></svg><p>Podes somar um múltiplo de outra linha, multiplicar uma linha por um número não nulo ou trocar duas linhas. Há vários caminhos válidos. Experimenta e usa <strong>Desfazer</strong> sempre que precisares.</p></div><p class="guide-system-note">Nos sistemas, a última coluna contém os termos independentes. Cada operação aplica-se à linha inteira, incluindo essa coluna. Uma linha do tipo 0 = 1 indica que o sistema não tem solução. Depois de reduzir a matriz, identifica as variáveis dependentes e introduz o conjunto-solução. As variáveis livres mantêm os seus nomes e podem assumir qualquer valor real; preenche as constantes e os coeficientes com inteiros ou frações.</p><button class="button button-primary" data-close-dialog>Fechar o guia<svg class="icon"><use href="#i-arrow"/></svg></button></div></dialog>
+  <dialog id="new-dialog" class="confirm-dialog" aria-labelledby="new-title"><div class="dialog-content"><div class="dialog-heading"><span class="eyebrow">NOVO EXERCÍCIO</span><button class="icon-button" data-close-dialog aria-label="Cancelar"><svg class="icon"><use href="#i-close"/></svg></button></div><h2 id="new-title">Começar um novo exercício?</h2><p>O percurso deste exercício será substituído. Tipo: <strong id="new-mode-name"></strong>. Nível: <strong id="new-level-name"></strong>.</p><div class="dialog-actions"><button class="button button-outline" data-close-dialog>Continuar este exercício</button><button class="button button-primary" id="confirm-new">Criar novo exercício<svg class="icon"><use href="#i-arrow"/></svg></button></div></div></dialog>
+  <div id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <noscript><div class="noscript-notice">Ativa o JavaScript no navegador para praticar com as matrizes.</div></noscript>
+</body>
+</html>

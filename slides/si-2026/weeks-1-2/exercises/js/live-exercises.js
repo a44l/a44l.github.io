@@ -60,22 +60,57 @@
 
   let state = null;
 
+  // The Portuguese page supplies only its copy; selection and grading stay shared.
+  const messages = {
+    chooseOne: "Choose one",
+    chooseInstruction: "Select the best answer.",
+    intruder: "Find the intruder",
+    intruderInstruction: "Select the one statement that does not meet the definition.",
+    proof: "Proof idea",
+    proofInstruction: "Choose the step that completes the argument.",
+    numeric: "Quick calculation",
+    numericInstruction: "Enter a concise numerical answer. Decimals, fractions, and percentages are accepted when appropriate.",
+    start: "Start {bank} session",
+    review: "Review lecture slides",
+    answerPlaceholder: "Your answer",
+    answerLabel: "Your numerical answer",
+    number: "number",
+    counter: "Exercise {current} of {total}",
+    difficulty_intro: "intro",
+    difficulty_core: "core",
+    difficulty_challenge: "challenge",
+    correct: "Correct — keep going!",
+    incorrect: "Not quite. Answer: {answer}",
+    reviewSlide: "Review slide {slide}",
+    results: "See results",
+    continue: "Continue",
+    perfect: "Perfect session. You connected every idea in this set.",
+    strong: "Strong session. The foundations are settling into place.",
+    progress: "Good progress. Read the explanations once more and try a fresh set.",
+    encouragement: "This is how fluency starts: small attempts, immediate feedback, and another round.",
+    loadError: "The exercises could not be loaded. Please reload this page and try again.",
+    ...(window.PRACTICE_MESSAGES || {}),
+  };
+  const message = (key, values = {}) => messages[key].replace(
+    /\{(\w+)\}/g, (_, name) => String(values[name]),
+  );
+
   const typeCopy = {
     "multiple-choice": {
-      label: "Choose one",
-      instruction: "Select the best answer.",
+      label: message("chooseOne"),
+      instruction: message("chooseInstruction"),
     },
     "find-the-intruder": {
-      label: "Find the intruder",
-      instruction: "Select the one statement that does not meet the definition.",
+      label: message("intruder"),
+      instruction: message("intruderInstruction"),
     },
     "proof-step": {
-      label: "Proof idea",
-      instruction: "Choose the step that completes the argument.",
+      label: message("proof"),
+      instruction: message("proofInstruction"),
     },
     "numeric-input": {
-      label: "Quick calculation",
-      instruction: "Enter a concise numerical answer. Decimals, fractions, and percentages are accepted when appropriate.",
+      label: message("numeric"),
+      instruction: message("numericInstruction"),
     },
   };
 
@@ -116,9 +151,9 @@
     });
     selectedBankLabel.textContent = bank.block.title;
     bankSize.textContent = String(bank.exercises.length);
-    welcomeStartButton.textContent = `Start ${bank.block.title} session`;
+    welcomeStartButton.textContent = message("start", { bank: bank.block.title });
     resultBlock.textContent = bank.block.title;
-    reviewButton.textContent = "Review lecture slides";
+    reviewButton.textContent = message("review");
     reviewButton.href = bank.block.reviewHref || "../index.html";
     sourceReview.href = reviewButton.href;
 
@@ -282,8 +317,8 @@
       input.inputMode = "decimal";
       input.autocomplete = "off";
       input.spellcheck = false;
-      input.placeholder = "Your answer";
-      input.setAttribute("aria-label", "Your numerical answer");
+      input.placeholder = message("answerPlaceholder");
+      input.setAttribute("aria-label", message("answerLabel"));
       input.addEventListener("input", () => {
         checkButton.disabled = input.value.trim() === "";
       });
@@ -293,7 +328,7 @@
 
       const unit = document.createElement("span");
       unit.className = "exercise-number-unit";
-      unit.textContent = "number";
+      unit.textContent = message("number");
       wrap.append(input, unit);
       answerArea.append(wrap);
       window.requestAnimationFrame(() => input.focus({ preventScroll: true }));
@@ -343,8 +378,8 @@
     const copy = typeCopy[exercise.type] || typeCopy["multiple-choice"];
     state.locked = false;
 
-    counter.textContent = `Exercise ${state.index + 1} of ${SESSION_SIZE}`;
-    topic.textContent = `${exercise.topic} · ${exercise.difficulty}`;
+    counter.textContent = message("counter", { current: state.index + 1, total: SESSION_SIZE });
+    topic.textContent = `${exercise.topic} · ${message(`difficulty_${exercise.difficulty}`)}`;
     type.textContent = copy.label;
     prompt.textContent = exercise.prompt;
     questionContext.replaceChildren();
@@ -430,7 +465,7 @@
     const displayAnswer = exercise.type === "numeric-input"
       ? exercise.correctAnswer
       : exercise.options.find((option) => option.id === exercise.correctAnswer).text;
-    feedbackTitle.textContent = correct ? "Correct — keep going!" : `Not quite. Answer: ${displayAnswer}`;
+    feedbackTitle.textContent = correct ? message("correct") : message("incorrect", { answer: displayAnswer });
     feedbackExplanation.textContent = exercise.explanation;
     (exercise.sources || []).forEach((source) => {
       const reference = state.bank.sourceCatalog[source.sourceId];
@@ -439,7 +474,7 @@
       const url = new URL(reference.url, document.baseURI);
       url.hash = `/${source.anchor}`;
       link.href = url.href;
-      link.textContent = `Review slide ${source.slide}`;
+      link.textContent = message("reviewSlide", { slide: source.slide });
       link.target = "_blank";
       link.rel = "noopener";
       if (questionSource.childNodes.length) questionSource.append(" · ");
@@ -450,7 +485,7 @@
     feedback.hidden = false;
     checkButton.hidden = true;
     nextButton.hidden = false;
-    nextButton.textContent = state.index === SESSION_SIZE - 1 ? "See results" : "Continue";
+    nextButton.textContent = message(state.index === SESSION_SIZE - 1 ? "results" : "continue");
 
     score.textContent = String(state.points);
     streak.textContent = String(state.streak);
@@ -472,13 +507,13 @@
     finalBestStreak.textContent = String(state.bestStreak);
     totalSessions.textContent = String(updated.sessions);
     if (state.correct === 8) {
-      resultMessage.textContent = "Perfect session. You connected every idea in this set.";
+      resultMessage.textContent = message("perfect");
     } else if (state.correct >= 6) {
-      resultMessage.textContent = "Strong session. The foundations are settling into place.";
+      resultMessage.textContent = message("strong");
     } else if (state.correct >= 4) {
-      resultMessage.textContent = "Good progress. Read the explanations once more and try a fresh set.";
+      resultMessage.textContent = message("progress");
     } else {
-      resultMessage.textContent = "This is how fluency starts: small attempts, immediate feedback, and another round.";
+      resultMessage.textContent = message("encouragement");
     }
     updateBestScore();
     showScreen("results");
@@ -532,7 +567,7 @@
 
   if (!bank) {
     const lead = app.querySelector(".practice-lead");
-    lead.textContent = "The exercises could not be loaded. Please reload this page and try again.";
+    lead.textContent = message("loadError");
     startButtons.forEach((button) => {
       button.disabled = true;
     });

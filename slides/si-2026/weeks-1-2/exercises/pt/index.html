@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pratique os conteúdos da Aula 1, da Aula 2 ou de todas as semanas 1–2 de Inferência Estatística, com oito perguntas aleatórias e explicações imediatas.">
+    <title>Exercícios interativos — Semanas 1–2 | Inferência Estatística</title>
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="js/exercises-bank-0.js" defer></script>
+    <script src="js/exercises-lecture-2.js" defer></script>
+    <script src="js/exercises-week-1-2.js" defer></script>
+    <script src="js/interface-pt.js" defer></script>
+    <script src="../js/live-exercises.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Ir para os exercícios</a>
+    <header class="course-header">
+      <a class="course-author" href="../../../../../index.html">Alexander Taveira Blomenhofer</a>
+      <nav aria-label="Navegação da unidade curricular">
+        <a href="../../../../../ensino.html">Ensino</a>
+        <a href="../../pt/index.html">Slides das aulas</a>
+        <a href="../index.html" lang="en-GB" hreflang="en-GB">English</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="practice-section">
+      <div class="practice-layout">
+        <div class="course-heading">
+          <p>Inferência Estatística · 2026/27 · Semanas 1–2</p>
+          <h1>Exercícios interativos</h1>
+        </div>
+
+        <div class="practice-app" data-practice-app>
+          <section class="practice-screen practice-welcome" data-practice-screen="welcome" aria-labelledby="practice-heading">
+            <div class="practice-kicker" data-selected-bank>Aula 1</div>
+            <h2 id="practice-heading">Desenvolva a intuição estatística, passo a passo.</h2>
+            <p class="practice-lead">Escolha os conteúdos que já estudou e resolva 8 perguntas diferentes. Verifique cada resposta, leia a explicação e experimente um novo conjunto sempre que quiser.</p>
+
+            <div class="practice-bank-picker" role="group" aria-label="Escolha o conjunto de exercícios">
+              <button class="practice-bank is-selected" type="button" data-select-bank="lecture-1" aria-pressed="true">
+                <strong>Aula 1</strong>
+                <span class="practice-bank-range">Slides 12–41</span>
+                <span>Espaços de probabilidade, elementos aleatórios, funções de distribuição e quantis</span>
+              </button>
+              <button class="practice-bank" type="button" data-select-bank="lecture-2" aria-pressed="false">
+                <strong>Aula 2</strong>
+                <span class="practice-bank-range">Slides 42–70</span>
+                <span>Distribuições conjuntas, condicionamento, independência, funções de probabilidade e densidades</span>
+              </button>
+              <button class="practice-bank" type="button" data-select-bank="weeks-1-2" aria-pressed="false">
+                <strong>Semanas 1–2</strong>
+                <span class="practice-bank-range">Revisão completa</span>
+                <span>Inclui distribuições conjuntas, valor esperado, covariância e transformadas</span>
+              </button>
+            </div>
+
+            <div class="practice-stats" aria-label="Informações sobre a sessão">
+              <div class="practice-stat"><strong data-bank-size>40</strong><span>exercícios</span></div>
+              <div class="practice-stat"><strong>8</strong><span>por sessão</span></div>
+              <div class="practice-stat"><strong data-best-score>—</strong><span>melhor resultado</span></div>
+            </div>
+            <div class="practice-topics" data-practice-topics aria-label="Temas dos exercícios">
+              <span>Espaços de probabilidade</span><span>Mensurabilidade</span><span>Elementos aleatórios</span>
+              <span>Funções de distribuição</span><span>Quantis</span><span>Tipos de distribuições</span>
+            </div>
+            <button class="practice-button practice-button-primary" type="button" data-start-session disabled>Iniciar sessão — Aula 1</button>
+            <p class="practice-note">Não é necessária uma conta. Cada conjunto tem o seu próprio melhor resultado e número de sessões concluídas, guardados apenas neste navegador e partilhados entre os dois idiomas.</p>
+          </section>
+
+          <section class="practice-screen practice-question" data-practice-screen="question" aria-label="Exercício atual" hidden>
+            <div class="practice-session-bar">
+              <div>
+                <span class="practice-counter" data-question-counter>Exercício 1 de 8</span>
+                <span class="practice-topic" data-question-topic>Fundamentos</span>
+              </div>
+              <div class="practice-scoreboard" aria-label="Pontuação da sessão atual">
+                <span><strong data-score>0</strong> pontos</span>
+                <span><strong data-streak>0</strong> acertos seguidos</span>
+              </div>
+            </div>
+            <div class="practice-progress" role="progressbar" aria-label="Progresso da sessão" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" data-progress>
+              <span data-progress-fill></span>
+            </div>
+            <article class="exercise-card" aria-live="polite">
+              <div class="exercise-type" data-question-type>Escolha uma opção</div>
+              <div class="exercise-context" data-question-context hidden></div>
+              <h2 data-question-prompt></h2>
+              <p class="exercise-instruction" data-question-instruction></p>
+              <div class="exercise-answer-area" data-answer-area></div>
+            </article>
+            <div class="exercise-feedback" data-feedback hidden tabindex="-1">
+              <strong data-feedback-title></strong>
+              <p data-feedback-explanation></p>
+              <p class="exercise-source" data-question-source hidden></p>
+            </div>
+            <div class="practice-actions">
+              <button class="practice-button practice-button-quiet" type="button" data-end-session>Terminar sessão</button>
+              <button class="practice-button practice-button-primary" type="button" data-check-answer disabled>Verificar resposta</button>
+              <button class="practice-button practice-button-primary" type="button" data-next-question hidden>Continuar</button>
+            </div>
+          </section>
+
+          <section class="practice-screen practice-results" data-practice-screen="results" aria-label="Resultados da sessão" hidden>
+            <div class="results-emblem" aria-hidden="true">✓</div>
+            <div class="practice-kicker"><span data-result-block>Aula 1</span> · sessão concluída</div>
+            <h2 tabindex="-1">Muito bem — continue a consolidar os seus conhecimentos.</h2>
+            <p class="results-score"><strong data-final-score>0</strong><span>respostas corretas em 8</span></p>
+            <p data-result-message></p>
+            <div class="results-grid">
+              <div><strong data-final-points>0</strong><span>pontos</span></div>
+              <div><strong data-final-best-streak>0</strong><span>melhor sequência de acertos</span></div>
+              <div><strong data-total-sessions>0</strong><span>sessões concluídas</span></div>
+            </div>
+            <div class="practice-actions practice-actions-centered">
+              <a class="practice-button practice-button-quiet" href="../../pt/index.html#/espaços-de-probabilidade-e-distribuições-unidimensionais" data-review-block>Rever os slides das aulas</a>
+              <button class="practice-button practice-button-quiet" type="button" data-choose-practice>Mudar de conjunto</button>
+              <button class="practice-button practice-button-primary" type="button" data-start-session disabled>Experimentar outro conjunto</button>
+            </div>
+          </section>
+          <noscript>
+            <p class="practice-noscript">Ative o JavaScript no navegador para utilizar os exercícios. Também pode <a href="../../pt/index.html">consultar os slides das aulas</a>.</p>
+          </noscript>
+        </div>
+        <p class="practice-source-note"><span data-source-block>Aula 1 — Slides 12–41: espaços de probabilidade, elementos aleatórios, funções de distribuição, quantis e tipos de distribuições.</span> <a href="../../pt/index.html#/espaços-de-probabilidade-e-distribuições-unidimensionais" data-source-review>Rever os slides das aulas</a>.</p>
+      </div>
+    </main>
+  </body>
+</html>
