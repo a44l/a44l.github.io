@@ -23,27 +23,23 @@ Na Universidade do Porto, leciono as seguintes unidades curriculares.
 
 As duas unidades curriculares, M4061 e M4169, são lecionadas em conjunto por [Eliana Duarte](https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=668545) e por mim. Abordaremos os fundamentos da inferência estatística, incluindo modelos estatísticos, estimação pontual e intervalar, intervalos de confiança, testes de hipóteses paramétricos e não paramétricos e inferência bayesiana. As unidades curriculares incluem também aplicações práticas em R.
 
+**O [site da unidade curricular no Google Sites](https://sites.google.com/g.uporto.pt/statisticalinference2026/p%C3%A1gina-inicial) reúne os materiais didáticos (slides, fichas de exercícios e exercícios interativos). O acesso é feito mediante convite. Se pretender frequentar uma destas unidades curriculares, entre em contacto por e-mail comigo ou com Eliana Duarte para lhe darmos acesso.**
+
+Os materiais da primeira semana também estão disponíveis aqui. Para as semanas seguintes, consulte o site da unidade curricular.
+
 [Slides das aulas das semanas 1-2](/slides/si-2026/weeks-1-2/pt/)
 
 [Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/pt/)
 
-[Worksheet 1](/slides/si-2026/weeks-1-2/worksheets/Worksheet1-pt.pdf)
-
 #### Horário semanal
 
-As aulas decorrem duas vezes por semana, de acordo com o seguinte horário. <!-- Ambas as sessões são aulas TP. A primeira metade da unidade curricular será lecionada por mim e a segunda por Eliana Duarte. -->
+As aulas decorrem duas vezes por semana, de acordo com o seguinte horário.
 
 | Dia | Horário | Período letivo | Sala |
 |:---|:---|:---|:---|
 | Terça-feira | 16:00 às 19:00 | 15 set. a 15 dez.<br>11 semanas | [FC1&nbsp;029](https://sigarra.up.pt/fcup/pt/instal_geral.espaco_view?pv_id=68589) |
 | Quinta-feira | 14:00 às 16:00 | 17 set. a 10 dez.<br>12 semanas | [FC1&nbsp;029](https://sigarra.up.pt/fcup/pt/instal_geral.espaco_view?pv_id=68589) |
 {: .teaching-schedule}
-
-**Os materiais didáticos serão disponibilizados no [_site da unidade curricular_](https://sites.google.com/g.uporto.pt/statisticalinference2026/p%C3%A1gina-inicial), ao qual se acede por convite. Quem pretender frequentar uma destas unidades curriculares pode enviar uma [mensagem a Eliana Duarte](mailto:eliana.gelvez@fc.up.pt?subject=Pedido%20de%20acesso%20ao%20site%20de%20Infer%C3%AAncia%20Estat%C3%ADstica&body=Cara%20Eliana%2C%0D%0A%0D%0APretendo%20frequentar%20Infer%C3%AAncia%20Estat%C3%ADstica%20%28M4061%29%20ou%20Infer%C3%AAncia%20Estat%C3%ADstica%20A%20%28M4169%29%20e%20gostaria%20de%20solicitar%20acesso%20ao%20site%20das%20unidades%20curriculares.%0D%0A%0D%0ACom%20os%20melhores%20cumprimentos%2C) para solicitar acesso.**
-
-Pode encontrar mais informações nas páginas das duas unidades curriculares no Moodle:<br>
-[Inferência Estatística (M4061) no Moodle, acesso disponível em breve](https://moodle2627.up.pt/course/view.php?id=5894)<br>
-[Inferência Estatística A (M4169) no Moodle, acesso disponível em breve](https://moodle2627.up.pt/course/view.php?id=5698)
 
 Não são necessários conhecimentos prévios de R. Utilizaremos o R em alguns exercícios; por isso, deverá instalá-lo antes da primeira sessão prática com R.
 

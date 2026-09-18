@@ -107,6 +107,7 @@ select { appearance: none; width: 100%; background: #fff; border: 1px solid #dce
 .matrix-table tr td:last-child { border-radius: 0 7px 7px 0; }
 .matrix-table tr.is-target td { background: #eaf2dde6; box-shadow: inset 0 1px #cfdeb766, inset 0 -1px #cfdeb766; }
 .matrix-table tr.is-source td { background: #eef0fae6; box-shadow: inset 0 1px #d8dcef66, inset 0 -1px #d8dcef66; }
+.matrix-table tr.is-contradiction td { background: #fff0d5; box-shadow: inset 0 1px #e6cc9a, inset 0 -1px #e6cc9a; }
 .matrix-table tr.just-changed td { animation: row-flash .7s ease-out; }
 .matrix-table .zero { color: #637157; }
 .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; align-items: stretch; line-height: 1.05; font-size: .77em; margin: 0 2px; }
@@ -119,6 +120,10 @@ select { appearance: none; width: 100%; background: #fff; border: 1px solid #dce
 .legend-target, .legend-source { display: inline-block; width: 7px; height: 7px; border-radius: 2px; background: #b2c990; flex-shrink: 0; }
 .legend-source { background: #b2bae0; }
 .matrix-action-bar { padding: 12px 18px; border-top: 1px solid #e9ece3; display: flex; justify-content: space-between; align-items: center; background: #fcfdf9; gap: 10px; }
+.infeasibility-action { border-top: 1px solid #e9ece3; padding: 13px 18px; }
+#declare-impossible { width: 100%; background: #ffe3bd; border-color: #d6a267; color: #6b3a13; }
+#declare-impossible:not(:disabled):hover { background: #ffd39b; border-color: #ba803c; }
+.infeasibility-action .answer-feedback { margin-bottom: 0; }
 .undo-group { display: flex; gap: 3px; }
 .undo-group .icon, .reset-button .icon { width: 15px; height: 15px; }
 .reset-button { font-size: 11px; padding: 4px; }

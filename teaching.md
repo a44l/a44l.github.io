@@ -22,15 +22,17 @@ In the first semester at the University of Porto, I teach the following curricul
 
 With [Eliana Duarte](https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=668545). The two curricular units M4061 and M4169 are taught together. We will cover the basics of statistical inference, such as statistical models, point and interval estimation, confidence intervals, parametric and nonparametric hypothesis testing and Bayesian inference. The course also includes practical applications using the R programming language.
 
+**There is a [_Google Site_](https://sites.google.com/g.uporto.pt/statisticalinference2026/p%C3%A1gina-inicial) with the teaching material (slides, worksheets and live exercises), which will be made available on invitation. If you intend to participate in the course, please send an email to me or to Eliana Duarte and we will share the site with you.** 
+
+The material for the first week is also linked here. For all following weeks, please confer the Google site. 
+
 [Lecture slides Weeks 1-2](/slides/si-2026/weeks-1-2/)
 
 [Live exercises Weeks 1-2](/slides/si-2026/weeks-1-2/exercises/)
 
-[Worksheet 1](/slides/si-2026/weeks-1-2/worksheets/Worksheet1.pdf)
-
 #### Weekly schedule
 
-We meet twice per week according to the following schedule.  <!-- Both meetings are classes of type TP. The first half of the course will be taught by me, the second half by Eliana Duarte. -->
+We meet twice per week according to the following schedule. 
 
 | Day | Time | Teaching period | Room |
 |:---|:---|:---|:---|
@@ -38,12 +40,6 @@ We meet twice per week according to the following schedule.  <!-- Both meetings 
 | Thursday | 14:00 to 16:00 | 17 Sep to 10 Dec<br>12 weeks | [FC1&nbsp;029](https://sigarra.up.pt/fcup/en/instal_geral.espaco_view?pv_id=68589) |
 {: .teaching-schedule}
 
-**There is a [_Google Site_](https://sites.google.com/g.uporto.pt/statisticalinference2026/p%C3%A1gina-inicial) with the teaching material, which will be made available on invitation. If you intend to participate in the course, please send an email to [Eliana Duarte](mailto:eliana.gelvez@fc.up.pt?subject=Request%20for%20access%20to%20the%20Statistical%20Inference%20Google%20Site&body=Dear%20Eliana%2C%0D%0A%0D%0AI%20intend%20to%20participate%20in%20Statistical%20Inference%20%28M4061%29%20or%20Statistical%20Inference%20A%20%28M4169%29.%20Could%20you%20please%20give%20me%20access%20to%20the%20Google%20Site%3F%0D%0A%0D%0ABest%20regards) and she will share the site with you.**
-
-
-Further course information can also be found on the moodle pages of the courses:<br>
-[Statistical Inference (M4061) Moodle page (available later)](https://moodle2627.up.pt/course/view.php?id=5894)<br>
-[Statistical Inference A (M4169) Moodle page (available later)](https://moodle2627.up.pt/course/view.php?id=5698)
 
 Prior experience with R is not required. The course will use R for selected exercises, so please install it before the first computational session. 
 

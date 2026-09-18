@@ -191,6 +191,10 @@ export function generateExercise(level = 'first', random = Math.random, options 
   return matrixFrom(fallback);
 }
 
+export function contradictionRow(matrix) {
+  return matrix.findIndex(row => row.slice(0, -1).every(value => value.isZero) && !row[row.length - 1].isZero);
+}
+
 export function systemSolution(matrix) {
   if (!rrefStatus(matrix).complete) throw new Error('Reduz primeiro a matriz ampliada.');
   const variables = matrix[0].length - 1;
@@ -198,7 +202,7 @@ export function systemSolution(matrix) {
   const pivots = pivotRows.filter(column => column !== -1);
   const rank = pivots.length;
   const free = Array.from({length: variables}, (_, i) => i).filter(i => !pivotRows.includes(i));
-  if (matrix.some((row, i) => pivotRows[i] === -1 && !row[variables].isZero)) return {type: 'none', rank, variables, pivots, free, expressions: []};
+  if (contradictionRow(matrix) !== -1) return {type: 'none', rank, variables, pivots, free, expressions: []};
   const expressions = Array.from({length: variables}, (_, variable) => {
     const parameter = free.indexOf(variable);
     if (parameter !== -1) return {variable, constant: Fraction.from(0), terms: [{parameter, coefficient: Fraction.from(1)}]};

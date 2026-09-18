@@ -1,6 +1,6 @@
 import {
   Fraction, matrixFrom, serializeMatrix, sameMatrix, applyOperation,
-  rrefStatus, nextHint, generateExercise, LEVELS, MODES, systemSolution,
+  rrefStatus, nextHint, generateExercise, LEVELS, MODES, systemSolution, contradictionRow,
   checkDependentVariables, checkSolution, solutionFieldKeys, operationDescription
 } from './math.mjs';
 import {buildLecture} from './lecture.mjs';
@@ -25,12 +25,17 @@ let demonstrationTimer = null;
 let demonstrationPlaying = false;
 
 function emptyQuiz() {
-  return {selected: [], dependentChecked: false, kind: '', values: {}, complete: false};
+  return {selected: [], dependentChecked: false, kind: '', values: {}, complete: false, declaredImpossible: false};
 }
 
 function restoreQuiz(saved, matrix) {
   const quiz = emptyQuiz();
-  if (!saved || !rrefStatus(matrix).complete) return quiz;
+  if (!saved) return quiz;
+  if (saved.declaredImpossible === true) {
+    if (saved.complete === true && contradictionRow(matrix) !== -1) return {...quiz, kind: 'none', complete: true, declaredImpossible: true};
+    return quiz;
+  }
+  if (!rrefStatus(matrix).complete) return quiz;
   if (Array.isArray(saved.selected)) quiz.selected = [...new Set(saved.selected.filter(value => Number.isInteger(value) && value >= 0 && value < matrix[0].length - 1))];
   quiz.dependentChecked = saved.dependentChecked === true && checkDependentVariables(matrix, quiz.selected);
   if (['none', 'unique', 'infinite'].includes(saved.kind)) quiz.kind = saved.kind;
@@ -349,7 +354,29 @@ function renderSolutionFields() {
   updateSolutionPreview();
 }
 
+function renderCompletion() {
+  const count = operationCount();
+  const promoted = nextExerciseLevel() !== state.level;
+  $('#completion-description').textContent = `${count} ${count === 1 ? 'operação aplicada' : 'operações aplicadas'}.${promoted ? ' O próximo sistema será do nível Intermédio.' : ''}`;
+  $('#next-exercise').textContent = promoted ? 'Próximo sistema · Intermédio' : 'Novo exercício';
+  $('#accepted-solution').innerHTML = proposedSolutionMarkup();
+}
+
 function renderLearning() {
+  if (state.quiz.complete && state.quiz.declaredImpossible) {
+    const row = contradictionRow(currentMatrix());
+    const value = currentMatrix()[row][currentMatrix()[row].length - 1].toString().replace('-', '−');
+    $('#success-panel').hidden = false;
+    $('#exercise-complete').hidden = false;
+    $('#dependent-question').hidden = true;
+    $('#solution-question').hidden = true;
+    $('#demonstrated-variables').hidden = true;
+    $('#learning-step').textContent = 'EXERCÍCIO CONCLUÍDO';
+    $('#learning-title').textContent = 'Correto. Sistema impossível';
+    $('#learning-description').textContent = `A linha ${row + 1} representa 0 = ${value}, uma contradição. O sistema não tem solução. Não é necessário continuar a redução.`;
+    renderCompletion();
+    return;
+  }
   const reduced = rrefStatus(currentMatrix()).complete;
   const stage = !reduced ? 0 : !state.quiz.dependentChecked ? 1 : !state.quiz.complete ? 2 : 3;
   $$('.exercise-stages li').forEach((item, i) => {
@@ -374,13 +401,7 @@ function renderLearning() {
     $('#identified-variables').innerHTML = `${icon('check')}<span>Variáveis dependentes: ${model.pivots.map(variableSymbol).join(', ')}.</span>`;
     renderSolutionFields();
   }
-  if (stage === 3) {
-    const count = operationCount();
-    const promoted = nextExerciseLevel() !== state.level;
-    $('#completion-description').textContent = `${count} ${count === 1 ? 'operação aplicada' : 'operações aplicadas'}.${promoted ? ' O próximo sistema será do nível Intermédio.' : ''}`;
-    $('#next-exercise').textContent = promoted ? 'Próximo sistema · Intermédio' : 'Novo exercício';
-    $('#accepted-solution').innerHTML = proposedSolutionMarkup();
-  }
+  if (stage === 3) renderCompletion();
   if (viewMode === 'demonstration') {
     $('#dependent-question').hidden = true;
     $('#solution-question').hidden = true;
@@ -404,6 +425,8 @@ function renderSettings() {
   $('.exercise-options').hidden = lectureMode;
   $('#workspace').hidden = lectureMode;
   $('#lecture-workspace').hidden = !lectureMode;
+  $('.exercise-stages').hidden = !lectureMode && state.quiz.complete && state.quiz.declaredImpossible === true;
+  $('#infeasibility-action').hidden = viewMode !== 'practice' || state.quiz.complete;
   $('.skip-link').href = lectureMode ? '#lecture-workspace' : '#workspace';
   const level = nextExerciseLevel();
   const promoted = level !== state.level;
@@ -434,6 +457,7 @@ function clearHint() {
 
 function render(changedRows = []) {
   const matrix = currentMatrix();
+  $('#infeasibility-feedback').hidden = true;
   renderSettings();
   if (isLectureDemo()) {
     renderLectureWorkspace(lecture, lectureCursor);
@@ -449,8 +473,9 @@ function render(changedRows = []) {
   $('#redo').disabled = state.cursor === state.frames.length - 1;
   $('#reset').disabled = sameMatrix(matrix, state.original);
   const status = rrefStatus(matrix);
-  $('#matrix-status').innerHTML = `<span></span>${status.complete ? 'Reduzida' : 'Em curso'}`;
-  $('#matrix-status').classList.toggle('is-complete', status.complete);
+  const impossible = state.quiz.complete && state.quiz.declaredImpossible;
+  $('#matrix-status').innerHTML = `<span></span>${impossible ? 'Impossível' : status.complete ? 'Reduzida' : 'Em curso'}`;
+  $('#matrix-status').classList.toggle('is-complete', status.complete || impossible);
   renderLearning();
   const rules = [
     ['zeroRowsLast', 'As linhas nulas estão no fim.'],
@@ -521,11 +546,19 @@ function markCell(position, className, description) {
 }
 
 function highlightDemonstration(next) {
+  $$('#matrix-container tr').forEach(row => row.classList.remove('is-contradiction'));
   $$('#matrix-container td, #matrix-container th').forEach(cell => {
     cell.classList.remove('cell-pivot', 'cell-target', 'variable-dependent', 'variable-independent');
     if (cell.dataset.baseLabel) cell.setAttribute('aria-label', cell.dataset.baseLabel);
     cell.removeAttribute('title');
   });
+  if (state.quiz.complete && state.quiz.declaredImpossible) {
+    const row = contradictionRow(currentMatrix());
+    const column = currentMatrix()[row].length - 1;
+    $$('#matrix-container tbody tr')[row].classList.add('is-contradiction');
+    markCell({row, column}, 'cell-target', `contradição: 0 = ${spokenNumber(currentMatrix()[row][column])}`);
+    return;
+  }
   if (viewMode !== 'demonstration') return;
   if (next) {
     markCell(next.pivot, 'cell-pivot', 'pivô da próxima operação');
@@ -565,11 +598,12 @@ function syncDemonstration() {
     return;
   }
   const reduced = rrefStatus(currentMatrix()).complete;
+  const finished = reduced || state.quiz.complete;
   const next = demo ? nextHint(currentMatrix()) : null;
-  $('.hint-card').hidden = demo || reduced;
-  $('#operation-form').closest('.operation-card').hidden = reduced;
-  $('#workspace').classList.toggle('is-reduced', reduced);
-  $('#row-legend').hidden = !demo && reduced;
+  $('.hint-card').hidden = demo || finished;
+  $('#operation-form').closest('.operation-card').hidden = finished;
+  $('#workspace').classList.toggle('is-reduced', finished);
+  $('#row-legend').hidden = !demo && finished;
   $('#operation-title').textContent = demo ? 'Próxima operação' : 'Operações sobre linhas';
   if (next) {
     setOperationType(next.operation.type);
@@ -578,13 +612,13 @@ function syncDemonstration() {
     if (next.operation.type !== 'swap') $('#factor').value = next.operation.factor;
     updatePreview();
   }
-  $$('.operation-tabs button, .row-choice').forEach(button => { button.disabled = demo; });
-  $$('#matrix-container [data-pick-row]').forEach(button => { button.disabled = demo || reduced; });
-  if (reduced) $$('#matrix-container tr, #matrix-container [data-pick-row]').forEach(element => {
+  $$('.operation-tabs button, .row-choice').forEach(button => { button.disabled = demo || finished; });
+  $$('#matrix-container [data-pick-row]').forEach(button => { button.disabled = demo || finished; });
+  if (finished) $$('#matrix-container tr, #matrix-container [data-pick-row]').forEach(element => {
     element.classList.remove('is-target', 'is-source');
     if (element.matches('button')) element.setAttribute('aria-pressed', 'false');
   });
-  $('#factor').disabled = demo || operationType === 'swap';
+  $('#factor').disabled = demo || finished || operationType === 'swap';
   $('#apply-operation').hidden = demo;
   $('#demo-explanation').textContent = next ? next.reason : state.quiz.complete ? 'O sistema está resolvido. As colunas dependentes e livres estão assinaladas na matriz; o conjunto-solução aparece abaixo.' : 'A matriz está reduzida. As colunas com pivô identificam as variáveis dependentes; o próximo passo apresenta o conjunto-solução.';
   $('#demo-legend').innerHTML = next ? `<span><i class="pivot-key"></i>Pivô</span>${next.target ? `<span><i class="target-key"></i>${next.operation.type === 'swap' ? 'Destino do pivô' : 'Próximo elemento a anular'}</span>` : ''}` : '<span><i class="pivot-key"></i>Coluna de variável dependente</span><span><i class="free-key"></i>Coluna de variável livre</span>';
@@ -688,7 +722,7 @@ $('#lecture-workspace').addEventListener('click', event => {
 
 $('#operation-form').addEventListener('submit', event => {
   event.preventDefault();
-  if ($('#apply-operation').disabled) return;
+  if (viewMode === 'demonstration' || state.quiz.complete || $('#apply-operation').disabled) return;
   try { commit(formOperation()); } catch (problem) { announce(problem.message); }
 });
 
@@ -819,6 +853,19 @@ $('#prepare-hint').addEventListener('click', () => {
   updatePreview();
   $('#apply-operation').focus();
   announce('Operação sugerida preparada. Confirma a pré-visualização antes de a aplicar.');
+});
+
+$('#declare-impossible').addEventListener('click', () => {
+  if (viewMode !== 'practice' || state.quiz.complete) return;
+  if (contradictionRow(currentMatrix()) === -1) {
+    $('#infeasibility-feedback').textContent = 'Ainda não há uma linha com todos os coeficientes nulos e termo independente diferente de zero. Continua a redução para justificar a declaração.';
+    $('#infeasibility-feedback').hidden = false;
+    return;
+  }
+  state.quiz = {...emptyQuiz(), kind: 'none', complete: true, declaredImpossible: true};
+  render();
+  $('#learning-title').focus();
+  announce('Correto. A linha assinalada prova que o sistema é impossível. O conjunto-solução é vazio. Exercício concluído.');
 });
 
 $('#dependent-choices').addEventListener('click', event => {
