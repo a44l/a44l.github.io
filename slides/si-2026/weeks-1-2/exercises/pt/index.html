@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Pratique os conteúdos da Aula 1, da Aula 2 ou de todas as semanas 1–2 de Inferência Estatística, com oito perguntas aleatórias e explicações imediatas.">
+    <meta name="description" content="Pratique os conteúdos das Aulas 1, 2 e 3 ou de todas as semanas 1–2 de Inferência Estatística, com oito perguntas aleatórias e explicações imediatas.">
     <title>Exercícios interativos — Semanas 1–2 | Inferência Estatística</title>
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="js/exercises-bank-0.js" defer></script>
     <script src="js/exercises-lecture-2.js" defer></script>
+    <script src="js/exercises-lecture-3.js" defer></script>
     <script src="js/exercises-week-1-2.js" defer></script>
     <script src="js/interface-pt.js" defer></script>
+    <script src="../js/exercise-visuals.js" defer></script>
     <script src="../js/live-exercises.js" defer></script>
   </head>
   <body>
@@ -47,6 +49,11 @@
                 <strong>Aula 2</strong>
                 <span class="practice-bank-range">Slides 42–70</span>
                 <span>Distribuições conjuntas, condicionamento, independência, funções de probabilidade e densidades</span>
+              </button>
+              <button class="practice-bank" type="button" data-select-bank="lecture-3" aria-pressed="false">
+                <strong>Aula 3</strong>
+                <span class="practice-bank-range">Slides 72–114</span>
+                <span>Valor esperado, covariância, distribuições usuais, funções geradoras de momentos e funções características</span>
               </button>
               <button class="practice-bank" type="button" data-select-bank="weeks-1-2" aria-pressed="false">
                 <strong>Semanas 1–2</strong>
@@ -86,6 +93,7 @@
               <div class="exercise-type" data-question-type>Escolha uma opção</div>
               <div class="exercise-context" data-question-context hidden></div>
               <h2 data-question-prompt></h2>
+              <figure class="exercise-visual" data-question-visual hidden></figure>
               <p class="exercise-instruction" data-question-instruction></p>
               <div class="exercise-answer-area" data-answer-area></div>
             </article>

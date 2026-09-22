@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 475" role="img" aria-labelledby="title desc">
+  <title id="title">Counting paths through four Bernoulli trials</title>
+  <desc id="desc">Each left step has probability one minus p and each right step probability p. Node labels count paths. The last row has counts 1, 4, 6, 4, 1, for zero through four right steps. The highlighted path has two right and two left steps.</desc>
+  <rect x="2" y="2" width="516" height="471" rx="20" fill="#fffdf8"/>
+  <g fill="none" stroke="#b7cdcd" stroke-width="3">
+    <path d="M260 50 L205 135 M260 50 L315 135"/>
+    <path d="M205 135 L150 220 M205 135 L260 220 M315 135 L260 220 M315 135 L370 220"/>
+    <path d="M150 220 L95 305 M150 220 L205 305 M260 220 L205 305 M260 220 L315 305 M370 220 L315 305 M370 220 L425 305"/>
+    <path d="M95 305 L40 390 M95 305 L150 390 M205 305 L150 390 M205 305 L260 390 M315 305 L260 390 M315 305 L370 390 M425 305 L370 390 M425 305 L480 390"/>
+  </g>
+  <path d="M260 50 L315 135 L370 220 L315 305 L260 390" fill="none" stroke="#c58b20" stroke-width="6" stroke-linejoin="round"/>
+  <g font-family="Georgia, serif" font-size="27" fill="#17313b">
+    <text x="25" y="43" font-style="italic">n = 4</text>
+    <text x="162" y="91" font-style="italic">1−p</text>
+    <text x="326" y="91" font-style="italic">p</text>
+  </g>
+  <g fill="#d9eeeb" stroke="#087f8c" stroke-width="2">
+    <circle cx="260" cy="50" r="19"/>
+    <circle cx="205" cy="135" r="19"/><circle cx="315" cy="135" r="19"/>
+    <circle cx="150" cy="220" r="19"/><circle cx="260" cy="220" r="19"/><circle cx="370" cy="220" r="19"/>
+    <circle cx="95" cy="305" r="19"/><circle cx="205" cy="305" r="19"/><circle cx="315" cy="305" r="19"/><circle cx="425" cy="305" r="19"/>
+    <circle cx="40" cy="390" r="24"/><circle cx="150" cy="390" r="24"/>
+    <circle cx="260" cy="390" r="26" fill="#faedc8" stroke="#c58b20" stroke-width="3"/>
+    <circle cx="370" cy="390" r="24"/><circle cx="480" cy="390" r="24"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="26" text-anchor="middle" dominant-baseline="central" fill="#17313b">
+    <text x="260" y="50" data-row="0" data-k="0">1</text>
+    <text x="205" y="135" data-row="1" data-k="0">1</text><text x="315" y="135" data-row="1" data-k="1">1</text>
+    <text x="150" y="220" data-row="2" data-k="0">1</text><text x="260" y="220" data-row="2" data-k="1">2</text><text x="370" y="220" data-row="2" data-k="2">1</text>
+    <text x="95" y="305" data-row="3" data-k="0">1</text><text x="205" y="305" data-row="3" data-k="1">3</text><text x="315" y="305" data-row="3" data-k="2">3</text><text x="425" y="305" data-row="3" data-k="3">1</text>
+    <text x="40" y="390" data-row="4" data-k="0">1</text><text x="150" y="390" data-row="4" data-k="1">4</text><text x="260" y="390" data-row="4" data-k="2" font-weight="700">6</text><text x="370" y="390" data-row="4" data-k="3">4</text><text x="480" y="390" data-row="4" data-k="4">1</text>
+  </g>
+  <g font-family="Georgia, serif" font-size="25" font-style="italic" text-anchor="middle" fill="#17313b">
+    <text x="40" y="446">k=0</text><text x="150" y="446">k=1</text><text x="260" y="446">k=2</text><text x="370" y="446">k=3</text><text x="480" y="446">k=4</text>
+  </g>
+</svg>

@@ -152,7 +152,7 @@ button { color: inherit; }
 
 .practice-bank-picker {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin: 28px 0 0;
   text-align: left;
@@ -191,6 +191,24 @@ button { color: inherit; }
 }
 .exercise-context strong { color: var(--practice-green-dark); font-size: 14px; }
 .exercise-context p { margin: 5px 0 0; font-size: 16px; line-height: 1.6; white-space: pre-line; }
+
+/* Data-driven, local diagrams. The question always also states the data in text. */
+.exercise-visual {
+  margin: 22px 0;
+  padding: 16px;
+  border: 1px solid #d6e6e1;
+  border-radius: 16px;
+  background: #f7fbfa;
+}
+.exercise-visual svg { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
+.exercise-visual text { font-family: inherit; font-size: 18px; fill: #24473e; }
+.exercise-visual .visual-axis { stroke: #647a74; stroke-width: 1.5; }
+.exercise-visual .visual-guide { stroke: #c9dbd5; stroke-width: 1; stroke-dasharray: 5 5; }
+.exercise-visual .visual-fill { fill: #007761; }
+.exercise-visual .visual-soft { fill: #c6e8db; }
+.exercise-visual .visual-curve { fill: none; stroke: #007761; stroke-width: 3; }
+.exercise-visual figcaption, .exercise-visual .visual-key { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: #365b51; }
+.exercise-visual figcaption strong { display: block; margin-bottom: 3px; }
 
 .practice-stats {
   display: grid;
@@ -579,6 +597,7 @@ button { color: inherit; }
 .exercise-number:focus-visible { outline: none; }
 
 @media (max-width: 767px) {
+  .exercise-visual text { font-size: 24px; }
   .course-header { padding: 16px 20px; }
   .practice-section { padding: 26px 14px 40px; }
   .practice-screen { min-height: 0; padding: 30px 24px; }

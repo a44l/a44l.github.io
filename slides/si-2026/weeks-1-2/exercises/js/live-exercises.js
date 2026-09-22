@@ -7,6 +7,7 @@
   const banks = [
     window.BANK_0_EXERCISE_BANK,
     window.LECTURE_2_EXERCISE_BANK,
+    window.LECTURE_3_EXERCISE_BANK,
     window.WEEK_1_2_EXERCISE_BANK,
   ].filter(
     (candidate) => candidate && candidate.block &&
@@ -35,6 +36,7 @@
   const type = app.querySelector("[data-question-type]");
   const prompt = app.querySelector("[data-question-prompt]");
   const questionContext = app.querySelector("[data-question-context]");
+  const questionVisual = app.querySelector("[data-question-visual]");
   const instruction = app.querySelector("[data-question-instruction]");
   const answerArea = app.querySelector("[data-answer-area]");
   const checkButton = app.querySelector("[data-check-answer]");
@@ -382,6 +384,14 @@
     topic.textContent = `${exercise.topic} · ${message(`difficulty_${exercise.difficulty}`)}`;
     type.textContent = copy.label;
     prompt.textContent = exercise.prompt;
+    prompt.dataset.exerciseId = exercise.id;
+    if (questionVisual) {
+      questionVisual.replaceChildren();
+      questionVisual.hidden = true;
+      if (exercise.visual && window.renderExerciseVisual) {
+        window.renderExerciseVisual(questionVisual, exercise.visual);
+      }
+    }
     questionContext.replaceChildren();
     (exercise.context || []).forEach((entry) => {
       const block = document.createElement("div");

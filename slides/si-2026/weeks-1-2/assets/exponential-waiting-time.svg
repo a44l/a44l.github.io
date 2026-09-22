@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 175" role="img" aria-labelledby="title desc">
+  <title id="title">Waiting for the first arrival</title>
+  <desc id="desc">No arrival occurs between zero and t. The first arrival is at X_n, after t. The interval with zero calls, N_n(t)=0, is highlighted.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#17313b"/></marker></defs>
+  <rect x="90" y="35" width="510" height="75" rx="10" fill="#d8efed"/>
+  <path d="M60 105 H1190" fill="none" stroke="#17313b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M90 95 V116 M600 65 V116 M960 95 V116" fill="none" stroke="#17313b" stroke-width="2.5"/>
+  <circle cx="960" cy="105" r="9" fill="#dc6b4f"/>
+  <circle cx="1110" cy="105" r="6" fill="#dc6b4f"/>
+  <g font-family="Arial, sans-serif" font-size="30" fill="#17313b" text-anchor="middle">
+    <text x="90" y="151">0</text>
+    <text x="600" y="151" font-style="italic">t</text>
+    <text x="960" y="151" font-style="italic">Xₙ</text>
+    <text x="345" y="75">Nₙ(t) = 0</text>
+    <text x="875" y="62">Xₙ &gt; t</text>
+  </g>
+</svg>

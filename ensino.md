@@ -31,6 +31,7 @@ Os materiais da primeira semana também estão disponíveis aqui. Para as semana
 
 [Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/pt/)
 
+
 #### Horário semanal
 
 As aulas decorrem duas vezes por semana, de acordo com o seguinte horário.

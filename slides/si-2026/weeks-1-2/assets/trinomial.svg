@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 520" role="img" aria-labelledby="title desc">
+<title id="title">Multinomial(10, (0.2, 0.3, 0.5))</title><desc id="desc">Each point is a count triple with sum 10. Teal circle area is proportional to its probability. The highlighted triple (2,3,5) has probability 0.08505.</desc>
+<rect width="740" height="520" rx="18" fill="#fffdf8"/>
+<line x1="340.500" y1="92.500" x2="606.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="399.500" y1="92.500" x2="134.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="635.500" y1="392.500" x2="104.500" y2="392.500" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="311.000" y1="130.000" x2="547.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="429.000" y1="130.000" x2="193.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="606.000" y1="355.000" x2="134.000" y2="355.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="281.500" y1="167.500" x2="488.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="458.500" y1="167.500" x2="252.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="576.500" y1="317.500" x2="163.500" y2="317.500" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="252.000" y1="205.000" x2="429.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="488.000" y1="205.000" x2="311.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="547.000" y1="280.000" x2="193.000" y2="280.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="222.500" y1="242.500" x2="370.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="517.500" y1="242.500" x2="370.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="517.500" y1="242.500" x2="222.500" y2="242.500" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="193.000" y1="280.000" x2="311.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="547.000" y1="280.000" x2="429.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="488.000" y1="205.000" x2="252.000" y2="205.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="163.500" y1="317.500" x2="252.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="576.500" y1="317.500" x2="488.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="458.500" y1="167.500" x2="281.500" y2="167.500" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="134.000" y1="355.000" x2="193.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="606.000" y1="355.000" x2="547.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="429.000" y1="130.000" x2="311.000" y2="130.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="104.500" y1="392.500" x2="134.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="635.500" y1="392.500" x2="606.000" y2="430.000" stroke="#cad3d1" stroke-width="0.8"/>
+<line x1="399.500" y1="92.500" x2="340.500" y2="92.500" stroke="#cad3d1" stroke-width="0.8"/>
+<polygon points="75,430 665,430 370,55" fill="none" stroke="#5d6d72" stroke-width="2"/>
+<circle cx="370.000" cy="55.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,0,10" data-probability="1/1024" cx="370.000" cy="55.000" r="2.571722" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="92.500" r="2" fill="#cad3d1"/>
+<circle data-counts="0,1,9" data-probability="3/512" cx="399.500" cy="92.500" r="6.299408" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="429.000" cy="130.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,2,8" data-probability="81/5120" cx="429.000" cy="130.000" r="10.350983" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="458.500" cy="167.500" r="2" fill="#cad3d1"/>
+<circle data-counts="0,3,7" data-probability="81/3200" cx="458.500" cy="167.500" r="13.093073" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="488.000" cy="205.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,4,6" data-probability="1701/64000" cx="488.000" cy="205.000" r="13.416408" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="517.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="0,5,5" data-probability="15309/800000" cx="517.500" cy="242.500" r="11.384200" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="547.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,6,4" data-probability="15309/1600000" cx="547.000" cy="280.000" r="8.049845" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="576.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="0,7,3" data-probability="6561/2000000" cx="576.500" cy="317.500" r="4.713506" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="606.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,8,2" data-probability="59049/80000000" cx="606.000" cy="355.000" r="2.235812" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="635.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="0,9,1" data-probability="19683/200000000" cx="635.500" cy="392.500" r="0.816403" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="665.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="0,10,0" data-probability="59049/10000000000" cx="665.000" cy="430.000" r="0.199977" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="340.500" cy="92.500" r="2" fill="#cad3d1"/>
+<circle data-counts="1,0,9" data-probability="1/256" cx="340.500" cy="92.500" r="5.143445" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="370.000" cy="130.000" r="2" fill="#cad3d1"/>
+<circle data-counts="1,1,8" data-probability="27/1280" cx="370.000" cy="130.000" r="11.952286" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="167.500" r="2" fill="#cad3d1"/>
+<circle data-counts="1,2,7" data-probability="81/1600" cx="399.500" cy="167.500" r="18.516402" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="429.000" cy="205.000" r="2" fill="#cad3d1"/>
+<circle data-counts="1,3,6" data-probability="567/8000" cx="429.000" cy="205.000" r="21.908902" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="458.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="1,4,5" data-probability="5103/80000" cx="458.500" cy="242.500" r="20.784610" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="488.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="1,5,4" data-probability="15309/400000" cx="488.000" cy="280.000" r="16.099689" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="517.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="1,6,3" data-probability="15309/1000000" cx="517.500" cy="317.500" r="10.182338" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="547.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="1,7,2" data-probability="19683/5000000" cx="547.000" cy="355.000" r="5.163388" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="576.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="1,8,1" data-probability="59049/100000000" cx="576.500" cy="392.500" r="1.999771" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="606.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="1,9,0" data-probability="19683/500000000" cx="606.000" cy="430.000" r="0.516339" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="311.000" cy="130.000" r="2" fill="#cad3d1"/>
+<circle data-counts="2,0,8" data-probability="9/1280" cx="311.000" cy="130.000" r="6.900656" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="340.500" cy="167.500" r="2" fill="#cad3d1"/>
+<circle data-counts="2,1,7" data-probability="27/800" cx="340.500" cy="167.500" r="15.118579" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="370.000" cy="205.000" r="2" fill="#cad3d1"/>
+<circle data-counts="2,2,6" data-probability="567/8000" cx="370.000" cy="205.000" r="21.908902" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="2,3,5" data-probability="1701/20000" cx="399.500" cy="242.500" r="24.000000" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="429.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="2,4,4" data-probability="5103/80000" cx="429.000" cy="280.000" r="20.784610" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="458.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="2,5,3" data-probability="15309/500000" cx="458.500" cy="317.500" r="14.400000" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="488.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="2,6,2" data-probability="45927/5000000" cx="488.000" cy="355.000" r="7.887205" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="517.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="2,7,1" data-probability="19683/12500000" cx="517.500" cy="392.500" r="3.265613" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="547.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="2,8,0" data-probability="59049/500000000" cx="547.000" cy="430.000" r="0.894325" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="281.500" cy="167.500" r="2" fill="#cad3d1"/>
+<circle data-counts="3,0,7" data-probability="3/400" cx="281.500" cy="167.500" r="7.126966" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="311.000" cy="205.000" r="2" fill="#cad3d1"/>
+<circle data-counts="3,1,6" data-probability="63/2000" cx="311.000" cy="205.000" r="14.605935" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="340.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="3,2,5" data-probability="567/10000" cx="340.500" cy="242.500" r="19.595918" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="370.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="3,3,4" data-probability="567/10000" cx="370.000" cy="280.000" r="19.595918" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="3,4,3" data-probability="1701/50000" cx="399.500" cy="317.500" r="15.178933" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="429.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="3,5,2" data-probability="15309/1250000" cx="429.000" cy="355.000" r="9.107360" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="458.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="3,6,1" data-probability="15309/6250000" cx="458.500" cy="392.500" r="4.072935" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="488.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="3,7,0" data-probability="6561/31250000" cx="488.000" cy="430.000" r="1.192433" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="252.000" cy="205.000" r="2" fill="#cad3d1"/>
+<circle data-counts="4,0,6" data-probability="21/4000" cx="252.000" cy="205.000" r="5.962848" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="281.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="4,1,5" data-probability="189/10000" cx="281.500" cy="242.500" r="11.313708" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="311.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="4,2,4" data-probability="567/20000" cx="311.000" cy="280.000" r="13.856406" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="340.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="4,3,3" data-probability="567/25000" cx="340.500" cy="317.500" r="12.393547" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="370.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="4,4,2" data-probability="5103/500000" cx="370.000" cy="355.000" r="8.313844" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="4,5,1" data-probability="15309/6250000" cx="399.500" cy="392.500" r="4.072935" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="429.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="4,6,0" data-probability="15309/62500000" cx="429.000" cy="430.000" r="1.287975" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="222.500" cy="242.500" r="2" fill="#cad3d1"/>
+<circle data-counts="5,0,5" data-probability="63/25000" cx="222.500" cy="242.500" r="4.131182" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="252.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="5,1,4" data-probability="189/25000" cx="252.000" cy="280.000" r="7.155418" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="281.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="5,2,3" data-probability="567/62500" cx="281.500" cy="317.500" r="7.838367" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="311.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="5,3,2" data-probability="1701/312500" cx="311.000" cy="355.000" r="6.071573" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="340.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="5,4,1" data-probability="5103/3125000" cx="340.500" cy="392.500" r="3.325538" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="370.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="5,5,0" data-probability="15309/78125000" cx="370.000" cy="430.000" r="1.152000" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="193.000" cy="280.000" r="2" fill="#cad3d1"/>
+<circle data-counts="6,0,4" data-probability="21/25000" cx="193.000" cy="280.000" r="2.385139" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="222.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="6,1,3" data-probability="63/31250" cx="222.500" cy="317.500" r="3.695042" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="252.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="6,2,2" data-probability="567/312500" cx="252.000" cy="355.000" r="3.505424" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="281.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="6,3,1" data-probability="567/781250" cx="281.500" cy="392.500" r="2.217025" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="311.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="6,4,0" data-probability="1701/15625000" cx="311.000" cy="430.000" r="0.858650" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="163.500" cy="317.500" r="2" fill="#cad3d1"/>
+<circle data-counts="7,0,3" data-probability="3/15625" cx="163.500" cy="317.500" r="1.140315" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="193.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="7,1,2" data-probability="27/78125" cx="193.000" cy="355.000" r="1.529893" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="222.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="7,2,1" data-probability="81/390625" cx="222.500" cy="392.500" r="1.185050" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="252.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="7,3,0" data-probability="81/1953125" cx="252.000" cy="430.000" r="0.529970" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="134.000" cy="355.000" r="2" fill="#cad3d1"/>
+<circle data-counts="8,0,2" data-probability="9/312500" cx="134.000" cy="355.000" r="0.441642" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="163.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="8,1,1" data-probability="27/781250" cx="163.500" cy="392.500" r="0.483795" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="193.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="8,2,0" data-probability="81/7812500" cx="193.000" cy="430.000" r="0.264985" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="104.500" cy="392.500" r="2" fill="#cad3d1"/>
+<circle data-counts="9,0,1" data-probability="1/390625" cx="104.500" cy="392.500" r="0.131672" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="134.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="9,1,0" data-probability="3/1953125" cx="134.000" cy="430.000" r="0.101993" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="75.000" cy="430.000" r="2" fill="#cad3d1"/>
+<circle data-counts="10,0,0" data-probability="1/9765625" cx="75.000" cy="430.000" r="0.026334" fill="#087f8c" fill-opacity="0.82"/>
+<circle cx="399.500" cy="242.500" r="27" fill="none" stroke="#b7831d" stroke-width="3"/>
+<line x1="421.500" y1="224.500" x2="499.500" y2="164.500" stroke="#b7831d" stroke-width="2"/>
+<text x="509.500" y="158.500" font-family="Arial, sans-serif" font-size="27" text-anchor="start" fill="#b7831d">(2,3,5)</text>
+<text x="85.000" y="472.000" font-family="Arial, sans-serif" font-size="25" text-anchor="middle" fill="#17313b">(10,0,0)</text>
+<text x="655.000" y="472.000" font-family="Arial, sans-serif" font-size="25" text-anchor="middle" fill="#17313b">(0,10,0)</text>
+<text x="370.000" y="32.000" font-family="Arial, sans-serif" font-size="25" text-anchor="middle" fill="#17313b">(0,0,10)</text>
+<text x="370.000" y="506.000" font-family="Arial, sans-serif" font-size="27" text-anchor="middle" fill="#17313b">x₁ + x₂ + x₃ = 10</text>
+</svg>

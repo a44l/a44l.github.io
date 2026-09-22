@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 332" role="img" aria-labelledby="title desc">
   <title id="title">π₁(x₁,x₂) = x₁</title>
-  <desc id="desc">P_X({(i,j)}) = 1/36, i,j ∈ {1,2,3,4,5,6}. P_X₁({i}) = 6/36 = 1/6.</desc>
+  <desc id="desc">ℙ_X({(i,j)}) = 1/36, i,j ∈ {1,2,3,4,5,6}. ℙ_X₁({i}) = 6/36 = 1/6.</desc>
   <defs>
     <marker id="projection-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#718086"/></marker>
     <marker id="projection-gold-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#bb8800"/></marker>

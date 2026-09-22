@@ -3,19 +3,22 @@
 A standalone practice page for the Statistical Inference course, hosted at
 `/slides/si-2026/weeks-1-2/exercises/` and linked from `teaching.md`.
 `ensino.md` links to the European Portuguese version at
-`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all three banks.
+`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all four banks.
 
 ## Edit
 
 - `index.html`: page wording, course navigation, and screen layout.
 - `js/exercises-bank-0.js`: the 40 Lecture 1 questions, restricted to slides 12–41.
 - `js/exercises-lecture-2.js`: the 40 Lecture 2 questions, answer keys, explanations, and slide references.
+- `js/exercises-lecture-3.js`: the 40 Lecture 3 questions (slides 72–114), with diagram data, explanations and slide references.
 - `js/exercises-week-1-2.js`: the original 40-question full Weeks 1–2 review.
+- `js/exercise-visuals.js`: accessible SVG diagrams generated locally from each question's `visual` field.
 - `js/live-exercises.js`: session selection, answer checking, scoring, and browser storage.
 - `css/styles.css`: typography, colours, spacing, and mobile layout.
 - `pt/index.html`: Portuguese page text, navigation, and screen layout.
 - `pt/js/exercises-bank-0.js`: all 40 Lecture 1 questions in Portuguese.
 - `pt/js/exercises-lecture-2.js`: all 40 Lecture 2 questions in Portuguese.
+- `pt/js/exercises-lecture-3.js`: all 40 Lecture 3 questions and diagram labels in Portuguese.
 - `pt/js/exercises-week-1-2.js`: all 40 full-review questions in Portuguese.
 - `pt/js/interface-pt.js`: Portuguese messages, input labels, and feedback.
 
@@ -58,7 +61,23 @@ steps. Every question has an explanation and links to its supporting slide(s).
 Slide numbers describe the deck used during authoring; stable anchors keep links
 working if earlier slides are added. Check the ranges if the deck is reorganised.
 
-The third choice, **Weeks 1–2**, retains the original 40 questions for a wider
+The third choice, **Lecture 3**, covers slides 72–114 of the deck checked on
+22 September 2026. Topics include expectation, moments, variance, covariance,
+tail and quantile formulas, binomial/multinomial/Poisson/exponential/normal/gamma
+models, moment-generating functions and characteristic functions. Word problems
+state their modelling assumptions; gamma parameters are explicitly shape and
+scale. Proof exercises include the theorem and the preceding argument. The bank
+does not assume material from Lecture 4.
+
+Its optional `visual` objects support `bars`, `points`, `trials`, `timeline` and
+`normal` diagrams. Edit their numerical data and translated labels in the bank
+files; the shared renderer handles layout. Each diagram has a descriptive SVG
+title and description plus a visible caption. Essential data are also in the
+question text. Trial columns show probabilities, not sampled outcomes; normal
+curves are drawn from the specified mean and standard deviation. No external
+image service, chart package or network request is used.
+
+The fourth choice, **Weeks 1–2**, retains the original 40 questions for a wider
 review, including material from later lectures. Each session contains eight
 unique questions from the selected bank only, balancing topics and difficulties.
 Lecture 1 is the default. Use “Change practice set” after a session to switch.
@@ -67,7 +86,8 @@ Answers and progress stay in the browser; no server API or accounts are required
 The existing Weeks 1–2 best score and session count retain the
 `statistical-inference-2026-practice` localStorage key. Lecture 1 uses the separate
 `statistical-inference-2026-practice-lecture-1` key; Lecture 2 uses
-`statistical-inference-2026-practice-lecture-2`. Selecting a lecture never mixes
+`statistical-inference-2026-practice-lecture-2`; Lecture 3 uses
+`statistical-inference-2026-practice-lecture-3`. Selecting a lecture never mixes
 in questions or scores from the other banks. Progress is specific to the browser
 and website origin.
 

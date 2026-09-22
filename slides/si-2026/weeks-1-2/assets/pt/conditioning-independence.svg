@@ -32,10 +32,10 @@
     <text x="338" y="99" fill="#087f8c" font-style="italic">A</text>
     <text x="713" y="143" fill="#996a08" font-style="italic">B</text>
     <text x="894" y="99" fill="#087f8c" font-style="italic">A ∩ B</text>
-    <text x="207" y="222" text-anchor="middle">P(A) = 8/16 = 1/2</text>
-    <text x="816" y="222" text-anchor="middle">P(A | B) = 4/8 = 1/2</text>
+    <text x="207" y="222" text-anchor="middle">ℙ(A) = 8/16 = 1/2</text>
+    <text x="816" y="222" text-anchor="middle">ℙ(A | B) = 4/8 = 1/2</text>
     <rect x="1040" y="75" width="420" height="64" rx="14" fill="#d9eeeb"/>
-    <text x="1250" y="118" text-anchor="middle">P(A | B) = P(A)</text>
-    <text x="1250" y="188" text-anchor="middle">P(A ∩ B) = P(A)P(B)</text>
+    <text x="1250" y="118" text-anchor="middle">ℙ(A | B) = ℙ(A)</text>
+    <text x="1250" y="188" text-anchor="middle">ℙ(A ∩ B) = ℙ(A)ℙ(B)</text>
   </g>
 </svg>

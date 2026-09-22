@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased, 18 September 2026 teaching page synchronization
+
+### Teaching
+
+- Synchronized the Portuguese Statistical Inference section with the latest English version: moved the Google Sites invitation notice before the first-week material links, included slides, worksheets and interactive exercises in its description, and named both instructors as contacts.
+- Kept the localized Portuguese slides and exercise links, and removed the worksheet link, the two Statistical Inference Moodle links and the outdated teaching-assignment source comment to match the English page.
+
+### Verification
+
+- Built the site successfully, checked that both localized material links resolve in the generated site and confirmed that the removed links no longer appear in the Portuguese Statistical Inference section.
+- `git diff --check -- ensino.md changelog.md` passed; the full check still reports three trailing spaces in the user's existing edits to `teaching.md`, which were left unchanged.
+
 ## Unreleased, 14 September 2026 complete teaching schedules
 
 ### Teaching
