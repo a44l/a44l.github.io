@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <meta name="description" content="Descobre exemplos e não-exemplos de espaços vetoriais. Testa os oito axiomas de Álgebra Linear e aprende com cada resposta.">
+  <title>Espaços vetoriais · Álgebra Linear</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="proofs.js"></script>
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#exercise">Saltar para o exercício</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="./" aria-label="Vetor, início"><img src="favicon.svg" width="36" height="36" alt=""><span>vetor<span class="brand-dot">.</span></span></a>
+    <span class="course-label">ÁLGEBRA LINEAR <span>/</span> LABORATÓRIO 01</span>
+    <button class="quiet-button" id="guide-open"><span class="book-icon" aria-hidden="true">▤</span> Guia rápido</button>
+  </div></header>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span class="tiny-line"></span> EXPLORAR · CONJETURAR · VERIFICAR</p><h1 id="page-title">Será um <em>espaço vetorial?</em></h1><p class="hero-copy">Nem todos os vetores são setas. Nem todas as somas são as de sempre.<br> Explora as operações, testa os axiomas e descobre o que faz a diferença.</p></div>
+      <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 220 140"><defs><pattern id="hero-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#dce3d6" stroke-width=".7"/></pattern><marker id="hero-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="m0 0 6 3-6 3" fill="#236453"/></marker></defs><rect x="10" width="200" height="140" fill="url(#hero-grid)"/><path d="M35 120 95 40 190 30 130 110Z" fill="#dff0c2" opacity=".5"/><path d="M35 120 95 40M35 120 130 110" stroke="#236453" stroke-width="2.2" marker-end="url(#hero-arrow)"/><path d="M95 40 190 30 130 110" stroke="#789281" stroke-width="1.2" stroke-dasharray="4 4" fill="none"/><circle cx="35" cy="120" r="3" fill="#236453"/><text x="86" y="28">u</text><text x="137" y="122">v</text><text x="171" y="20" class="art-small">u # v</text><text x="21" y="136" class="art-small">0</text></svg></div>
+    </section>
+    <nav class="workspace-tabs" aria-label="Percursos de prática"><div class="tab-buttons"><button data-mode="explore" aria-pressed="true">Explorar exemplos <span>11</span></button><button data-mode="axioms" aria-pressed="false">Axiomas à prova <span>9</span></button><button data-mode="closure" aria-pressed="false">Testar o fecho <span>4</span></button></div><button class="text-button" id="axioms-open">Consultar os 8 axiomas <span aria-hidden="true">↗</span></button></nav>
+    <div class="workspace">
+      <aside class="catalogue" aria-label="Escolher exercício">
+        <div class="catalogue-heading"><h2>O teu percurso</h2><span id="progress-count">0 / 24</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Exercícios resolvidos" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Procurar um exemplo…" aria-label="Procurar um exemplo" autocomplete="off"></label>
+        <div class="catalogue-caption"><span id="catalogue-label">DO FAMILIAR AO INESPERADO</span><button id="unsolved" aria-pressed="false" title="Mostrar apenas exercícios por resolver">Por resolver</button></div>
+        <div id="example-list"></div><p id="empty-search" hidden>Nenhum exemplo encontrado. Tenta outro termo.</p>
+        <div class="sidebar-note"><span class="note-symbol" aria-hidden="true">↳</span><p><strong>Um contraexemplo basta.</strong>Para refutar uma propriedade universal, basta encontrar um caso em que falha.</p></div>
+        <a class="notes-link" href="assets/lecture-notes.pdf#page=14" target="_blank" rel="noopener">Notas da aula · pp. 14–23 <span aria-hidden="true">↗</span></a>
+      </aside>
+      <section id="exercise" class="exercise" tabindex="-1" aria-labelledby="exercise-title"></section>
+    </div>
+    <footer class="site-footer"><span>Álgebra Linear <span class="footer-dot">·</span> Aprende a partir das definições.</span><span id="save-status">O progresso fica neste navegador.</span></footer>
+  </main>
+  <div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="guide-dialog" aria-labelledby="guide-title"><div class="dialog-top"><span class="eyebrow">UM PASSO DE CADA VEZ</span><button data-close-dialog aria-label="Fechar guia" class="close-button">×</button></div><h2 id="guide-title">Como explorar</h2><ol class="guide-steps"><li><strong>Lê as regras do jogo.</strong><p>Um espaço vetorial é um conjunto, um corpo de escalares e duas operações. Os símbolos # e ⊙ representam as operações definidas em cada exemplo.</p></li><li><strong>Responde a cada propriedade.</strong><p>Cada axioma tem dois botões: «Sim» e «Não». Ao escolher uma resposta, vês imediatamente se está correta e a explicação completa, passo a passo. Uma propriedade sem resposta ainda não foi avaliada.</p></li><li><strong>Compara o teu raciocínio.</strong><p>Tanto as respostas certas como as erradas mostram todos os passos da demonstração ou do contraexemplo. Podes alterar a resposta, recolher uma explicação já lida, pedir uma pista ou consultar a resolução completa.</p></li></ol><div class="guide-note"><strong>O fecho vem primeiro.</strong><p>No percurso «Testar o fecho», decide se somar e multiplicar por qualquer escalar mantém o resultado no conjunto. Se uma operação não está definida em E, não avançamos para os oito axiomas.</p></div><p class="small-copy">A ordem dos axiomas segue a página 14 das notas. Todos os conjuntos apresentados são não vazios. Uma resolução consultada fica assinalada como consultada, não como resolvida.</p><button class="primary-button" data-close-dialog>Vamos explorar <span aria-hidden="true">→</span></button></dialog>
+  <dialog id="axioms-dialog" aria-labelledby="axioms-title"><div class="dialog-top"><span class="eyebrow">REFERÊNCIA · NOTAS, P. 14</span><button data-close-dialog aria-label="Fechar axiomas" class="close-button">×</button></div><h2 id="axioms-title">Os oito axiomas</h2><p>Para quaisquer u, v, w ∈ E e α, β no corpo de escalares. Antes de começar: E ≠ ∅ e as duas operações têm de tomar valores em E.</p><div id="reference-axioms"></div><details class="dependency-note"><summary>É possível falhar apenas um qualquer axioma?</summary><p>Não com esta lista. A comutatividade (A4) resulta de A1, A2, A3, A5, A6 e A8. E A3 fala de simétricos em relação ao neutro de A2: não se pode satisfazer A3, neste sentido, sem esse neutro.</p><p>Por isso, «Axiomas à prova» inclui oito quase-exemplos genuínos para seis axiomas, e um caso que explora a dependência entre A2 e A3. A demonstração de A4 está disponível abaixo.</p></details><details class="dependency-note"><summary>Porque é que A4 resulta dos outros axiomas?</summary><div id="commutativity-proof"></div></details><a class="notes-link" href="assets/lecture-notes.pdf#page=14" target="_blank" rel="noopener">Abrir a definição nas notas ↗</a></dialog>
+  <noscript><div class="noscript">Ativa o JavaScript para responder aos exercícios. A definição completa está nas notas da aula, página 14.</div></noscript>
+</body>
+</html>

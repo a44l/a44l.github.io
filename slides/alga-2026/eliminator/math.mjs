@@ -119,7 +119,8 @@ export const LEVELS = {
 export const MODES = {
   matrix: {name: 'Matriz', description: 'Transforma a matriz na forma escalonada reduzida por linhas.'},
   homogeneous: {name: 'Sistema homogéneo', description: 'Reduz a matriz ampliada [A | 0] e determina as soluções de Ax = 0.'},
-  inhomogeneous: {name: 'Sistema não homogéneo', description: 'Reduz a matriz ampliada [A | b] e determina as soluções de Ax = b, com b ≠ 0.'}
+  inhomogeneous: {name: 'Sistema não homogéneo', description: 'Reduz a matriz ampliada [A | b] e determina as soluções de Ax = b, com b ≠ 0.'},
+  combination: {name: 'Combinação linear', description: 'Decide se u é combinação linear dos vetores dados e determina os coeficientes.'}
 };
 
 function manageable(matrix, level) {
@@ -146,7 +147,8 @@ export function generateExercise(level = 'first', random = Math.random, options 
   // Sorteia uma única vez. Rejeições e alternativas mantêm este tamanho e posto,
   // preservando a distribuição uniforme em {1, …, n}, inclusive nos sistemas.
   const rank = integer(1, size);
-  const inconsistent = mode === 'inhomogeneous' && rank < size && random() < 0.5;
+  const nonhomogeneous = mode === 'inhomogeneous' || mode === 'combination';
+  const inconsistent = nonhomogeneous && rank < size && random() < 0.5;
   const augmented = mode !== 'matrix';
   const scrambleSteps = config.scramble * (2 * size - rank);
   const withinBounds = matrix => matrix.every(row => row.every(value => value.d === 1n && abs(value.n) <= BigInt(config.bound)));
@@ -169,8 +171,8 @@ export function generateExercise(level = 'first', random = Math.random, options 
       if (seed.every(row => row[column] === 0)) seed[integer(0, rank - 1)][column] = pick([-2, -1, 1, 2]);
     }
     if (augmented) {
-      const rhs = Array.from({length: size}, (_, row) => mode === 'inhomogeneous' && row < rank ? integer(-2, 2) : 0);
-      if (mode === 'inhomogeneous' && rhs.every(value => value === 0)) rhs[integer(0, rank - 1)] = pick([-2, -1, 1, 2]);
+      const rhs = Array.from({length: size}, (_, row) => nonhomogeneous && row < rank ? integer(-2, 2) : 0);
+      if (nonhomogeneous && rhs.every(value => value === 0)) rhs[integer(0, rank - 1)] = pick([-2, -1, 1, 2]);
       if (inconsistent) rhs[integer(rank, size - 1)] = pick([-2, -1, 1, 2]);
       seed.forEach((row, i) => row.push(rhs[i]));
     }
@@ -187,12 +189,33 @@ export function generateExercise(level = 'first', random = Math.random, options 
   // Base densa de posto r: as primeiras r colunas formam I + J nas r
   // primeiras linhas; as restantes linhas repetem essas linhas independentes.
   const fallback = Array.from({length: size}, (_, row) => Array.from({length: size}, (_, column) => 1 + (column === row % rank ? 1 : 0)));
-  if (augmented) fallback.forEach((row, i) => row.push(mode === 'inhomogeneous' ? row[0] + (inconsistent && i === rank ? 1 : 0) : 0));
+  if (augmented) fallback.forEach((row, i) => row.push(nonhomogeneous ? row[0] + (inconsistent && i === rank ? 1 : 0) : 0));
   return matrixFrom(fallback);
 }
 
 export function contradictionRow(matrix) {
   return matrix.findIndex(row => row.slice(0, -1).every(value => value.isZero) && !row[row.length - 1].isZero);
+}
+
+// Verifica uma representação, incluindo qualquer escolha válida dos coeficientes
+// livres. Usa os vetores originais, sem depender de uma redução específica.
+export function checkCombination(matrix, values) {
+  const count = matrix[0].length - 1;
+  const coefficients = [];
+  for (let i = 0; i < count; i++) {
+    try { coefficients.push(Fraction.from(Array.isArray(values) && values[i] !== undefined ? values[i] : '')); }
+    catch (_) { return {correct: false, invalid: [i], message: 'Preenche todos os coeficientes com inteiros ou frações. O denominador não pode ser zero.'}; }
+  }
+  const mismatch = matrix.findIndex(row => !row.slice(0, count).reduce((sum, value, i) => sum.add(value.mul(coefficients[i])), Fraction.from(0)).equals(row[count]));
+  return mismatch === -1 ? {correct: true, message: 'Correto. Estes coeficientes reproduzem o vetor u.'}
+    : {correct: false, message: `A combinação obtida não coincide com u na coordenada ${mismatch + 1}. Revê os coeficientes e os sinais.`};
+}
+
+export function combinationCoefficients(reduced) {
+  const model = systemSolution(reduced);
+  if (model.type === 'none') return null;
+  // Uma representação basta: escolhe zero para cada coeficiente livre.
+  return model.expressions.map(expression => expression.constant.toString());
 }
 
 export function systemSolution(matrix) {

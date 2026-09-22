@@ -46,6 +46,11 @@
       <div class="view-mode-control"><span class="eyebrow">MODO DE UTILIZAÇÃO</span><div class="view-mode-options" role="group" aria-label="Modo de utilização"><button type="button" data-view-mode="practice" aria-pressed="true">Praticar</button><button type="button" data-view-mode="demonstration" aria-pressed="false">Demonstração</button></div></div>
     </section>
 
+    <section class="topic-controls" aria-label="Tema do exercício">
+      <span class="eyebrow">TEMA DO EXERCÍCIO</span>
+      <div class="view-mode-options" role="group" aria-label="Tema"><button type="button" data-exercise-topic="system" aria-pressed="true">Sistema linear</button><button type="button" data-exercise-topic="combination" aria-pressed="false">Combinação linear</button></div>
+    </section>
+
     <section id="demo-source-controls" class="demo-source-controls" aria-label="Origem da demonstração" hidden>
       <span class="eyebrow">ESCOLHER DEMONSTRAÇÃO</span>
       <div class="view-mode-options" role="group" aria-label="Origem da matriz"><button type="button" data-demo-source="random" aria-pressed="true">Sistemas aleatórios</button><button type="button" data-demo-source="lecture" aria-pressed="false">Exemplos da aula</button></div>
@@ -53,6 +58,7 @@
         <label for="lecture-example">Exemplo do texto</label><span class="select-wrapper"><select id="lecture-example"><option value="1">Exemplo 1 (página 8)</option><option value="2">Exemplo 2 (página 8)</option><option value="3">Exemplo 3 (página 9)</option><option value="4">Exemplo 4 (página 9)</option><option value="5">Exemplo 5 (página 10)</option><option value="6">Exemplo 6 (página 11)</option></select></span>
         <div id="lecture-cases" class="lecture-cases" hidden><span class="field-label">Caso do parâmetro a</span><div id="lecture-case-buttons" class="lecture-case-buttons" role="group" aria-label="Caso do parâmetro a"></div></div>
       </div>
+      <div id="combination-lecture-settings" class="lecture-settings" hidden><label for="combination-lecture-example">Exemplo do texto</label><span class="select-wrapper"><select id="combination-lecture-example"><option value="1">Exemplo 1: uma combinação (p. 18)</option><option value="2">Exemplo 2: impossibilidade (p. 19)</option><option value="3">Exemplo 3: construção geométrica (p. 20)</option><option value="4">Exemplo 4: coeficientes não únicos (p. 21)</option><option value="5">Exemplo 5: um plano (p. 22)</option><option value="6">Exemplo 6: seno e cosseno (p. 23)</option></select></span></div>
     </section>
 
     <section class="exercise-toolbar" aria-label="Configuração do exercício">
@@ -64,7 +70,7 @@
       </div>
     </section>
     <section class="exercise-options" aria-label="Tipo e tamanho do exercício">
-      <div class="mode-options" role="group" aria-label="Tipo de exercício">
+      <div id="system-mode-options" class="mode-options" role="group" aria-label="Tipo de sistema">
         <button type="button" data-mode="homogeneous" aria-pressed="true">Sistema homogéneo</button>
         <button type="button" data-mode="inhomogeneous" aria-pressed="false">Sistema não homogéneo</button>
       </div>
@@ -79,6 +85,8 @@
     </section>
 
     <div class="workspace" id="lecture-workspace" tabindex="-1" hidden></div>
+    <div id="combination-lecture-workspace" tabindex="-1" hidden></div>
+    <section id="combination-problem" class="card combination-problem" aria-labelledby="combination-problem-title" hidden></section>
     <div class="workspace" id="workspace" tabindex="-1">
       <div class="main-column">
         <section class="matrix-card card" aria-labelledby="matrix-title">
@@ -138,6 +146,13 @@
               <button id="check-solution" type="submit" class="button button-primary">Verificar conjunto-solução<svg class="icon"><use href="#i-check"/></svg></button>
             </form>
           </div>
+          <form id="combination-question" novalidate hidden>
+            <div class="solution-types" role="group" aria-label="u é combinação linear dos vetores dados?"><button type="button" data-combination-choice="yes" aria-pressed="false">Sim</button><button type="button" data-combination-choice="no" aria-pressed="false">Não</button></div>
+            <p id="combination-input-help" class="solution-guidance">Se responderes sim, indica uma escolha de coeficientes. Basta uma representação válida, mesmo que existam outras.</p>
+            <div id="combination-fields" class="unique-values"></div>
+            <p id="combination-feedback" class="answer-feedback" role="status" hidden></p>
+            <button id="check-combination" type="submit" class="button button-primary" disabled>Verificar resposta</button>
+          </form>
           <div id="exercise-complete" hidden><p id="completion-description"></p><div id="accepted-solution" class="solution-preview" tabindex="0" role="region" aria-label="Conjunto-solução correto"></div><button id="next-exercise" class="button button-primary">Novo exercício<svg class="icon"><use href="#i-arrow"/></svg></button></div>
         </section>
 
@@ -173,7 +188,7 @@
       </aside>
     </div>
 
-    <footer class="page-footer"><span>Operações elementares e sistemas lineares.</span><span id="storage-status"><span class="save-dot"></span>O teu progresso fica guardado neste navegador.</span></footer>
+    <footer class="page-footer"><span>Operações elementares, sistemas e combinações lineares.</span><span id="storage-status"><span class="save-dot"></span>O teu progresso fica guardado neste navegador.</span></footer>
   </main>
 
   <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title"><div class="dialog-content"><div class="dialog-heading"><span class="eyebrow">GUIA RÁPIDO</span><button class="icon-button" data-close-dialog aria-label="Fechar o guia"><svg class="icon"><use href="#i-close"/></svg></button></div><h2 id="guide-title">Forma escalonada reduzida</h2><p>Usa operações elementares para chegar à <strong>forma escalonada reduzida por linhas</strong>. O primeiro elemento não nulo de cada linha é o seu pivô.</p><div class="guide-example"><div class="bracketed"><table class="matrix-table" aria-label="Exemplo de uma matriz na forma escalonada reduzida"><tbody><tr><td class="example-pivot">1</td><td>2</td><td>0</td><td>−1</td></tr><tr><td>0</td><td>0</td><td class="example-pivot">1</td><td>3</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><span>Os pivôs estão assinalados a verde.</span></div><ol class="guide-rules"><li>As linhas nulas ficam no fim.</li><li>O primeiro elemento não nulo de cada linha é <strong>1</strong>.</li><li>Cada pivô está à direita do pivô da linha anterior.</li><li>Os restantes elementos de cada coluna com pivô são zero.</li></ol><div class="guide-tip"><svg class="icon"><use href="#i-bulb"/></svg><p>Podes somar um múltiplo de outra linha, multiplicar uma linha por um número não nulo ou trocar duas linhas. Há vários caminhos válidos. Experimenta e usa <strong>Desfazer</strong> sempre que precisares.</p></div><p class="guide-system-note">Nos sistemas, a última coluna contém os termos independentes. Cada operação aplica-se à linha inteira, incluindo essa coluna. Se obtiveres uma linha com todos os coeficientes nulos e termo independente diferente de zero, usa <strong>Declarar sistema impossível</strong> para concluir o exercício: essa linha prova que não há solução, sem ser necessário terminar a redução. Nos restantes casos, depois de reduzir a matriz, identifica as variáveis dependentes e introduz o conjunto-solução. As variáveis livres mantêm os seus nomes e podem assumir qualquer valor real; preenche as constantes e os coeficientes com inteiros ou frações.</p><button class="button button-primary" data-close-dialog>Fechar o guia<svg class="icon"><use href="#i-arrow"/></svg></button></div></dialog>

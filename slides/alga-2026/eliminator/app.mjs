@@ -1,18 +1,22 @@
 import {
   Fraction, matrixFrom, serializeMatrix, sameMatrix, applyOperation,
   rrefStatus, nextHint, generateExercise, LEVELS, MODES, systemSolution, contradictionRow,
-  checkDependentVariables, checkSolution, solutionFieldKeys, operationDescription
+  checkDependentVariables, checkSolution, solutionFieldKeys, operationDescription,
+  checkCombination, combinationCoefficients
 } from './math.mjs';
 import {buildLecture} from './lecture.mjs';
 import {renderLectureWorkspace} from './lecture-view.mjs';
 import {solutionSetMarkup} from './solution-view.mjs';
+import {buildCombinationLecture, renderCombinationLecture, updateCombinationIllustration} from './combination-lecture.mjs';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => Array.from(document.querySelectorAll(selector));
 const STORAGE_KEY = 'escalonar.exercicio.v2';
+const systemGuideHTML = $('.guide-system-note').innerHTML;
 const icon = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const rowSymbol = index => `L<sub>${index + 1}</sub>`;
-const variableSymbol = index => `<span class="variable-symbol">x<sub>${index + 1}</sub></span>`;
+const variableSymbol = index => `<span class="variable-symbol">${isCombination() ? 'α' : 'x'}<sub>${index + 1}</sub></span>`;
+const vectorSymbol = index => `<span class="vector-symbol">u${index === undefined ? '' : `<sub>${index + 1}</sub>`}</span>`;
 const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[character]));
 const operationNames = {add: 'Soma de linhas', scale: 'Multiplicação', swap: 'Troca de linhas'};
 let operationType = 'add';
@@ -25,12 +29,22 @@ let demonstrationTimer = null;
 let demonstrationPlaying = false;
 
 function emptyQuiz() {
-  return {selected: [], dependentChecked: false, kind: '', values: {}, complete: false, declaredImpossible: false};
+  return {selected: [], dependentChecked: false, kind: '', values: {}, complete: false, declaredImpossible: false, combinationChoice: '', coefficients: []};
 }
 
-function restoreQuiz(saved, matrix) {
+function restoreQuiz(saved, matrix, mode, original) {
   const quiz = emptyQuiz();
   if (!saved) return quiz;
+  if (mode === 'combination') {
+    if (saved.combinationChoice === 'no' && saved.complete === true && contradictionRow(matrix) !== -1) {
+      return {...quiz, combinationChoice: 'no', complete: true, declaredImpossible: true};
+    }
+    if (!rrefStatus(matrix).complete) return quiz;
+    quiz.combinationChoice = ['yes', 'no'].includes(saved.combinationChoice) ? saved.combinationChoice : '';
+    quiz.coefficients = Array.from({length: matrix[0].length - 1}, (_, i) => Array.isArray(saved.coefficients) && typeof saved.coefficients[i] === 'string' && saved.coefficients[i].length <= 64 ? saved.coefficients[i] : '0');
+    quiz.complete = saved.complete === true && quiz.combinationChoice === 'yes' && checkCombination(original, quiz.coefficients).correct;
+    return quiz;
+  }
   if (saved.declaredImpossible === true) {
     if (saved.complete === true && contradictionRow(matrix) !== -1) return {...quiz, kind: 'none', complete: true, declaredImpossible: true};
     return quiz;
@@ -75,7 +89,7 @@ function deserializeState(saved) {
         frames.push({matrix, operation: event});
       }
     }
-    return {level, mode, exerciseNumber: Number.isSafeInteger(saved.exerciseNumber) && saved.exerciseNumber > 0 ? saved.exerciseNumber : 1, original, frames, cursor: saved.cursor, quiz: restoreQuiz(saved.quiz, frames[saved.cursor].matrix)};
+    return {level, mode, exerciseNumber: Number.isSafeInteger(saved.exerciseNumber) && saved.exerciseNumber > 0 ? saved.exerciseNumber : 1, original, frames, cursor: saved.cursor, quiz: restoreQuiz(saved.quiz, frames[saved.cursor].matrix, mode, original)};
   } catch (_) {
     return null;
   }
@@ -84,7 +98,7 @@ function deserializeState(saved) {
 function restoreSessions() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem('escalonar.exercicio.v1'));
-    if (saved && [3, 4].includes(saved.version)) {
+    if (saved && [3, 4, 5].includes(saved.version)) {
       const practice = deserializeState(saved.practice) || freshState();
       let demonstration = deserializeState(saved.demonstration);
       // A versão anterior copiava o nível da prática para a demonstração.
@@ -92,14 +106,24 @@ function restoreSessions() {
       if (saved.version === 3 && demonstration && demonstration.level === 'first' && demonstration.frames.length === 1 && !demonstration.quiz.complete && demonstration.quiz.selected.length === 0) {
         demonstration = freshState('standard', demonstration.exerciseNumber, demonstration.mode);
       }
-      return {practice, demonstration, mode: saved.mode === 'demonstration' && demonstration ? 'demonstration' : 'practice', demonstrationSource: saved.demonstrationSource, lecture: saved.lecture};
+      const combinationPractice = deserializeState(saved.combinationPractice);
+      const combinationDemonstration = deserializeState(saved.combinationDemonstration);
+      return {practice, demonstration,
+        combinationPractice: combinationPractice && combinationPractice.mode === 'combination' ? combinationPractice : null,
+        combinationDemonstration: combinationDemonstration && combinationDemonstration.mode === 'combination' ? combinationDemonstration : null,
+        topic: saved.topic === 'combination' ? 'combination' : 'system',
+        mode: saved.mode === 'demonstration' ? 'demonstration' : 'practice', demonstrationSource: saved.demonstrationSource, lecture: saved.lecture,
+        combinationSource: saved.combinationSource, combinationLecture: saved.combinationLecture};
     }
     return {practice: deserializeState(saved) || freshState(), demonstration: null, mode: 'practice'};
   } catch (_) { return {practice: freshState(), demonstration: null, mode: 'practice'}; }
 }
 const sessions = restoreSessions();
 let viewMode = sessions.mode;
-let state = sessions[viewMode];
+let exerciseTopic = sessions.topic || 'system';
+const sessionKey = (mode = viewMode, topic = exerciseTopic) => topic === 'combination' ? (mode === 'practice' ? 'combinationPractice' : 'combinationDemonstration') : mode;
+let state = sessions[sessionKey()] || freshState(viewMode === 'practice' ? 'first' : 'standard', 1, exerciseTopic === 'combination' ? 'combination' : 'homogeneous');
+function isCombination() { return exerciseTopic === 'combination'; }
 const currentMatrix = () => state.frames[state.cursor].matrix;
 const nextExerciseLevel = () => viewMode === 'practice' && state.quiz.complete && state.level === 'first' ? 'standard' : state.level;
 let demonstrationSource = sessions.demonstrationSource === 'lecture' ? 'lecture' : 'random';
@@ -108,8 +132,18 @@ let lectureCursor = sessions.lecture && Number.isInteger(sessions.lecture.cursor
 // A versão anterior acrescentava uma linha e um passo indevidos ao exemplo 3.
 if (lecture.id === '3' && sessions.lecture && sessions.lecture.version !== 2 && lectureCursor > 1) lectureCursor--;
 lectureCursor = Math.max(0, Math.min(lectureCursor, lecture.steps.length));
-const isLectureDemo = () => viewMode === 'demonstration' && demonstrationSource === 'lecture';
-const demonstrationComplete = () => isLectureDemo() ? lectureCursor === lecture.steps.length : state.quiz.complete;
+const isLectureDemo = () => !isCombination() && viewMode === 'demonstration' && demonstrationSource === 'lecture';
+let combinationSource = sessions.combinationSource === 'lecture' ? 'lecture' : 'random';
+const savedCombinationLecture = sessions.combinationLecture || {};
+let combinationLecture = buildCombinationLecture(savedCombinationLecture.example);
+let combinationLectureCursor = Number.isInteger(savedCombinationLecture.cursor) ? Math.max(0, Math.min(savedCombinationLecture.cursor, combinationLecture.steps.length)) : 0;
+let combinationExploration = {};
+const storedExploration = savedCombinationLecture.exploration || {};
+if (Array.isArray(storedExploration.coefficients) && storedExploration.coefficients.length <= 3 && storedExploration.coefficients.every(v => Number.isFinite(v) && Math.abs(v) <= 4)) combinationExploration.coefficients = storedExploration.coefficients;
+if (Array.isArray(storedExploration.target) && storedExploration.target.length === 2 && storedExploration.target.every(v => Number.isFinite(v) && Math.abs(v) <= 10)) combinationExploration.target = storedExploration.target;
+if (Number.isFinite(storedExploration.parameter) && storedExploration.parameter >= -5 && storedExploration.parameter <= 3) combinationExploration.parameter = storedExploration.parameter;
+const isCombinationLecture = () => isCombination() && viewMode === 'demonstration' && combinationSource === 'lecture';
+const demonstrationComplete = () => isCombinationLecture() ? combinationLectureCursor === combinationLecture.steps.length : isLectureDemo() ? lectureCursor === lecture.steps.length : state.quiz.complete;
 
 function serializeState(exercise) {
   if (!exercise) return null;
@@ -121,11 +155,13 @@ function serializeState(exercise) {
 }
 
 function save() {
-  sessions[viewMode] = state;
+  sessions[sessionKey()] = state;
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      version: 4, mode: viewMode, practice: serializeState(sessions.practice), demonstration: serializeState(sessions.demonstration),
-      demonstrationSource, lecture: {version: 2, example: lecture.id, caseId: lecture.selectedCase.id, cursor: lectureCursor}
+      version: 5, mode: viewMode, topic: exerciseTopic, practice: serializeState(sessions.practice), demonstration: serializeState(sessions.demonstration),
+      combinationPractice: serializeState(sessions.combinationPractice), combinationDemonstration: serializeState(sessions.combinationDemonstration),
+      demonstrationSource, lecture: {version: 2, example: lecture.id, caseId: lecture.selectedCase.id, cursor: lectureCursor},
+      combinationSource, combinationLecture: {example: combinationLecture.id, cursor: combinationLectureCursor, exploration: combinationExploration}
     }));
     $('#storage-status').innerHTML = '<span class="save-dot"></span>O teu progresso fica guardado neste navegador.';
   } catch (_) {
@@ -161,7 +197,7 @@ function operationMarkup(operation) {
 function matrixMarkup(matrix, interactive = false, title = 'Matriz inicial') {
   const augmented = state.mode !== 'matrix';
   const lastColumn = matrix[0].length - 1;
-  const headings = augmented ? `<thead><tr>${matrix[0].map((_, i) => `<th scope="col" class="${i === lastColumn ? 'rhs-cell' : ''}" aria-label="${i === lastColumn ? 'Termos independentes' : `Coeficientes de x ${i + 1}`}">${i === lastColumn ? 'b' : `x<sub>${i + 1}</sub>`}</th>`).join('')}</tr></thead>` : '';
+  const headings = augmented ? `<thead><tr>${matrix[0].map((_, i) => `<th scope="col" class="${i === lastColumn ? 'rhs-cell' : ''}" aria-label="${i === lastColumn ? (isCombination() ? 'Termos independentes do vetor u' : 'Termos independentes') : `Coeficientes de ${isCombination() ? 'alfa' : 'x'} ${i + 1}`}">${i === lastColumn ? (isCombination() ? 'u' : 'b') : variableSymbol(i)}</th>`).join('')}</tr></thead>` : '';
   const table = `<div class="bracketed"><table class="matrix-table"><caption class="sr-only">${title}: ${matrix.length} linhas e ${matrix[0].length} colunas${augmented ? ', incluindo os termos independentes na última coluna' : ''}.</caption>${headings}<tbody>${matrix.map((row, i) => `<tr data-matrix-row="${i}">${row.map((value, j) => `<td class="${augmented && j === lastColumn ? 'rhs-cell' : ''}" aria-label="Linha ${i + 1}, ${augmented && j === lastColumn ? 'termo independente' : `coluna ${j + 1}`}: ${spokenNumber(value)}"><span aria-hidden="true">${numberMarkup(value)}</span></td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   if (!interactive) return table;
   return `<div class="matrix-display ${augmented ? 'has-headers' : ''} ${matrix.length >= 6 ? 'large-matrix' : ''}"><div class="row-pickers" role="group" aria-label="Selecionar linhas para a operação">${matrix.map((_, i) => `<div class="row-picker-slot"><button type="button" class="row-picker" data-pick-row="${i}" aria-label="Escolher linha ${i + 1}" aria-pressed="false">${rowSymbol(i)}</button></div>`).join('')}</div>${table}</div>`;
@@ -362,7 +398,75 @@ function renderCompletion() {
   $('#accepted-solution').innerHTML = proposedSolutionMarkup();
 }
 
+function columnVector(values, label) {
+  return `<table class="solution-vector" aria-label="${label}"><tbody>${values.map(value => `<tr><td class="solution-component">${numberMarkup(value)}</td></tr>`).join('')}</tbody></table>`;
+}
+
+function renderCombinationProblem() {
+  const matrix = state.original;
+  const count = matrix[0].length - 1;
+  $('#combination-problem').innerHTML = `<div class="card-heading"><h2 id="combination-problem-title">O vetor ${vectorSymbol()} é combinação linear dos vetores dados?</h2><span class="dimension-tag">ℝ<sup>${matrix.length}</sup></span></div><div class="given-vectors"><div class="given-vector target-vector">${vectorSymbol()} = ${columnVector(matrix.map(row => row[count]), 'Vetor u')}</div>${Array.from({length: count}, (_, i) => `<div class="given-vector">${vectorSymbol(i)} = ${columnVector(matrix.map(row => row[i]), `Vetor u ${i + 1}`)}</div>`).join('')}</div><div class="combination-bridge"><p>Procuramos coeficientes reais tais que <span class="combination-formula">${vectorSymbol()} = ${Array.from({length: count}, (_, i) => `<span class="solution-term">${i ? '+ ' : ''}${variableSymbol(i)}${vectorSymbol(i)}</span>`).join(' ')}</span>.</p><p>Colocamos os vetores dados nas colunas de A e o vetor u na última coluna. Reduz Aα = u e verifica se há solução. Os vetores apresentados acima mantêm os seus valores originais.</p></div>`;
+}
+
+function renderCombinationFields() {
+  const {combinationChoice: choice, coefficients} = state.quiz;
+  const count = state.original[0].length - 1;
+  for (let i = 0; i < count; i++) if (coefficients[i] === undefined) coefficients[i] = '0';
+  $$('[data-combination-choice]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.combinationChoice === choice)));
+  $('#combination-fields').innerHTML = choice === 'yes' ? Array.from({length: count}, (_, i) => `<label class="solution-equation">${variableSymbol(i)} = <input type="text" class="solution-input" data-combination-coefficient="${i}" value="${escapeHTML(coefficients[i])}" maxlength="64" autocomplete="off" spellcheck="false" aria-label="Coeficiente alfa ${i + 1}" aria-describedby="combination-input-help combination-feedback"></label>`).join('') : '';
+  $('#combination-input-help').textContent = choice === 'no' ? 'Para responder não, deve existir uma linha com todos os coeficientes nulos e termo independente diferente de zero.' : 'Indica uma escolha de coeficientes, com inteiros ou frações. Basta uma representação válida, mesmo que existam outras. Mantém os zeros que estiverem corretos.';
+  $('#combination-feedback').hidden = true;
+  $('#check-combination').disabled = !choice;
+  $('#check-combination').textContent = choice === 'yes' ? 'Verificar coeficientes' : 'Verificar resposta';
+}
+
+function renderCombinationLearning() {
+  const reduced = rrefStatus(currentMatrix()).complete;
+  const complete = state.quiz.complete;
+  $('#success-panel').hidden = !reduced && !complete;
+  $('#dependent-question').hidden = true;
+  $('#solution-question').hidden = true;
+  $('#combination-question').hidden = !reduced || complete || viewMode === 'demonstration';
+  $('#exercise-complete').hidden = !complete;
+  $('#demonstrated-variables').hidden = true;
+  const stage = complete ? 3 : !reduced ? 0 : state.quiz.combinationChoice === 'yes' ? 2 : 1;
+  $$('.exercise-stages li').forEach((item, i) => {
+    item.classList.toggle('is-complete', i < stage);
+    if (i === stage) item.setAttribute('aria-current', 'step'); else item.removeAttribute('aria-current');
+  });
+  if (!reduced && !complete) return;
+  $('#learning-step').textContent = complete ? viewMode === 'demonstration' ? 'DEMONSTRAÇÃO CONCLUÍDA' : 'EXERCÍCIO CONCLUÍDO' : 'INTERPRETAR A REDUÇÃO';
+  $('#learning-title').textContent = complete ? state.quiz.combinationChoice === 'no' ? 'Não é combinação linear' : 'É uma combinação linear' : 'É possível obter o vetor u?';
+  $('#learning-description').textContent = complete ? '' : viewMode === 'demonstration' ? 'A matriz está reduzida. O próximo passo interpreta o sistema Aα = u e apresenta a conclusão.' : 'Decide se u é combinação linear dos vetores dados. Se for, indica os coeficientes.';
+  if (!complete) {
+    if (viewMode === 'practice') renderCombinationFields();
+    return;
+  }
+  if (state.quiz.combinationChoice === 'no') {
+    const row = contradictionRow(currentMatrix());
+    const value = currentMatrix()[row][currentMatrix()[row].length - 1].toString().replace('-', '−');
+    $('#learning-description').textContent = `A linha ${row + 1} representa 0 = ${value}. Esta contradição mostra que nenhum conjunto de coeficientes permite obter u.`;
+    $('#accepted-solution').innerHTML = `<p>Não existem ${Array.from({length: state.original[0].length - 1}, (_, i) => variableSymbol(i)).join(', ')} que satisfaçam Aα = u.</p>`;
+  } else {
+    const values = state.quiz.coefficients.map(Fraction.from);
+    const terms = values.flatMap((value, i) => value.isZero ? [] : [`<span class="solution-term">${value.n < 0n ? '− ' : values.slice(0, i).some(v => !v.isZero) ? '+ ' : ''}${numberMarkup(value.n < 0n ? value.neg() : value)} · ${vectorSymbol(i)}</span>`]);
+    $('#learning-description').textContent = 'Estes coeficientes reproduzem exatamente o vetor u.';
+    $('#accepted-solution').innerHTML = `<div class="coefficient-values">${values.map((value, i) => `<span>${variableSymbol(i)} = ${numberMarkup(value)}</span>`).join('')}</div><p class="combination-formula">${vectorSymbol()} = ${terms.join(' ') || '0'}</p>`;
+    if (viewMode === 'demonstration') {
+      const model = systemSolution(currentMatrix());
+      $('#demonstrated-variables').hidden = false;
+      $('#demonstrated-variables').innerHTML = `<div class="demo-variable-group"><span>Coeficientes dependentes</span><div>${model.pivots.map(i => `<span class="variable-chip dependent">${variableSymbol(i)}</span>`).join('')}</div></div><div class="demo-variable-group"><span>Coeficientes livres</span><div>${model.free.map(i => `<span class="variable-chip independent">${variableSymbol(i)}</span>`).join('') || '<span class="no-free-variables">Não há coeficientes livres.</span>'}</div></div><p class="solution-guidance">${model.free.length ? 'Há várias representações. Escolhemos zero para os coeficientes livres e obtemos uma delas.' : 'A representação é única.'}</p>`;
+    }
+  }
+  const promoted = nextExerciseLevel() !== state.level;
+  const count = operationCount();
+  $('#completion-description').textContent = `${count} ${count === 1 ? 'operação aplicada' : 'operações aplicadas'}.${promoted ? ' O próximo exercício será do nível Intermédio.' : ''}`;
+  $('#next-exercise').textContent = promoted ? 'Próximo exercício · Intermédio' : 'Novo exercício';
+}
+
 function renderLearning() {
+  if (isCombination()) { renderCombinationLearning(); return; }
+  $('#combination-question').hidden = true;
   if (state.quiz.complete && state.quiz.declaredImpossible) {
     const row = contradictionRow(currentMatrix());
     const value = currentMatrix()[row][currentMatrix()[row].length - 1].toString().replace('-', '−');
@@ -413,34 +517,50 @@ function renderLearning() {
 }
 
 function renderSettings() {
+  $$('[data-exercise-topic]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.exerciseTopic === exerciseTopic)));
+  $('h1').textContent = isCombination() ? 'Combinações lineares' : 'Eliminação de Gauss';
+  $('.guide-system-note').innerHTML = isCombination() ? 'Para decidir se u é combinação linear dos vetores dados, coloca esses vetores nas colunas de A e u na última coluna. As incógnitas são os coeficientes α₁, …, αₙ da equação Aα = u. Reduz a matriz e responde se a combinação existe. Se existir, indica uma escolha de coeficientes com inteiros ou frações; qualquer representação válida é aceite. Se obtiveres uma linha com todos os coeficientes nulos e termo independente diferente de zero, usa <strong>Não é combinação linear</strong> para concluir sem terminar a redução.' : systemGuideHTML;
+  document.title = `${isCombination() ? 'Combinações lineares' : 'Eliminação de Gauss'} · escalonar.`;
   $$('[data-view-mode]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.viewMode === viewMode)));
-  const lectureMode = isLectureDemo();
+  const lectureMode = isLectureDemo() || isCombinationLecture();
   $('#demo-source-controls').hidden = viewMode !== 'demonstration';
-  $$('[data-demo-source]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.demoSource === demonstrationSource)));
-  $('#lecture-settings').hidden = !lectureMode;
+  $$('[data-demo-source]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.demoSource === (isCombination() ? combinationSource : demonstrationSource))));
+  $('[data-demo-source="random"]').textContent = isCombination() ? 'Exemplos aleatórios' : 'Sistemas aleatórios';
+  $('#lecture-settings').hidden = !isLectureDemo();
+  $('#combination-lecture-settings').hidden = !isCombinationLecture();
+  $('#combination-lecture-example').value = combinationLecture.id;
   $('#lecture-example').value = lecture.id;
   $('#lecture-cases').hidden = lecture.cases.length === 1;
   $('#lecture-case-buttons').innerHTML = lecture.cases.map(item => `<button type="button" data-lecture-case="${item.id}" aria-pressed="${item.id === lecture.selectedCase.id}">${item.label}</button>`).join('');
   $('.exercise-toolbar').hidden = lectureMode;
   $('.exercise-options').hidden = lectureMode;
+  $('#system-mode-options').hidden = isCombination();
+  $('#combination-problem').hidden = !isCombination() || lectureMode;
   $('#workspace').hidden = lectureMode;
-  $('#lecture-workspace').hidden = !lectureMode;
-  $('.exercise-stages').hidden = !lectureMode && state.quiz.complete && state.quiz.declaredImpossible === true;
+  $('#lecture-workspace').hidden = !isLectureDemo();
+  $('#combination-lecture-workspace').hidden = !isCombinationLecture();
+  $('.exercise-stages').hidden = isCombinationLecture() || !lectureMode && state.quiz.complete && state.quiz.declaredImpossible === true;
   $('#infeasibility-action').hidden = viewMode !== 'practice' || state.quiz.complete;
-  $('.skip-link').href = lectureMode ? '#lecture-workspace' : '#workspace';
+  $('#declare-impossible').textContent = isCombination() ? 'Não é combinação linear' : 'Declarar sistema impossível';
+  $('#accepted-solution').setAttribute('aria-label', isCombination() ? 'Conclusão e coeficientes da combinação linear' : 'Conjunto-solução correto');
+  $('#new-exercise').innerHTML = `${icon('refresh')}${isCombination() ? 'Novos vetores' : 'Novo sistema'}`;
+  const stageLabels = isCombination() ? ['Reduzir a matriz', 'Decidir se é possível', 'Indicar coeficientes'] : ['Reduzir a matriz', 'Identificar variáveis', 'Dar o conjunto-solução'];
+  $$('.exercise-stages li').forEach((item, i) => { item.innerHTML = `<span>${i + 1}</span>${stageLabels[i]}`; });
+  $('.skip-link').href = isCombinationLecture() ? '#combination-lecture-workspace' : lectureMode ? '#lecture-workspace' : '#workspace';
   const level = nextExerciseLevel();
   const promoted = level !== state.level;
   $('#difficulty').value = level;
   $('.exercise-settings > label').textContent = promoted ? 'Próximo nível' : 'Nível';
   $$('[data-mode]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === state.mode)));
   const sizes = LEVELS[level].sizes.map(size => `${size} × ${size}`);
-  $('#size-description').textContent = `${promoted ? 'Próximo sistema' : 'Coeficientes'}: ${sizes.slice(0, -1).join(', ')} ou ${sizes[sizes.length - 1]}.`;
-  $('#exercise-instruction').textContent = 'Reduz a matriz, identifica as variáveis dependentes e determina o conjunto-solução.';
+  $('#size-description').textContent = isCombination() ? `${promoted ? 'Próximo exercício' : 'Vetores em ℝⁿ'}: n = ${LEVELS[level].sizes.join(', ')}.` : `${promoted ? 'Próximo sistema' : 'Coeficientes'}: ${sizes.slice(0, -1).join(', ')} ou ${sizes[sizes.length - 1]}.`;
+  $('#exercise-instruction').innerHTML = isCombination() ? `Decide se ${vectorSymbol()} é combinação linear dos vetores dados e determina os coeficientes ${variableSymbol(0)}, …, <span class="variable-symbol">α<sub>n</sub></span>.` : 'Reduz a matriz, identifica as variáveis dependentes e determina o conjunto-solução.';
   $('#system-context').hidden = false;
   const rows = state.original.length;
   const variables = state.original[0].length - 1;
-  $('#system-context').innerHTML = `<strong>${state.mode === 'homogeneous' ? 'Ax = 0' : 'Ax = b, b ≠ 0'}</strong><span>${rows} equações · ${variables} incógnitas · última coluna: termos independentes</span>`;
+  $('#system-context').innerHTML = `<strong>${isCombination() ? 'Aα = u' : state.mode === 'homogeneous' ? 'Ax = 0' : 'Ax = b, b ≠ 0'}</strong><span>${rows} equações · ${variables} ${isCombination() ? 'coeficientes a determinar · última coluna: vetor u' : 'incógnitas · última coluna: termos independentes'}</span>`;
   $('#matrix-title').textContent = 'Matriz ampliada';
+  if (isCombination() && !lectureMode) renderCombinationProblem();
 }
 
 function clearHint() {
@@ -459,6 +579,12 @@ function render(changedRows = []) {
   const matrix = currentMatrix();
   $('#infeasibility-feedback').hidden = true;
   renderSettings();
+  if (isCombinationLecture()) {
+    renderCombinationLecture(combinationLecture, combinationLectureCursor, combinationExploration);
+    syncDemonstration();
+    save();
+    return;
+  }
   if (isLectureDemo()) {
     renderLectureWorkspace(lecture, lectureCursor);
     syncDemonstration();
@@ -506,7 +632,7 @@ function commit(operation) {
   const affected = operation.type === 'reset' ? matrix.map((_, i) => i) : operation.type === 'swap' ? [operation.target, operation.source] : [operation.target];
   render(affected);
   const action = operation.type === 'reset' ? 'Matriz inicial restaurada. Podes desfazer esta ação.' : `${operationDescription(operation)}. Operação aplicada.`;
-  announce(`${action}${rrefStatus(matrix).complete ? viewMode === 'practice' ? ' A matriz está reduzida. Identifica agora as variáveis dependentes.' : ' A matriz está reduzida. A demonstração apresenta agora as variáveis dependentes e livres.' : ''}`);
+  announce(`${action}${rrefStatus(matrix).complete ? isCombination() ? ' A matriz está reduzida. Decide agora se u é combinação linear dos vetores dados.' : viewMode === 'practice' ? ' A matriz está reduzida. Identifica agora as variáveis dependentes.' : ' A matriz está reduzida. A demonstração apresenta agora as variáveis dependentes e livres.' : ''}`);
   if (rrefStatus(matrix).complete && viewMode === 'practice') $('#learning-title').focus();
 }
 
@@ -525,7 +651,7 @@ function createNew(level, mode = state.mode) {
 
 function requestNew(level, mode = state.mode) {
   renderSettings();
-  if ((state.frames.length > 1 || state.quiz.selected.length > 0) && !state.quiz.complete) {
+  if ((state.frames.length > 1 || state.quiz.selected.length > 0 || state.quiz.combinationChoice) && !state.quiz.complete) {
     pauseDemonstration();
     pendingSettings = {level, mode};
     $('#new-level-name').textContent = LEVELS[level].name;
@@ -590,6 +716,13 @@ function syncDemonstration() {
   const demo = viewMode === 'demonstration';
   $('#demo-controls').hidden = !demo;
   document.body.classList.toggle('demonstration-mode', demo);
+  if (isCombinationLecture()) {
+    const next = combinationLecture.steps[combinationLectureCursor];
+    $('#demo-explanation').textContent = next ? next.reason : 'O exemplo está concluído. A conclusão e a interpretação da combinação linear aparecem abaixo.';
+    $('#demo-legend').innerHTML = next && next.operation ? '<span><i class="pivot-key"></i>Pivô</span><span><i class="target-key"></i>Elemento a anular</span>' : '';
+    syncDemoTransport();
+    return;
+  }
   if (isLectureDemo()) {
     const next = lecture.steps[lectureCursor];
     $('#demo-explanation').textContent = next ? next.reason : 'O exemplo está concluído no ponto de paragem do texto. As variáveis e o conjunto-solução estão apresentados abaixo.';
@@ -620,7 +753,7 @@ function syncDemonstration() {
   });
   $('#factor').disabled = demo || finished || operationType === 'swap';
   $('#apply-operation').hidden = demo;
-  $('#demo-explanation').textContent = next ? next.reason : state.quiz.complete ? 'O sistema está resolvido. As colunas dependentes e livres estão assinaladas na matriz; o conjunto-solução aparece abaixo.' : 'A matriz está reduzida. As colunas com pivô identificam as variáveis dependentes; o próximo passo apresenta o conjunto-solução.';
+  $('#demo-explanation').textContent = next ? next.reason : isCombination() ? state.quiz.complete ? 'A demonstração está concluída. A conclusão e a sua justificação aparecem abaixo.' : 'A matriz está reduzida. O próximo passo mostra se u é combinação linear e, quando possível, apresenta os coeficientes.' : state.quiz.complete ? 'O sistema está resolvido. As colunas dependentes e livres estão assinaladas na matriz; o conjunto-solução aparece abaixo.' : 'A matriz está reduzida. As colunas com pivô identificam as variáveis dependentes; o próximo passo apresenta o conjunto-solução.';
   $('#demo-legend').innerHTML = next ? `<span><i class="pivot-key"></i>Pivô</span>${next.target ? `<span><i class="target-key"></i>${next.operation.type === 'swap' ? 'Destino do pivô' : 'Próximo elemento a anular'}</span>` : ''}` : '<span><i class="pivot-key"></i>Coluna de variável dependente</span><span><i class="free-key"></i>Coluna de variável livre</span>';
   if (demo && reduced) $('#row-legend').innerHTML = '<span><i class="legend-target"></i>Dependentes</span><span><i class="legend-source"></i>Livres</span>';
   highlightDemonstration(next);
@@ -636,6 +769,14 @@ function pauseDemonstration() {
 
 function advanceDemonstration() {
   if (viewMode !== 'demonstration' || demonstrationComplete()) return;
+  if (isCombinationLecture()) {
+    combinationLectureCursor++;
+    combinationExploration = {};
+    if (demonstrationComplete()) pauseDemonstration();
+    render();
+    announce(demonstrationComplete() ? 'Exemplo de combinação linear concluído.' : `Passo ${combinationLectureCursor} apresentado.`);
+    return;
+  }
   if (isLectureDemo()) {
     lectureCursor++;
     if (demonstrationComplete()) pauseDemonstration();
@@ -645,6 +786,13 @@ function advanceDemonstration() {
   }
   const next = nextHint(currentMatrix());
   if (next) commit(next.operation);
+  else if (isCombination()) {
+    const coefficients = combinationCoefficients(currentMatrix());
+    state.quiz = {...emptyQuiz(), combinationChoice: coefficients ? 'yes' : 'no', coefficients: coefficients || [], declaredImpossible: !coefficients, complete: true};
+    pauseDemonstration();
+    render();
+    announce('Demonstração concluída. A conclusão sobre a combinação linear está apresentada.');
+  }
   else {
     const model = systemSolution(currentMatrix());
     const values = {};
@@ -682,15 +830,28 @@ function playDemonstration() {
 function switchViewMode(mode) {
   if (mode === viewMode) return;
   pauseDemonstration();
-  sessions[viewMode] = state;
-  if (!sessions[mode]) sessions[mode] = freshState(mode === 'demonstration' ? 'standard' : 'first', 1, state.mode);
+  sessions[sessionKey()] = state;
+  if (!sessions[sessionKey(mode)]) sessions[sessionKey(mode)] = freshState(mode === 'demonstration' ? 'standard' : 'first', 1, state.mode);
   viewMode = mode;
-  state = sessions[mode];
+  state = sessions[sessionKey()];
   populateRows();
   $('#factor').value = '1';
   setOperationType('add');
   render();
   announce(mode === 'demonstration' ? 'Modo de demonstração. Avança um passo ou inicia a reprodução automática.' : 'Modo de prática. O teu exercício e as tuas respostas foram recuperados.');
+}
+
+function switchTopic(topic) {
+  if (topic === exerciseTopic) return;
+  pauseDemonstration();
+  sessions[sessionKey()] = state;
+  exerciseTopic = topic;
+  state = sessions[sessionKey()] || freshState(viewMode === 'practice' ? 'first' : 'standard', 1, isCombination() ? 'combination' : 'homogeneous');
+  populateRows();
+  $('#factor').value = '1';
+  setOperationType('add');
+  render();
+  announce(isCombination() ? 'Tema: combinação linear. Os coeficientes são alfa 1, alfa 2, e assim sucessivamente.' : 'Tema: sistema linear. O teu progresso foi recuperado.');
 }
 
 function selectLecture(example, caseId) {
@@ -703,9 +864,42 @@ function selectLecture(example, caseId) {
 
 $$('[data-demo-source]').forEach(button => button.addEventListener('click', () => {
   pauseDemonstration();
-  demonstrationSource = button.dataset.demoSource;
+  if (isCombination()) combinationSource = button.dataset.demoSource;
+  else demonstrationSource = button.dataset.demoSource;
   render();
 }));
+function selectCombinationLecture(id) {
+  pauseDemonstration();
+  combinationLecture = buildCombinationLecture(id);
+  combinationLectureCursor = 0;
+  combinationExploration = {};
+  render();
+  announce(`Exemplo ${combinationLecture.id}, página ${combinationLecture.page}. Avança um passo para começar.`);
+}
+$('#combination-lecture-example').addEventListener('change', event => selectCombinationLecture(event.target.value));
+$('#combination-lecture-workspace').addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button || button.disabled) return;
+  pauseDemonstration();
+  if (button.id === 'combination-lecture-back') { combinationLectureCursor = Math.max(0, combinationLectureCursor - 1); combinationExploration = {}; render(); }
+  if (button.id === 'combination-lecture-forward') advanceDemonstration();
+  if (button.id === 'combination-lecture-next') selectCombinationLecture(String(Number(combinationLecture.id) % 6 + 1));
+});
+$('#combination-lecture-workspace').addEventListener('input', event => {
+  const input = event.target;
+  if (!input.matches('[data-plot-coefficient], [data-plot-parameter], [data-plot-target]')) return;
+  const value = Number(input.value);
+  if (!Number.isFinite(value) || input.value.trim() === '' || value < Number(input.min) || value > Number(input.max)) return;
+  pauseDemonstration();
+  if (input.matches('[data-plot-coefficient]')) combinationExploration.coefficients = $$('[data-plot-coefficient]').map(field => Number(field.value));
+  if (input.matches('[data-plot-parameter]')) combinationExploration.parameter = value;
+  if (input.matches('[data-plot-target]')) {
+    combinationExploration.target = combinationExploration.target || combinationLecture.target.slice();
+    combinationExploration.target[Number(input.dataset.plotTarget)] = value;
+  }
+  updateCombinationIllustration(combinationLecture, combinationLectureCursor, combinationExploration);
+  save();
+});
 $('#lecture-example').addEventListener('change', event => selectLecture(event.target.value));
 $('#lecture-case-buttons').addEventListener('click', event => {
   const button = event.target.closest('[data-lecture-case]');
@@ -862,10 +1056,42 @@ $('#declare-impossible').addEventListener('click', () => {
     $('#infeasibility-feedback').hidden = false;
     return;
   }
-  state.quiz = {...emptyQuiz(), kind: 'none', complete: true, declaredImpossible: true};
+  state.quiz = {...emptyQuiz(), kind: 'none', combinationChoice: isCombination() ? 'no' : '', complete: true, declaredImpossible: true};
   render();
   $('#learning-title').focus();
-  announce('Correto. A linha assinalada prova que o sistema é impossível. O conjunto-solução é vazio. Exercício concluído.');
+  announce(isCombination() ? 'Correto. A linha assinalada prova que u não é combinação linear dos vetores dados. Exercício concluído.' : 'Correto. A linha assinalada prova que o sistema é impossível. O conjunto-solução é vazio. Exercício concluído.');
+});
+
+$$('[data-combination-choice]').forEach(button => button.addEventListener('click', () => {
+  if (!isCombination() || viewMode !== 'practice' || state.quiz.complete) return;
+  state.quiz.combinationChoice = button.dataset.combinationChoice;
+  renderCombinationLearning();
+  save();
+}));
+$('#combination-fields').addEventListener('input', event => {
+  const input = event.target.closest('[data-combination-coefficient]');
+  if (!input) return;
+  state.quiz.coefficients[Number(input.dataset.combinationCoefficient)] = input.value;
+  input.removeAttribute('aria-invalid');
+  $('#combination-feedback').hidden = true;
+  save();
+});
+$('#combination-question').addEventListener('submit', event => {
+  event.preventDefault();
+  if (!isCombination() || viewMode !== 'practice' || state.quiz.complete || !rrefStatus(currentMatrix()).complete) return;
+  const choice = state.quiz.combinationChoice;
+  const result = choice === 'yes' ? checkCombination(state.original, state.quiz.coefficients) : {correct: choice === 'no' && contradictionRow(currentMatrix()) !== -1, message: 'Não há uma linha contraditória. Revê a resposta e verifica se existem coeficientes que reproduzem u.'};
+  if (!result.correct) {
+    $('#combination-feedback').textContent = result.message;
+    $('#combination-feedback').hidden = false;
+    (result.invalid || []).forEach(i => $(`[data-combination-coefficient="${i}"]`).setAttribute('aria-invalid', 'true'));
+    return;
+  }
+  state.quiz.complete = true;
+  state.quiz.declaredImpossible = choice === 'no';
+  render();
+  $('#learning-title').focus();
+  announce('Resposta correta. Exercício de combinação linear concluído.');
 });
 
 $('#dependent-choices').addEventListener('click', event => {
@@ -936,10 +1162,12 @@ window.addEventListener('resize', updateScrollNotice);
 if ('ResizeObserver' in window) new ResizeObserver(updateScrollNotice).observe($('#matrix-container'));
 
 $$('[data-view-mode]').forEach(button => button.addEventListener('click', () => switchViewMode(button.dataset.viewMode)));
+$$('[data-exercise-topic]').forEach(button => button.addEventListener('click', () => switchTopic(button.dataset.exerciseTopic)));
 $('#demo-play').addEventListener('click', () => { if (demonstrationPlaying) pauseDemonstration(); else playDemonstration(); });
 $('#demo-step').addEventListener('click', () => { pauseDemonstration(); advanceDemonstration(); });
 $('#demo-restart').addEventListener('click', () => {
   pauseDemonstration();
+  if (isCombinationLecture()) { combinationLectureCursor = 0; combinationExploration = {}; render(); return; }
   if (isLectureDemo()) { lectureCursor = 0; render(); return; }
   state.frames = [{matrix: state.original, operation: null}];
   state.cursor = 0;

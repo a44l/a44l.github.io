@@ -370,6 +370,62 @@ dialog::backdrop { background: #1e2d2361; backdrop-filter: blur(4px); }
 .variable-chip.independent { border-color: #c6cce5; background: #eef0f9; color: #4d5888; }
 .variable-chip sub { font-size: .65em; }
 .no-free-variables { font-size: 12px; }
+.topic-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 22px; margin-bottom: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.combination-problem { margin-bottom: 20px; }
+.combination-problem h2, .combination-lesson h2 { font-size: 16px; }
+.vector-symbol { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 600; }
+.vector-symbol sub { font-size: .65em; }
+.given-vectors { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 4px 22px 20px; }
+.given-vector { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; padding: 12px; }
+.given-vector .solution-vector { font-size: 18px; }
+.given-vector .solution-component { padding: 2px 10px; }
+.target-vector { background: #edf3e5; border: 1px solid #d4e1c6; border-radius: 9px; }
+.combination-bridge { border-top: 1px solid var(--line); padding: 16px 22px; color: #53634c; font-size: 12px; line-height: 1.8; }
+.combination-bridge p + p { margin-top: 8px; }
+.combination-formula { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; line-height: 1.9; }
+.coefficient-values { display: flex; flex-wrap: wrap; gap: 10px 20px; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; margin: 12px 0; }
+.coefficient-values > span { white-space: nowrap; }
+#combination-question .solution-guidance { margin-top: 16px; }
+#combination-fields { margin: 16px 0 20px; }
+.combination-lesson-body { padding: 0 22px 22px; }
+.combination-lesson > .combination-formula { padding: 4px 22px 20px; }
+.combination-lesson .lecture-source-note { background: #fff4e4; border-radius: 8px; margin-bottom: 20px; color: #6b471e; padding: 12px 16px; }
+.combination-lesson-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 30px; }
+.combination-lesson-grid > * { min-width: 0; }
+.combination-lesson-explanation { border: 1px solid #d4e1c6; border-radius: 12px; background: #f8faf3; padding: 22px; align-self: start; }
+.combination-lesson-explanation h2 { margin: 10px 0 15px; font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 400; }
+.combination-lesson-explanation p { line-height: 1.8; font-size: 13px; }
+.combination-lesson-explanation .operation-notation { margin-top: 20px; }
+.combination-lesson-next { padding: 0 22px 22px; }
+.combination-decomposition { display: flex; flex-wrap: wrap; gap: 12px; }
+.combination-plot { display: block; width: 100%; max-width: 520px; margin: 12px auto; background: #fcfdf9; border-radius: 10px; border: 1px solid var(--line); }
+.combination-plot text { font-family: Georgia, 'Times New Roman', serif; font-size: 14px; fill: #34423a; }
+.plot-legend { display: flex; flex-wrap: wrap; gap: 9px 18px; font-size: 12px; margin: 12px 0; }
+.plot-first { color: #335a90; }
+.plot-second { color: #795497; }
+.plot-sum { color: #9b4d12; }
+.plot-controls { display: grid; gap: 14px; margin-top: 20px; }
+.plot-slider { display: grid; grid-template-columns: 30px minmax(0, 1fr) 35px; align-items: center; gap: 12px; }
+.plot-slider input { width: 100%; min-width: 0; accent-color: var(--green); }
+.plot-slider output { text-align: right; font-variant-numeric: tabular-nums; }
+.plot-target-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 20px 0; font-size: 12px; }
+.plot-target-controls label { display: grid; gap: 6px; }
+.plot-target-controls input { width: 95px; padding: 8px; border: 1px solid #cbd8be; background: #fff; }
+#combination-exploration-summary { font-size: 13px; line-height: 1.8; }
+.lecture-representation { border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 12px; }
+.lecture-representation p { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; }
+.combination-span { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-family: Georgia, 'Times New Roman', serif; font-size: 19px; margin: 18px 0; }
+@media (max-width: 780px) {
+  .topic-controls { align-items: stretch; flex-direction: column; }
+  .topic-controls .view-mode-options { width: 100%; }
+  .combination-lesson-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .combination-lesson-body { padding: 0 16px 16px; }
+  .given-vectors { padding: 4px 16px 18px; gap: 10px; }
+  .given-vector { font-size: 18px; padding: 9px; }
+  .combination-lesson .card-heading { flex-wrap: wrap; gap: 10px; }
+  #combination-lecture-settings { grid-template-columns: minmax(0, 1fr); }
+  #combination-lecture-settings select { font-size: 12px; }
+}
 @keyframes row-flash { from { background: #d6e99a; } }
 
 @media (min-width: 1300px) { .matrix-canvas { min-height: 284px; } }
