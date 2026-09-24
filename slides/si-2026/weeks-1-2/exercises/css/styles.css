@@ -192,6 +192,42 @@ button { color: inherit; }
 .exercise-context strong { color: var(--practice-green-dark); font-size: 14px; }
 .exercise-context p { margin: 5px 0 0; font-size: 16px; line-height: 1.6; white-space: pre-line; }
 
+/* Explicit TeX is rendered locally. Long expressions scroll within their block,
+   never widening a mobile question or shrinking mathematics to unreadable size. */
+.exercise-math {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  overflow-x: auto;
+  overflow-y: hidden;
+  line-height: normal;
+  font-weight: normal;
+  white-space: normal;
+  padding: 0.12em 0;
+}
+.exercise-math[data-display="true"] {
+  display: block;
+  text-align: center;
+  margin: 0.6em 0;
+  padding: 0.3em 0;
+}
+.exercise-math mjx-container { margin: 0 !important; }
+/* Preserve screen-reader MathML without a second visible copy of the formula. */
+.exercise-math mjx-assistive-mml {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap !important;
+}
+.exercise-context p, .exercise-feedback p { line-height: 1.75; }
+.exercise-option-text { min-width: 0; }
+
 /* Data-driven, local diagrams. The question always also states the data in text. */
 .exercise-visual {
   margin: 22px 0;
@@ -200,7 +236,7 @@ button { color: inherit; }
   border-radius: 16px;
   background: #f7fbfa;
 }
-.exercise-visual svg { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
+.exercise-visual > svg { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
 .exercise-visual text { font-family: inherit; font-size: 18px; fill: #24473e; }
 .exercise-visual .visual-axis { stroke: #647a74; stroke-width: 1.5; }
 .exercise-visual .visual-guide { stroke: #c9dbd5; stroke-width: 1; stroke-dasharray: 5 5; }
@@ -590,6 +626,10 @@ button { color: inherit; }
   overflow-wrap: anywhere;
 }
 .exercise-number-wrap { width: 100%; }
+.exercise-option:has(input[type="checkbox"]) .exercise-option-marker { border-radius: 4px; }
+.exercise-option:has(input[type="checkbox"]:checked) .exercise-option-marker::after { content: "✓"; }
+.visual-series-key { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+.practice-actions { flex-wrap: wrap; }
 .exercise-number-wrap:focus-within {
   outline: 3px solid rgba(49, 95, 159, 0.3);
   outline-offset: 3px;

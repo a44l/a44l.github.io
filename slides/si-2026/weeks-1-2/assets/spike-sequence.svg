@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" role="img" aria-labelledby="title desc">
+  <title id="title">The functions u mapped to n times the indicator of (0, 1/n]</title>
+  <desc id="desc">The graphs for n equal to two, four, and eight have heights two, four, and eight and widths one half, one quarter, and one eighth. All three areas are one. Open and closed endpoints show that zero is excluded and one over n is included.</desc>
+  <rect x="10" y="10" width="780" height="560" rx="22" fill="#fffdf8"/>
+  <g font-family="Arial, sans-serif" font-size="28" fill="#17313b">
+    <text x="90" y="51">n · 1<tspan baseline-shift="sub" font-size="20">(0,1/n]</tspan><tspan baseline-shift="baseline">(u)</tspan></text>
+    <text x="748" y="535" font-style="italic">u</text>
+  </g>
+  <g stroke="#d7dfdc" stroke-width="2" stroke-dasharray="5 6">
+    <path d="M90,400 H730 M90,300 H730 M90,100 H730"/>
+  </g>
+  <rect id="spike-fill-2" x="90" y="400" width="320" height="100" fill="#087f8c" opacity="0.12"/>
+  <rect id="spike-fill-4" x="90" y="300" width="160" height="200" fill="#c48612" opacity="0.12"/>
+  <rect id="spike-fill-8" x="90" y="100" width="80" height="400" fill="#b95341" opacity="0.12"/>
+  <g stroke="#5d6d72" stroke-width="2.5" fill="none">
+    <path d="M90,82 V500 H742"/>
+    <path d="M90,500 v8 M170,500 v8 M250,500 v8 M410,500 v8 M730,500 v8"/>
+    <path d="M82,400 h8 M82,300 h8 M82,100 h8"/>
+  </g>
+  <g stroke-width="5" fill="none">
+    <path d="M90,400 H410" stroke="#087f8c"/>
+    <path d="M90,300 H250" stroke="#c48612"/>
+    <path d="M90,100 H170" stroke="#b95341"/>
+    <path d="M170,500 H730" stroke="#5d6d72"/>
+  </g>
+  <g stroke-width="3.5">
+    <circle cx="90" cy="400" r="6" fill="#fffdf8" stroke="#087f8c"/>
+    <circle cx="410" cy="400" r="6" fill="#087f8c" stroke="#087f8c"/>
+    <circle cx="90" cy="300" r="6" fill="#fffdf8" stroke="#c48612"/>
+    <circle cx="250" cy="300" r="6" fill="#c48612" stroke="#c48612"/>
+    <circle cx="90" cy="100" r="6" fill="#fffdf8" stroke="#b95341"/>
+    <circle cx="170" cy="100" r="6" fill="#b95341" stroke="#b95341"/>
+    <circle cx="170" cy="500" r="6" fill="#fffdf8" stroke="#5d6d72"/>
+    <circle cx="90" cy="500" r="5" fill="#5d6d72" stroke="#5d6d72"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="27" fill="#5d6d72" text-anchor="middle">
+    <text x="90" y="540">0</text>
+    <text x="170" y="540">1/8</text>
+    <text x="250" y="540">1/4</text>
+    <text x="410" y="540">1/2</text>
+    <text x="730" y="540">1</text>
+    <text x="61" y="410">2</text>
+    <text x="61" y="310">4</text>
+    <text x="61" y="110">8</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="30" font-weight="700">
+    <text x="430" y="406" fill="#087f8c">n = 2</text>
+    <text x="272" y="306" fill="#a56b08">n = 4</text>
+    <text x="192" y="106" fill="#b95341">n = 8</text>
+  </g>
+</svg>

@@ -8,6 +8,7 @@
     window.BANK_0_EXERCISE_BANK,
     window.LECTURE_2_EXERCISE_BANK,
     window.LECTURE_3_EXERCISE_BANK,
+    window.LECTURE_4_EXERCISE_BANK,
     window.WEEK_1_2_EXERCISE_BANK,
   ].filter(
     (candidate) => candidate && candidate.block &&
@@ -42,6 +43,8 @@
   const checkButton = app.querySelector("[data-check-answer]");
   const nextButton = app.querySelector("[data-next-question]");
   const endButton = app.querySelector("[data-end-session]");
+  const skipButton = app.querySelector("[data-skip-question]");
+  const skipStatus = app.querySelector("[data-skip-status]");
   const score = app.querySelector("[data-score]");
   const streak = app.querySelector("[data-streak]");
   const progress = app.querySelector("[data-progress]");
@@ -61,11 +64,19 @@
   const sourceReview = document.querySelector("[data-source-review]");
 
   let state = null;
+  const setQuestionText = (element, value) => {
+    if (window.ExerciseMath) window.ExerciseMath.set(element, value);
+    else element.textContent = value;
+  };
 
   // The Portuguese page supplies only its copy; selection and grading stay shared.
   const messages = {
     chooseOne: "Choose one",
     chooseInstruction: "Select the best answer.",
+    chooseMany: "Select all that apply",
+    chooseManyInstruction: "Select every correct option and no incorrect ones. The question counts as one answer.",
+    skipped: "Question moved to the end of this session. Your draft answer is saved.",
+    lastQuestion: "This is the last unanswered question; it is already at the end.",
     intruder: "Find the intruder",
     intruderInstruction: "Select the one statement that does not meet the definition.",
     proof: "Proof idea",
@@ -98,6 +109,10 @@
   );
 
   const typeCopy = {
+    "multiple-select": {
+      label: message("chooseMany"),
+      instruction: message("chooseManyInstruction"),
+    },
     "multiple-choice": {
       label: message("chooseOne"),
       instruction: message("chooseInstruction"),
@@ -308,7 +323,8 @@
   };
 
   const renderOptions = (exercise) => {
-    const optionType = exercise.type === "numeric-input" ? null : "radio";
+    const optionType = exercise.type === "numeric-input" ? null
+      : exercise.type === "multiple-select" ? "checkbox" : "radio";
     if (!optionType) {
       const wrap = document.createElement("div");
       wrap.className = "exercise-number-wrap";
@@ -316,7 +332,7 @@
       const input = document.createElement("input");
       input.className = "exercise-number";
       input.type = "text";
-      input.inputMode = "decimal";
+      input.inputMode = exercise.integerAnswer ? "numeric" : "decimal";
       input.autocomplete = "off";
       input.spellcheck = false;
       input.placeholder = message("answerPlaceholder");
@@ -343,27 +359,27 @@
       label.dataset.optionId = option.id;
 
       const input = document.createElement("input");
-      input.type = "radio";
+      input.type = optionType;
       input.name = "exercise-answer";
       input.value = option.id;
       input.addEventListener("change", () => {
         answerArea.querySelectorAll(".exercise-option").forEach((item) => {
           item.classList.toggle("is-selected", item.querySelector("input").checked);
         });
-        checkButton.disabled = false;
+        checkButton.disabled = !answerArea.querySelector("input:checked");
       });
 
       const marker = document.createElement("span");
       marker.className = "exercise-option-marker";
-      marker.textContent = String.fromCharCode(65 + index);
+      marker.textContent = optionType === "checkbox" ? "" : String.fromCharCode(65 + index);
 
       const text = document.createElement("span");
       text.className = "exercise-option-text";
-      text.textContent = option.text;
+      setQuestionText(text, option.text);
       label.append(input, marker, text);
       answerArea.append(label);
     });
-    const firstOption = answerArea.querySelector('input[type="radio"]');
+    const firstOption = answerArea.querySelector("input");
     window.requestAnimationFrame(() => firstOption.focus({ preventScroll: true }));
   };
 
@@ -383,7 +399,7 @@
     counter.textContent = message("counter", { current: state.index + 1, total: SESSION_SIZE });
     topic.textContent = `${exercise.topic} · ${message(`difficulty_${exercise.difficulty}`)}`;
     type.textContent = copy.label;
-    prompt.textContent = exercise.prompt;
+    setQuestionText(prompt, exercise.prompt);
     prompt.dataset.exerciseId = exercise.id;
     if (questionVisual) {
       questionVisual.replaceChildren();
@@ -398,7 +414,7 @@
       const label = document.createElement("strong");
       label.textContent = entry.label;
       const text = document.createElement("p");
-      text.textContent = entry.text;
+      setQuestionText(text, entry.text);
       block.append(label, text);
       questionContext.append(block);
     });
@@ -412,11 +428,32 @@
     nextButton.hidden = true;
     checkButton.hidden = false;
     checkButton.disabled = true;
+    skipButton.hidden = false;
+    skipButton.disabled = state.index === state.questions.length - 1;
+    skipButton.title = skipButton.disabled ? message("lastQuestion") : "";
+    skipStatus.textContent = "";
+    skipStatus.hidden = true;
     updateSessionDisplay();
     renderOptions(exercise);
+    const draft = state.drafts[exercise.id];
+    if (draft) {
+      if (exercise.type === "numeric-input") {
+        const input = answerArea.querySelector("input");
+        input.value = draft;
+        input.dispatchEvent(new Event("input"));
+      } else {
+        answerArea.querySelectorAll("input").forEach((input) => {
+          input.checked = draft.split(",").includes(input.value);
+          input.dispatchEvent(new Event("change"));
+        });
+      }
+    }
   };
 
   const selectedAnswer = (exercise) => {
+    if (exercise.type === "multiple-select") {
+      return [...answerArea.querySelectorAll("input:checked")].map((input) => input.value).join(",");
+    }
     if (exercise.type === "numeric-input") {
       const input = answerArea.querySelector("input");
       return input ? input.value : "";
@@ -426,7 +463,13 @@
   };
 
   const isCorrect = (exercise, answer) => {
+    if (exercise.type === "multiple-select") {
+      const selected = new Set(answer.split(",").filter(Boolean));
+      return selected.size === exercise.correctAnswers.length &&
+        exercise.correctAnswers.every((id) => selected.has(id));
+    }
     if (exercise.type !== "numeric-input") return answer === exercise.correctAnswer;
+    if (exercise.integerAnswer && !Number.isInteger(parseNumericAnswer(answer))) return false;
     const normalized = normalizeAnswer(answer);
     if (exercise.acceptedAnswers.some((accepted) => normalizeAnswer(accepted) === normalized)) return true;
 
@@ -437,14 +480,16 @@
   };
 
   const revealOptionAnswer = (exercise, answer) => {
+    const correctIds = exercise.correctAnswers || [exercise.correctAnswer];
+    const selectedIds = answer.split(",");
     answerArea.querySelectorAll(".exercise-option").forEach((option) => {
       const input = option.querySelector("input");
       input.disabled = true;
       option.classList.remove("is-selected");
-      option.classList.toggle("is-correct", option.dataset.optionId === exercise.correctAnswer);
+      option.classList.toggle("is-correct", correctIds.includes(option.dataset.optionId));
       option.classList.toggle(
         "is-incorrect",
-        option.dataset.optionId === answer && answer !== exercise.correctAnswer,
+        selectedIds.includes(option.dataset.optionId) && !correctIds.includes(option.dataset.optionId),
       );
     });
   };
@@ -473,10 +518,12 @@
     }
 
     const displayAnswer = exercise.type === "numeric-input"
-      ? exercise.correctAnswer
+      ? (exercise.answerDisplay || exercise.correctAnswer)
+      : exercise.type === "multiple-select"
+      ? exercise.options.filter((option) => exercise.correctAnswers.includes(option.id)).map((option) => option.text).join("; ")
       : exercise.options.find((option) => option.id === exercise.correctAnswer).text;
-    feedbackTitle.textContent = correct ? message("correct") : message("incorrect", { answer: displayAnswer });
-    feedbackExplanation.textContent = exercise.explanation;
+    setQuestionText(feedbackTitle, correct ? message("correct") : message("incorrect", { answer: displayAnswer }));
+    setQuestionText(feedbackExplanation, exercise.explanation);
     (exercise.sources || []).forEach((source) => {
       const reference = state.bank.sourceCatalog[source.sourceId];
       if (!reference || !Number.isInteger(source.slide) || !source.anchor) return;
@@ -494,6 +541,8 @@
     feedback.classList.toggle("is-incorrect", !correct);
     feedback.hidden = false;
     checkButton.hidden = true;
+    skipButton.hidden = true;
+    skipStatus.hidden = true;
     nextButton.hidden = false;
     nextButton.textContent = message(state.index === SESSION_SIZE - 1 ? "results" : "continue");
 
@@ -505,6 +554,8 @@
   };
 
   const finishSession = () => {
+    if (state.completed) return;
+    state.completed = true;
     const saved = readProgress(state.bank);
     const updated = {
       best: Math.max(saved.best, state.correct),
@@ -533,6 +584,7 @@
   };
 
   const nextQuestion = () => {
+    if (!state || !state.locked) return;
     if (state.index >= SESSION_SIZE - 1) {
       finishSession();
       return;
@@ -553,6 +605,7 @@
       streak: 0,
       bestStreak: 0,
       locked: false,
+      drafts: {},
     };
     showScreen("question");
     renderQuestion();
@@ -564,6 +617,17 @@
     showScreen("welcome");
     updateBestScore();
     welcomeStartButton.focus();
+  };
+
+  const skipQuestion = () => {
+    if (!state || state.locked || state.index >= state.questions.length - 1) return;
+    const question = state.questions[state.index];
+    state.drafts[question.id] = selectedAnswer(question);
+    state.questions.push(state.questions.splice(state.index, 1)[0]);
+    renderQuestion();
+    skipStatus.textContent = message("skipped");
+    skipStatus.hidden = false;
+    window.scrollTo({ top: screens.question.offsetTop - 80, behavior: "smooth" });
   };
 
   bankButtons.forEach((button) => {
@@ -591,6 +655,7 @@
   checkButton.addEventListener("click", checkAnswer);
   nextButton.addEventListener("click", nextQuestion);
   endButton.addEventListener("click", exitSession);
+  skipButton.addEventListener("click", skipQuestion);
   app.querySelector("[data-choose-practice]").addEventListener("click", exitSession);
   updateBankDetails();
 })();

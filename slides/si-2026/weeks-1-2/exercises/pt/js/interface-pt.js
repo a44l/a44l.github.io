@@ -1,6 +1,10 @@
 window.PRACTICE_MESSAGES = {
   chooseOne: "Escolha uma opção",
   chooseInstruction: "Selecione a resposta mais adequada.",
+  chooseMany: "Selecione todas as opções corretas",
+  chooseManyInstruction: "Selecione todas as opções corretas e nenhuma incorreta. A pergunta conta como uma única resposta.",
+  skipped: "Pergunta adiada para o fim desta sessão. A sua resposta provisória foi guardada.",
+  lastQuestion: "Esta é a última pergunta por responder; já está no fim.",
   intruder: "Encontre a intrusa",
   intruderInstruction: "Selecione a única opção que não satisfaz a condição indicada.",
   proof: "Ideia da demonstração",

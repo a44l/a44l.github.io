@@ -3,7 +3,7 @@
 A standalone practice page for the Statistical Inference course, hosted at
 `/slides/si-2026/weeks-1-2/exercises/` and linked from `teaching.md`.
 `ensino.md` links to the European Portuguese version at
-`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all four banks.
+`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all five banks.
 
 ## Edit
 
@@ -11,14 +11,17 @@ A standalone practice page for the Statistical Inference course, hosted at
 - `js/exercises-bank-0.js`: the 40 Lecture 1 questions, restricted to slides 12–41.
 - `js/exercises-lecture-2.js`: the 40 Lecture 2 questions, answer keys, explanations, and slide references.
 - `js/exercises-lecture-3.js`: the 40 Lecture 3 questions (slides 72–114), with diagram data, explanations and slide references.
+- `js/exercises-lecture-4.js`: the 40 Lecture 4 questions (slides 115–140), including multiple-answer convergence classifications.
 - `js/exercises-week-1-2.js`: the original 40-question full Weeks 1–2 review.
 - `js/exercise-visuals.js`: accessible SVG diagrams generated locally from each question's `visual` field.
+- `js/math-rendering.js`: safe, local rendering of explicitly delimited LaTeX in question text, context, choices, and feedback.
 - `js/live-exercises.js`: session selection, answer checking, scoring, and browser storage.
 - `css/styles.css`: typography, colours, spacing, and mobile layout.
 - `pt/index.html`: Portuguese page text, navigation, and screen layout.
 - `pt/js/exercises-bank-0.js`: all 40 Lecture 1 questions in Portuguese.
 - `pt/js/exercises-lecture-2.js`: all 40 Lecture 2 questions in Portuguese.
 - `pt/js/exercises-lecture-3.js`: all 40 Lecture 3 questions and diagram labels in Portuguese.
+- `pt/js/exercises-lecture-4.js`: all 40 Lecture 4 questions and diagram labels in Portuguese.
 - `pt/js/exercises-week-1-2.js`: all 40 full-review questions in Portuguese.
 - `pt/js/interface-pt.js`: Portuguese messages, input labels, and feedback.
 
@@ -49,7 +52,8 @@ new tab. The source record also includes a hash of the deck used when authoring.
 Proof-completion questions include a `context` array with the theorem and the
 preceding proof steps; the page displays these above the missing-step question.
 Other questions can use the same field for a short setup. Each context entry has
-a `label` and plain-text `text` (newlines are preserved).
+a `label` and `text` (newlines are preserved; mathematical expressions can use
+the LaTeX delimiters described below).
 
 The second choice, **Lecture 2**, covers slides 42–69 of the current neighbouring
 deck (slide 42 is the section title). It covers joint CDFs, marginals, conditional
@@ -77,7 +81,35 @@ question text. Trial columns show probabilities, not sampled outcomes; normal
 curves are drawn from the specified mean and standard deviation. No external
 image service, chart package or network request is used.
 
-The fourth choice, **Weeks 1–2**, retains the original 40 questions for a wider
+The fourth choice, **Lecture 4**, follows the rendered deck's slides 115–140
+checked on 24 September 2026. It emphasises explicit sequences: shrinking errors,
+rare spikes, powers of a uniform variable, alternating trajectories, independent
+copies, the typewriter sequence and modifications. It also covers Markov bounds
+(including Chebyshev as an explicitly derived corollary), dominated convergence,
+CDFs, continuity sets, continuous mapping and Lévy's theorem. It does not assume
+Borel–Cantelli, laws of large numbers or the central limit theorem.
+
+Its `multiple-select` questions use checkboxes. All and only the IDs listed in
+`correctAnswers` must be selected; each question still counts as one answer.
+Question text specifies the target and whether conclusions actually hold or are
+merely guaranteed by given assumptions. Diagrams additionally support `spikes`,
+`powers`, `paths` and `typewriter`; selected finite terms illustrate a formula,
+but are never treated as proof of an infinite sequence's behaviour.
+
+Lecture 4 uses rendered LaTeX in both languages. Use `\(...\)` for inline
+mathematics and `\[...\]` for a displayed formula. In JavaScript string literals,
+escape each backslash, for example `"Compute \\(\\mathbb E[X]\\)."`.
+The shared renderer inserts ordinary text safely and renders only explicitly
+delimited mathematics; HTML in bank strings is not interpreted. MathJax is
+already vendored in the neighbouring deck at
+`../assets/vendor/mathjax/tex-svg-full.js`; nothing is fetched from a CDN.
+The Lecture 4 questions have no blanket notation cards. Only necessary
+construction context and the theorem/preceding argument for proof exercises
+are retained. Grading still uses stable option IDs and plain numeric answers;
+`answerDisplay` optionally gives a LaTeX version of a numeric answer for feedback.
+Older banks' question content is unchanged by this formatting update.
+
+The fifth choice, **Weeks 1–2**, retains the original 40 questions for a wider
 review, including material from later lectures. Each session contains eight
 unique questions from the selected bank only, balancing topics and difficulties.
 Lecture 1 is the default. Use “Change practice set” after a session to switch.
@@ -87,13 +119,22 @@ The existing Weeks 1–2 best score and session count retain the
 `statistical-inference-2026-practice` localStorage key. Lecture 1 uses the separate
 `statistical-inference-2026-practice-lecture-1` key; Lecture 2 uses
 `statistical-inference-2026-practice-lecture-2`; Lecture 3 uses
-`statistical-inference-2026-practice-lecture-3`. Selecting a lecture never mixes
+`statistical-inference-2026-practice-lecture-3`; Lecture 4 uses
+`statistical-inference-2026-practice-lecture-4`. Selecting a lecture never mixes
 in questions or scores from the other banks. Progress is specific to the browser
 and website origin.
 
 Changing language shares the selected bank's existing best score and session
 count; changing banks keeps their progress separate. An unfinished session is
 not saved when navigating to another page or language.
+
+**Skip for now / Responder mais tarde** works in every bank. It moves the current
+unanswered question to the end of the same eight-question session. Draft input
+and checkbox selections are restored when it returns. Skipping does not change
+points, streaks, completed-question progress or the session's question set. A
+graded question cannot be skipped, and the last unanswered question's skip button
+is disabled (it is already at the end). Completing a session still requires all
+eight questions to be answered; repeated skips never count as completion.
 
 ## Preview and publish
 

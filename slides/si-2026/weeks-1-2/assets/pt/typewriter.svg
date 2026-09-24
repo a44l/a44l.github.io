@@ -7,8 +7,8 @@
     </filter>
   </defs>
   <rect x="22" y="18" width="1156" height="510" rx="24" fill="#fffdf8" filter="url(#shadow)"/>
-  <text x="90" y="82" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#17313b">nível diádico</text>
-  <text x="1080" y="510" font-family="Arial, sans-serif" font-size="25" fill="#5d6d72">u</text>
+  <text x="90" y="82" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#17313b">linha m</text>
+  <text x="1080" y="510" font-family="Arial, sans-serif" font-size="25" fill="#5d6d72">ω</text>
 
   <g font-family="Arial, sans-serif" font-size="24" fill="#5d6d72">
     <text x="105" y="151">0</text>
@@ -52,5 +52,4 @@
     <text x="1059" y="492">1</text>
   </g>
 </svg>
-
 

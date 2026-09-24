@@ -28,7 +28,7 @@
   window.renderExerciseVisual = (container, data) => {
     container.replaceChildren();
     container.hidden = true;
-    if (!data || !["bars", "points", "trials", "timeline", "normal"].includes(data.kind)) return;
+    if (!data || !["bars", "points", "trials", "timeline", "normal", "spikes", "powers", "paths", "typewriter"].includes(data.kind)) return;
     activeDiagram = { container, data };
     diagramCount += 1;
     const id = `exercise-diagram-${diagramCount}`;
@@ -49,6 +49,69 @@
     const label = (x, y, text, anchor = "middle") =>
       draw("text", { x, y, "text-anchor": anchor }, text);
     const left = 76, right = width - 34, top = 52, bottom = 220;
+    const colours = ["#007761", "#8155a2", "#b65522"];
+    const dashes = ["none", "9 5", "3 4"];
+    let legend = [];
+
+    if (data.kind === "spikes" || data.kind === "powers") {
+      const maxY = data.kind === "powers" ? 1 : Math.ceil(Math.max(...data.ns.map(n => n ** data.power)));
+      const x = value => left + value * (right - left);
+      const y = value => bottom - value / maxY * (bottom - top);
+      [0, maxY / 2, maxY].forEach(value => {
+        line(left, y(value), right, y(value), "visual-guide");
+        label(left - 12, y(value) + 6, number(value), "end");
+      });
+      line(left, top, left, bottom); line(left, bottom, right, bottom);
+      [0, 0.5, 1].forEach(value => label(x(value), bottom + 28, number(value)));
+      data.ns.forEach((n, index) => {
+        const attrs = { fill: "none", stroke: colours[index % 3], "stroke-width": 3, "stroke-dasharray": dashes[index % 3] };
+        if (data.kind === "spikes") {
+          const end = n ** (-data.widthPower), height = n ** data.power;
+          draw("rect", { x: x(0), y: y(height), width: x(end)-x(0), height: bottom-y(height), fill: colours[index % 3], opacity: 0.07 });
+          draw("path", { d: `M ${x(0)} ${y(height)} H ${x(end)} V ${bottom} H ${right}`, ...attrs });
+          // Closed top endpoint; open bottom endpoint at the same threshold.
+          draw("circle", { cx: x(end), cy: y(height), r: 4, fill: colours[index % 3] });
+          draw("circle", { cx: x(end), cy: bottom, r: 4, fill: "#f7fbfa", stroke: colours[index % 3], "stroke-width": 2 });
+          draw("circle", { cx: left, cy: y(height), r: 4, fill: "#f7fbfa", stroke: colours[index % 3], "stroke-width": 2 });
+        } else {
+          const path = Array.from({length:121}, (_,i) => `${i?'L':'M'} ${x(i/120)} ${y((i/120)**n)}`).join(' ');
+          draw("path", {d:path, ...attrs});
+        }
+        legend.push(`n=${n}`);
+      });
+      label(left, 30, data.yLabel, "start"); label((left+right)/2, 281, data.xLabel);
+    }
+
+    if (data.kind === "typewriter") {
+      const rowHeight = 38;
+      for (let m=0;m<data.levels;m++) {
+        const cells=2**m, step=(right-left)/cells, y=top+m*rowHeight;
+        label(left-15,y+25,String(m),"end");
+        for(let k=0;k<cells;k++) {
+          draw("rect",{x:left+k*step,y,width:step,height:32,fill:k%2?'#c6e8db':'#e7f3ee',stroke:'#007761','stroke-width':1.5});
+          label(left+(k+0.5)*step,y+24,String(cells+k));
+        }
+      }
+      label(left, 246, "0"); label(right,246,"1");
+      label(left,30,data.yLabel,"start"); label((left+right)/2,281,data.xLabel);
+    }
+
+    if (data.kind === "paths") {
+      const minX=Math.min(...data.xs),maxX=Math.max(...data.xs);
+      const minY=Math.min(0,...data.series.flatMap(s=>s.ys)),maxY=Math.max(0,...data.series.flatMap(s=>s.ys));
+      const x=value=>left+(value-minX)/(maxX-minX)*(right-left);
+      const y=value=>bottom-(value-minY)/(maxY-minY)*(bottom-top);
+      [minY,0,maxY].forEach(value=>{line(left,y(value),right,y(value),'visual-guide');label(left-12,y(value)+6,number(value),'end');});
+      line(left,top,left,bottom);
+      data.xs.forEach(value=>label(x(value),bottom+28,String(value)));
+      data.series.forEach((series,index)=>{
+        const d=data.xs.map((value,i)=>`${i?'L':'M'} ${x(value)} ${y(series.ys[i])}`).join(' ');
+        draw('path',{d,fill:'none',stroke:colours[index%3],'stroke-width':2.5,'stroke-dasharray':dashes[index%3]});
+        data.xs.forEach((value,i)=>draw('circle',{cx:x(value),cy:y(series.ys[i]),r:5,fill:colours[index%3]}));
+        legend.push(series.label);
+      });
+      label(left,30,data.yLabel,'start');label((left+right)/2,281,data.xLabel);
+    }
 
     if (data.kind === "bars") {
       const max = Math.max(...data.values, 0.001);
@@ -158,6 +221,23 @@
     }
 
     container.append(svg);
+    if (legend.length) {
+      const key = document.createElement("p");
+      key.className = "visual-key visual-series-key";
+      legend.forEach((text, index) => {
+        const item = document.createElement("span");
+        const swatch = document.createElement("span");
+        swatch.setAttribute("aria-hidden", "true");
+        swatch.style.borderTop = `3px ${index ? "dashed" : "solid"} ${colours[index % 3]}`;
+        swatch.style.display = "inline-block";
+        swatch.style.width = "24px";
+        swatch.style.marginRight = "6px";
+        swatch.style.verticalAlign = "middle";
+        item.append(swatch, document.createTextNode(text));
+        key.append(item);
+      });
+      container.append(key);
+    }
     if (data.kind === "trials") {
       const key = document.createElement("p");
       key.className = "visual-key";
