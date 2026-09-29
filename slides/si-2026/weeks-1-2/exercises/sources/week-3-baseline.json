@@ -1,0 +1,1370 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-09-25",
+  "decks": {
+    "en": {
+      "sourceFile": "index.qmd",
+      "renderedFile": "_site/index.html",
+      "sourceSha256": "5ab1eeed957411a72bc0f80321ea75825ff91d3fae785a754d9664f37463e3da",
+      "renderedSha256": "d393c4919aceb0fb4f6a6e67f2e653e24301155b633a2df5e2e996e0dfa78e91",
+      "slides": [
+        {
+          "key": "0b3442\"",
+          "slide": 2,
+          "anchor": "laws-of-large-numbers-and-normal-approximations",
+          "title": "Laws of large numbers and normal approximations",
+          "sha256": "f3530a940f9894c573c9365d7a8b91075f0a994f081f5a0b9e859e88b28b6676",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-random-sample",
+          "slide": 3,
+          "anchor": "random-samples-and-sample-means",
+          "title": "Random samples and sample means",
+          "sha256": "03c08b554815de877f850274857b27752f3e6231310cbcc499c444647dc3040b",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sample-mean-moments",
+          "slide": 4,
+          "anchor": "mean-and-variance-of-the-sample-mean",
+          "title": "Mean and variance of the sample mean",
+          "sha256": "c8e1970df2f2314a45886cee6addb4753fd5dab05a870afb9f7adace3ede5dbd",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-weak-law",
+          "slide": 5,
+          "anchor": "the-weak-law-of-large-numbers",
+          "title": "The weak law of large numbers",
+          "sha256": "218b171b7d200de2ecf16b1b813ed4797126d2c1b4ecb0dcbb9626ae9e5559bf",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-bernoulli-guarantee",
+          "slide": 6,
+          "anchor": "a-finite-sample-guarantee",
+          "title": "A finite-sample guarantee",
+          "sha256": "f1e228750dbde1ad5d942fc7d98d8f7c7b422ef8c5efef258205b01012783b99",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-strong-law",
+          "slide": 7,
+          "anchor": "the-strong-law-of-large-numbers",
+          "title": "The strong law of large numbers",
+          "sha256": "8c9e1b0d40764709d41b28e52a555be7679dce269702b23c254926a6333aebcd",
+          "dependencies": {}
+        },
+        {
+          "key": "Sample averages along individual outcomes",
+          "slide": 8,
+          "anchor": "sample-averages-along-individual-outcomes",
+          "title": "Sample averages along individual outcomes",
+          "sha256": "04c5079939d4dcb54100457a003165d572ccebf539c8eec435966c8fc2be6d13",
+          "dependencies": {
+            "assets/sample-means.svg": "2510c59b3c8a1ebc0de52e7dbf7d5c5279325b97885c92a6e7966f64857491f4"
+          }
+        },
+        {
+          "key": "stmt-relative-frequencies",
+          "slide": 9,
+          "anchor": "relative-frequencies",
+          "title": "Relative frequencies",
+          "sha256": "66f7423d151ef4a8a52bc8aaf34e09af53b58c6f252507704722d6b0c37a193d",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-transformed-averages",
+          "slide": 10,
+          "anchor": "averages-of-functions",
+          "title": "Averages of functions",
+          "sha256": "6bf59821d1932d09366a3f2bc7be16dbdae7cc689f73c3b717c0aa48f195faa8",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-monte-carlo",
+          "slide": 11,
+          "anchor": "simulation-and-integration",
+          "title": "Simulation and integration",
+          "sha256": "25f7720b39e8a8f699b75c35089e90e7fba101843bd7fa9591f627b35ee0203f",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-dependent-average",
+          "slide": 12,
+          "anchor": "why-independence-matters",
+          "title": "Why independence matters",
+          "sha256": "ed70534572cac1c53b3be6079796c6eb48627819893482314e1338417366edd6",
+          "dependencies": {}
+        },
+        {
+          "key": "central-limit-theorem",
+          "slide": 13,
+          "anchor": "central-limit-theorem",
+          "title": "The central limit theorem",
+          "sha256": "6c14e1ce5de3b408786552f1385c786b46a281d9d51017e95412e237984b8eb6",
+          "dependencies": {}
+        },
+        {
+          "key": "central-limit-proof",
+          "slide": 14,
+          "anchor": "central-limit-proof",
+          "title": "The central limit theorem: proof",
+          "sha256": "7d8e40c7ae9b8ad4e7b5d43633f22ab78aa330f75bf1b3ac24675f0da88c72f5",
+          "dependencies": {}
+        },
+        {
+          "key": "Laws of large numbers and the CLT",
+          "slide": 15,
+          "anchor": "laws-of-large-numbers-and-the-clt",
+          "title": "Laws of large numbers and the CLT",
+          "sha256": "b8fba112d924b4cab787aee3e32126619baf6c37c6b0850ba1663bbe1a20c484",
+          "dependencies": {}
+        },
+        {
+          "key": "Normal approximation: exponential samples",
+          "slide": 16,
+          "anchor": "normal-approximation-exponential-samples",
+          "title": "Normal approximation: exponential samples",
+          "sha256": "86d58ab7e09456c5865af756df32d13709718d07a428a68168cc80a284572b94",
+          "dependencies": {
+            "assets/exponential-clt.svg": "917f4c8c5c84e0c1588d1330765d6c6ecc754d79ba63c278f13c4cda1e6f8056"
+          }
+        },
+        {
+          "key": "stmt-clt-intervals",
+          "slide": 17,
+          "anchor": "normal-approximations-to-probabilities",
+          "title": "Normal approximations to probabilities",
+          "sha256": "0038b81de9340747f8c0f04894bdd52a55d9f218d77d12d6559d58414aa25e29",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-waiting-time-example",
+          "slide": 18,
+          "anchor": "a-total-waiting-time",
+          "title": "A total waiting time",
+          "sha256": "1790bdf25c1f004c548aa06c959d5784dd62ae0ff53aac170501fe641dd7b350",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-continuity-correction-definition",
+          "slide": 19,
+          "anchor": "binomial-approximation-and-continuity-correction",
+          "title": "Binomial approximation and continuity correction",
+          "sha256": "c3c5cd7e57530afab4143b84c2429c25e7b26f6b45fb14563f22e74297ea2a4a",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet2-ex1",
+          "slide": 20,
+          "anchor": "practice-binomial-probabilities",
+          "title": "Practice: binomial probabilities",
+          "sha256": "23a73cf433aba627e8b9767c760e292cae98d3e00ed8305a1c2ae1eeec4288fc",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet2-ex5",
+          "slide": 21,
+          "anchor": "practice-sample-means",
+          "title": "Practice: sample means",
+          "sha256": "aec1855d6147e535fc66711b2abcc2130d87b86fdfe5cbe76ef0c24317996ed4",
+          "dependencies": {}
+        },
+        {
+          "key": "123e4b\"",
+          "slide": 22,
+          "anchor": "hypothesis-testing-and-the-sign-test",
+          "title": "Hypothesis testing and the sign test",
+          "sha256": "37e9d1d0d9cb0f8961119389f4ba45d55fe29a95208ce01debebfb14a46bb75e",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-statistical-model",
+          "slide": 23,
+          "anchor": "statistical-models",
+          "title": "Statistical models",
+          "sha256": "379dcb79ab69bd80537da99ccfffb3b5f087c253cfafca24a0a35dbf7649749b",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-hypotheses",
+          "slide": 24,
+          "anchor": "null-and-alternative-hypotheses",
+          "title": "Null and alternative hypotheses",
+          "sha256": "35b0ede17ad701a808cedfdd2271a41c90ac0a32add262372b93ce46f8004d53",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-test",
+          "slide": 25,
+          "anchor": "tests-and-rejection-regions",
+          "title": "Tests and rejection regions",
+          "sha256": "22270d4f02b89860de02e60017cd8ca6708af208a1fbb16f94051c44859608dd",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-test-statistic",
+          "slide": 26,
+          "anchor": "test-statistics",
+          "title": "Test statistics",
+          "sha256": "fc00fe9875d1dd00f59e252d0fa641cd8e029188ca7d877885941c906bf968a0",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-testing-errors",
+          "slide": 27,
+          "anchor": "type-i-and-type-ii-errors",
+          "title": "Type I and Type II errors",
+          "sha256": "4f115c4bea6cb9e53b053a70d59d2cba8bb561c014a658f191b468f475a4919e",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-power",
+          "slide": 28,
+          "anchor": "the-power-function",
+          "title": "The power function",
+          "sha256": "41ec9d4d9164a4588b7bb54bb5ad3d5f15ee3effe7a82a965da07d3d84825455",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-size-level",
+          "slide": 29,
+          "anchor": "size-and-significance-level",
+          "title": "Size and significance level",
+          "sha256": "90bebae337649e5ff6f27f6d71f9ee3c8871c5f7472f684ba7281f68122d53a2",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-test",
+          "slide": 30,
+          "anchor": "a-binomial-test",
+          "title": "A binomial test",
+          "sha256": "7f6309473101d53be801d4b78d9242a04c66c81429c22d970d48c69f8759d6d3",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-larger-binomial-test",
+          "slide": 31,
+          "anchor": "a-larger-rejection-region",
+          "title": "A larger rejection region",
+          "sha256": "6c62696ab2d0ac457e5f328ef5fc392d2df550ff1db603aca5a69c89a9c5f976",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-region-inclusion",
+          "slide": 32,
+          "anchor": "power-and-the-rejection-region",
+          "title": "Power and the rejection region",
+          "sha256": "b3b0223e9e4ed2ee65de9ae8f7d03708634ecb1d42c68858b3fddc87d7d5a556",
+          "dependencies": {
+            "assets/binomial-power.svg": "733ce4fb3149924fda2f89710a77a1578f1446869844e722a91ba03e738234c4"
+          }
+        },
+        {
+          "key": "stmt-pvalue",
+          "slide": 33,
+          "anchor": "valid-p-values",
+          "title": "Valid $p$-values",
+          "sha256": "45e4fa4f67ee45043daa11f57a1b6ce1ff0c28f87e4e7234f9d0f853360143e3",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-tail-pvalue",
+          "slide": 34,
+          "anchor": "p-values-from-upper-tails",
+          "title": "$p$-values from upper tails",
+          "sha256": "cfd926d9b8e639d9bf2f1d35fa8296a27cd221d3e5e03d48609ec6a8bd449357",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-pvalue",
+          "slide": 35,
+          "anchor": "an-observed-binomial-p-value",
+          "title": "An observed binomial $p$-value",
+          "sha256": "cb774753e848c9e86384cc5b581aec6884083b961f7affc55913b4e94a60c9c9",
+          "dependencies": {}
+        },
+        {
+          "key": "Interpreting a $p$-value",
+          "slide": 36,
+          "anchor": "interpreting-a-p-value",
+          "title": "Interpreting a $p$-value",
+          "sha256": "5a1f7f1ed89693a3c0275e8336106c27cc89f8c0f8c2655910d2ccd7cef8c683",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-model-types",
+          "slide": 37,
+          "anchor": "parametric-and-nonparametric-models",
+          "title": "Parametric and nonparametric models",
+          "sha256": "a0808ef59731b5475178d17439f990b1b55a0ea328e3e5504aad5028d55ebb09",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-paired-data",
+          "slide": 38,
+          "anchor": "paired-observations",
+          "title": "Paired observations",
+          "sha256": "dd1f724b3da37c20ec41e4fce4fab240bef3060bc8c66b57ee5e61892444ccc7",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-median",
+          "slide": 39,
+          "anchor": "medians-and-signs",
+          "title": "Medians and signs",
+          "sha256": "6fa8a3d50d9f07e10fa9eebcdf3b8fb0632706e1a85986c5e5c9b676e9ecabe1",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sign-distribution",
+          "slide": 40,
+          "anchor": "the-null-distribution-of-the-sign-statistic",
+          "title": "The null distribution of the sign statistic",
+          "sha256": "c12cc44ba89dc84996644a1efb62321d12064f5aeb572e959c8d74fe61200470",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-tail-monotonicity",
+          "slide": 41,
+          "anchor": "binomial-tail-probabilities",
+          "title": "Binomial tail probabilities",
+          "sha256": "cfa82db898e4ea649b3c8b3ad78a2f376eeb38c0d17b38ca0a831957a22a70db",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sign-pvalues",
+          "slide": 42,
+          "anchor": "one-sided-and-two-sided-sign-tests",
+          "title": "One-sided and two-sided sign tests",
+          "sha256": "7f24e6fd0942879155e59fd139c4543ddb9e6732c918da7bf3f1a4248a6a5fb4",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-paired-example",
+          "slide": 43,
+          "anchor": "a-paired-example",
+          "title": "A paired example",
+          "sha256": "2ca374e7eed8727b40b7b87df8fa0e74bd02f64b45c8086d3084137f4182c8dd",
+          "dependencies": {}
+        },
+        {
+          "key": "The exact two-sided calculation",
+          "slide": 44,
+          "anchor": "the-exact-two-sided-calculation",
+          "title": "The exact two-sided calculation",
+          "sha256": "edebe1c63bb7ba4fa0a20d327f817767651439af904e492298dee5a66277741d",
+          "dependencies": {
+            "assets/sign-tails.svg": "979040ad1f643453f0604873f0154d74c3a4f7bb8cf1e342d6095537e44aa0f1"
+          }
+        },
+        {
+          "key": "stmt-sign-ties",
+          "slide": 45,
+          "anchor": "zero-differences",
+          "title": "Zero differences",
+          "sha256": "36b88cae931b6d1fd291582e6957865805902c3e917a095ca23d64cb58e4dc78",
+          "dependencies": {}
+        },
+        {
+          "key": "Zero differences: proof",
+          "slide": 46,
+          "anchor": "zero-differences-proof",
+          "title": "Zero differences: proof",
+          "sha256": "551555b9ff08b4924e3b9ac4775dcbe02d18b81e09da8184e9ef73b5f06ccbd8",
+          "dependencies": {}
+        },
+        {
+          "key": "A normal approximation for the sign test",
+          "slide": 47,
+          "anchor": "a-normal-approximation-for-the-sign-test",
+          "title": "A normal approximation for the sign test",
+          "sha256": "d663da8d7d2eaa622f8530a2da07d7ee3cbb118475beb6cd49ab66c552ec11a4",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet3-ex5",
+          "slide": 48,
+          "anchor": "practice-paired-treatment-measurements",
+          "title": "Practice: paired treatment measurements",
+          "sha256": "345c73d2816f8d387494a55bc60e83f87d0b6bdf3d32eb8877c36ee59a72753a",
+          "dependencies": {}
+        },
+        {
+          "key": "Reading and practice",
+          "slide": 49,
+          "anchor": "reading-and-practice",
+          "title": "Reading and practice",
+          "sha256": "6608a8affe781fd7b22bb8afb310dcfe003917774caf9f6de59517f8c81ad15a",
+          "dependencies": {}
+        }
+      ]
+    },
+    "pt": {
+      "sourceFile": "pt/index.qmd",
+      "renderedFile": "_site/pt/index.html",
+      "sourceSha256": "33e0701eacd2e7c2a8b3fc87266afd69c7d47052bfa21a79ba019c096e303148",
+      "renderedSha256": "cb3c2e5fd474cc5d558e0df7ae1b02799baa301919648e6d2ece61275a738351",
+      "slides": [
+        {
+          "key": "0b3442\"",
+          "slide": 2,
+          "anchor": "leis-dos-grandes-números-e-aproximações-normais",
+          "title": "Leis dos grandes números e aproximações normais",
+          "sha256": "547db3f90768660d33bec1c1d85d673793470877e87a0b51db8e452e05d74b22",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-random-sample",
+          "slide": 3,
+          "anchor": "amostras-aleatórias-e-médias-amostrais",
+          "title": "Amostras aleatórias e médias amostrais",
+          "sha256": "6a6f2c90c773d643df7c71543a28b0f46bcf2b33c6c84015aef0b7d05e272a4a",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sample-mean-moments",
+          "slide": 4,
+          "anchor": "valor-esperado-e-variância-da-média-amostral",
+          "title": "Valor esperado e variância da média amostral",
+          "sha256": "09fc1cb21a2cf47d2372a4e4f8ad54074084a1ff3a65edede1bba3faf036045c",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-weak-law",
+          "slide": 5,
+          "anchor": "a-lei-fraca-dos-grandes-números",
+          "title": "A lei fraca dos grandes números",
+          "sha256": "7ca86c88b432af1fa3914cd5ac98b0edd6963210013bed356a056bf0d130ed2d",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-bernoulli-guarantee",
+          "slide": 6,
+          "anchor": "uma-garantia-para-amostras-finitas",
+          "title": "Uma garantia para amostras finitas",
+          "sha256": "86ea43fbcb43bd2228ef9aa83df8166aa63fa5318c7344c8939208c49faf9af8",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-strong-law",
+          "slide": 7,
+          "anchor": "a-lei-forte-dos-grandes-números",
+          "title": "A lei forte dos grandes números",
+          "sha256": "3d3e275e59d249c50a33bbffeb8fc4b6d40139a2042862e6816e62d4c66eb74f",
+          "dependencies": {}
+        },
+        {
+          "key": "Médias amostrais ao longo de resultados individuais",
+          "slide": 8,
+          "anchor": "médias-amostrais-ao-longo-de-resultados-individuais",
+          "title": "Médias amostrais ao longo de resultados individuais",
+          "sha256": "92319182e6d3851525c8d383a0f5381d325fefd20b2e0eae969386b7c82b9bd1",
+          "dependencies": {
+            "assets/pt/sample-means.svg": "ef79dfdd1ae618df8b823f4bfccf23e921f0a3a96efed15d651767d8706f7c2c"
+          }
+        },
+        {
+          "key": "stmt-relative-frequencies",
+          "slide": 9,
+          "anchor": "frequências-relativas",
+          "title": "Frequências relativas",
+          "sha256": "675dbace828cfa3502f2a33a22ae6925685e18e0f5660c98d62d818408050d59",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-transformed-averages",
+          "slide": 10,
+          "anchor": "médias-de-funções",
+          "title": "Médias de funções",
+          "sha256": "fb6ab2470c416995ed902c5139d05504c39a10268803ad9effb695f404c6e305",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-monte-carlo",
+          "slide": 11,
+          "anchor": "simulação-e-integração",
+          "title": "Simulação e integração",
+          "sha256": "a05a6e4e119c3dcac4c925800c6bd24d86183792e568e16d496adfa2d54fe28c",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-dependent-average",
+          "slide": 12,
+          "anchor": "a-importância-da-independência",
+          "title": "A importância da independência",
+          "sha256": "0969885654620560577e76d3806dfcf0cdd7c1069d0d9ae0a85d405dfd1d9529",
+          "dependencies": {}
+        },
+        {
+          "key": "central-limit-theorem",
+          "slide": 13,
+          "anchor": "central-limit-theorem",
+          "title": "O teorema do limite central",
+          "sha256": "195e2913c3dca6f1701e896bcf6a6500bf3e859de1a404a05951cc1264211fc5",
+          "dependencies": {}
+        },
+        {
+          "key": "central-limit-proof",
+          "slide": 14,
+          "anchor": "central-limit-proof",
+          "title": "O teorema do limite central: demonstração",
+          "sha256": "3f87e96b71d48d9a1bbff4d036fd6564af48832a84eae140786c56e17e53525f",
+          "dependencies": {}
+        },
+        {
+          "key": "Leis dos grandes números e o TLC",
+          "slide": 15,
+          "anchor": "leis-dos-grandes-números-e-o-tlc",
+          "title": "Leis dos grandes números e o TLC",
+          "sha256": "b7121d32698e7f80ca6e7518a2bdb706602a7dabac6aab405cd8056def81457d",
+          "dependencies": {}
+        },
+        {
+          "key": "Aproximação normal: amostras exponenciais",
+          "slide": 16,
+          "anchor": "aproximação-normal-amostras-exponenciais",
+          "title": "Aproximação normal: amostras exponenciais",
+          "sha256": "526ff87a20e5077120b9b86ab01807bbdf86f232b857864ba5a80875e511dc56",
+          "dependencies": {
+            "assets/pt/exponential-clt.svg": "f3f3bdef272381d302e61f132d2f9e4399e963c4f03686c0fa5993b1b3967343"
+          }
+        },
+        {
+          "key": "stmt-clt-intervals",
+          "slide": 17,
+          "anchor": "aproximações-normais-de-probabilidades",
+          "title": "Aproximações normais de probabilidades",
+          "sha256": "19bf12dc83ed5a7fba67be19df57452c629f25d23e37e9ee88871de0c7d8bf93",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-waiting-time-example",
+          "slide": 18,
+          "anchor": "um-tempo-total-de-espera",
+          "title": "Um tempo total de espera",
+          "sha256": "3ab1c2eb3339a8d447e18c99e2fd3a19233ae143aa79723fba669082a6c2832a",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-continuity-correction-definition",
+          "slide": 19,
+          "anchor": "aproximação-binomial-e-correção-de-continuidade",
+          "title": "Aproximação binomial e correção de continuidade",
+          "sha256": "00989b96a04b95eafe8951f47b2cbee978f6d8e899e4c27616c6c4a65af8e7c7",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet2-ex1",
+          "slide": 20,
+          "anchor": "exercícios-probabilidades-binomiais",
+          "title": "Exercícios: probabilidades binomiais",
+          "sha256": "a3ee95a698158ab7f6f39b614f35754c89874075df1b5959fc2cc5a7ade38c88",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet2-ex5",
+          "slide": 21,
+          "anchor": "exercícios-médias-amostrais",
+          "title": "Exercícios: médias amostrais",
+          "sha256": "e35ba8e0a23030daa66926f9f7b1957bc4a6948d516d5dee6212f2ee2662f75a",
+          "dependencies": {}
+        },
+        {
+          "key": "123e4b\"",
+          "slide": 22,
+          "anchor": "testes-de-hipóteses-e-teste-dos-sinais",
+          "title": "Testes de hipóteses e teste dos sinais",
+          "sha256": "dcd38a7611a0d2d8c1af158bba78de1c2a03151817231de08af87a248a5f8a3d",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-statistical-model",
+          "slide": 23,
+          "anchor": "modelos-estatísticos",
+          "title": "Modelos estatísticos",
+          "sha256": "58080ece55e4b4209879e8a4906bc60057aa7d963c61bd312caf40473e3604cd",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-hypotheses",
+          "slide": 24,
+          "anchor": "hipóteses-nula-e-alternativa",
+          "title": "Hipóteses nula e alternativa",
+          "sha256": "42e7e05e852d0b3fdc8e3459404a32b50edfe6ec74e93746902a478a16714130",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-test",
+          "slide": 25,
+          "anchor": "testes-e-regiões-de-rejeição",
+          "title": "Testes e regiões de rejeição",
+          "sha256": "b673abe70154b7a239eeaa1407a5be1f3982595e20334c6a3dc23e37d0d45c25",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-test-statistic",
+          "slide": 26,
+          "anchor": "estatísticas-de-teste",
+          "title": "Estatísticas de teste",
+          "sha256": "b98c560587cd1be9bc5cdc81e804be9c3851e3b3af2c90e09b06f9cba7f3377c",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-testing-errors",
+          "slide": 27,
+          "anchor": "erros-de-tipo-i-e-de-tipo-ii",
+          "title": "Erros de tipo I e de tipo II",
+          "sha256": "93fc223192128d99f1f31ed8371b56fcf030deff6ae645fda075d8d0b0d46322",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-power",
+          "slide": 28,
+          "anchor": "a-função-potência",
+          "title": "A função potência",
+          "sha256": "7f0bca8de29b9666e27d576dcdab5c63830930a0fdd4908caeafd8ca1f911d2d",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-size-level",
+          "slide": 29,
+          "anchor": "dimensão-e-nível-de-significância",
+          "title": "Dimensão e nível de significância",
+          "sha256": "0683920b18abe8659f16ceb3f0d5045b295b6acf2473ede8f92a4c48f8d7448f",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-test",
+          "slide": 30,
+          "anchor": "um-teste-binomial",
+          "title": "Um teste binomial",
+          "sha256": "57195affb9169989bd3be2c637428a2724d30ba02856f6178bae48aba0fde39e",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-larger-binomial-test",
+          "slide": 31,
+          "anchor": "uma-região-de-rejeição-maior",
+          "title": "Uma região de rejeição maior",
+          "sha256": "8ff43eef22f95311cbf2ffd782514c30118a60cbf7bca83eb0a25702545cb43a",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-region-inclusion",
+          "slide": 32,
+          "anchor": "potência-e-região-de-rejeição",
+          "title": "Potência e região de rejeição",
+          "sha256": "534a4c92f671a6c686015556b65544f955001a9355c56c2cb06fde4168d799dc",
+          "dependencies": {
+            "assets/pt/binomial-power.svg": "0ab62c483555a22f31448da4e0a593c0024caca81afbe545323ce0e5ca3c7584"
+          }
+        },
+        {
+          "key": "stmt-pvalue",
+          "slide": 33,
+          "anchor": "valores-p-válidos",
+          "title": "Valores-$p$ válidos",
+          "sha256": "dde7927b9e7a2eaddd2018cc5f582d2cab0c12e5a1f7c7a4e61deb9e841090a8",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-tail-pvalue",
+          "slide": 34,
+          "anchor": "valores-p-a-partir-de-caudas-superiores",
+          "title": "Valores-$p$ a partir de caudas superiores",
+          "sha256": "93872c602e1993f6f3e8efc3c64aca70fbc9f3b974070debb18f51fa9d524d7b",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-pvalue",
+          "slide": 35,
+          "anchor": "um-valor-p-binomial-observado",
+          "title": "Um valor-$p$ binomial observado",
+          "sha256": "40d0914144be9dabb47bf59592bba73f0ec2e70c524198eccf6e129bdd2c01c9",
+          "dependencies": {}
+        },
+        {
+          "key": "Interpretação de um valor-$p$",
+          "slide": 36,
+          "anchor": "interpretação-de-um-valor-p",
+          "title": "Interpretação de um valor-$p$",
+          "sha256": "d03efa889987e7d86bc3a9c2d57972cb6978bf37909907e8860394cf1be2b543",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-model-types",
+          "slide": 37,
+          "anchor": "modelos-paramétricos-e-não-paramétricos",
+          "title": "Modelos paramétricos e não paramétricos",
+          "sha256": "eb0597bd76a3b08b0fbfff5e722e17821c36231edf6d62a0ef8cae266b0a2af6",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-paired-data",
+          "slide": 38,
+          "anchor": "observações-emparelhadas",
+          "title": "Observações emparelhadas",
+          "sha256": "652b20803ee6d89ab62d8192a063021d6949d94c5ff9853cfed325aceacecdf6",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-median",
+          "slide": 39,
+          "anchor": "medianas-e-sinais",
+          "title": "Medianas e sinais",
+          "sha256": "6e6f92716b989bf8b3b2af1afbc9bfa2f4bf0f34310d1ca82cd3e1deab417c69",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sign-distribution",
+          "slide": 40,
+          "anchor": "distribuição-da-estatística-dos-sinais-sob-a-hipótese-nula",
+          "title": "Distribuição da estatística dos sinais sob a hipótese nula",
+          "sha256": "0a5c9d1fee448377497669563bdd3419d773cbb583ce6f30b38c6741ef6539f0",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-binomial-tail-monotonicity",
+          "slide": 41,
+          "anchor": "probabilidades-de-cauda-binomiais",
+          "title": "Probabilidades de cauda binomiais",
+          "sha256": "6ea66592aaca02e4bbf6d60bf313daeac7e678febf6dc33922642755f1e167cb",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-sign-pvalues",
+          "slide": 42,
+          "anchor": "testes-dos-sinais-unilaterais-e-bilaterais",
+          "title": "Testes dos sinais unilaterais e bilaterais",
+          "sha256": "d197e3b502d5459251e74f50919aba1c7027ff8403f659bffaf71cc0066909a9",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-paired-example",
+          "slide": 43,
+          "anchor": "um-exemplo-emparelhado",
+          "title": "Um exemplo emparelhado",
+          "sha256": "034c9971915e23c8b87745afeca41f5e7961948dca80399345838a2b20ae4c1b",
+          "dependencies": {}
+        },
+        {
+          "key": "O cálculo bilateral exato",
+          "slide": 44,
+          "anchor": "o-cálculo-bilateral-exato",
+          "title": "O cálculo bilateral exato",
+          "sha256": "95f7d3db34459a9ba75251ea3cd47230e27eafc51cffe19350b899a5ab4d5a4b",
+          "dependencies": {
+            "assets/pt/sign-tails.svg": "162cdf836926690a0e1dafa86489ae0f1de90e727d6c16ff62c567759ef42c8d"
+          }
+        },
+        {
+          "key": "stmt-sign-ties",
+          "slide": 45,
+          "anchor": "diferenças-nulas",
+          "title": "Diferenças nulas",
+          "sha256": "726acad42b688531ebe068a2187f9d7637f457d289f465ec28b13b709dcf176f",
+          "dependencies": {}
+        },
+        {
+          "key": "Diferenças nulas: demonstração",
+          "slide": 46,
+          "anchor": "diferenças-nulas-demonstração",
+          "title": "Diferenças nulas: demonstração",
+          "sha256": "529117174cd2a3f533e3b20b17c7de0849c588ecd9030bec713e174f55287703",
+          "dependencies": {}
+        },
+        {
+          "key": "Aproximação normal para o teste dos sinais",
+          "slide": 47,
+          "anchor": "aproximação-normal-para-o-teste-dos-sinais",
+          "title": "Aproximação normal para o teste dos sinais",
+          "sha256": "e49324b5bf35138206db5e023685beb50b49b26931d7bd4302de26f4c8687f04",
+          "dependencies": {}
+        },
+        {
+          "key": "stmt-worksheet3-ex5",
+          "slide": 48,
+          "anchor": "exercícios-medições-emparelhadas-de-um-tratamento",
+          "title": "Exercícios: medições emparelhadas de um tratamento",
+          "sha256": "523e7713f976e581370d82d54c30c0a5562057468f3d3e6a0bfb4c484592f293",
+          "dependencies": {}
+        },
+        {
+          "key": "Leitura e exercícios",
+          "slide": 49,
+          "anchor": "leitura-e-exercícios",
+          "title": "Leitura e exercícios",
+          "sha256": "4e3b6533a4874abee399f0f999413a80c8fe55e443ee6b8395d17a9100238871",
+          "dependencies": {}
+        }
+      ]
+    }
+  },
+  "questionSources": {
+    "en": {
+      "lec05-001": [
+        "stmt-random-sample"
+      ],
+      "lec05-002": [
+        "stmt-random-sample"
+      ],
+      "lec05-003": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-004": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-005": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-006": [
+        "stmt-weak-law"
+      ],
+      "lec05-007": [
+        "stmt-weak-law",
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-008": [
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-009": [
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-010": [
+        "stmt-weak-law",
+        "Laws of large numbers and the CLT"
+      ],
+      "lec05-011": [
+        "stmt-strong-law",
+        "Sample averages along individual outcomes"
+      ],
+      "lec05-012": [
+        "stmt-sample-mean-moments",
+        "stmt-weak-law"
+      ],
+      "lec05-013": [
+        "stmt-strong-law"
+      ],
+      "lec05-014": [
+        "stmt-sample-mean-moments",
+        "stmt-weak-law",
+        "stmt-strong-law"
+      ],
+      "lec05-015": [
+        "stmt-dependent-average"
+      ],
+      "lec05-016": [
+        "stmt-strong-law",
+        "Sample averages along individual outcomes"
+      ],
+      "lec05-017": [
+        "stmt-relative-frequencies"
+      ],
+      "lec05-018": [
+        "stmt-relative-frequencies"
+      ],
+      "lec05-019": [
+        "stmt-transformed-averages",
+        "stmt-monte-carlo"
+      ],
+      "lec05-020": [
+        "stmt-transformed-averages",
+        "stmt-monte-carlo"
+      ],
+      "lec05-021": [
+        "central-limit-theorem"
+      ],
+      "lec05-022": [
+        "central-limit-theorem",
+        "Normal approximation: exponential samples"
+      ],
+      "lec05-023": [
+        "central-limit-theorem",
+        "stmt-clt-intervals"
+      ],
+      "lec05-024": [
+        "stmt-waiting-time-example"
+      ],
+      "lec05-025": [
+        "Laws of large numbers and the CLT"
+      ],
+      "lec05-026": [
+        "central-limit-proof"
+      ],
+      "lec05-027": [
+        "central-limit-proof"
+      ],
+      "lec05-028": [
+        "central-limit-proof"
+      ],
+      "lec05-029": [
+        "stmt-strong-law",
+        "central-limit-theorem"
+      ],
+      "lec05-030": [
+        "stmt-clt-intervals",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-031": [
+        "stmt-weak-law",
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-032": [
+        "stmt-clt-intervals",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-033": [
+        "stmt-continuity-correction-definition"
+      ],
+      "lec05-034": [
+        "stmt-continuity-correction-definition",
+        "stmt-worksheet2-ex1"
+      ],
+      "lec05-035": [
+        "central-limit-theorem",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-036": [
+        "stmt-worksheet2-ex1"
+      ],
+      "lec05-037": [
+        "central-limit-theorem",
+        "stmt-clt-intervals"
+      ],
+      "lec05-038": [
+        "stmt-weak-law",
+        "stmt-strong-law"
+      ],
+      "lec05-039": [
+        "stmt-transformed-averages"
+      ],
+      "lec05-040": [
+        "stmt-strong-law",
+        "central-limit-theorem",
+        "Laws of large numbers and the CLT"
+      ],
+      "lec06-001": [
+        "stmt-statistical-model"
+      ],
+      "lec06-002": [
+        "stmt-hypotheses"
+      ],
+      "lec06-003": [
+        "stmt-test-statistic"
+      ],
+      "lec06-004": [
+        "stmt-test",
+        "stmt-test-statistic"
+      ],
+      "lec06-005": [
+        "stmt-testing-errors"
+      ],
+      "lec06-006": [
+        "stmt-testing-errors"
+      ],
+      "lec06-007": [
+        "stmt-power",
+        "stmt-binomial-test"
+      ],
+      "lec06-008": [
+        "stmt-testing-errors",
+        "stmt-power",
+        "stmt-binomial-test"
+      ],
+      "lec06-009": [
+        "stmt-size-level"
+      ],
+      "lec06-010": [
+        "stmt-size-level"
+      ],
+      "lec06-011": [
+        "stmt-size-level",
+        "stmt-binomial-test"
+      ],
+      "lec06-012": [
+        "stmt-region-inclusion"
+      ],
+      "lec06-013": [
+        "stmt-binomial-tail-monotonicity"
+      ],
+      "lec06-014": [
+        "stmt-power",
+        "stmt-size-level"
+      ],
+      "lec06-015": [
+        "stmt-larger-binomial-test"
+      ],
+      "lec06-016": [
+        "stmt-test",
+        "stmt-power",
+        "stmt-size-level"
+      ],
+      "lec06-017": [
+        "stmt-pvalue"
+      ],
+      "lec06-018": [
+        "Interpreting a $p$-value"
+      ],
+      "lec06-019": [
+        "stmt-test",
+        "Interpreting a $p$-value"
+      ],
+      "lec06-020": [
+        "stmt-tail-pvalue",
+        "stmt-binomial-pvalue"
+      ],
+      "lec06-021": [
+        "stmt-binomial-pvalue"
+      ],
+      "lec06-022": [
+        "stmt-tail-pvalue"
+      ],
+      "lec06-023": [
+        "stmt-pvalue"
+      ],
+      "lec06-024": [
+        "stmt-paired-data"
+      ],
+      "lec06-025": [
+        "stmt-model-types",
+        "stmt-sign-distribution"
+      ],
+      "lec06-026": [
+        "stmt-paired-data",
+        "stmt-sign-distribution"
+      ],
+      "lec06-027": [
+        "stmt-median",
+        "stmt-sign-distribution"
+      ],
+      "lec06-028": [
+        "stmt-median",
+        "stmt-sign-distribution"
+      ],
+      "lec06-029": [
+        "stmt-median"
+      ],
+      "lec06-030": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-031": [
+        "stmt-sign-pvalues",
+        "The exact two-sided calculation"
+      ],
+      "lec06-032": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-033": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-034": [
+        "stmt-median",
+        "stmt-paired-example",
+        "The exact two-sided calculation"
+      ],
+      "lec06-035": [
+        "stmt-sign-ties"
+      ],
+      "lec06-036": [
+        "stmt-median",
+        "stmt-sign-ties"
+      ],
+      "lec06-037": [
+        "Zero differences: proof"
+      ],
+      "lec06-038": [
+        "A normal approximation for the sign test"
+      ],
+      "lec06-039": [
+        "stmt-pvalue"
+      ],
+      "lec06-040": [
+        "stmt-tail-pvalue"
+      ]
+    },
+    "pt": {
+      "lec05-001": [
+        "stmt-random-sample"
+      ],
+      "lec05-002": [
+        "stmt-random-sample"
+      ],
+      "lec05-003": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-004": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-005": [
+        "stmt-sample-mean-moments"
+      ],
+      "lec05-006": [
+        "stmt-weak-law"
+      ],
+      "lec05-007": [
+        "stmt-weak-law",
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-008": [
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-009": [
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-010": [
+        "stmt-weak-law",
+        "Leis dos grandes números e o TLC"
+      ],
+      "lec05-011": [
+        "stmt-strong-law",
+        "Médias amostrais ao longo de resultados individuais"
+      ],
+      "lec05-012": [
+        "stmt-sample-mean-moments",
+        "stmt-weak-law"
+      ],
+      "lec05-013": [
+        "stmt-strong-law"
+      ],
+      "lec05-014": [
+        "stmt-sample-mean-moments",
+        "stmt-weak-law",
+        "stmt-strong-law"
+      ],
+      "lec05-015": [
+        "stmt-dependent-average"
+      ],
+      "lec05-016": [
+        "stmt-strong-law",
+        "Médias amostrais ao longo de resultados individuais"
+      ],
+      "lec05-017": [
+        "stmt-relative-frequencies"
+      ],
+      "lec05-018": [
+        "stmt-relative-frequencies"
+      ],
+      "lec05-019": [
+        "stmt-transformed-averages",
+        "stmt-monte-carlo"
+      ],
+      "lec05-020": [
+        "stmt-transformed-averages",
+        "stmt-monte-carlo"
+      ],
+      "lec05-021": [
+        "central-limit-theorem"
+      ],
+      "lec05-022": [
+        "central-limit-theorem",
+        "Aproximação normal: amostras exponenciais"
+      ],
+      "lec05-023": [
+        "central-limit-theorem",
+        "stmt-clt-intervals"
+      ],
+      "lec05-024": [
+        "stmt-waiting-time-example"
+      ],
+      "lec05-025": [
+        "Leis dos grandes números e o TLC"
+      ],
+      "lec05-026": [
+        "central-limit-proof"
+      ],
+      "lec05-027": [
+        "central-limit-proof"
+      ],
+      "lec05-028": [
+        "central-limit-proof"
+      ],
+      "lec05-029": [
+        "stmt-strong-law",
+        "central-limit-theorem"
+      ],
+      "lec05-030": [
+        "stmt-clt-intervals",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-031": [
+        "stmt-weak-law",
+        "stmt-bernoulli-guarantee"
+      ],
+      "lec05-032": [
+        "stmt-clt-intervals",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-033": [
+        "stmt-continuity-correction-definition"
+      ],
+      "lec05-034": [
+        "stmt-continuity-correction-definition",
+        "stmt-worksheet2-ex1"
+      ],
+      "lec05-035": [
+        "central-limit-theorem",
+        "stmt-worksheet2-ex5"
+      ],
+      "lec05-036": [
+        "stmt-worksheet2-ex1"
+      ],
+      "lec05-037": [
+        "central-limit-theorem",
+        "stmt-clt-intervals"
+      ],
+      "lec05-038": [
+        "stmt-weak-law",
+        "stmt-strong-law"
+      ],
+      "lec05-039": [
+        "stmt-transformed-averages"
+      ],
+      "lec05-040": [
+        "stmt-strong-law",
+        "central-limit-theorem",
+        "Leis dos grandes números e o TLC"
+      ],
+      "lec06-001": [
+        "stmt-statistical-model"
+      ],
+      "lec06-002": [
+        "stmt-hypotheses"
+      ],
+      "lec06-003": [
+        "stmt-test-statistic"
+      ],
+      "lec06-004": [
+        "stmt-test",
+        "stmt-test-statistic"
+      ],
+      "lec06-005": [
+        "stmt-testing-errors"
+      ],
+      "lec06-006": [
+        "stmt-testing-errors"
+      ],
+      "lec06-007": [
+        "stmt-power",
+        "stmt-binomial-test"
+      ],
+      "lec06-008": [
+        "stmt-testing-errors",
+        "stmt-power",
+        "stmt-binomial-test"
+      ],
+      "lec06-009": [
+        "stmt-size-level"
+      ],
+      "lec06-010": [
+        "stmt-size-level"
+      ],
+      "lec06-011": [
+        "stmt-size-level",
+        "stmt-binomial-test"
+      ],
+      "lec06-012": [
+        "stmt-region-inclusion"
+      ],
+      "lec06-013": [
+        "stmt-binomial-tail-monotonicity"
+      ],
+      "lec06-014": [
+        "stmt-power",
+        "stmt-size-level"
+      ],
+      "lec06-015": [
+        "stmt-larger-binomial-test"
+      ],
+      "lec06-016": [
+        "stmt-test",
+        "stmt-power",
+        "stmt-size-level"
+      ],
+      "lec06-017": [
+        "stmt-pvalue"
+      ],
+      "lec06-018": [
+        "Interpretação de um valor-$p$"
+      ],
+      "lec06-019": [
+        "stmt-test",
+        "Interpretação de um valor-$p$"
+      ],
+      "lec06-020": [
+        "stmt-tail-pvalue",
+        "stmt-binomial-pvalue"
+      ],
+      "lec06-021": [
+        "stmt-binomial-pvalue"
+      ],
+      "lec06-022": [
+        "stmt-tail-pvalue"
+      ],
+      "lec06-023": [
+        "stmt-pvalue"
+      ],
+      "lec06-024": [
+        "stmt-paired-data"
+      ],
+      "lec06-025": [
+        "stmt-model-types",
+        "stmt-sign-distribution"
+      ],
+      "lec06-026": [
+        "stmt-paired-data",
+        "stmt-sign-distribution"
+      ],
+      "lec06-027": [
+        "stmt-median",
+        "stmt-sign-distribution"
+      ],
+      "lec06-028": [
+        "stmt-median",
+        "stmt-sign-distribution"
+      ],
+      "lec06-029": [
+        "stmt-median"
+      ],
+      "lec06-030": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-031": [
+        "stmt-sign-pvalues",
+        "O cálculo bilateral exato"
+      ],
+      "lec06-032": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-033": [
+        "stmt-sign-pvalues"
+      ],
+      "lec06-034": [
+        "stmt-median",
+        "stmt-paired-example",
+        "O cálculo bilateral exato"
+      ],
+      "lec06-035": [
+        "stmt-sign-ties"
+      ],
+      "lec06-036": [
+        "stmt-median",
+        "stmt-sign-ties"
+      ],
+      "lec06-037": [
+        "Diferenças nulas: demonstração"
+      ],
+      "lec06-038": [
+        "Aproximação normal para o teste dos sinais"
+      ],
+      "lec06-039": [
+        "stmt-pvalue"
+      ],
+      "lec06-040": [
+        "stmt-tail-pvalue"
+      ]
+    }
+  }
+}

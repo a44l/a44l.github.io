@@ -189,6 +189,7 @@ button { color: inherit; }
   text-align: left;
   overflow-wrap: anywhere;
 }
+.exercise-context > div { min-width: 0; }
 .exercise-context strong { color: var(--practice-green-dark); font-size: 14px; }
 .exercise-context p { margin: 5px 0 0; font-size: 16px; line-height: 1.6; white-space: pre-line; }
 

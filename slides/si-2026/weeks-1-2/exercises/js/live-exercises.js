@@ -9,6 +9,8 @@
     window.LECTURE_2_EXERCISE_BANK,
     window.LECTURE_3_EXERCISE_BANK,
     window.LECTURE_4_EXERCISE_BANK,
+    window.LECTURE_5_EXERCISE_BANK,
+    window.LECTURE_6_EXERCISE_BANK,
     window.WEEK_1_2_EXERCISE_BANK,
   ].filter(
     (candidate) => candidate && candidate.block &&
@@ -62,6 +64,8 @@
   const reviewButton = app.querySelector("[data-review-block]");
   const sourceBlock = document.querySelector("[data-source-block]");
   const sourceReview = document.querySelector("[data-source-review]");
+  const courseSlides = document.querySelector("[data-course-slides]");
+  const bankStatus = app.querySelector("[data-bank-status]");
 
   let state = null;
   const setQuestionText = (element, value) => {
@@ -173,6 +177,11 @@
     reviewButton.textContent = message("review");
     reviewButton.href = bank.block.reviewHref || "../index.html";
     sourceReview.href = reviewButton.href;
+    if (courseSlides) courseSlides.href = reviewButton.href;
+    if (bankStatus) {
+      bankStatus.textContent = bank.block.provisionalNote || "";
+      bankStatus.hidden = !bank.block.provisionalNote;
+    }
 
     topicsList.replaceChildren();
     const featuredTopics = Array.isArray(bank.block.featuredTopics)

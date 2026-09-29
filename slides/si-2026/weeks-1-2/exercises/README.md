@@ -1,9 +1,10 @@
-# Weeks 1–2 live exercises
+# Statistical Inference live exercises — Weeks 1–3
 
 A standalone practice page for the Statistical Inference course, hosted at
 `/slides/si-2026/weeks-1-2/exercises/` and linked from `teaching.md`.
 `ensino.md` links to the European Portuguese version at
-`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all five banks.
+`/slides/si-2026/weeks-1-2/exercises/pt/`. Both versions offer all seven banks.
+The existing URL is retained so earlier links and browser progress keep working.
 
 ## Edit
 
@@ -12,6 +13,8 @@ A standalone practice page for the Statistical Inference course, hosted at
 - `js/exercises-lecture-2.js`: the 40 Lecture 2 questions, answer keys, explanations, and slide references.
 - `js/exercises-lecture-3.js`: the 40 Lecture 3 questions (slides 72–114), with diagram data, explanations and slide references.
 - `js/exercises-lecture-4.js`: the 40 Lecture 4 questions (slides 115–140), including multiple-answer convergence classifications.
+- `js/exercises-lecture-5.js`: 40 Lecture 5 questions (Week 3, slides 2–21).
+- `js/exercises-lecture-6.js`: 40 Lecture 6 questions (Week 3, slides 22–49).
 - `js/exercises-week-1-2.js`: the original 40-question full Weeks 1–2 review.
 - `js/exercise-visuals.js`: accessible SVG diagrams generated locally from each question's `visual` field.
 - `js/math-rendering.js`: safe, local rendering of explicitly delimited LaTeX in question text, context, choices, and feedback.
@@ -22,6 +25,7 @@ A standalone practice page for the Statistical Inference course, hosted at
 - `pt/js/exercises-lecture-2.js`: all 40 Lecture 2 questions in Portuguese.
 - `pt/js/exercises-lecture-3.js`: all 40 Lecture 3 questions and diagram labels in Portuguese.
 - `pt/js/exercises-lecture-4.js`: all 40 Lecture 4 questions and diagram labels in Portuguese.
+- `pt/js/exercises-lecture-5.js` and `pt/js/exercises-lecture-6.js`: the matching Portuguese Week 3 banks.
 - `pt/js/exercises-week-1-2.js`: all 40 full-review questions in Portuguese.
 - `pt/js/interface-pt.js`: Portuguese messages, input labels, and feedback.
 
@@ -109,7 +113,7 @@ are retained. Grading still uses stable option IDs and plain numeric answers;
 `answerDisplay` optionally gives a LaTeX version of a numeric answer for feedback.
 Older banks' question content is unchanged by this formatting update.
 
-The fifth choice, **Weeks 1–2**, retains the original 40 questions for a wider
+The **Weeks 1–2** choice retains the original 40 questions for a wider
 review, including material from later lectures. Each session contains eight
 unique questions from the selected bank only, balancing topics and difficulties.
 Lecture 1 is the default. Use “Change practice set” after a session to switch.
@@ -120,7 +124,9 @@ The existing Weeks 1–2 best score and session count retain the
 `statistical-inference-2026-practice-lecture-1` key; Lecture 2 uses
 `statistical-inference-2026-practice-lecture-2`; Lecture 3 uses
 `statistical-inference-2026-practice-lecture-3`; Lecture 4 uses
-`statistical-inference-2026-practice-lecture-4`. Selecting a lecture never mixes
+`statistical-inference-2026-practice-lecture-4`; Lectures 5 and 6 use the corresponding
+`statistical-inference-2026-practice-lecture-5` and
+`statistical-inference-2026-practice-lecture-6` keys. Selecting a lecture never mixes
 in questions or scores from the other banks. Progress is specific to the browser
 and website origin.
 
@@ -135,6 +141,65 @@ points, streaks, completed-question progress or the session's question set. A
 graded question cannot be skipped, and the last unanswered question's skip button
 is disabled (it is already at the end). Completing a session still requires all
 eight questions to be answered; repeated skips never count as completion.
+
+## Week 3 banks and changing slides
+
+**Lecture 5** covers sample means, finite-sample Chebyshev bounds, weak and strong
+laws, averages of functions, the CLT (including its current proof), and normal
+approximations with continuity correction. **Lecture 6** covers models, hypotheses,
+decisions and errors, power, size versus level, valid p-values, paired observations,
+medians, exact sign tests, zero differences and the stated normal approximation.
+Each has 40 questions, with 10 introductory, 20 core and 10 challenge questions.
+Every session stays within the selected lecture.
+
+Both banks were checked against the Week 3 source
+on **25 September 2026**. All new questions use rendered LaTeX, explicit modelling
+assumptions and self-contained proof context. Exact values, bounds and approximations
+are distinguished. No notation cards were added to ordinary questions.
+The Lecture 1–4 and full-review question files are unchanged.
+
+The review links for Lectures 5–6 open **unaltered reference copies** of the
+English/Portuguese rendered Week 3 decks in `sources/week-3/`, not a live mirror.
+The accompanying MathJax runtime and licence are local. The original slide
+projects have not been changed. The course-navigation slide link follows
+the selected bank.
+
+Run this read-only check from the exercise directory after the slides change:
+
+```bash
+python3 scripts/check_week3_sources.py --slides-source "/absolute/path/to/slides-2026-week-3"
+```
+
+On the author's current machine the source path is:
+
+```text
+/home/alexander/Nextcloud/admin/unipo/lehre/2026S2-statistical-inference/webpage/slides-2026-week-3
+```
+
+`sources/week-3-baseline.json` records both source/render hashes, hashes of each
+slide body and its referenced figures, stable slide keys, numbers and anchors,
+and the question-to-slide mapping. The check reports changed slides and affected
+question IDs, including translation-only changes. It exits 0 for a match, 1 when
+review is needed, or 2 when it cannot verify (for example, the source has not been
+rendered after adding a slide). It never modifies anything.
+
+When it reports changes:
+
+1. Inspect the slide changes and the listed questions in **both** languages.
+   Review assumptions, scope, answers, explanations and proof context. Check whether
+   added material needs new questions, even if no existing question refers to it.
+2. Edit the matching bank files, keeping question/option IDs aligned across languages.
+   Update source anchors and numbers when necessary.
+3. After reviewing and rendering the source, replace the reference copies with the
+   matching rendered decks and local runtime. Refresh the baseline hashes and
+   per-question mapping and the bank's source metadata together. Do not merely
+   update hashes to silence an unreviewed mismatch.
+4. Run `node scripts/verify_week3_banks.js` and the source check, then preview both
+   languages on desktop and mobile.
+
+This is a **change detector**, not an automatic mathematical-consistency checker.
+Changes are not monitored in the background, and exercises are not rewritten
+automatically when slides change.
 
 ## Preview and publish
 
@@ -156,4 +221,5 @@ Publish with the website's usual GitHub Pages workflow.
 
 All exercise scripts, styles, fonts, and icons are local. The source notes in the
 question-bank file retain reference URLs; those documents are not fetched while
-playing. The lecture link points to the neighbouring Weeks 1–2 slide deck.
+playing. The lecture link follows the selected bank: the neighbouring Weeks 1–2
+deck for older banks, or the reviewed Week 3 snapshot for Lectures 5–6.

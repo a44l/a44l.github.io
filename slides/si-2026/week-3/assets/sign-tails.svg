@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc" xml:lang="en">
+<title id="title">Sign-test tails</title>
+<desc id="desc">B~Binomial(10,1/2). Highlighted k=0,1,9,10. Total probability 22/1024.</desc>
+<g font-family="Arial, Helvetica, sans-serif">
+<line x1="57.00" y1="262.00" x2="1157.00" y2="262.00" stroke="#cad3d1" stroke-width="1.5"/>
+<text x="44.00" y="269.00" font-size="19" text-anchor="end" fill="#17313b">0</text>
+<line x1="57.00" y1="176.07" x2="1157.00" y2="176.07" stroke="#cad3d1" stroke-width="1.5"/>
+<text x="44.00" y="183.07" font-size="19" text-anchor="end" fill="#17313b">0.1</text>
+<line x1="57.00" y1="90.15" x2="1157.00" y2="90.15" stroke="#cad3d1" stroke-width="1.5"/>
+<text x="44.00" y="97.15" font-size="19" text-anchor="end" fill="#17313b">0.2</text>
+<rect x="66.000" y="261.161" width="56" height="0.839" fill="#dc6b4f" rx="2"/>
+<text x="94.00" y="291.00" font-size="23" text-anchor="middle" fill="#dc6b4f">0</text>
+<rect x="168.600" y="253.609" width="56" height="8.391" fill="#dc6b4f" rx="2"/>
+<text x="196.60" y="291.00" font-size="23" text-anchor="middle" fill="#dc6b4f">1</text>
+<rect x="271.200" y="224.240" width="56" height="37.760" fill="#087f8c" rx="2"/>
+<text x="299.20" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">2</text>
+<rect x="373.800" y="161.306" width="56" height="100.694" fill="#087f8c" rx="2"/>
+<text x="401.80" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">3</text>
+<rect x="476.400" y="85.785" width="56" height="176.215" fill="#087f8c" rx="2"/>
+<text x="504.40" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">4</text>
+<rect x="579.000" y="50.542" width="56" height="211.458" fill="#087f8c" rx="2"/>
+<text x="607.00" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">5</text>
+<rect x="681.600" y="85.785" width="56" height="176.215" fill="#087f8c" rx="2"/>
+<text x="709.60" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">6</text>
+<rect x="784.200" y="161.306" width="56" height="100.694" fill="#087f8c" rx="2"/>
+<text x="812.20" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">7</text>
+<rect x="886.800" y="224.240" width="56" height="37.760" fill="#087f8c" rx="2"/>
+<text x="914.80" y="291.00" font-size="23" text-anchor="middle" fill="#087f8c">8</text>
+<rect x="989.400" y="253.609" width="56" height="8.391" fill="#dc6b4f" rx="2"/>
+<text x="1017.40" y="291.00" font-size="23" text-anchor="middle" fill="#dc6b4f">9</text>
+<rect x="1092.000" y="261.161" width="56" height="0.839" fill="#dc6b4f" rx="2"/>
+<text x="1120.00" y="291.00" font-size="23" text-anchor="middle" fill="#dc6b4f">10</text>
+<text x="607.00" y="334.00" font-size="22" text-anchor="middle" fill="#17313b">Number of positive differences</text>
+<line x1="1017.40" y1="57.00" x2="1017.40" y2="246.61" stroke="#dc6b4f" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="1017.40" y="42.00" font-size="23" text-anchor="middle" fill="#dc6b4f">t = 9</text>
+</g>
+</svg>

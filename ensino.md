@@ -29,7 +29,7 @@ Os materiais da primeira semana também estão disponíveis aqui. Para as semana
 
 [Slides das aulas das semanas 1-2](/slides/si-2026/weeks-1-2/pt/)
 
-[Exercícios interativos semanas 1-2](/slides/si-2026/weeks-1-2/exercises/pt/)
+[Exercícios interativos — Aulas 1–6](/slides/si-2026/weeks-1-2/exercises/pt/)
 
 
 #### Horário semanal

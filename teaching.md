@@ -28,7 +28,7 @@ The material for the first week is also linked here. For all following weeks, pl
 
 [Lecture slides Weeks 1-2](/slides/si-2026/weeks-1-2/)
 
-[Live exercises Weeks 1-2](/slides/si-2026/weeks-1-2/exercises/)
+[Live exercises — Lectures 1–6](/slides/si-2026/weeks-1-2/exercises/)
 
 #### Weekly schedule
 
