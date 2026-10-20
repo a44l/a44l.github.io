@@ -1,0 +1,25 @@
+{
+  "input_sha256": "6305abe0ee5b844955a30ea318b661357bfcce8859be47969554c6080724b356",
+  "provenance": "Supplied historical/reduced opposition data; not raw readings",
+  "fit_rows": 10,
+  "later_rows_not_fitted": 2,
+  "time_unit": "Supplied elapsed local days, historical Julian calendar",
+  "circular": {
+    "phase_deg": 57.34655419552059,
+    "rate_deg_per_day": 0.5242532538424748,
+    "period_days": 686.6910169110197,
+    "rms_arcmin": 442.1487523840136
+  },
+  "elliptical": {
+    "mean_longitude_at_origin_deg": 55.844592383585194,
+    "rate_deg_per_day": 0.524078986313857,
+    "eccentricity": 0.09270469062426805,
+    "perihelion_deg_mod_360": 328.9006387074687,
+    "period_days": 686.9193564353401,
+    "rms_arcmin": 1.1243590661389378
+  },
+  "later_elliptical_residuals_arcmin": [
+    2.3470731016641366,
+    0.48398732284113066
+  ]
+}

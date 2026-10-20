@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="972pt" height="331.2pt" viewBox="0 0 972 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.6.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2 
+L 972 331.2 
+L 972 0 
+L 0 0 
+z
+" style="fill: #f7f4ed"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 235.263158 249.178947 
+C 257.428554 249.178947 278.689097 240.372542 294.362398 224.69924 
+C 310.0357 209.025939 318.842105 187.765396 318.842105 165.6 
+C 318.842105 143.434604 310.0357 122.174061 294.362398 106.50076 
+C 278.689097 90.827458 257.428554 82.021053 235.263158 82.021053 
+C 213.097762 82.021053 191.837219 90.827458 176.163917 106.50076 
+C 160.490616 122.174061 151.684211 143.434604 151.684211 165.6 
+C 151.684211 187.765396 160.490616 209.025939 176.163917 224.69924 
+C 191.837219 240.372542 213.097762 249.178947 235.263158 249.178947 
+L 235.263158 249.178947 
+z
+" clip-path="url(#p2ea6ee9217)" style="fill: none; stroke: #cad3d1; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 235.263158 307.684211 
+C 272.944331 307.684211 309.087254 292.713322 335.731867 266.068709 
+C 362.37648 239.424096 377.347368 203.281173 377.347368 165.6 
+C 377.347368 127.918827 362.37648 91.775904 335.731867 65.131291 
+C 309.087254 38.486678 272.944331 23.515789 235.263158 23.515789 
+C 197.581985 23.515789 161.439062 38.486678 134.794449 65.131291 
+C 108.149836 91.775904 93.178947 127.918827 93.178947 165.6 
+C 93.178947 203.281173 108.149836 239.424096 134.794449 266.068709 
+C 161.439062 292.713322 197.581985 307.684211 235.263158 307.684211 
+L 235.263158 307.684211 
+z
+" clip-path="url(#p2ea6ee9217)" style="fill: none; stroke: #cad3d1; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 320.845368 165.6 
+Q 348.097996 165.6 371.996522 165.6 
+" style="fill: none; stroke: #dc6b4f; stroke-width: 3; stroke-linecap: round"/>
+    <path d="M 365.196522 162.2 
+L 371.996522 165.6 
+L 365.196522 169 
+" style="fill: none; stroke: #dc6b4f; stroke-width: 3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 237.262084 163.092632 
+Q 306.306499 163.092632 373.673863 163.092632 
+" style="fill: none; stroke: #17313b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 366.873863 159.692632 
+L 373.673863 163.092632 
+L 366.873863 166.492632 
+" style="fill: none; stroke: #17313b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #17313b; font: 20px 'DejaVu Sans'; text-anchor: end" x="228.576842" y="190.673684" transform="rotate(-0 228.576842 190.673684)">Sun</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #17313b; font: 20px 'DejaVu Sans'; text-anchor: end" x="316.334737" y="192.345263" transform="rotate(-0 316.334737 192.345263)">Earth</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #17313b; font: 20px 'DejaVu Sans'; text-anchor: start" x="382.362105" y="192.345263" transform="rotate(-0 382.362105 192.345263)">Mars</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #17313b; font: 17px 'DejaVu Sans'; text-anchor: middle" x="282.903158" y="150.555789" transform="rotate(-0 282.903158 150.555789)">Heliocentric position</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #17313b; font: 700 23px 'DejaVu Sans'; text-anchor: start" x="477.642105" y="69.484211" transform="rotate(-0 477.642105 69.484211)">Opposition (schematic)</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #17313b; font: 20px 'DejaVu Sans'; text-anchor: start" x="477.642105" y="115.452632" transform="rotate(-0 477.642105 115.452632)">Observed direction from Earth:</text>
+   </g>
+   <g id="text_7">
+    <!-- $\mathbf{r}_{\mathrm{Mars}}-\mathbf{r}_{\mathrm{Earth}}$ -->
+    <g style="fill: #dc6b4f" transform="translate(477.642105 153.063158)">
+     <text>
+      <tspan style="font: 700 23px 'DejaVu Sans'" x="0 79.189404" y="-0.125">rr</tspan>
+      <tspan style="font: 16.1px 'DejaVu Sans'" x="11.562891 25.453857 35.319824 41.939062 90.752295 100.924854 110.79082 117.410059 123.722705" y="3.6484375">MarsEarth</tspan>
+      <tspan style="font: 23px 'DejaVu Sans'" x="55.436963" y="-0.125">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #17313b; font: 18px 'DejaVu Sans'" transform="translate(477.642105 183.130255)">A tabulated heliocentric longitude</text>
+    <text style="fill: #17313b; font: 18px 'DejaVu Sans'" transform="translate(477.642105 207.389474)">already includes a coordinate reduction.</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #5d6d72; font: 15px 'DejaVu Sans'; text-anchor: start" x="477.642105" y="274.252632" transform="rotate(-0 477.642105 274.252632)">Planar idealization · distances not to scale</text>
+   </g>
+   <g id="PathCollection_1">
+    <path d="M 235.263158 173.016198 
+C 237.229957 173.016198 239.116465 172.234781 240.507202 170.844044 
+C 241.897939 169.453307 242.679356 167.566799 242.679356 165.6 
+C 242.679356 163.633201 241.897939 161.746693 240.507202 160.355956 
+C 239.116465 158.965219 237.229957 158.183802 235.263158 158.183802 
+C 233.296359 158.183802 231.40985 158.965219 230.019114 160.355956 
+C 228.628377 161.746693 227.846959 163.633201 227.846959 165.6 
+C 227.846959 167.566799 228.628377 169.453307 230.019114 170.844044 
+C 231.40985 172.234781 233.296359 173.016198 235.263158 173.016198 
+z
+" clip-path="url(#p2ea6ee9217)" style="fill: #e2ae3a; stroke: #e2ae3a"/>
+    <path d="M 318.842105 171.723724 
+C 320.466136 171.723724 322.023869 171.07849 323.172232 169.930127 
+C 324.320595 168.781764 324.96583 167.224031 324.96583 165.6 
+C 324.96583 163.975969 324.320595 162.418236 323.172232 161.269873 
+C 322.023869 160.12151 320.466136 159.476276 318.842105 159.476276 
+C 317.218075 159.476276 315.660341 160.12151 314.511978 161.269873 
+C 313.363615 162.418236 312.718381 163.975969 312.718381 165.6 
+C 312.718381 167.224031 313.363615 168.781764 314.511978 169.930127 
+C 315.660341 171.07849 317.218075 171.723724 318.842105 171.723724 
+z
+" clip-path="url(#p2ea6ee9217)" style="fill: #087f8c; stroke: #087f8c"/>
+    <path d="M 377.347368 172.119202 
+C 379.076281 172.119202 380.734615 171.432298 381.957141 170.209772 
+C 383.179667 168.987246 383.866571 167.328913 383.866571 165.6 
+C 383.866571 163.871087 383.179667 162.212754 381.957141 160.990228 
+C 380.734615 159.767702 379.076281 159.080798 377.347368 159.080798 
+C 375.618456 159.080798 373.960122 159.767702 372.737596 160.990228 
+C 371.51507 162.212754 370.828166 163.871087 370.828166 165.6 
+C 370.828166 167.328913 371.51507 168.987246 372.737596 170.209772 
+C 373.960122 171.432298 375.618456 172.119202 377.347368 172.119202 
+z
+" clip-path="url(#p2ea6ee9217)" style="fill: #dc6b4f; stroke: #dc6b4f"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2ea6ee9217">
+   <rect x="68.105263" y="6.8" width="835.789474" height="317.6"/>
+  </clipPath>
+ </defs>
+</svg>

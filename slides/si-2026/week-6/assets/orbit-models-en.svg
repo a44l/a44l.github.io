@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="972pt" height="338.4pt" viewBox="0 0 972 338.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.6.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 338.4 
+L 972 338.4 
+L 972 0 
+L 0 0 
+z
+" style="fill: #f7f4ed"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 244.738836 278.8416 
+C 269.747701 278.8416 293.735634 268.905473 311.419572 251.221535 
+C 329.103509 233.537597 339.039636 209.549664 339.039636 184.5408 
+C 339.039636 159.531936 329.103509 135.544003 311.419572 117.860065 
+C 293.735634 100.176127 269.747701 90.24 244.738836 90.24 
+C 219.729972 90.24 195.742039 100.176127 178.058101 117.860065 
+C 160.374164 135.544003 150.438036 159.531936 150.438036 184.5408 
+C 150.438036 209.549664 160.374164 233.537597 178.058101 251.221535 
+C 195.742039 268.905473 219.729972 278.8416 244.738836 278.8416 
+L 244.738836 278.8416 
+z
+" clip-path="url(#p64cd39a90c)" style="fill: none; stroke: #dc6b4f; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m42f959fafe" d="M 0 7.071068 
+C 1.875269 7.071068 3.673985 6.326016 5 5 
+C 6.326016 3.673985 7.071068 1.875269 7.071068 0 
+C 7.071068 -1.875269 6.326016 -3.673985 5 -5 
+C 3.673985 -6.326016 1.875269 -7.071068 0 -7.071068 
+C -1.875269 -7.071068 -3.673985 -6.326016 -5 -5 
+C -6.326016 -3.673985 -7.071068 -1.875269 -7.071068 0 
+C -7.071068 1.875269 -6.326016 3.673985 -5 5 
+C -3.673985 6.326016 -1.875269 7.071068 0 7.071068 
+z
+" style="stroke: #e2ae3a"/>
+    </defs>
+    <g clip-path="url(#p64cd39a90c)">
+     <use xlink:href="#m42f959fafe" x="244.738836" y="184.5408" style="fill: #e2ae3a; stroke: #e2ae3a"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="fill: #17313b; font: 19px 'DejaVu Sans'; text-anchor: middle" x="244.738836" y="209.11616" transform="rotate(-0 244.738836 209.11616)">Sun at centre</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #17313b; font: 23px 'DejaVu Sans'; text-anchor: middle" x="244.738836" y="298.8448" transform="rotate(-0 244.738836 298.8448)">Circular model</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #17313b; font: 700 28px 'DejaVu Sans'; text-anchor: middle" x="239.023636" y="41.376" transform="rotate(-0 239.023636 41.376)">Galilei</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 708.233708 282.340731 
+C 736.27395 282.340731 763.169511 272.035913 782.996956 253.695795 
+C 802.824401 235.355676 813.964908 210.477645 813.964908 184.5408 
+C 813.964908 158.603955 802.824401 133.725924 782.996956 115.385805 
+C 763.169511 97.045687 736.27395 86.740869 708.233708 86.740869 
+C 680.193466 86.740869 653.297904 97.045687 633.470459 115.385805 
+C 613.643014 133.725924 602.502508 158.603955 602.502508 184.5408 
+C 602.502508 210.477645 613.643014 235.355676 633.470459 253.695795 
+C 653.297904 272.035913 680.193466 282.340731 708.233708 282.340731 
+L 708.233708 282.340731 
+z
+" clip-path="url(#pea4e76a5c2)" style="fill: none; stroke: #087f8c; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#pea4e76a5c2)">
+     <use xlink:href="#m42f959fafe" x="748.411564" y="184.5408" style="fill: #e2ae3a; stroke: #e2ae3a"/>
+    </g>
+   </g>
+   <g id="text_4">
+    <text style="fill: #17313b; font: 19px 'DejaVu Sans'; text-anchor: middle" x="748.411564" y="209.11616" transform="rotate(-0 748.411564 209.11616)">Sun at one focus</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #17313b; font: 23px 'DejaVu Sans'; text-anchor: middle" x="728.408364" y="298.8448" transform="rotate(-0 728.408364 298.8448)">Elliptical model</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #17313b; font: 700 28px 'DejaVu Sans'; text-anchor: middle" x="742.696364" y="41.376" transform="rotate(-0 742.696364 41.376)">Kepler</text>
+   </g>
+  </g>
+  <g id="text_7">
+   <text style="fill: #5d6d72; font: 14px 'DejaVu Sans'; text-anchor: middle" x="486" y="331.632" transform="rotate(-0 486 331.632)">Schematic orbit shapes · eccentricity exaggerated</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p64cd39a90c">
+   <rect x="90.428436" y="47.376" width="297.1904" height="257.184"/>
+  </clipPath>
+  <clipPath id="pea4e76a5c2">
+   <rect x="594.101164" y="47.376" width="297.1904" height="257.184"/>
+  </clipPath>
+ </defs>
+</svg>
