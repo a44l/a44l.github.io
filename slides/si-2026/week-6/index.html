@@ -999,7 +999,7 @@ margin-right: 0; }
 <section id="week-6" class="slide level2" data-importance="2">
 <h2>Week 6</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="2" title="Importance: 2/5" aria-label="Importance: 2/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 2/5" data-importance="2" role="img" aria-label="Importance: 2/5">●</span> WEEK 6</p>
 </div>
 <div class="route">
 <div>
@@ -1015,7 +1015,7 @@ Sample spaces, parameter spaces and assumptions about distributions
 Statistics
 </h3>
 <p>
-Functions of a sample used as data summaries, and their sampling distributions
+Functions of a sample and their sampling distributions
 </p>
 </div>
 <div>
@@ -1023,7 +1023,7 @@ Functions of a sample used as data summaries, and their sampling distributions
 Sufficiency
 </h3>
 <p>
-Preserving information about a parameter and finding a minimal sufficient summary
+Preserving information about a parameter and finding a minimal sufficient statistic
 </p>
 </div>
 <div>
@@ -1053,7 +1053,7 @@ display:block!important;
 <section id="lecture-11" class="title-slide slide level1 section-slide" data-background-color="#0b3442" data-importance="2">
 <h1>Lecture 11</h1>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="2" title="Importance: 2/5" aria-label="Importance: 2/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 2/5" data-importance="2" role="img" aria-label="Importance: 2/5">●</span> WEEK 6</p>
 </div>
 <p><span class="kicker">Week 6 · Statistical models and statistics</span></p>
 <p>Models, sampling distributions and sufficient statistics.</p>
@@ -1061,22 +1061,22 @@ display:block!important;
 <section id="statistical-models" class="slide level2" data-importance="5">
 <h2>Statistical models</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>A model specifies which probability distributions could describe the data.</p>
 <div id="stmt-statistical-model" class="statement definition-card" data-kind="Definition" data-statement-number="11.1">
 <div class="statement-label">
 Definition 11.1
 </div>
-<p>A <strong>statistical model</strong> consists of a measurable sample space <span class="math inline">\((\mathcal X,\mathcal A)\)</span> and a family <span class="math inline">\(\mathcal P\)</span> of probability measures on it.</p>
-<p>A model is <strong>parametric</strong> if its distributions are described by a fixed finite number <span class="math inline">\(d\)</span> of real parameters. It has the form <span class="math display">\[
+<p>A measurable sample space <span class="math inline">\((\mathcal X,\mathcal A)\)</span> together with a family <span class="math inline">\(\mathcal P\)</span> of probability measures on it is called a <strong>statistical model</strong>.</p>
+<p>A model is called <strong>parametric</strong> if its distributions are described by a fixed finite number <span class="math inline">\(d\)</span> of real parameters. It has the form <span class="math display">\[
 \mathcal P=\{P_\theta:\theta\in\Theta\},\qquad \Theta\subseteq\mathbb R^d,\quad d&lt;\infty,
-\]</span> where <span class="math inline">\(\Theta\)</span> is the parameter space.</p>
+\]</span> where <span class="math inline">\(\Theta\)</span> is called the <strong>parameter space</strong>.</p>
 </div>
-<p>In a <strong>nonparametric model</strong>, the family is not described by a fixed finite number of free parameters.</p>
-<p>The parameter <span class="math inline">\(\theta\)</span> is fixed but unknown. The sample <span class="math inline">\(X\)</span> is random with law <span class="math inline">\(P_\theta\)</span>.</p>
+<p>A model is called <strong>nonparametric</strong> if its family of distributions is not described by a fixed finite number of free parameters.</p>
+<p>The parameter <span class="math inline">\(\theta\)</span> is fixed but unknown. The sample <span class="math inline">\(X\)</span> is random with distribution <span class="math inline">\(P_\theta\)</span>.</p>
 <aside class="notes">
-<p>This follows the opening of the original lectures. The questions of inference concern whether a family can describe the data, which parameter values are compatible with observations, and how to quantify uncertainty. The family describes a joint sampling law, not just individual marginal distributions. On real sample spaces we use Borel events. A parametric family has a finite dimensional parameterization in the usual statistical sense. A nonparametric family is not described by a fixed finite list of free distributional parameters.</p>
+<p>This follows the opening of the original lectures. The questions of inference concern whether a family can describe the data, which parameter values are compatible with observations, and how to quantify uncertainty. The family describes a joint sampling distribution, not just individual marginal distributions. On real sample spaces we use Borel events. A parametric family has a finite dimensional parameterization in the usual statistical sense. A nonparametric family is not described by a fixed finite list of free distributional parameters.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1092,7 +1092,7 @@ display:block!important;
 <section id="examples-of-parametric-models" class="slide level2" data-importance="5">
 <h2>Examples of parametric models</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>We now assume a sample of fixed size <span class="math inline">\(n\)</span> with i.i.d. coordinates.</p>
 <div class="two-panels">
@@ -1131,7 +1131,7 @@ display:block!important;
 <section id="example-measuring-the-speed-of-light" class="slide level2" data-importance="3">
 <h2>Example: Measuring the speed of light</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="3" title="Importance: 3/5" aria-label="Importance: 3/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 3/5" data-importance="3" role="img" aria-label="Importance: 3/5">●</span> WEEK 6</p>
 </div>
 <div class="light-layout">
 <div class="light-images">
@@ -1150,7 +1150,7 @@ X_i=\mu+\varepsilon_i,
 </div>
 </div>
 <aside class="notes">
-<p>This is the measurement example in the original lectures. A common true travel time and a common error law are assumptions about the experiment. Differences between days or calibration changes can challenge those assumptions. The original source shows 66 observations recorded over three days. The figures are extracted unchanged from the supplied PDF. We reproduce the original measurement plot on the next slide, without inventing observation values or new numerical estimates. The symbol d denotes the known total light path.</p>
+<p>This is the measurement example in the original lectures. A common true travel time and a common error distribution are assumptions about the experiment. Differences between days or calibration changes can challenge those assumptions. The original source shows 66 observations recorded over three days. The figures are extracted unchanged from the supplied PDF. We reproduce the original measurement plot on the next slide, without inventing observation values or new numerical estimates. The symbol d denotes the known total light path.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1166,7 +1166,7 @@ display:block!important;
 <section id="two-models-for-the-measurement-errors" class="slide level2 measurement-errors" data-importance="4">
 <h2>Two models for the measurement errors</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <p>For the travel time measurements <span class="math inline">\(X_i=\mu+\varepsilon_i\)</span>, assume independent errors with the same distribution.</p>
 <div class="two-panels">
@@ -1205,15 +1205,15 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="a-statistic-is-computable-from-the-sample" class="slide level2" data-importance="5">
-<h2>A statistic is computable from the sample</h2>
+<h2>Statistics</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-statistic" class="statement definition-card" data-kind="Definition" data-statement-number="11.2">
 <div class="statement-label">
 Definition 11.2
 </div>
-<p>A <strong>statistic</strong> <span class="math inline">\(T(X)\)</span> is a measurable function of the sample whose computation does not involve unknown parameters. It may be vector valued.</p>
+<p>A measurable function <span class="math inline">\(T\)</span> of the sample that does not depend on unknown parameters is called a <strong>statistic</strong>. It may be vector valued.</p>
 </div>
 <p>For <span class="math inline">\(n\ge2\)</span>, examples are <span class="math display">\[
 \overline X=\frac1n\sum_{i=1}^n X_i,\qquad
@@ -1238,13 +1238,13 @@ display:block!important;
 <section id="sampling-distributions" class="slide level2" data-importance="5">
 <h2>Sampling distributions</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-sampling-distribution" class="statement definition-card" data-kind="Definition" data-statement-number="11.3">
 <div class="statement-label">
 Definition 11.3
 </div>
-<p>The <strong>sampling distribution</strong> of <span class="math inline">\(T(X)\)</span> is its probability law under the specified sampling model.</p>
+<p>Under a specified sampling model, the probability distribution of <span class="math inline">\(T(X)\)</span> is called its <strong>sampling distribution</strong>.</p>
 </div>
 <div class="two-panels">
 <div class="definition-card">
@@ -1265,7 +1265,7 @@ T=\sum_iX_i\sim\operatorname{Bin}(n,p).
 </div>
 </div>
 <aside class="notes">
-<p>There are binomial(n,t) binary sample vectors with t successes, each with probability p<sup>t(1−p)</sup>(n−t). Their sum gives the binomial sampling pmf. For the normal mean, independence gives the MGF exp(mu s + sigma squared s squared/(2n)). Uniqueness of MGFs gives the stated normal law. Neither statement is a large sample approximation. The distributions depend on unknown parameters even though the statistics are computable from the observations.</p>
+<p>There are binomial(n,t) binary sample vectors with t successes, each with probability p<sup>t(1−p)</sup>(n−t). Their sum gives the binomial sampling pmf. For the normal mean, independence gives the MGF exp(mu s + sigma squared s squared/(2n)). Uniqueness of MGFs gives the stated normal distribution. Neither statement is a large sample approximation. The distributions depend on unknown parameters even though the statistics are computable from the observations.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1281,11 +1281,11 @@ display:block!important;
 <section id="example-modelling-the-orbit-of-mars" class="slide level2" data-importance="3">
 <h2>Example: Modelling the orbit of Mars</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="3" title="Importance: 3/5" aria-label="Importance: 3/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 3/5" data-importance="3" role="img" aria-label="Importance: 3/5">●</span> WEEK 6</p>
 </div>
 
 <img role="img" aria-label="Side by side schematic comparison. Galilei is associated with a circular model, with the Sun at the centre. Kepler&#39;s elliptical model places the Sun at one focus. The diagrams show idealized orbit shapes, not observations." data-src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9Ijk3MnB0IiBoZWlnaHQ9IjMzOC40cHQiIHZpZXdCb3g9IjAgMCA5NzIgMzM4LjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDMzOC40IApMIDk3MiAzMzguNCAKTCA5NzIgMCAKTCAwIDAgCnoKIiBzdHlsZT0iZmlsbDogI2Y3ZjRlZCIvPgogIDwvZz4KICA8ZyBpZD0iYXhlc18xIj4KICAgPGcgaWQ9InBhdGNoXzIiPgogICAgPHBhdGggZD0iTSAyNDQuNzM4ODM2IDI3OC44NDE2IApDIDI2OS43NDc3MDEgMjc4Ljg0MTYgMjkzLjczNTYzNCAyNjguOTA1NDczIDMxMS40MTk1NzIgMjUxLjIyMTUzNSAKQyAzMjkuMTAzNTA5IDIzMy41Mzc1OTcgMzM5LjAzOTYzNiAyMDkuNTQ5NjY0IDMzOS4wMzk2MzYgMTg0LjU0MDggCkMgMzM5LjAzOTYzNiAxNTkuNTMxOTM2IDMyOS4xMDM1MDkgMTM1LjU0NDAwMyAzMTEuNDE5NTcyIDExNy44NjAwNjUgCkMgMjkzLjczNTYzNCAxMDAuMTc2MTI3IDI2OS43NDc3MDEgOTAuMjQgMjQ0LjczODgzNiA5MC4yNCAKQyAyMTkuNzI5OTcyIDkwLjI0IDE5NS43NDIwMzkgMTAwLjE3NjEyNyAxNzguMDU4MTAxIDExNy44NjAwNjUgCkMgMTYwLjM3NDE2NCAxMzUuNTQ0MDAzIDE1MC40MzgwMzYgMTU5LjUzMTkzNiAxNTAuNDM4MDM2IDE4NC41NDA4IApDIDE1MC40MzgwMzYgMjA5LjU0OTY2NCAxNjAuMzc0MTY0IDIzMy41Mzc1OTcgMTc4LjA1ODEwMSAyNTEuMjIxNTM1IApDIDE5NS43NDIwMzkgMjY4LjkwNTQ3MyAyMTkuNzI5OTcyIDI3OC44NDE2IDI0NC43Mzg4MzYgMjc4Ljg0MTYgCkwgMjQ0LjczODgzNiAyNzguODQxNiAKegoiIGNsaXAtcGF0aD0idXJsKCNwNjRjZDM5YTkwYykiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNkYzZiNGY7IHN0cm9rZS13aWR0aDogMzsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlciIvPgogICA8L2c+CiAgIDxnIGlkPSJQYXRoQ29sbGVjdGlvbl8xIj4KICAgIDxkZWZzPgogICAgIDxwYXRoIGlkPSJtNDJmOTU5ZmFmZSIgZD0iTSAwIDcuMDcxMDY4IApDIDEuODc1MjY5IDcuMDcxMDY4IDMuNjczOTg1IDYuMzI2MDE2IDUgNSAKQyA2LjMyNjAxNiAzLjY3Mzk4NSA3LjA3MTA2OCAxLjg3NTI2OSA3LjA3MTA2OCAwIApDIDcuMDcxMDY4IC0xLjg3NTI2OSA2LjMyNjAxNiAtMy42NzM5ODUgNSAtNSAKQyAzLjY3Mzk4NSAtNi4zMjYwMTYgMS44NzUyNjkgLTcuMDcxMDY4IDAgLTcuMDcxMDY4IApDIC0xLjg3NTI2OSAtNy4wNzEwNjggLTMuNjczOTg1IC02LjMyNjAxNiAtNSAtNSAKQyAtNi4zMjYwMTYgLTMuNjczOTg1IC03LjA3MTA2OCAtMS44NzUyNjkgLTcuMDcxMDY4IDAgCkMgLTcuMDcxMDY4IDEuODc1MjY5IC02LjMyNjAxNiAzLjY3Mzk4NSAtNSA1IApDIC0zLjY3Mzk4NSA2LjMyNjAxNiAtMS44NzUyNjkgNy4wNzEwNjggMCA3LjA3MTA2OCAKegoiIHN0eWxlPSJzdHJva2U6ICNlMmFlM2EiLz4KICAgIDwvZGVmcz4KICAgIDxnIGNsaXAtcGF0aD0idXJsKCNwNjRjZDM5YTkwYykiPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI200MmY5NTlmYWZlIiB4PSIyNDQuNzM4ODM2IiB5PSIxODQuNTQwOCIgc3R5bGU9ImZpbGw6ICNlMmFlM2E7IHN0cm9rZTogI2UyYWUzYSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzEiPgogICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE5cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iMjQ0LjczODgzNiIgeT0iMjA5LjExNjE2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCAyNDQuNzM4ODM2IDIwOS4xMTYxNikiPlN1biBhdCBjZW50cmU8L3RleHQ+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMiI+CiAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMjNweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSIyNDQuNzM4ODM2IiB5PSIyOTguODQ0OCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgMjQ0LjczODgzNiAyOTguODQ0OCkiPkNpcmN1bGFyIG1vZGVsPC90ZXh0PgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzMiPgogICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDcwMCAyOHB4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjIzOS4wMjM2MzYiIHk9IjQxLjM3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgMjM5LjAyMzYzNiA0MS4zNzYpIj5HYWxpbGVpPC90ZXh0PgogICA8L2c+CiAgPC9nPgogIDxnIGlkPSJheGVzXzIiPgogICA8ZyBpZD0icGF0Y2hfMyI+CiAgICA8cGF0aCBkPSJNIDcwOC4yMzM3MDggMjgyLjM0MDczMSAKQyA3MzYuMjczOTUgMjgyLjM0MDczMSA3NjMuMTY5NTExIDI3Mi4wMzU5MTMgNzgyLjk5Njk1NiAyNTMuNjk1Nzk1IApDIDgwMi44MjQ0MDEgMjM1LjM1NTY3NiA4MTMuOTY0OTA4IDIxMC40Nzc2NDUgODEzLjk2NDkwOCAxODQuNTQwOCAKQyA4MTMuOTY0OTA4IDE1OC42MDM5NTUgODAyLjgyNDQwMSAxMzMuNzI1OTI0IDc4Mi45OTY5NTYgMTE1LjM4NTgwNSAKQyA3NjMuMTY5NTExIDk3LjA0NTY4NyA3MzYuMjczOTUgODYuNzQwODY5IDcwOC4yMzM3MDggODYuNzQwODY5IApDIDY4MC4xOTM0NjYgODYuNzQwODY5IDY1My4yOTc5MDQgOTcuMDQ1Njg3IDYzMy40NzA0NTkgMTE1LjM4NTgwNSAKQyA2MTMuNjQzMDE0IDEzMy43MjU5MjQgNjAyLjUwMjUwOCAxNTguNjAzOTU1IDYwMi41MDI1MDggMTg0LjU0MDggCkMgNjAyLjUwMjUwOCAyMTAuNDc3NjQ1IDYxMy42NDMwMTQgMjM1LjM1NTY3NiA2MzMuNDcwNDU5IDI1My42OTU3OTUgCkMgNjUzLjI5NzkwNCAyNzIuMDM1OTEzIDY4MC4xOTM0NjYgMjgyLjM0MDczMSA3MDguMjMzNzA4IDI4Mi4zNDA3MzEgCkwgNzA4LjIzMzcwOCAyODIuMzQwNzMxIAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3BlYTRlNzZhNWMyKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzA4N2Y4Yzsgc3Ryb2tlLXdpZHRoOiAzOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9IlBhdGhDb2xsZWN0aW9uXzIiPgogICAgPGcgY2xpcC1wYXRoPSJ1cmwoI3BlYTRlNzZhNWMyKSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjbTQyZjk1OWZhZmUiIHg9Ijc0OC40MTE1NjQiIHk9IjE4NC41NDA4IiBzdHlsZT0iZmlsbDogI2UyYWUzYTsgc3Ryb2tlOiAjZTJhZTNhIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfNCI+CiAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTlweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSI3NDguNDExNTY0IiB5PSIyMDkuMTE2MTYiIHRyYW5zZm9ybT0icm90YXRlKC0wIDc0OC40MTE1NjQgMjA5LjExNjE2KSI+U3VuIGF0IG9uZSBmb2N1czwvdGV4dD4KICAgPC9nPgogICA8ZyBpZD0idGV4dF81Ij4KICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAyM3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjcyOC40MDgzNjQiIHk9IjI5OC44NDQ4IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA3MjguNDA4MzY0IDI5OC44NDQ4KSI+RWxsaXB0aWNhbCBtb2RlbDwvdGV4dD4KICAgPC9nPgogICA8ZyBpZD0idGV4dF82Ij4KICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiA3MDAgMjhweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSI3NDIuNjk2MzY0IiB5PSI0MS4zNzYiIHRyYW5zZm9ybT0icm90YXRlKC0wIDc0Mi42OTYzNjQgNDEuMzc2KSI+S2VwbGVyPC90ZXh0PgogICA8L2c+CiAgPC9nPgogIDxnIGlkPSJ0ZXh0XzciPgogICA8dGV4dCBzdHlsZT0iZmlsbDogIzVkNmQ3MjsgZm9udDogMTRweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSI0ODYiIHk9IjMzMS42MzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDQ4NiAzMzEuNjMyKSI+U2NoZW1hdGljIG9yYml0IHNoYXBlcyDCtyBlY2NlbnRyaWNpdHkgZXhhZ2dlcmF0ZWQ8L3RleHQ+CiAgPC9nPgogPC9nPgogPGRlZnM+CiAgPGNsaXBQYXRoIGlkPSJwNjRjZDM5YTkwYyI+CiAgIDxyZWN0IHg9IjkwLjQyODQzNiIgeT0iNDcuMzc2IiB3aWR0aD0iMjk3LjE5MDQiIGhlaWdodD0iMjU3LjE4NCIvPgogIDwvY2xpcFBhdGg+CiAgPGNsaXBQYXRoIGlkPSJwZWE0ZTc2YTVjMiI+CiAgIDxyZWN0IHg9IjU5NC4xMDExNjQiIHk9IjQ3LjM3NiIgd2lkdGg9IjI5Ny4xOTA0IiBoZWlnaHQ9IjI1Ny4xODQiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K" class="week6-figure r-stretch" alt="Side by side schematic comparison. Galilei is associated with a circular model, with the Sun at the centre. Kepler&#39;s elliptical model places the Sun at one focus. The diagrams show idealized orbit shapes, not observations."><aside class="notes">
-<p>The historical discovery involved much more than fitting these two simplified curves. Our purpose is to distinguish the deterministic orbital law from assumptions about measured positions. The supplied table contains historical reductions, not raw readings. It includes ten observations from 1580 to 1600 and two later ones from 1602 and 1604. At opposition, the Sun, Earth and Mars are approximately aligned with Earth in the middle. Direct observations describe the direction from Earth, while the supplied heliocentric longitudes already include a coordinate reduction. We do not identify this simple comparison with the historical eight arcminute discrepancy or with Tycho’s full circular construction. The geometry drawing is schematic, not observed or simulated data.</p>
+<p>The historical discovery involved much more than fitting these two simplified curves. Our purpose is to distinguish the deterministic orbital model from assumptions about measured positions. The supplied table contains historical reductions, not raw readings. It includes ten observations from 1580 to 1600 and two later ones from 1602 and 1604. At opposition, the Sun, Earth and Mars are approximately aligned with Earth in the middle. Direct observations describe the direction from Earth, while the supplied heliocentric longitudes already include a coordinate reduction. We do not identify this simple comparison with the historical eight arcminute discrepancy or with Tycho’s full circular construction. The geometry drawing is schematic, not observed or simulated data.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1301,7 +1301,7 @@ display:block!important;
 <section id="example-a-statistical-model-for-mars" class="slide level2" data-importance="5">
 <h2>Example: A statistical model for Mars</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>At a known time <span class="math inline">\(t_i\)</span>, let <span class="math inline">\(Y_i\)</span> denote the measured longitude of Mars.</p>
 <p>An orbital model predicts the longitude <span class="math inline">\(m_\theta(t_i)\)</span>. The unknown parameters <span class="math inline">\(\theta\)</span> describe quantities such as the orbital period and orientation.</p>
@@ -1312,7 +1312,7 @@ Y_i=m_\theta(t_i)+\varepsilon_i.
 <p>For example, assume <span class="math inline">\(\varepsilon_i\overset{\mathrm{iid}}\sim N(0,\sigma^2)\)</span>.</p>
 <p>Then the observations are independent normal variables with common variance, but their means <span class="math inline">\(m_\theta(t_i)\)</span> generally differ. Thus the observations need not be identically distributed.</p>
 <aside class="notes">
-<p>The times are treated as fixed. The parameters are fixed but unknown and the responses are random. The Gaussian error law is an assumption, not a property established by the historical table. We use unwrapped angular coordinates. A simple circular prediction is m(t)=alpha+bt. For an ellipse, set M(t)=alpha+bt−omega, solve E−e sin E=M, convert eccentric anomaly E to true anomaly nu and form longitude omega+nu. Here e is eccentricity, the distance from the ellipse centre to a focus divided by the semimajor axis. The period is 2 pi/b. The code preserves complete revolutions. At zero eccentricity the circular model is recovered and omega is not identifiable. Coordinate reduction and timing uncertainty can create dependence or systematic errors not captured by the proposed error law.</p>
+<p>The times are treated as fixed. The parameters are fixed but unknown and the responses are random. The Gaussian error distribution is an assumption, not a property established by the historical table. We use unwrapped angular coordinates. A simple circular prediction is m(t)=alpha+bt. For an ellipse, set M(t)=alpha+bt−omega, solve E−e sin E=M, convert eccentric anomaly E to true anomaly nu and form longitude omega+nu. Here e is eccentricity, the distance from the ellipse centre to a focus divided by the semimajor axis. The period is 2 pi/b. The code preserves complete revolutions. At zero eccentricity the circular model is recovered and omega is not identifiable. Coordinate reduction and timing uncertainty can create dependence or systematic errors not captured by the proposed error distribution.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1328,7 +1328,7 @@ display:block!important;
 <section id="observed-positions-and-fitted-residuals" class="slide level2" data-importance="4">
 <h2>Observed positions and fitted residuals</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <p>Let <span class="math inline">\(m(t_i)\)</span> be a fitted prediction and <span class="math inline">\(y_i\)</span> a recorded position.</p>
 <p>The <strong>root mean square (RMS) residual</strong> over the ten fitting observations is</p>
@@ -1356,21 +1356,21 @@ display:block!important;
 <section id="sufficient-statistics" class="slide level2" data-importance="5">
 <h2>Sufficient statistics</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-sufficiency" class="statement definition-card" data-kind="Definition" data-statement-number="11.4">
 <div class="statement-label">
 Definition 11.4
 </div>
-<p>Let <span class="math inline">\(X\)</span> have law <span class="math inline">\(P_\theta\)</span> on <span class="math inline">\((\mathcal X,\mathcal A)\)</span>.</p>
-<p>A statistic <span class="math inline">\(T(X)\)</span> is <strong>sufficient</strong> if, for every <span class="math inline">\(A\in\mathcal A\)</span>, there is a measurable function <span class="math inline">\(q_A\)</span>, not depending on <span class="math inline">\(\theta\)</span>, such that for every <span class="math inline">\(\theta\)</span>,</p>
+<p>Let <span class="math inline">\(X\)</span> have distribution <span class="math inline">\(P_\theta\)</span> on <span class="math inline">\((\mathcal X,\mathcal A)\)</span>.</p>
+<p>A statistic <span class="math inline">\(T(X)\)</span> is called <strong>sufficient</strong> if, for every <span class="math inline">\(A\in\mathcal A\)</span>, there is a measurable function <span class="math inline">\(q_A\)</span>, not depending on <span class="math inline">\(\theta\)</span>, such that for every <span class="math inline">\(\theta\)</span>,</p>
 <p><span class="math display">\[
 \mathbb P_\theta(X\in A\mid T(X))=q_A(T(X))
 \quad P_\theta\text{ almost surely}.
 \]</span></p>
 </div>
 <aside class="notes">
-<p>Conditioning on T(X) means conditioning on the sigma algebra generated by that statistic. A conditional probability is defined up to an almost sure equality under each sampling law. The requirement is that the same measurable function q_A works for every parameter. The definition applies to continuous observations as well as discrete ones and never divides by the probability of an individual value of a continuous statistic.</p>
+<p>Conditioning on T(X) means conditioning on the sigma algebra generated by that statistic. A conditional probability is defined up to an almost sure equality under each sampling distribution. The requirement is that the same measurable function q_A works for every parameter. The definition applies to continuous observations as well as discrete ones and never divides by the probability of an individual value of a continuous statistic.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1384,9 +1384,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="bernoulli-the-count-is-sufficient" class="slide level2 proof-slide" data-importance="5">
-<h2>Bernoulli: the count is sufficient</h2>
+<h2>Bernoulli model: Sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>Let <span class="math inline">\(X_i\overset{\mathrm{iid}}\sim\operatorname{Bernoulli}(p)\)</span>, <span class="math inline">\(p\in(0,1)\)</span>, and <span class="math inline">\(T=\sum_iX_i\)</span>.</p>
 <p>For <span class="math inline">\(t=0,\ldots,n\)</span> and <span class="math inline">\(x\in\{0,1\}^n\)</span> with <span class="math inline">\(\sum_ix_i=t\)</span>, <span class="math display">\[
@@ -1401,7 +1401,7 @@ Proposition 11.5
 <p>The total number of successes is sufficient for <span class="math inline">\(p\)</span>. Conditional on the count, their arrangement is uniform and does not depend on <span class="math inline">\(p\)</span>.</p>
 </div>
 <aside class="notes">
-<p>All values t have positive probability for every p in the stated open interval. The conditional law is a genuine finite probability distribution on the fibre of T: a set of binomial(n,t) vectors. The arrangement has not disappeared from the data, but its conditional distribution no longer contains p. Reconstructing an arrangement randomly from this conditional law does not require knowing p.</p>
+<p>All values t have positive probability for every p in the stated open interval. The conditional distribution is a genuine finite probability distribution on the fibre of T: a set of binomial(n,t) vectors. The arrangement has not disappeared from the data, but its conditional distribution no longer contains p. Reconstructing an arrangement randomly from this conditional distribution does not require knowing p.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1417,7 +1417,7 @@ display:block!important;
 <section id="the-neyman-and-fisher-factorization-theorem" class="slide level2" data-importance="5">
 <h2>The Neyman and Fisher factorization theorem</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-factorization" class="statement result-card" data-kind="Theorem" data-statement-number="11.6">
 <div class="statement-label">
@@ -1430,7 +1430,7 @@ f_\theta(x)=g_\theta(T(x))\,h(x)
 \]</span> The factor <span class="math inline">\(h\)</span> does not depend on <span class="math inline">\(\theta\)</span>. the other factor uses the sample only through <span class="math inline">\(T(x)\)</span>.</p>
 </div>
 <aside class="notes">
-<p>Counting measure covers discrete samples and Lebesgue measure covers the continuous examples. The factor g need not be the normalized sampling density of T. A ratio of a sample density and a statistic density is not automatically a conditional density on a fibre in Euclidean space. The discrete proof follows on the next slide. The general theorem uses conditional laws rather than division by probabilities of conditioning events that are zero.</p>
+<p>Counting measure covers discrete samples and Lebesgue measure covers the continuous examples. The factor g need not be the normalized sampling density of T. A ratio of a sample density and a statistic density is not automatically a conditional density on a fibre in Euclidean space. The discrete proof follows on the next slide. The general theorem uses conditional distributions rather than division by probabilities of conditioning events that are zero.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1446,7 +1446,7 @@ display:block!important;
 <section id="factorization-proof-for-a-countable-sample-space" class="slide level2 proof-slide" data-importance="4">
 <h2>Factorization proof for a countable sample space</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <p><strong>From factorization to sufficiency.</strong> Suppose <span class="math inline">\(f_\theta(x)=g_\theta(T(x))h(x)\)</span> and put <span class="math display">\[
 H(t)=\sum_{z:T(z)=t}h(z).
@@ -1475,7 +1475,7 @@ display:block!important;
 <section id="a-density-ratio-characterisation" class="slide level2 proof-slide" data-importance="5">
 <h2>A density ratio characterisation</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-sufficiency-density-ratio" class="statement result-card" data-kind="Proposition" data-statement-number="11.7">
 <div class="statement-label">
@@ -1505,7 +1505,7 @@ display:block!important;
 <section id="normal-observations-with-known-variance" class="slide level2 proof-slide" data-importance="5">
 <h2>Normal observations with known variance</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>Assume <span class="math inline">\(X_i\overset{\mathrm{iid}}\sim N(\mu,\sigma_0^2)\)</span> with known <span class="math inline">\(\sigma_0^2&gt;0\)</span>.</p>
 <p>The identity <span class="math display">\[
@@ -1536,7 +1536,7 @@ display:block!important;
 <section id="normal-observations-with-both-parameters-unknown" class="slide level2 proof-slide" data-importance="5">
 <h2>Normal observations with both parameters unknown</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>Now <span class="math inline">\(X_i\overset{\mathrm{iid}}\sim N(\mu,\sigma^2)\)</span>, with both parameters unknown. Put <span class="math display">\[
 s(x)=\sum_i x_i,\qquad q(x)=\sum_i x_i^2.
@@ -1550,7 +1550,7 @@ Proposition 11.8
 </div>
 <p><span class="math inline">\(T(X)=(\sum_iX_i,\sum_iX_i^2)\)</span> is sufficient for <span class="math inline">\((\mu,\sigma^2)\)</span>.</p>
 </div>
-<p>The coefficient of the spread is unknown: it can no longer be absorbed into a independent of the parameter factor.</p>
+<p>The coefficient of the spread is unknown: it can no longer be absorbed into a factor that does not depend on the parameter.</p>
 <aside class="notes">
 <p>Factorization uses h=1 and the displayed expression as g of the pair (s,q). For n at least two the same information is contained in the sample mean and sample variance. we establish both transformations explicitly in Lecture 12. This factorization alone proves sufficiency, not minimality or completeness. Those properties will be proved separately.</p>
 <style type="text/css">
@@ -1568,7 +1568,7 @@ display:block!important;
 <section id="a-uniform-sample-with-unknown-endpoint" class="slide level2 proof-slide" data-importance="5">
 <h2>A uniform sample with unknown endpoint</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>Let <span class="math inline">\(X_i\overset{\mathrm{iid}}\sim U(0,\theta)\)</span>, <span class="math inline">\(\theta&gt;0\)</span>. Let <span class="math inline">\(x_{(1)}=\min_i x_i\)</span> and <span class="math inline">\(x_{(n)}=\max_i x_i\)</span>.</p>
 <p>The <strong>whole</strong> joint density is <span class="math display">\[
@@ -1580,7 +1580,7 @@ g_\theta(m)=\theta^{-n}\mathbf1_{\{m&lt;\theta\}},\qquad
 h(x)=\mathbf1_{\{x_{(1)}&gt;0\}}.
 \]</span> Thus the sample maximum <span class="math inline">\(M=X_{(n)}\)</span> is sufficient for <span class="math inline">\(\theta\)</span>.</p>
 <aside class="notes">
-<p>The choice of strict or nonstrict endpoint inequalities does not change these continuous probability laws. We use open endpoints. Removing the indicators would discard the support information. If the minimum is nonpositive the whole density is zero for every theta. On the possible sample space of positive vectors, the support condition involving theta is max(x)&lt;theta. The factorization theorem does not require support to be constant throughout the model. For completeness, the maximum has CDF (m/theta)^n on 0&lt;m&lt;theta, by independence. Its density there is n times m^(n−1) divided by theta^n.</p>
+<p>The choice of strict or nonstrict endpoint inequalities does not change these continuous probability distributions. We use open endpoints. Removing the indicators would discard the support information. If the minimum is nonpositive the whole density is zero for every theta. On the possible sample space of positive vectors, the support condition involving theta is max(x)&lt;theta. The factorization theorem does not require support to be constant throughout the model. For completeness, the maximum has CDF (m/theta)^n on 0&lt;m&lt;theta, by independence. Its density there is n times m^(n−1) divided by theta^n.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1594,9 +1594,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="sorting-is-sufficient-in-an-i.i.d.-model" class="slide level2" data-importance="4">
-<h2>Sorting is sufficient in an i.i.d. model</h2>
+<h2>Order statistics: Sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-order-statistics-sufficient" class="statement result-card" data-kind="Proposition" data-statement-number="11.9">
 <div class="statement-label">
@@ -1611,7 +1611,7 @@ f_X(x)=\prod_{i=1}^n f(x_i)=\prod_{i=1}^n f(x_{(i)}).
 \]</span> Apply factorization. The original order is discarded, but all <span class="math inline">\(n\)</span> values remain.</p>
 <p>This argument does <strong>not</strong> justify sorting responses while forgetting their different observation times.</p>
 <aside class="notes">
-<p>Here the model has a common dominating measure, for example Lebesgue measure. The same argument covers a countable pmf family. More generally, conditional on the sorted values of an i.i.d. real sample, a uniform random permutation reproduces the conditional sample law, including ties. Sorting discards ordering information even though the number of retained values does not decrease. With different fixed observation times, the response and time pairing matters. The joint density is not generally invariant under permutations of responses alone.</p>
+<p>Here the model has a common dominating measure, for example Lebesgue measure. The same argument covers a countable pmf family. More generally, conditional on the sorted values of an i.i.d. real sample, a uniform random permutation reproduces the conditional sample distribution, including ties. Sorting discards ordering information even though the number of retained values does not decrease. With different fixed observation times, the response and time pairing matters. The joint density is not generally invariant under permutations of responses alone.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1628,7 +1628,7 @@ display:block!important;
 <section id="lecture-12" class="title-slide slide level1 section-slide" data-background-color="#0b3442" data-importance="2">
 <h1>Lecture 12</h1>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="2" title="Importance: 2/5" aria-label="Importance: 2/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 2/5" data-importance="2" role="img" aria-label="Importance: 2/5">●</span> WEEK 6</p>
 </div>
 <p><span class="kicker">Week 6 · Minimality and completeness</span></p>
 <p>The coarsest sufficient information. exponential structure. uniqueness from expectations.</p>
@@ -1636,16 +1636,16 @@ display:block!important;
 <section id="minimal-sufficient-statistics" class="slide level2" data-importance="5">
 <h2>Minimal sufficient statistics</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-minimal-sufficiency" class="statement definition-card" data-kind="Definition" data-statement-number="12.1">
 <div class="statement-label">
 Definition 12.1
 </div>
-<p>A sufficient statistic <span class="math inline">\(T(X)\)</span> is <strong>minimal sufficient</strong> if, for every sufficient statistic <span class="math inline">\(U(X)\)</span>, there is a measurable function <span class="math inline">\(\varphi\)</span> such that <span class="math display">\[
+<p>A sufficient statistic <span class="math inline">\(T(X)\)</span> is called <strong>minimal sufficient</strong> if, for every sufficient statistic <span class="math inline">\(U(X)\)</span>, there is a measurable function <span class="math inline">\(\varphi\)</span> such that <span class="math display">\[
 T(X)=\varphi(U(X))
 \quad P_\theta\text{ almost surely for every }\theta.
-\]</span> The recovery function must be the same for every parameter.</p>
+\]</span> The function <span class="math inline">\(\varphi\)</span> may depend on <span class="math inline">\(U\)</span>, but not on <span class="math inline">\(\theta\)</span>.</p>
 </div>
 <p>Minimal sufficient statistics need not be unique. Measurable invertible transformations preserve the information retained.</p>
 <aside class="notes">
@@ -1663,25 +1663,25 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="a-likelihood-criterion-for-minimal-sufficiency" class="slide level2" data-importance="5">
-<h2>A likelihood criterion for minimal sufficiency</h2>
+<h2>Criterion for minimal sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<p>For observed <span class="math inline">\(x\)</span>, the <strong>likelihood</strong> is the function <span class="math inline">\(\theta\mapsto f_\theta(x)\)</span>.</p>
+<p>Let <span class="math inline">\(f_\theta\)</span> be the joint density or probability mass function of the sample under <span class="math inline">\(P_\theta\)</span>.</p>
 <div id="stmt-ratio-criterion" class="statement result-card" data-kind="Theorem" data-statement-number="12.2">
 <div class="statement-label">
 Theorem 12.2
 </div>
-<p>For the sample models considered here, suppose a sufficient statistic <span class="math inline">\(T\)</span> satisfies <span class="math display">\[
+<p>Let <span class="math inline">\(T\)</span> be sufficient. Suppose that, for all sample points <span class="math inline">\(x,y\)</span>, <span class="math display">\[
 T(x)=T(y)
 \quad\Longleftrightarrow\quad
 f_\theta(x)=c(x,y)f_\theta(y)\text{ for every }\theta,
-\]</span> for some <span class="math inline">\(c(x,y)&gt;0\)</span> not depending on <span class="math inline">\(\theta\)</span>. Then <span class="math inline">\(T\)</span> is minimal sufficient.</p>
+\]</span> for some <span class="math inline">\(c(x,y)&gt;0\)</span> independent of <span class="math inline">\(\theta\)</span>.</p>
+<p>Then <span class="math inline">\(T\)</span> is minimal sufficient.</p>
 </div>
-<p>On a common positive support, this says that <span class="math inline">\(f_\theta(x)/f_\theta(y)\)</span> is constant in <span class="math inline">\(\theta\)</span> exactly when <span class="math inline">\(T(x)=T(y)\)</span>.</p>
-<p>When support depends on the parameter, the likelihoods must also have the same zeros.</p>
+<p>If the support depends on <span class="math inline">\(\theta\)</span>, the equality must also hold for parameter values at which one of the densities is zero.</p>
 <aside class="notes">
-<p>The statement is used with the ordinary coherent density versions on countable or Euclidean sample spaces. Remove sample points whose density is zero under every parameter. If U is any sufficient statistic, factorization shows that sample points with equal U have proportional likelihoods. The criterion therefore makes T constant on the fibres of U, and the standard theorem gives recovery from U up to model null sets. A quotient considered only where both densities are positive can discard essential support information. Proportionality for all parameters avoids this problem.</p>
+<p>The statement is used with the ordinary coherent density versions on countable or Euclidean sample spaces. Remove sample points whose density is zero under every parameter. If U is any sufficient statistic, factorization shows that sample points with equal U have proportional joint density values for every parameter. The criterion therefore makes T constant on the fibres of U. On Borel sample spaces with real or vector valued statistics, measurable factorization makes T a measurable function of U. The argument here is a proof idea and does not include a proof of that measure theoretic lemma. A quotient considered only where both densities are positive can discard essential support information. Proportionality for all parameters avoids this problem.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1695,9 +1695,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="bernoulli-prove-that-the-count-is-minimal" class="slide level2 proof-slide" data-importance="5">
-<h2>Bernoulli: prove that the count is minimal</h2>
+<h2>Bernoulli model: Minimal sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>For <span class="math inline">\(x,y\in\{0,1\}^n\)</span>, let <span class="math inline">\(t_x=\sum_i x_i\)</span> and <span class="math inline">\(t_y=\sum_i y_i\)</span>. <span class="math display">\[
 \frac{f_p(x)}{f_p(y)}
@@ -1715,7 +1715,7 @@ Proposition 12.3
 <p>For an i.i.d. Bernoulli<span class="math inline">\((p)\)</span> sample, <span class="math inline">\(\sum_iX_i\)</span> is minimal sufficient. So is <span class="math inline">\(\overline X\)</span>, because <span class="math inline">\(n\)</span> is known.</p>
 </div>
 <aside class="notes">
-<p>The odds p/(1−p) range over all positive real values, so a nonzero integer power cannot be constant on the parameter space. This proves both directions of the criterion. Counts and proportions are equivalent summaries at a fixed known sample size, not two different amounts of parameter information.</p>
+<p>The odds p/(1−p) range over all positive real values, so a nonzero integer power cannot be constant on the parameter space. This proves both directions of the criterion. Counts and proportions are equivalent statistics at a fixed known sample size, not two different amounts of parameter information.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1729,19 +1729,19 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="minimal-summaries-in-the-normal-model" class="slide level2 proof-slide" data-importance="5">
-<h2>Minimal summaries in the normal model</h2>
+<h2>Normal model: Minimal sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<p>Write <span class="math inline">\(s_x=\sum_i x_i\)</span> and <span class="math inline">\(q_x=\sum_i x_i^2\)</span>, and similarly for <span class="math inline">\(y\)</span>. Then <span class="math display">\[
+<p>Write <span class="math inline">\(s(x)=\sum_i x_i\)</span> and <span class="math inline">\(q(x)=\sum_i x_i^2\)</span>, and similarly for <span class="math inline">\(y\)</span>. Then <span class="math display">\[
 \log\frac{f_{\mu,\sigma^2}(x)}{f_{\mu,\sigma^2}(y)}
-=\frac{\mu(s_x-s_y)}{\sigma^2}-\frac{q_x-q_y}{2\sigma^2}.
+=\frac{\mu(s(x)-s(y))}{\sigma^2}-\frac{q(x)-q(y)}{2\sigma^2}.
 \]</span></p>
-<p><strong>Known variance.</strong> The ratio is constant in <span class="math inline">\(\mu\in\mathbb R\)</span> exactly when <span class="math inline">\(s_x=s_y\)</span>. Thus <span class="math inline">\(\overline X\)</span> is minimal sufficient.</p>
-<p><strong>Both parameters unknown.</strong> Varying <span class="math inline">\(\mu\)</span> forces <span class="math inline">\(s_x=s_y\)</span>. Varying <span class="math inline">\(\sigma^2&gt;0\)</span> then forces <span class="math inline">\(q_x=q_y\)</span>. Conversely, these equalities give ratio one.</p>
+<p><strong>Known variance.</strong> The ratio is constant in <span class="math inline">\(\mu\in\mathbb R\)</span> exactly when <span class="math inline">\(s(x)=s(y)\)</span>. Thus <span class="math inline">\(\overline X\)</span> is minimal sufficient.</p>
+<p><strong>Both parameters unknown.</strong> Varying <span class="math inline">\(\mu\)</span> forces <span class="math inline">\(s(x)=s(y)\)</span>. Varying <span class="math inline">\(\sigma^2&gt;0\)</span> then forces <span class="math inline">\(q(x)=q(y)\)</span>. Conversely, if both equalities hold, the density ratio equals <span class="math inline">\(1\)</span> for every parameter value.</p>
 <p>Hence <span class="math inline">\((\sum_iX_i,\sum_iX_i^2)\)</span> is minimal sufficient for <span class="math inline">\((\mu,\sigma^2)\)</span>.</p>
 <aside class="notes">
-<p>Sufficiency was proved by factorization before using the likelihood criterion. The first coefficient must vanish because mu varies over the real line. Once it vanishes, constancy as the variance ranges over the positive line requires the remaining numerator to vanish. The sample mean alone is not sufficient when both parameters are unknown and n is at least two. For n=2, the contrast D=(X1−X2)/2 is independent of the mean A=(X1+X2)/2 and has nonzero normal variance sigma squared/2. The sum of squares is 2A squared+2D squared and is still random conditional on A. Independence follows directly by transforming the joint normal density.</p>
+<p>Sufficiency was proved by factorization before using the criterion for minimal sufficiency. The first coefficient must vanish because mu varies over the real line. Once it vanishes, constancy as the variance ranges over the positive line requires the remaining numerator to vanish. The sample mean alone is not sufficient when both parameters are unknown and n is at least two. For n=2, the contrast D=(X1−X2)/2 is independent of the mean A=(X1+X2)/2 and has nonzero normal variance sigma squared/2. The sum of squares is 2A squared+2D squared and is still random conditional on A. Independence follows directly by transforming the joint normal density.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1755,17 +1755,19 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="equivalent-normal-summaries" class="slide level2 proof-slide" data-importance="5">
-<h2>Equivalent normal summaries</h2>
+<h2>Normal model: Equivalent statistics</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<p>For a normal sample of size <span class="math inline">\(n\ge2\)</span>, write <span class="math inline">\(s=\sum_i x_i\)</span>, <span class="math inline">\(q=\sum_i x_i^2\)</span>.</p>
-<p>The two summaries <span class="math inline">\((s,q)\)</span> and <span class="math inline">\((\overline x,s_x^2)\)</span> determine one another: <span class="math display">\[
-\overline x=\frac{s}{n},\qquad
-s_x^2=\frac{q-s^2/n}{n-1},
+<p>For a normal sample of size <span class="math inline">\(n\ge2\)</span>, define the sample variance by <span class="math display">\[
+S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline X)^2.
+\]</span></p>
+<p>The statistics <span class="math inline">\((\sum_iX_i,\sum_iX_i^2)\)</span> and <span class="math inline">\((\overline X,S^2)\)</span> determine one another: <span class="math display">\[
+\overline X=\frac{\sum_iX_i}{n},\qquad
+S^2=\frac{\sum_iX_i^2-(\sum_iX_i)^2/n}{n-1},
 \]</span> <span class="math display">\[
-s=n\overline x,\qquad
-q=(n-1)s_x^2+n\overline x^2.
+\sum_iX_i=n\overline X,\qquad
+\sum_iX_i^2=(n-1)S^2+n\overline X^2.
 \]</span></p>
 <div id="stmt-equivalent-summaries" class="statement result-card" data-kind="Proposition" data-statement-number="12.4">
 <div class="statement-label">
@@ -1773,9 +1775,8 @@ Proposition 12.4
 </div>
 <p>A measurable one to one transformation with measurable inverse preserves sufficiency and minimal sufficiency.</p>
 </div>
-<p><strong>Proof.</strong> The summaries can be recovered from each other. Compose these recovery maps with a factorization or a minimality map.</p>
 <aside class="notes">
-<p>The transformations are continuous on their attainable ranges, so measurability of the inverse is not an issue. The sample variance notation s_x squared means the value of S squared for observed x. Sufficiency was already proved for (s,q), so it now follows for (sample mean, sample variance). Minimality transfers once it has been established for either representation. For n=1 the pair (sum,sum of squares) remains defined but S squared is not. that is why the equivalence is stated for n at least two.</p>
+<p>S squared denotes the sample variance with denominator n minus one. The sample mean and sample variance are defined here for n at least two. For n equal to one, the sum and sum of squares are still defined, but the displayed sample variance is not.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1789,18 +1790,18 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="uniform-the-maximum-is-also-minimal" class="slide level2 proof-slide" data-importance="5">
-<h2>Uniform: the maximum is also minimal</h2>
+<h2>Uniform model: Minimal sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<p>For positive sample vectors, the likelihood is <span class="math display">\[
+<p>For a positive sample vector <span class="math inline">\(x\)</span>, the joint density is <span class="math display">\[
 f_\theta(x)=\theta^{-n}\mathbf1_{\{\theta&gt;x_{(n)}\}}.
 \]</span></p>
 <ul>
-<li>Equal maxima give identical likelihoods.</li>
+<li>If <span class="math inline">\(x_{(n)}=y_{(n)}\)</span>, then <span class="math inline">\(f_\theta(x)=f_\theta(y)\)</span> for every <span class="math inline">\(\theta\)</span>.</li>
 <li>If <span class="math inline">\(x_{(n)}&lt;y_{(n)}\)</span>, choose <span class="math inline">\(x_{(n)}&lt;\theta&lt;y_{(n)}\)</span>. Then <span class="math inline">\(f_\theta(x)&gt;0\)</span> but <span class="math inline">\(f_\theta(y)=0\)</span>.</li>
 </ul>
-<p>Thus proportional likelihoods are equivalent to equal maxima.</p>
+<p>Thus the proportionality condition in <a href="#/stmt-ratio-criterion">Theorem 12.2</a> holds exactly when <span class="math inline">\(x_{(n)}=y_{(n)}\)</span>.</p>
 <div id="stmt-uniform-minimal" class="statement result-card" data-kind="Proposition" data-statement-number="12.5">
 <div class="statement-label">
 Proposition 12.5
@@ -1822,23 +1823,24 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="exponential-families-expose-useful-summaries" class="slide level2" data-importance="4">
-<h2>Exponential families expose useful summaries</h2>
+<h2>Exponential families</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <div id="stmt-exponential-family" class="statement definition-card" data-kind="Definition" data-statement-number="12.6">
 <div class="statement-label">
 Definition 12.6
 </div>
-<p>A with fixed support family has <strong>exponential form</strong> if its densities can be written <span class="math display">\[
+<p>A family whose support does not depend on <span class="math inline">\(\theta\)</span> is called an <strong>exponential family</strong> if, for some integer <span class="math inline">\(k\ge1\)</span>, its densities can be written as <span class="math display">\[
 f(x\mid\theta)=h(x)c(\theta)
 \exp\!\left(\sum_{j=1}^k w_j(\theta)t_j(x)\right),
-\]</span> with <span class="math inline">\(c(\theta)&gt;0\)</span>, <span class="math inline">\(h(x)\ge0\)</span>, and finite real functions <span class="math inline">\(w_j,t_j\)</span>.</p>
-<p>The functions <span class="math inline">\(h,t_1,\ldots,t_k\)</span> do not involve <span class="math inline">\(\theta\)</span>. The common support is <span class="math inline">\(\{x:h(x)&gt;0\}\)</span>.</p>
+\]</span> where <span class="math inline">\(c(\theta)&gt;0\)</span>, <span class="math inline">\(h(x)\ge0\)</span>, each <span class="math inline">\(w_j,t_j\)</span> takes values in <span class="math inline">\(\mathbb R\)</span>, and each <span class="math inline">\(t_j\)</span> is measurable.</p>
+<p>The functions <span class="math inline">\(h\)</span> and <span class="math inline">\(t=(t_1,\ldots,t_k)\)</span> do not involve <span class="math inline">\(\theta\)</span>. The common support is <span class="math inline">\(\{x:h(x)&gt;0\}\)</span>.</p>
 </div>
-<p>Separate <strong>data functions</strong> <span class="math inline">\(t_j(x)\)</span> from <strong>parameter functions</strong> <span class="math inline">\(w_j(\theta)\)</span>.</p>
+<p>Here <span class="math inline">\(x\)</span> denotes one observation. The coefficients <span class="math inline">\(w_j(\theta)\)</span> are called <strong>natural parameters</strong>. Write <span class="math inline">\(w=(w_1,\ldots,w_k)\)</span>.</p>
+<p>For i.i.d. <span class="math inline">\(X_1,\ldots,X_n\)</span>, the statistic <span class="math inline">\(T_n=\sum_{i=1}^n t(X_i)\)</span> is called the <strong>canonical statistic</strong>.</p>
 <aside class="notes">
-<p>Here x denotes a single observation. later the product gives a sample summary. Densities are with respect to one common measure. Finite natural parameters, a positive normalizer, and a fixed carrier imply a independent of the parameter positivity set. We use this ordinary with fixed support definition, not an extended notion that permits depending on the parameter support or infinite natural parameters. Bernoulli endpoints are excluded so the log odds remain finite. Multiple or redundant representations are possible. simply writing an exponential is not a minimality proof.</p>
+<p>The displayed density is for one observation. The canonical statistic defined below it is for the entire i.i.d. sample. With t(x)=(t1(x),…,tk(x)), the sample statistic is the sum of t(X_i). For sample size one this reduces to t(X1). There are finitely many functions and their values do not include either infinity. Densities are with respect to one common measure. Since the exponential and c(theta) are strictly positive, the density is positive exactly where h is positive, independently of theta. Bernoulli endpoints are excluded so the log odds remain finite. Multiple or redundant representations are possible. Simply writing an exponential does not establish minimal sufficiency.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1852,9 +1854,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="binomial-identify-every-factor" class="slide level2 proof-slide" data-importance="4">
-<h2>Binomial: identify every factor</h2>
+<h2>Examples of exponential families: Binomial</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <p>Let <span class="math inline">\(Y\sim\operatorname{Bin}(m,p)\)</span>, where <span class="math inline">\(m\)</span> is known and <span class="math inline">\(p\in(0,1)\)</span>. For <span class="math inline">\(y=0,\ldots,m\)</span>, <span class="math display">\[
 f(y\mid p)
@@ -1869,6 +1871,7 @@ f(y\mid p)
 p=\frac{e^\eta}{1+e^\eta},\qquad
 c(p)=(1+e^\eta)^{-m}.
 \]</span></p>
+<p>For an i.i.d. sample <span class="math inline">\(X_i\sim\operatorname{Bin}(m,p)\)</span>, the canonical statistic is <span class="math inline">\(T_n=\sum_iX_i\)</span>.</p>
 <aside class="notes">
 <p>Counting measure is restricted to the fixed set {0,…,m}. outside it include an indicator in h. The symbol m is the known number of trials in one binomial observation, not the later sample size n. For m=1 this is the Bernoulli family. The scalar t(y)=y will add across independent repeated binomial observations.</p>
 <style type="text/css">
@@ -1884,9 +1887,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="normal-the-two-data-functions-are-x-and-x2" class="slide level2 proof-slide" data-importance="4">
-<h2>Normal: the two data functions are <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span></h2>
+<h2>Examples of exponential families: Normal</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
 <p>For a single <span class="math inline">\(N(\mu,\sigma^2)\)</span> observation, <span class="math display">\[
 f(x\mid\mu,\sigma^2)
@@ -1897,7 +1900,7 @@ f(x\mid\mu,\sigma^2)
 t_1(x)=x,\quad t_2(x)=x^2,\qquad
 w_1=\frac{\mu}{\sigma^2},\quad w_2=-\frac1{2\sigma^2}.
 \]</span></p>
-<p>The two natural coordinates range over <span class="math inline">\(\mathbb R\times(-\infty,0)\)</span> when both normal parameters are free.</p>
+<p>The two natural coordinates range over <span class="math inline">\(\mathbb R\times(-\infty,0)\)</span> when both normal parameters are free. For an i.i.d. sample, the canonical statistic is <span class="math inline">\(T_n=(\sum_iX_i,\sum_iX_i^2)\)</span>.</p>
 <aside class="notes">
 <p>Expanding −(x−mu)^2/(2 sigma squared) gives the signs and coefficients. We use x first and x squared second. The inverse natural parameter map is sigma squared = −1/(2 eta2), mu = −eta1/(2 eta2). Every real eta1 and negative eta2 corresponds to one normal distribution.</p>
 <style type="text/css">
@@ -1912,20 +1915,71 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="natural-parameters-and-restrictions" class="slide level2" data-importance="4">
-<h2>Natural parameters and restrictions</h2>
+<section id="natural-parameters-and-restrictions" class="slide level2" data-importance="5">
+<h2>Natural parameter spaces</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<p>For a density <span class="math inline">\(f_\eta(x)=h(x)e^{\eta\cdot t(x)-A(\eta)}\)</span>, normalization requires <span class="math display">\[
-A(\eta)=\log\int h(x)e^{\eta\cdot t(x)}\,dx.
-\]</span> For a probability mass function, replace the integral by a sum. The natural parameter space consists of values where the normalizing integral or sum is positive and finite.</p>
-
-<img role="img" aria-label="The full normal natural parameter region contains an open rectangle. The normal subfamily with mean mu and variance mu squared lies on a curve and contains no open two dimensional rectangle." data-src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9Ijk3MnB0IiBoZWlnaHQ9IjMzMS4ycHQiIHZpZXdCb3g9IjAgMCA5NzIgMzMxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDMzMS4yIApMIDk3MiAzMzEuMiAKTCA5NzIgMCAKTCAwIDAgCnoKIiBzdHlsZT0iZmlsbDogI2Y3ZjRlZCIvPgogIDwvZz4KICA8ZyBpZD0iYXhlc18xIj4KICAgPGcgaWQ9InBhdGNoXzIiPgogICAgPHBhdGggZD0iTSA3Ny43NiAyNjQuOTYgCkwgNDYzLjEzNDQ0OSAyNjQuOTYgCkwgNDYzLjEzNDQ0OSA0OS42OCAKTCA3Ny43NiA0OS42OCAKegoiIHN0eWxlPSJmaWxsOiAjZjdmNGVkIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzMiPgogICAgPHBhdGggZD0iTSA3Ny43NiAyNjQuOTYgCkwgNzcuNzYgNDkuNjggCkwgNDYzLjEzNDQ0OSA0OS42OCAKTCA0NjMuMTM0NDQ5IDI2NC45NiAKegoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiAjMDg3ZjhjOyBvcGFjaXR5OiAwLjA5OyBzdHJva2U6ICMwODdmOGM7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfNCI+CiAgICA8cGF0aCBkPSJNIDE3NC4xMDM2MTIgMjAwLjM3NiAKTCAzMzQuNjc2MyAyMDAuMzc2IApMIDMzNC42NzYzIDEyOC42MTYgCkwgMTc0LjEwMzYxMiAxMjguNjE2IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3BlZmZkMTYyOTQwKSIgc3R5bGU9ImZpbGw6ICNlMmFlM2E7IG9wYWNpdHk6IDAuNTUiLz4KICAgPC9nPgogICA8ZyBpZD0ibWF0cGxvdGxpYi5heGlzXzEiPgogICAgPGcgaWQ9Inh0aWNrXzEiPgogICAgIDxnIGlkPSJsaW5lMmRfMSI+CiAgICAgIDxwYXRoIGQ9Ik0gNzcuNzYgMjY0Ljk2IApMIDc3Ljc2IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzIiPgogICAgICA8ZGVmcz4KICAgICAgIDxwYXRoIGlkPSJtNWEyNDM1YjU3NiIgZD0iTSAwIDAgCkwgMCAzLjUgCiIgc3R5bGU9InN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9kZWZzPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI201YTI0MzViNTc2IiB4PSI3Ny43NiIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzEiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSI3Ny43NiIgeT0iMjg0Ljg3NzM0NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzcuNzYgMjg0Ljg3NzM0NCkiPjAuMDwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieHRpY2tfMiI+CiAgICAgPGcgaWQ9ImxpbmUyZF8zIj4KICAgICAgPHBhdGggZD0iTSAxNTguMDQ2MzQ0IDI2NC45NiAKTCAxNTguMDQ2MzQ0IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzQiPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI201YTI0MzViNTc2IiB4PSIxNTguMDQ2MzQ0IiB5PSIyNjQuOTYiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfMiI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjE1OC4wNDYzNDQiIHk9IjI4NC44NzczNDQiIHRyYW5zZm9ybT0icm90YXRlKC0wIDE1OC4wNDYzNDQgMjg0Ljg3NzM0NCkiPjAuNTwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieHRpY2tfMyI+CiAgICAgPGcgaWQ9ImxpbmUyZF81Ij4KICAgICAgPHBhdGggZD0iTSAyMzguMzMyNjg3IDI2NC45NiAKTCAyMzguMzMyNjg3IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzYiPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI201YTI0MzViNTc2IiB4PSIyMzguMzMyNjg3IiB5PSIyNjQuOTYiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfMyI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjIzOC4zMzI2ODciIHk9IjI4NC44NzczNDQiIHRyYW5zZm9ybT0icm90YXRlKC0wIDIzOC4zMzI2ODcgMjg0Ljg3NzM0NCkiPjEuMDwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieHRpY2tfNCI+CiAgICAgPGcgaWQ9ImxpbmUyZF83Ij4KICAgICAgPHBhdGggZD0iTSAzMTguNjE5MDMxIDI2NC45NiAKTCAzMTguNjE5MDMxIDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzgiPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI201YTI0MzViNTc2IiB4PSIzMTguNjE5MDMxIiB5PSIyNjQuOTYiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfNCI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjMxOC42MTkwMzEiIHk9IjI4NC44NzczNDQiIHRyYW5zZm9ybT0icm90YXRlKC0wIDMxOC42MTkwMzEgMjg0Ljg3NzM0NCkiPjEuNTwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieHRpY2tfNSI+CiAgICAgPGcgaWQ9ImxpbmUyZF85Ij4KICAgICAgPHBhdGggZD0iTSAzOTguOTA1Mzc0IDI2NC45NiAKTCAzOTguOTA1Mzc0IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzEwIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtNWEyNDM1YjU3NiIgeD0iMzk4LjkwNTM3NCIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzUiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSIzOTguOTA1Mzc0IiB5PSIyODQuODc3MzQ0IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCAzOTguOTA1Mzc0IDI4NC44NzczNDQpIj4yLjA8L3RleHQ+CiAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9InRleHRfNiI+CiAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE4cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iMjcwLjQ0NzIyNSIgeT0iMzA2LjA5IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCAyNzAuNDQ3MjI1IDMwNi4wOSkiPk5hdHVyYWwgcGFyYW1ldGVyIM634oKBPC90ZXh0PgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJtYXRwbG90bGliLmF4aXNfMiI+CiAgICA8ZyBpZD0ieXRpY2tfMSI+CiAgICAgPGcgaWQ9ImxpbmUyZF8xMSI+CiAgICAgIDxwYXRoIGQ9Ik0gNzcuNzYgMjY0Ljk2IApMIDQ2My4xMzQ0NDkgMjY0Ljk2IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzEyIj4KICAgICAgPGRlZnM+CiAgICAgICA8cGF0aCBpZD0ibTM2MzhjNGMyZDciIGQ9Ik0gMCAwIApMIC0zLjUgMCAKIiBzdHlsZT0ic3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2RlZnM+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9Ijc3Ljc2IiB5PSIyNjQuOTYiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfNyI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjcwLjc2IiB5PSIyNzEuNDE4NjcyIiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA3MC43NiAyNzEuNDE4NjcyKSI+4oiSMy4wPC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ5dGlja18yIj4KICAgICA8ZyBpZD0ibGluZTJkXzEzIj4KICAgICAgPHBhdGggZD0iTSA3Ny43NiAyMjkuMDggCkwgNDYzLjEzNDQ0OSAyMjkuMDggCiIgY2xpcC1wYXRoPSJ1cmwoI3BlZmZkMTYyOTQwKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogI2IwYjBiMDsgc3Ryb2tlLW9wYWNpdHk6IDAuMTM7IHN0cm9rZS13aWR0aDogMC44OyBzdHJva2UtbGluZWNhcDogc3F1YXJlIi8+CiAgICAgPC9nPgogICAgIDxnIGlkPSJsaW5lMmRfMTQiPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI20zNjM4YzRjMmQ3IiB4PSI3Ny43NiIgeT0iMjI5LjA4IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzgiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogZW5kIiB4PSI3MC43NiIgeT0iMjM1LjUzODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzAuNzYgMjM1LjUzODY3MikiPuKIkjIuNTwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieXRpY2tfMyI+CiAgICAgPGcgaWQ9ImxpbmUyZF8xNSI+CiAgICAgIDxwYXRoIGQ9Ik0gNzcuNzYgMTkzLjIgCkwgNDYzLjEzNDQ0OSAxOTMuMiAKIiBjbGlwLXBhdGg9InVybCgjcGVmZmQxNjI5NDApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF8xNiI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9Ijc3Ljc2IiB5PSIxOTMuMiIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF85Ij4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IGVuZCIgeD0iNzAuNzYiIHk9IjE5OS42NTg2NzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDcwLjc2IDE5OS42NTg2NzIpIj7iiJIyLjA8L3RleHQ+CiAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9Inl0aWNrXzQiPgogICAgIDxnIGlkPSJsaW5lMmRfMTciPgogICAgICA8cGF0aCBkPSJNIDc3Ljc2IDE1Ny4zMiAKTCA0NjMuMTM0NDQ5IDE1Ny4zMiAKIiBjbGlwLXBhdGg9InVybCgjcGVmZmQxNjI5NDApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF8xOCI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9Ijc3Ljc2IiB5PSIxNTcuMzIiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfMTAiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogZW5kIiB4PSI3MC43NiIgeT0iMTYzLjc3ODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzAuNzYgMTYzLjc3ODY3MikiPuKIkjEuNTwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieXRpY2tfNSI+CiAgICAgPGcgaWQ9ImxpbmUyZF8xOSI+CiAgICAgIDxwYXRoIGQ9Ik0gNzcuNzYgMTIxLjQ0IApMIDQ2My4xMzQ0NDkgMTIxLjQ0IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzIwIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNzcuNzYiIHk9IjEyMS40NCIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8xMSI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjcwLjc2IiB5PSIxMjcuODk4NjcyIiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA3MC43NiAxMjcuODk4NjcyKSI+4oiSMS4wPC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ5dGlja182Ij4KICAgICA8ZyBpZD0ibGluZTJkXzIxIj4KICAgICAgPHBhdGggZD0iTSA3Ny43NiA4NS41NiAKTCA0NjMuMTM0NDQ5IDg1LjU2IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzIyIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNzcuNzYiIHk9Ijg1LjU2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzEyIj4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IGVuZCIgeD0iNzAuNzYiIHk9IjkyLjAxODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzAuNzYgOTIuMDE4NjcyKSI+4oiSMC41PC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ5dGlja183Ij4KICAgICA8ZyBpZD0ibGluZTJkXzIzIj4KICAgICAgPHBhdGggZD0iTSA3Ny43NiA0OS42OCAKTCA0NjMuMTM0NDQ5IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwZWZmZDE2Mjk0MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzI0Ij4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNzcuNzYiIHk9IjQ5LjY4IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzEzIj4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IGVuZCIgeD0iNzAuNzYiIHk9IjU2LjEzODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzAuNzYgNTYuMTM4NjcyKSI+MC4wPC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ0ZXh0XzE0Ij4KICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMThweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSIyMS43MzU3ODEiIHk9IjE1Ny4zMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIxLjczNTc4MSAxNTcuMzIpIj5OYXR1cmFsIHBhcmFtZXRlciDOt+KCgjwvdGV4dD4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfNSI+CiAgICA8cGF0aCBkPSJNIDc3Ljc2IDI2NC45NiAKTCA3Ny43NiA0OS42OCAKIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjY2FkM2QxOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICA8L2c+CiAgIDxnIGlkPSJwYXRjaF82Ij4KICAgIDxwYXRoIGQ9Ik0gNzcuNzYgMjY0Ljk2IApMIDQ2My4xMzQ0NDkgMjY0Ljk2IAoiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNjYWQzZDE7IHN0cm9rZS13aWR0aDogMC44OyBzdHJva2UtbGluZWpvaW46IG1pdGVyOyBzdHJva2UtbGluZWNhcDogc3F1YXJlIi8+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMTUiPgogICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE2cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IHN0YXJ0IiB4PSIxODYuOTQ5NDI3IiB5PSIxNjUuOTMxMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgMTg2Ljk0OTQyNyAxNjUuOTMxMikiPk9wZW4gcmVjdGFuZ2xlPC90ZXh0PgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzE2Ij4KICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiA3MDAgMjFweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogbWlkZGxlIiB4PSIyNzAuNDQ3MjI1IiB5PSI0My42OCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgMjcwLjQ0NzIyNSA0My42OCkiPkZ1bGwgbm9ybWFsIGZhbWlseSAocG9ydGlvbiBzaG93bik8L3RleHQ+CiAgIDwvZz4KICA8L2c+CiAgPGcgaWQ9ImF4ZXNfMiI+CiAgIDxnIGlkPSJwYXRjaF83Ij4KICAgIDxwYXRoIGQ9Ik0gNTY3LjE4NTU1MSAyNjQuOTYgCkwgOTUyLjU2IDI2NC45NiAKTCA5NTIuNTYgNDkuNjggCkwgNTY3LjE4NTU1MSA0OS42OCAKegoiIHN0eWxlPSJmaWxsOiAjZjdmNGVkIi8+CiAgIDwvZz4KICAgPGcgaWQ9Im1hdHBsb3RsaWIuYXhpc18zIj4KICAgIDxnIGlkPSJ4dGlja182Ij4KICAgICA8ZyBpZD0ibGluZTJkXzI1Ij4KICAgICAgPHBhdGggZD0iTSA1NjcuMTg1NTUxIDI2NC45NiAKTCA1NjcuMTg1NTUxIDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzI2Ij4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtNWEyNDM1YjU3NiIgeD0iNTY3LjE4NTU1MSIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzE3Ij4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iNTY3LjE4NTU1MSIgeT0iMjg0Ljg3NzM0NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNTY3LjE4NTU1MSAyODQuODc3MzQ0KSI+MC4wPC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ4dGlja183Ij4KICAgICA8ZyBpZD0ibGluZTJkXzI3Ij4KICAgICAgPHBhdGggZD0iTSA2NDcuNDcxODk0IDI2NC45NiAKTCA2NDcuNDcxODk0IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzI4Ij4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtNWEyNDM1YjU3NiIgeD0iNjQ3LjQ3MTg5NCIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzE4Ij4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iNjQ3LjQ3MTg5NCIgeT0iMjg0Ljg3NzM0NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNjQ3LjQ3MTg5NCAyODQuODc3MzQ0KSI+MC41PC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ4dGlja184Ij4KICAgICA8ZyBpZD0ibGluZTJkXzI5Ij4KICAgICAgPHBhdGggZD0iTSA3MjcuNzU4MjM4IDI2NC45NiAKTCA3MjcuNzU4MjM4IDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzMwIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtNWEyNDM1YjU3NiIgeD0iNzI3Ljc1ODIzOCIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzE5Ij4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iNzI3Ljc1ODIzOCIgeT0iMjg0Ljg3NzM0NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNzI3Ljc1ODIzOCAyODQuODc3MzQ0KSI+MS4wPC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ4dGlja185Ij4KICAgICA8ZyBpZD0ibGluZTJkXzMxIj4KICAgICAgPHBhdGggZD0iTSA4MDguMDQ0NTgxIDI2NC45NiAKTCA4MDguMDQ0NTgxIDQ5LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzMyIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtNWEyNDM1YjU3NiIgeD0iODA4LjA0NDU4MSIgeT0iMjY0Ljk2IiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzIwIj4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iODA4LjA0NDU4MSIgeT0iMjg0Ljg3NzM0NCIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgODA4LjA0NDU4MSAyODQuODc3MzQ0KSI+MS41PC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ4dGlja18xMCI+CiAgICAgPGcgaWQ9ImxpbmUyZF8zMyI+CiAgICAgIDxwYXRoIGQ9Ik0gODg4LjMzMDkyNSAyNjQuOTYgCkwgODg4LjMzMDkyNSA0OS42OCAKIiBjbGlwLXBhdGg9InVybCgjcGM2NzhhOTMyOTApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF8zNCI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTVhMjQzNWI1NzYiIHg9Ijg4OC4zMzA5MjUiIHk9IjI2NC45NiIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8yMSI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9Ijg4OC4zMzA5MjUiIHk9IjI4NC44NzczNDQiIHRyYW5zZm9ybT0icm90YXRlKC0wIDg4OC4zMzA5MjUgMjg0Ljg3NzM0NCkiPjIuMDwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0idGV4dF8yMiI+CiAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE4cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IG1pZGRsZSIgeD0iNzU5Ljg3Mjc3NSIgeT0iMzA2LjA5IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA3NTkuODcyNzc1IDMwNi4wOSkiPk5hdHVyYWwgcGFyYW1ldGVyIM634oKBPC90ZXh0PgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJtYXRwbG90bGliLmF4aXNfNCI+CiAgICA8ZyBpZD0ieXRpY2tfOCI+CiAgICAgPGcgaWQ9ImxpbmUyZF8zNSI+CiAgICAgIDxwYXRoIGQ9Ik0gNTY3LjE4NTU1MSAyNjQuOTYgCkwgOTUyLjU2IDI2NC45NiAKIiBjbGlwLXBhdGg9InVybCgjcGM2NzhhOTMyOTApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF8zNiI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9IjU2Ny4xODU1NTEiIHk9IjI2NC45NiIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8yMyI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjU2MC4xODU1NTEiIHk9IjI3MS40MTg2NzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDU2MC4xODU1NTEgMjcxLjQxODY3MikiPuKIkjMuMDwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieXRpY2tfOSI+CiAgICAgPGcgaWQ9ImxpbmUyZF8zNyI+CiAgICAgIDxwYXRoIGQ9Ik0gNTY3LjE4NTU1MSAyMjkuMDggCkwgOTUyLjU2IDIyOS4wOCAKIiBjbGlwLXBhdGg9InVybCgjcGM2NzhhOTMyOTApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF8zOCI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9IjU2Ny4xODU1NTEiIHk9IjIyOS4wOCIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8yNCI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjU2MC4xODU1NTEiIHk9IjIzNS41Mzg2NzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDU2MC4xODU1NTEgMjM1LjUzODY3MikiPuKIkjIuNTwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieXRpY2tfMTAiPgogICAgIDxnIGlkPSJsaW5lMmRfMzkiPgogICAgICA8cGF0aCBkPSJNIDU2Ny4xODU1NTEgMTkzLjIgCkwgOTUyLjU2IDE5My4yIAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzQwIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNTY3LjE4NTU1MSIgeT0iMTkzLjIiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfMjUiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogZW5kIiB4PSI1NjAuMTg1NTUxIiB5PSIxOTkuNjU4NjcyIiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA1NjAuMTg1NTUxIDE5OS42NTg2NzIpIj7iiJIyLjA8L3RleHQ+CiAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9Inl0aWNrXzExIj4KICAgICA8ZyBpZD0ibGluZTJkXzQxIj4KICAgICAgPHBhdGggZD0iTSA1NjcuMTg1NTUxIDE1Ny4zMiAKTCA5NTIuNTYgMTU3LjMyIAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzQyIj4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNTY3LjE4NTU1MSIgeT0iMTU3LjMyIiBzdHlsZT0iZmlsbDogIzE3MzEzYjsgc3Ryb2tlOiAjMTczMTNiOyBzdHJva2Utd2lkdGg6IDAuOCIvPgogICAgICA8L2c+CiAgICAgPC9nPgogICAgIDxnIGlkPSJ0ZXh0XzI2Ij4KICAgICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDE3cHggJ0RlamFWdSBTYW5zJzsgdGV4dC1hbmNob3I6IGVuZCIgeD0iNTYwLjE4NTU1MSIgeT0iMTYzLjc3ODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNTYwLjE4NTU1MSAxNjMuNzc4NjcyKSI+4oiSMS41PC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ5dGlja18xMiI+CiAgICAgPGcgaWQ9ImxpbmUyZF80MyI+CiAgICAgIDxwYXRoIGQ9Ik0gNTY3LjE4NTU1MSAxMjEuNDQgCkwgOTUyLjU2IDEyMS40NCAKIiBjbGlwLXBhdGg9InVybCgjcGM2NzhhOTMyOTApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjYjBiMGIwOyBzdHJva2Utb3BhY2l0eTogMC4xMzsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgICA8L2c+CiAgICAgPGcgaWQ9ImxpbmUyZF80NCI+CiAgICAgIDxnPgogICAgICAgPHVzZSB4bGluazpocmVmPSIjbTM2MzhjNGMyZDciIHg9IjU2Ny4xODU1NTEiIHk9IjEyMS40NCIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8yNyI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjU2MC4xODU1NTEiIHk9IjEyNy44OTg2NzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDU2MC4xODU1NTEgMTI3Ljg5ODY3MikiPuKIkjEuMDwvdGV4dD4KICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0ieXRpY2tfMTMiPgogICAgIDxnIGlkPSJsaW5lMmRfNDUiPgogICAgICA8cGF0aCBkPSJNIDU2Ny4xODU1NTEgODUuNTYgCkwgOTUyLjU2IDg1LjU2IAoiIGNsaXAtcGF0aD0idXJsKCNwYzY3OGE5MzI5MCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICNiMGIwYjA7IHN0cm9rZS1vcGFjaXR5OiAwLjEzOyBzdHJva2Utd2lkdGg6IDAuODsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICAgIDwvZz4KICAgICA8ZyBpZD0ibGluZTJkXzQ2Ij4KICAgICAgPGc+CiAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNtMzYzOGM0YzJkNyIgeD0iNTY3LjE4NTU1MSIgeT0iODUuNTYiIHN0eWxlPSJmaWxsOiAjMTczMTNiOyBzdHJva2U6ICMxNzMxM2I7IHN0cm9rZS13aWR0aDogMC44Ii8+CiAgICAgIDwvZz4KICAgICA8L2c+CiAgICAgPGcgaWQ9InRleHRfMjgiPgogICAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTdweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogZW5kIiB4PSI1NjAuMTg1NTUxIiB5PSI5Mi4wMTg2NzIiIHRyYW5zZm9ybT0icm90YXRlKC0wIDU2MC4xODU1NTEgOTIuMDE4NjcyKSI+4oiSMC41PC90ZXh0PgogICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJ5dGlja18xNCI+CiAgICAgPGcgaWQ9ImxpbmUyZF80NyI+CiAgICAgIDxwYXRoIGQ9Ik0gNTY3LjE4NTU1MSA0OS42OCAKTCA5NTIuNTYgNDkuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3BjNjc4YTkzMjkwKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogI2IwYjBiMDsgc3Ryb2tlLW9wYWNpdHk6IDAuMTM7IHN0cm9rZS13aWR0aDogMC44OyBzdHJva2UtbGluZWNhcDogc3F1YXJlIi8+CiAgICAgPC9nPgogICAgIDxnIGlkPSJsaW5lMmRfNDgiPgogICAgICA8Zz4KICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI20zNjM4YzRjMmQ3IiB4PSI1NjcuMTg1NTUxIiB5PSI0OS42OCIgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IHN0cm9rZTogIzE3MzEzYjsgc3Ryb2tlLXdpZHRoOiAwLjgiLz4KICAgICAgPC9nPgogICAgIDwvZz4KICAgICA8ZyBpZD0idGV4dF8yOSI+CiAgICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxN3B4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBlbmQiIHg9IjU2MC4xODU1NTEiIHk9IjU2LjEzODY3MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAgNTYwLjE4NTU1MSA1Ni4xMzg2NzIpIj4wLjA8L3RleHQ+CiAgICAgPC9nPgogICAgPC9nPgogICAgPGcgaWQ9InRleHRfMzAiPgogICAgIDx0ZXh0IHN0eWxlPSJmaWxsOiAjMTczMTNiOyBmb250OiAxOHB4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9IjUxMS4xNjEzMzIiIHk9IjE1Ny4zMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDUxMS4xNjEzMzIgMTU3LjMyKSI+TmF0dXJhbCBwYXJhbWV0ZXIgzrfigoI8L3RleHQ+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF80OSI+CiAgICA8cGF0aCBkPSJNIDk0MC42MTA0MDUgMjQzLjczMDgzOCAKTCA5MzAuOTIxNzk2IDIzMy43OTIwNjIgCkwgOTIxLjcyMzIyIDIyNC41OTc3MzkgCkwgOTEyLjk3ODQxNyAyMTYuMDc1MzMzIApMIDkwNC42NTQ2MTcgMjA4LjE2MDkzNCAKTCA4OTYuNzIyMTMyIDIwMC43OTgwNTMgCkwgODgxLjkyNTY4NyAxODcuNTMyMDg2IApMIDg2OC40MDA4ODggMTc1LjkzOTI2MiAKTCA4NTUuOTkwNTU1IDE2NS43NDk2MDcgCkwgODQ0LjU2MjM4OSAxNTYuNzQ1NDgxIApMIDgzNC4wMDQyMzQgMTQ4Ljc0OTg2MiAKTCA4MjQuMjIwMzgzIDE0MS42MTc1NzUgCkwgODE1LjEyODY3MSAxMzUuMjI4NjU5IApMIDgwNi42NTgxNjEgMTI5LjQ4MzI4NyAKTCA3OTQuOTg0NjcgMTIxLjg5MjYzIApMIDc4NC4zOTYzNjYgMTE1LjMzNTYzMSAKTCA3NzQuNzQ4NjUxIDEwOS42MzI3ODggCkwgNzY1LjkyMTUyMSAxMDQuNjQxOTM5IApMIDc1NS4yNTcyNDIgOTguOTAxNjI0IApMIDc0NS42NzkxNzcgOTQuMDE1Nzk2IApMIDczNy4wMjk0MTQgODkuODIyOTA2IApMIDcyNy4zMjg3ODEgODUuMzY4MzMyIApMIDcxNy4wNTY4OTggODAuOTM2OTI5IApMIDcwOC4wMjMzMDQgNzcuMjgyNDI2IApMIDY5OC43NzAwNjkgNzMuNzc0NTQyIApMIDY4OS41Nzk4MTYgNzAuNTI2NDA4IApMIDY4MC42NjM0NzcgNjcuNTk5NzQ3IApMIDY3MS4zODU2OTcgNjQuNzg5MzQ5IApMIDY2Mi4yMDQ2MTIgNjIuMjQ0MDc2IApMIDY1Mi45MDg1MzYgNTkuOTA1OTUgCkwgNjQzLjk4NjAzOCA1Ny44ODc5OTQgCkwgNjM1LjA2MTkxNyA1Ni4wOTEzMDIgCkwgNjI1Ljk1NjQ0NCA1NC40ODY1NTIgCkwgNjE2Ljk4MDM2OCA1My4xMzA0NjMgCkwgNjA3Ljk5Mzc3NCA1MS45OTc0MTggCkwgNTk5LjMwMDA4OCA1MS4xMTUyIApMIDU5OS4zMDAwODggNTEuMTE1MiAKIiBjbGlwLXBhdGg9InVybCgjcGM2NzhhOTMyOTApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjZGM2YjRmOyBzdHJva2Utd2lkdGg6IDM7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfOCI+CiAgICA8cGF0aCBkPSJNIDU2Ny4xODU1NTEgMjY0Ljk2IApMIDU2Ny4xODU1NTEgNDkuNjggCiIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogI2NhZDNkMTsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfOSI+CiAgICA8cGF0aCBkPSJNIDU2Ny4xODU1NTEgMjY0Ljk2IApMIDk1Mi41NiAyNjQuOTYgCiIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogI2NhZDNkMTsgc3Ryb2tlLXdpZHRoOiAwLjg7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8zMSI+CiAgICA8dGV4dCBzdHlsZT0iZmlsbDogIzE3MzEzYjsgZm9udDogMTZweCAnRGVqYVZ1IFNhbnMnOyB0ZXh0LWFuY2hvcjogc3RhcnQiIHg9IjU5Ni4wODg2MzQiIHk9IjIzOS44NDQiIHRyYW5zZm9ybT0icm90YXRlKC0wIDU5Ni4wODg2MzQgMjM5Ljg0NCkiPkEgY3VydmUgY29udGFpbnMgbm8gb3BlbiAyRCByZWN0YW5nbGU8L3RleHQ+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMzIiPgogICAgPHRleHQgc3R5bGU9ImZpbGw6ICMxNzMxM2I7IGZvbnQ6IDcwMCAyMXB4ICdEZWphVnUgU2Fucyc7IHRleHQtYW5jaG9yOiBtaWRkbGUiIHg9Ijc1OS44NzI3NzUiIHk9IjQzLjY4IiB0cmFuc2Zvcm09InJvdGF0ZSgtMCA3NTkuODcyNzc1IDQzLjY4KSI+UmVzdHJpY3Rpb246IG1lYW4gzrwsIHZhcmlhbmNlIM68wrI8L3RleHQ+CiAgIDwvZz4KICA8L2c+CiA8L2c+CiA8ZGVmcz4KICA8Y2xpcFBhdGggaWQ9InBlZmZkMTYyOTQwIj4KICAgPHJlY3QgeD0iNzcuNzYiIHk9IjQ5LjY4IiB3aWR0aD0iMzg1LjM3NDQ0OSIgaGVpZ2h0PSIyMTUuMjgiLz4KICA8L2NsaXBQYXRoPgogIDxjbGlwUGF0aCBpZD0icGM2NzhhOTMyOTAiPgogICA8cmVjdCB4PSI1NjcuMTg1NTUxIiB5PSI0OS42OCIgd2lkdGg9IjM4NS4zNzQ0NDkiIGhlaWdodD0iMjE1LjI4Ii8+CiAgPC9jbGlwUGF0aD4KIDwvZGVmcz4KPC9zdmc+Cg==" class="week6-figure week6-natural-figure r-stretch" alt="The full normal natural parameter region contains an open rectangle. The normal subfamily with mean mu and variance mu squared lies on a curve and contains no open two dimensional rectangle."><div class="small">
-<p>The full normal family allows <span class="math inline">\(\eta\in\mathbb R\times(-\infty,0)\)</span>. The restriction <span class="math inline">\(N(\mu,\mu^2)\)</span>, <span class="math inline">\(\mu&gt;0\)</span>, gives the curved set <span class="math inline">\(\eta_2=-\eta_1^2/2\)</span>, <span class="math inline">\(\eta_1&gt;0\)</span>.</p>
+<div id="stmt-natural-parameter-space" class="statement definition-card" data-kind="Definition" data-statement-number="12.7">
+<div class="statement-label">
+Definition 12.7
+</div>
+<p>For fixed <span class="math inline">\(h\)</span> and <span class="math inline">\(t=(t_1,\ldots,t_k)\)</span>, define <span class="math display">\[
+Z(\eta)=\int_{\mathcal X}h(x)e^{\eta\cdot t(x)}\,d\nu(x),\qquad
+\mathcal N=\{\eta\in\mathbb R^k:0&lt;Z(\eta)&lt;\infty\}.
+\]</span> The set <span class="math inline">\(\mathcal N\)</span> is called the <strong>natural parameter space</strong>. Here <span class="math inline">\(\nu\)</span> is counting measure or Lebesgue measure. For <span class="math inline">\(\eta\in\mathcal N\)</span>, put <span class="math inline">\(A(\eta)=\log Z(\eta)\)</span>.</p>
+</div>
+<div class="data-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Distribution of each <span class="math inline">\(X_i\)</span> (i.i.d.)</th>
+<th style="text-align: left;">Canonical statistic <span class="math inline">\(T_n\)</span></th>
+<th style="text-align: left;">Natural parameter <span class="math inline">\(\eta\)</span></th>
+<th style="text-align: left;">Natural parameter space <span class="math inline">\(\mathcal N\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\operatorname{Bin}(m,p)\)</span>, fixed <span class="math inline">\(m\ge1\)</span>, <span class="math inline">\(0&lt;p&lt;1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sum_iX_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\log[p/(1-p)]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\operatorname{Pois}(\lambda)\)</span>, <span class="math inline">\(\lambda&gt;0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sum_iX_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\log\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Exponential with rate <span class="math inline">\(\lambda&gt;0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sum_iX_i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(-\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((-\infty,0)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(N(\mu,\sigma^2)\)</span>, both unknown</td>
+<td style="text-align: left;"><span class="math inline">\((\sum_iX_i,\sum_iX_i^2)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((\mu/\sigma^2,-1/(2\sigma^2))\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathbb R\times(-\infty,0)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="small">
+<p>The allowed parameter set is <span class="math inline">\(\Omega=w(\Theta)\subseteq\mathcal N\)</span>. A family is called <strong>full</strong> if <span class="math inline">\(\Omega=\mathcal N\)</span>. It is called <strong>curved</strong> if <span class="math inline">\(\Omega\)</span> is a smooth set of dimension less than <span class="math inline">\(k\)</span>.</p>
 </div>
 <aside class="notes">
-<p>The natural vector is eta=w(theta). For the normal carrier h=1 and t=(x,x squared), the normalizing integral is sqrt(pi divided by minus eta2) times exp(minus eta1 squared divided by four eta2), finite exactly when eta2&lt;0. A full family allows the entire natural space. A full dimensional subfamily contains an open set. A curved subfamily restricts the natural vector to a smooth set of lower dimension. The source’s N(lambda,lambda/n) restriction has constant first natural coordinate and admits a smaller representation after absorbing a factor into the carrier. The displayed nonlinear curve avoids that ambiguity. For a Poisson sample, n times the sample mean is exactly Poisson(n lambda). A normal law with mean lambda and variance lambda/n is only a CLT approximation, not that exact sampling law.</p>
+<p>The definition concerns the fixed representation h and t for one observation. Counting measure gives a sum for discrete models, while Lebesgue measure gives the displayed integral for continuous models. The normalized density is f_eta(x)=h(x) exp(eta dot t(x) minus A(eta)). For an i.i.d. sample of size n, the joint density has the factor exp(eta dot T_n minus n A(eta)), with carrier equal to the product of the h(X_i). Its normalizing integral is Z(eta) to the power n. Since n is a positive integer, this is positive and finite exactly when Z(eta) is positive and finite. Thus the natural parameter space is unchanged, while the canonical statistic is the sum over observations. The original family may use only the subset Omega=w(Theta) of all values for which the density exists.</p>
+<p>For the binomial representation, h(x)=binomial(m,x) on {0,…,m} and Z(eta)=(1+exp(eta)) to the power m, which is positive and finite for every real eta. The parameter p is restricted to (0,1). For the Poisson representation, h(x)=1/x! on the nonnegative integers and Z(eta)=exp(exp(eta)), finite for every real eta. Here lambda is positive. For the exponential representation, h(x) is the indicator of x&gt;0 and Z(eta)=minus 1/eta for eta&lt;0. The integral diverges for eta greater than or equal to zero. The rate lambda is positive. For the normal representation, h=1 and t=(x,x squared). Completing the square gives Z(eta)=sqrt(pi divided by minus eta2) times exp(minus eta1 squared divided by four eta2), finite exactly when eta2&lt;0. If eta2 is nonnegative, the integral on the whole real line diverges for every eta1. The inverse map is sigma squared=minus 1/(2 eta2), mu=minus eta1/(2 eta2).</p>
+<p>The full family uses all of the natural parameter space. A curved family constrains the natural parameters to a smooth set of smaller dimension. No condition of nonzero geometric curvature is intended by this statistical terminology. Full and curved refer to the chosen canonical representation. A subfamily of full dimension need not exhaust the natural parameter space.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1939,22 +1993,23 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="why-sample-sums-are-sufficient" class="slide level2 proof-slide" data-importance="5">
-<h2>Why sample sums are sufficient</h2>
+<h2>Sufficiency in exponential families</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<div id="stmt-exponential-sufficiency" class="statement result-card" data-kind="Theorem" data-statement-number="12.7">
+<div id="stmt-exponential-sufficiency" class="statement result-card" data-kind="Theorem" data-statement-number="12.8">
 <div class="statement-label">
-Theorem 12.7
+Theorem 12.8
 </div>
-<p>For i.i.d. observations from the displayed exponential family with <span class="math inline">\(k\)</span> terms, <span class="math display">\[
-T(X)=\left(\sum_{i=1}^n t_1(X_i),\ldots,\sum_{i=1}^n t_k(X_i)\right)
-\]</span> is sufficient for <span class="math inline">\(\theta\)</span>.</p>
+<p>Let <span class="math inline">\(X_1,\ldots,X_n\)</span> be i.i.d. with density or probability mass function <span class="math display">\[
+f(x\mid\theta)=h(x)c(\theta)
+\exp\!\left(\sum_{j=1}^k w_j(\theta)t_j(x)\right),
+\]</span> where <span class="math inline">\(h,t_1,\ldots,t_k\)</span> do not depend on <span class="math inline">\(\theta\)</span>. Write <span class="math inline">\(t=(t_1,\ldots,t_k)\)</span>. Then the canonical statistic <span class="math inline">\(T_n=\sum_{i=1}^n t(X_i)\)</span> is sufficient for <span class="math inline">\(\theta\)</span>.</p>
 </div>
-<p><strong>Proof.</strong> Multiplication gives <span class="math display">\[
-f_\theta(x)=\underbrace{\prod_{i=1}^n h(x_i)}_{\text{independent of the parameter}}
+<p><strong>Proof.</strong> The joint density is <span class="math display">\[
+f_\theta(x)=\left(\prod_{i=1}^n h(x_i)\right)
 c(\theta)^n\exp\!\left(\sum_{j=1}^k w_j(\theta)\sum_{i=1}^n t_j(x_i)\right).
-\]</span> Apply <a href="#/stmt-factorization">Theorem 11.6</a>.</p>
+\]</span> The first factor is independent of <span class="math inline">\(\theta\)</span>, so <a href="#/stmt-factorization">Theorem 11.6</a> applies.</p>
 <aside class="notes">
 <p>Sufficiency holds even if the allowed natural parameters occupy a set of lower dimension. Completeness requires a further condition on an open set. It does not follow from this multiplication alone. For binomial observations the result retains the sum of counts. For normal observations it retains the sum and sum of squares.</p>
 <style type="text/css">
@@ -1972,20 +2027,18 @@ display:block!important;
 <section id="completeness" class="slide level2" data-importance="5">
 <h2>Completeness</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<div id="stmt-completeness" class="statement definition-card" data-kind="Definition" data-statement-number="12.8">
+<div id="stmt-completeness" class="statement definition-card" data-kind="Definition" data-statement-number="12.9">
 <div class="statement-label">
-Definition 12.8
+Definition 12.9
 </div>
-<p>A statistic <span class="math inline">\(T\)</span> is <strong>complete</strong> for <span class="math inline">\(\{P_\theta:\theta\in\Theta\}\)</span> if every measurable <span class="math inline">\(a\)</span> satisfying <span class="math inline">\(\mathbb E_\theta(|a(T)|)&lt;\infty\)</span> for every <span class="math inline">\(\theta\)</span> obeys <span class="math display">\[
+<p>A statistic <span class="math inline">\(T\)</span> is called <strong>complete</strong> if every measurable <span class="math inline">\(a\)</span> satisfying <span class="math inline">\(\mathbb E_\theta(|a(T)|)&lt;\infty\)</span> for every <span class="math inline">\(\theta\)</span> obeys <span class="math display">\[
 \mathbb E_\theta(a(T))=0\ \text{for every }\theta
 \quad\Longrightarrow\quad
 \mathbb P_\theta(a(T)=0)=1\ \text{for every }\theta.
 \]</span></p>
 </div>
-<p>This is a property of the <strong>family of sampling distributions of <span class="math inline">\(T\)</span></strong>.</p>
-<p>A <strong>complete sufficient</strong> statistic has both properties. neither word can be dropped.</p>
 <aside class="notes">
 <p>The same function a must have expectation zero for every parameter, and the conclusion is almost sure equality for every parameter, not merely convergence in probability or a vanishing expectation at one parameter. Integrability is part of the definition. Completeness alone makes no assertion that T preserves all information in the original sample.</p>
 <style type="text/css">
@@ -2001,9 +2054,9 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="bernoulli-counts-are-complete-a-polynomial-proof" class="slide level2 proof-slide" data-importance="5">
-<h2>Bernoulli counts are complete: a polynomial proof</h2>
+<h2>Bernoulli model: Completeness</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
 <p>Let <span class="math inline">\(T\sim\operatorname{Bin}(n,p)\)</span> with <span class="math inline">\(p\in(0,1)\)</span>. Suppose <span class="math display">\[
 0=\mathbb E_p(a(T))
@@ -2030,21 +2083,21 @@ display:block!important;
 <section id="completeness-in-exponential-families" class="slide level2" data-importance="5">
 <h2>Completeness in exponential families</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<div id="stmt-exponential-completeness" class="statement result-card" data-kind="Theorem" data-statement-number="12.9">
+<div id="stmt-exponential-completeness" class="statement result-card" data-kind="Theorem" data-statement-number="12.10">
 <div class="statement-label">
-Theorem 12.9
+Theorem 12.10
 </div>
-<p>For i.i.d. observations with densities <span class="math display">\[
-f_\eta(x)=h(x)e^{\eta\cdot t(x)-A(\eta)},\qquad \eta\in\Omega,
-\]</span> suppose the <strong>actually allowed set</strong> <span class="math inline">\(\Omega\)</span> contains an open rectangle in <span class="math inline">\(\mathbb R^k\)</span>.</p>
-<p>Then <span class="math inline">\(T(X)=\sum_{i=1}^n t(X_i)\)</span> is complete and sufficient.</p>
+<p>For an exponential family, let <span class="math inline">\(\Omega=w(\Theta)\subseteq\mathcal N\)</span> be the set of natural parameter values used by the model.</p>
+<p>If <span class="math inline">\(\Omega\)</span> contains a nonempty open rectangle in <span class="math inline">\(\mathbb R^k\)</span>, then the canonical statistic <span class="math display">\[
+T_n=\sum_{i=1}^n t(X_i)
+\]</span> of an i.i.d. sample is complete and sufficient.</p>
 </div>
-<p>For the normal model with both parameters unknown, <span class="math inline">\(\Omega=\mathbb R\times(-\infty,0)\)</span>. Thus <span class="math inline">\((\sum_iX_i,\sum_iX_i^2)\)</span> is complete and sufficient.</p>
-<p>A curved natural parameter set contains no such rectangle. The theorem does not decide completeness there.</p>
+<p>For the normal model with both parameters unknown, <span class="math inline">\(\Omega=\mathcal N=\mathbb R\times(-\infty,0)\)</span>. Thus <span class="math inline">\((\sum_iX_i,\sum_iX_i^2)\)</span> is complete and sufficient.</p>
+<p>A curved family has no such rectangle in <span class="math inline">\(\Omega\)</span>. This theorem does not decide completeness in that case.</p>
 <aside class="notes">
-<p>The open rectangle is a sufficient condition, not a necessary one. The hypothesis concerns the actual allowed set, not the natural space of a larger family. A proof uses uniqueness of Laplace transforms. Choose an interior eta0 and let Q_eta be the law of the canonical sum. If a(T) is integrable and has expectation zero throughout the family, define finite positive measures with densities a positive part and a negative part relative to Q_eta0. Exponential tilting gives equal finite transforms in a neighbourhood of zero. Uniqueness makes the two measures equal, so a is zero Q_eta0 almost surely. The laws Q_eta are mutually absolutely continuous and the conclusion holds for every parameter. The one parameter normal family with known variance also satisfies the open interval condition, so the mean is complete there.</p>
+<p>The open rectangle is a sufficient condition, not a necessary one. The hypothesis concerns the actual allowed set, not the natural space of a larger family. A proof uses uniqueness of Laplace transforms. Choose an interior eta0 and let Q_eta be the distribution of the canonical sum. If a(T) is integrable and has expectation zero throughout the family, define finite positive measures with densities a positive part and a negative part relative to Q_eta0. Exponential tilting gives equal finite transforms in a neighbourhood of zero. Uniqueness makes the two measures equal, so a is zero Q_eta0 almost surely. The distributions Q_eta are mutually absolutely continuous and the conclusion holds for every parameter. The one parameter normal family with known variance also satisfies the open interval condition, so the mean is complete there.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -2060,11 +2113,11 @@ display:block!important;
 <section id="complete-sufficient-statistics" class="slide level2" data-importance="5">
 <h2>Complete sufficient statistics</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="5" title="Importance: 5/5" aria-label="Importance: 5/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 5/5" data-importance="5" role="img" aria-label="Importance: 5/5">●</span> WEEK 6</p>
 </div>
-<div id="stmt-complete-sufficient-minimal" class="statement result-card" data-kind="Theorem" data-statement-number="12.10">
+<div id="stmt-complete-sufficient-minimal" class="statement result-card" data-kind="Theorem" data-statement-number="12.11">
 <div class="statement-label">
-Theorem 12.10
+Theorem 12.11
 </div>
 <p>Suppose the model admits a minimal sufficient statistic. Then every statistic that is <strong>complete and sufficient</strong> is minimal sufficient.</p>
 </div>
@@ -2073,7 +2126,7 @@ Theorem 12.10
 \]</span></p>
 <p>Completeness will give uniqueness in estimation. If two integrable functions of <span class="math inline">\(T\)</span> have the same expectation for every parameter, their difference has expectation zero, so they agree almost surely.</p>
 <aside class="notes">
-<p>A constant statistic is complete because expectation zero forces its only function value to vanish. It is not sufficient in a nontrivial Bernoulli model because conditioning on it leaves the parameter dependence unchanged. For the theorem, let M be minimal sufficient. Since T is sufficient, M=phi(T). For a bounded measurable b, sufficiency of M gives a common r(M)=E(b(T) given M). Completeness makes b(T)−r(phi(T)) zero almost surely throughout the model. Applying this to indicators of a countable determining family shows that T is measurable with respect to M, establishing minimality. Minimal sufficiency does not in general imply completeness. In the curved model N(mu,mu squared), mu&gt;0, the sum and sum of squares remain minimal by the likelihood criterion, but (1+1/n)S squared−mean squared has expectation zero for every mu without vanishing almost surely. At a vector of ones it equals minus one and stays nonzero on an open neighbourhood of positive normal probability. This converse is not needed as an additional classroom example. Uniqueness among functions of a complete statistic does not alone prove a variance optimum among all estimators.</p>
+<p>A constant statistic is complete because expectation zero forces its only function value to vanish. It is not sufficient in a nontrivial Bernoulli model because conditioning on it leaves the parameter dependence unchanged. For the theorem, let M be minimal sufficient. Since T is sufficient, M=phi(T). For a bounded measurable b, sufficiency of M gives a common r(M)=E(b(T) given M). Completeness makes b(T)−r(phi(T)) zero almost surely throughout the model. Applying this to indicators of a countable determining family shows that T is measurable with respect to M, establishing minimality. Minimal sufficiency does not in general imply completeness. In the curved model N(mu,mu squared), mu&gt;0, the sum and sum of squares remain minimal by the criterion for minimal sufficiency, but (1+1/n)S squared−mean squared has expectation zero for every mu without vanishing almost surely. At a vector of ones it equals minus one and stays nonzero on an open neighbourhood of positive normal probability. This converse is not needed as an additional classroom example. Uniqueness among functions of a complete statistic does not alone prove a variance optimum among all estimators.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -2087,51 +2140,58 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="sufficiency-in-the-circular-observation-model" class="slide level2 proof-slide" data-importance="4">
-<h2>Sufficiency in the circular observation model</h2>
+<h2>Mars example: Sufficiency</h2>
 <div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="4" title="Importance: 4/5" aria-label="Importance: 4/5" role="img">●</span> WEEK 6</p>
+<p>STATISTICAL INFERENCE <span class="importance-dot" title="Importance: 4/5" data-importance="4" role="img" aria-label="Importance: 4/5">●</span> WEEK 6</p>
 </div>
-<p>Assume fixed times and <span class="math inline">\(Y_i=\alpha+bt_i+\varepsilon_i\)</span>, where the errors are independent <span class="math inline">\(N(0,\sigma^2)\)</span> variables.</p>
-<p>Expansion gives <span class="math display">\[
+<p>For the Mars longitudes, assume <span class="math inline">\(Y_i=\alpha+bt_i+\varepsilon_i\)</span>, with fixed known times <span class="math inline">\(t_i\)</span> and independent <span class="math inline">\(N(0,\sigma^2)\)</span> errors. Here <span class="math inline">\(\alpha\)</span> is the initial longitude and <span class="math inline">\(b\)</span> the constant angular speed. Longitudes include completed revolutions.</p>
+<div class="small">
+<p><span class="math display">\[
 \begin{aligned}
-\sum_i(y_i-\alpha-bt_i)^2
-={}&amp;\sum_i y_i^2-2\alpha\sum_i y_i-2b\sum_i t_i y_i\\
-&amp;+n\alpha^2+2\alpha b\sum_i t_i+b^2\sum_i t_i^2.
+f_{\alpha,b,\sigma^2}(y)
+={}&amp;\underbrace{(2\pi\sigma^2)^{-n/2}
+\exp\!\left(-\frac{n\alpha^2+2\alpha b\sum_i t_i+b^2\sum_i t_i^2}{2\sigma^2}\right)}_{\text{independent of }y}\\
+&amp;\quad\times\exp\!\left(-\frac{\sum_i y_i^2}{2\sigma^2}
++\frac{\alpha}{\sigma^2}\sum_i y_i
++\frac{b}{\sigma^2}\sum_i t_i y_i\right).
 \end{aligned}
 \]</span></p>
-<p>For known variance, factorization gives the sufficient summary <span class="math display">\[
-\left(\sum_iY_i,\sum_i t_iY_i\right).
-\]</span> For unknown variance, additionally retain <span class="math inline">\(\sum_iY_i^2\)</span>.</p>
+</div>
+<p>The sums <span class="math inline">\(\sum_i t_i\)</span> and <span class="math inline">\(\sum_i t_i^2\)</span> are known constants, so they need not be included in the statistic.</p>
+<p>In the factorization <span class="math inline">\(f_\theta(y)=h(y)g_\theta(T(y))\)</span> from <a href="#/stmt-factorization">Theorem 11.6</a>, we can choose:</p>
+<div class="data-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variance</th>
+<th style="text-align: left;"><span class="math inline">\(h(y)\)</span></th>
+<th style="text-align: left;">Sufficient statistic <span class="math inline">\(T(Y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sigma^2\)</span> known</td>
+<td style="text-align: left;"><span class="math inline">\(\exp[-\sum_i y_i^2/(2\sigma^2)]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((\sum_iY_i,\sum_i t_iY_i)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sigma^2\)</span> unknown</td>
+<td style="text-align: left;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((\sum_iY_i,\sum_i t_iY_i,\sum_iY_i^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If <span class="math inline">\(\sigma^2\)</span> is unknown, we additionally retain <span class="math inline">\(\sum_iY_i^2\)</span> because its coefficient is unknown.</p>
 <aside class="notes">
-<p>This is an exact statement for the explicitly assumed Gaussian statistical model, not for the historical reduction process as an established fact. With known variance, sum y_i squared goes into the factor independent of alpha and b. The time sums are known constants. With unknown variance, sum y_i squared must also be retained. The nonidentical response means cause no difficulty for the factorization theorem. No sufficiency or completeness claim is made for the nonlinear ellipse fit. A fitted parameter vector does not automatically determine all the data dependence in its likelihood.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="sources" class="slide level2" data-importance="2">
-<h2>Sources</h2>
-<div class="footer importance-footer">
-<p>STATISTICAL INFERENCE <span class="importance-dot" data-importance="2" title="Importance: 2/5" aria-label="Importance: 2/5" role="img">●</span> WEEK 6</p>
-</div>
-<div class="small">
-<p>Eliana Duarte’s Week 6 teaching priorities and the three original lecture PDFs provide the mathematical scope and derivations.</p>
-<p>The course’s supplied Mars files provide the historical reduced observations. The ten observations from 1580 to 1600 determine the fits. The observations from 1602 and 1604 remain separate.</p>
-<p><a href="data/mars-oppositions-supplied.csv">Supplied observations</a> · <a href="data/mars-refit.csv">Recomputed predictions</a> · <a href="data/mars-results.json">Numerical results</a></p>
-<p><a href="https://github.com/mahendra-gehlot/mars-orbit">Historical data transcription</a> · <a href="https://doi.org/10.1016/j.hm.2025.09.006">Carman’s analysis of the opposition table</a></p>
-</div>
-<div class="disclosure">
-<p>An initial draft of these slides was prepared with the help of AI coding agents.</p>
-</div>
-<aside class="notes">
-<p>The source audit records the available files, mathematical conditions and calculation methods. The reference course deck is unchanged. Only the four supplied files in the Kepler directory are treated as available package inputs. No absent data, scripts or historical records are claimed as inspected. All slide content, notes and generated figure labels are English. Optional bibliography links require internet access, while the deck, figures, data and mathematics work locally.</p>
+<p>This is the Gaussian model associated with the simple constant angular speed prediction for Mars. Longitude is recorded on the real line, including full revolutions rather than resetting after a full turn. The initial longitude and angular speed are unknown parameters. The observation times are fixed and known, not random observations in this model. All their functions, including the sum of the times and the sum of squared times, are therefore already known. They still occur in the joint density, but do not need to be stored as components of a statistic of Y.</p>
+<p>The displayed expression follows by multiplying the independent normal densities and expanding sum (y_i minus alpha minus b t_i) squared. The first factor contains only the parameters and known times, so it belongs in g_theta. For known variance, take h(y)=exp(minus sum y_i squared divided by twice the known variance). Dividing the displayed joint density by this h leaves a function of the sample only through sum y_i and sum t_i y_i. Thus g_theta is a function of those two statistic values, as required by the Neyman and Fisher factorization theorem. For unknown variance, the coefficient of sum y_i squared is an unknown parameter, so that factor cannot be put into h. Instead use h=1 and retain all three sums in T. The displayed factorization then gives sufficiency for alpha, b and sigma squared.</p>
+<p>This is an exact mathematical statement for the assumed Gaussian statistical model, not an established property of the historical reduction process. The observations need not be identically distributed because their means depend on time. No sufficiency or completeness claim is made for the nonlinear ellipse fit. A fitted parameter vector does not automatically determine all the data dependence in the joint density.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
