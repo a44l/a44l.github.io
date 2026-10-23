@@ -7,8 +7,8 @@
   <meta name="description" content="Pratica a eliminação de Gauss, passo a passo. Transforma pequenas matrizes com operações elementares, frações exatas e pistas ao teu ritmo.">
   <title>Eliminação de Gauss: Escalonar</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.mjs"></script>
+  <link rel="stylesheet" href="styles.css?v=20261022-echelon">
+  <script type="module" src="app.mjs?v=20261022-echelon"></script>
 </head>
 <body>
   <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -48,7 +48,13 @@
 
     <section class="topic-controls" aria-label="Tema do exercício">
       <span class="eyebrow">TEMA DO EXERCÍCIO</span>
-      <div class="view-mode-options" role="group" aria-label="Tema"><button type="button" data-exercise-topic="system" aria-pressed="true">Sistema linear</button><button type="button" data-exercise-topic="combination" aria-pressed="false">Combinação linear</button></div>
+      <div class="view-mode-options" role="group" aria-label="Tema"><button type="button" data-exercise-topic="system" aria-pressed="true">Sistema linear</button><button type="button" data-exercise-topic="combination" aria-pressed="false">Combinação linear</button><button type="button" data-exercise-topic="dual" aria-pressed="false">Problema dual</button><button type="button" data-exercise-topic="independence" aria-pressed="false">Independência linear</button><button type="button" data-exercise-topic="basis" aria-pressed="false">Bases e coordenadas</button><button type="button" data-exercise-topic="complement" aria-pressed="false">Espaços suplementares</button><button type="button" data-exercise-topic="subspaces" aria-pressed="false">Soma e interseção</button></div>
+    </section>
+
+    <section class="variant-controls" aria-label="Variante do exercício">
+      <span class="eyebrow">VARIANTE</span>
+      <div class="mode-options" role="group" aria-label="Presença de parâmetro"><button type="button" data-exercise-variant="numeric" aria-pressed="true">Sem parâmetro</button><button type="button" data-exercise-variant="parameter" aria-pressed="false">Com parâmetro a</button></div>
+      <p>Na variante com parâmetro, os elementos são escolhidos aleatoriamente entre vetores, polinómios e matrizes.</p>
     </section>
 
     <section id="demo-source-controls" class="demo-source-controls" aria-label="Origem da demonstração" hidden>
@@ -74,10 +80,17 @@
         <button type="button" data-mode="homogeneous" aria-pressed="true">Sistema homogéneo</button>
         <button type="button" data-mode="inhomogeneous" aria-pressed="false">Sistema não homogéneo</button>
       </div>
+      <div id="representation-options" class="mode-options" role="group" aria-label="Tipo de elementos" hidden><button type="button" data-representation="vectors" aria-pressed="true">Vetores</button><button type="button" data-representation="polynomials" aria-pressed="false">Polinómios</button><button type="button" data-representation="matrices" aria-pressed="false">Matrizes</button></div>
       <p id="size-description">2 × 2 ou 3 × 3</p>
     </section>
 
-    <ol class="exercise-stages" aria-label="Etapas do exercício"><li id="stage-reduce" aria-current="step"><span>1</span>Reduzir a matriz</li><li id="stage-variables"><span>2</span>Identificar variáveis</li><li id="stage-solution"><span>3</span>Dar o conjunto-solução</li></ol>
+    <section id="basis-settings" class="basis-settings" aria-label="Tipo de exercício de bases" hidden><div><span class="eyebrow">OBJETIVO</span><div class="mode-options basis-task-options" role="group" aria-label="Objetivo"><button type="button" data-basis-task="find" aria-pressed="true">Achar coordenadas</button><button type="button" data-basis-task="expand" aria-pressed="false">Reconstruir o elemento</button><button type="button" data-basis-task="change" aria-pressed="false">Mudar de base</button></div></div><div><span class="eyebrow">VALORES</span><div class="mode-options" role="group" aria-label="Formato dos valores"><button type="button" data-basis-format="numeric" aria-pressed="true">Numérico</button><button type="button" data-basis-format="symbolic" aria-pressed="false">Simbólico</button></div></div></section>
+
+    <section id="complement-settings" class="basis-settings" aria-label="Espaço ambiente" hidden><div><span class="eyebrow">ESPAÇO E</span><div class="mode-options" role="group" aria-label="Espaço onde se procura o suplementar"><button type="button" data-complement-ambient="full" aria-pressed="true">Espaço todo</button><button type="button" data-complement-ambient="nested" aria-pressed="false">Dentro de um subespaço</button></div></div></section>
+
+    <section id="subspaces-settings" class="basis-settings" aria-label="Espaço ambiente da soma" hidden><div><span class="eyebrow">ESPAÇO E</span><div class="mode-options" role="group" aria-label="Espaço que contém E₁ e E₂"><button type="button" data-subspaces-ambient="full" aria-pressed="true">Espaço todo</button><button type="button" data-subspaces-ambient="nested" aria-pressed="false">Dentro de um subespaço</button></div></div></section>
+
+    <ol class="exercise-stages" aria-label="Etapas do exercício"><li id="stage-reduce" aria-current="step"><span>1</span>Reduzir a matriz</li><li id="stage-variables"><span>2</span>Identificar variáveis</li><li id="stage-solution"><span>3</span>Dar o conjunto-solução</li><li id="stage-classification" hidden><span>4</span>Suplementaridade</li></ol>
 
     <section id="demo-controls" class="demo-controls" aria-label="Controlos da demonstração" hidden>
       <div class="demo-transport"><button id="demo-play" class="button button-primary" aria-pressed="false">Iniciar reprodução automática</button><button id="demo-step" class="button button-outline">Avançar um passo<svg class="icon"><use href="#i-arrow"/></svg></button><button id="demo-restart" class="text-button"><svg class="icon"><use href="#i-refresh"/></svg>Recomeçar</button><label class="demo-speed" for="demo-speed">Ritmo<span class="select-wrapper"><select id="demo-speed"><option value="1000">Rápido (1 s)</option><option value="2500" selected>Normal (2,5 s)</option><option value="5000">Lento (5 s)</option></select></span></label></div>
@@ -87,8 +100,18 @@
     <div class="workspace" id="lecture-workspace" tabindex="-1" hidden></div>
     <div id="combination-lecture-workspace" tabindex="-1" hidden></div>
     <section id="combination-problem" class="card combination-problem" aria-labelledby="combination-problem-title" hidden></section>
+    <section id="dual-problem" class="card combination-problem" aria-labelledby="dual-problem-title" hidden></section>
+    <section id="independence-problem" class="card combination-problem" aria-labelledby="independence-problem-title" hidden></section>
+    <section id="basis-problem" class="card combination-problem" aria-labelledby="basis-problem-title" hidden></section>
+    <section id="complement-problem" class="card combination-problem" aria-labelledby="complement-problem-title" hidden></section>
+    <section id="subspaces-problem" class="card combination-problem" aria-labelledby="subspaces-problem-title" hidden></section>
+    <div id="parameter-workspace" tabindex="-1" hidden></div>
+    <div id="system-entry-workspace" tabindex="-1" hidden></div>
     <div class="workspace" id="workspace" tabindex="-1">
       <div class="main-column">
+        <section id="basis-expansion" class="card" hidden></section>
+        <section id="complement-construction" class="card" hidden></section>
+        <section id="subspaces-calculation" class="card" hidden></section>
         <section class="matrix-card card" aria-labelledby="matrix-title">
           <div class="card-heading">
             <div class="matrix-title-group"><h2 id="matrix-title">Matriz atual</h2><span class="dimension-tag" id="dimensions">3 × 3</span></div>
@@ -111,6 +134,11 @@
           <div id="infeasibility-action" class="infeasibility-action" hidden>
             <button id="declare-impossible" type="button" class="button button-outline" aria-describedby="infeasibility-feedback">Declarar sistema impossível</button>
             <p id="infeasibility-feedback" class="answer-feedback" role="status" hidden></p>
+          </div>
+          <div id="independence-echelon-action" class="echelon-action" hidden>
+            <button id="accept-independence-echelon" type="button" class="button button-outline" aria-describedby="independence-echelon-help independence-echelon-feedback">Usar esta forma escalonada</button>
+            <p id="independence-echelon-help" class="solution-guidance">Para classificar a família, basta uma forma escalonada. Não é preciso normalizar os pivôs nem anular as entradas acima deles.</p>
+            <p id="independence-echelon-feedback" class="answer-feedback" role="status" hidden></p>
           </div>
         </section>
 
@@ -152,6 +180,35 @@
             <div id="combination-fields" class="unique-values"></div>
             <p id="combination-feedback" class="answer-feedback" role="status" hidden></p>
             <button id="check-combination" type="submit" class="button button-primary" disabled>Verificar resposta</button>
+          </form>
+          <form id="subspaces-question" novalidate hidden>
+            <div id="subspaces-basis-editor"><div id="subspaces-intersection-kind" class="solution-types" role="group" aria-label="Forma da interseção" hidden><button type="button" data-subspaces-kind="basis" aria-pressed="true">Dar uma base</button><button type="button" data-subspaces-kind="zero" aria-pressed="false">Interseção = {0}</button></div><p id="subspaces-input-help" class="solution-guidance"></p><div id="subspaces-fields"></div><button id="subspaces-add" type="button" class="button button-outline button-small">Acrescentar elemento</button><div id="subspaces-preview" class="solution-preview" tabindex="0" role="region" aria-label="Base proposta"></div></div>
+            <div id="subspaces-classification" hidden>
+              <fieldset class="subspaces-property"><legend>A soma é direta?</legend><div class="solution-types" role="group" aria-label="A soma é direta?"><button type="button" data-subspaces-property="direct" data-choice="yes" aria-pressed="false">Sim</button><button type="button" data-subspaces-property="direct" data-choice="no" aria-pressed="false">Não</button></div></fieldset>
+              <fieldset class="subspaces-property"><legend>A soma é igual a E?</legend><div class="solution-types" role="group" aria-label="E₁ + E₂ é igual a E?"><button type="button" data-subspaces-property="spans" data-choice="yes" aria-pressed="false">Sim</button><button type="button" data-subspaces-property="spans" data-choice="no" aria-pressed="false">Não</button></div></fieldset>
+              <fieldset class="subspaces-property"><legend>E₁ e E₂ são suplementares em E?</legend><div class="solution-types" role="group" aria-label="São suplementares em E?"><button type="button" data-subspaces-property="complementary" data-choice="yes" aria-pressed="false">Sim</button><button type="button" data-subspaces-property="complementary" data-choice="no" aria-pressed="false">Não</button></div></fieldset>
+            </div>
+            <p id="subspaces-feedback" class="answer-feedback" role="status" hidden></p><div class="basis-answer-actions"><button id="check-subspaces" type="submit" class="button button-primary">Verificar resposta</button><button id="subspaces-back" type="button" class="text-button" hidden>Rever resposta anterior</button></div>
+          </form>
+          <form id="complement-question" novalidate hidden><div id="complement-first" hidden></div><p id="complement-input-help" class="solution-guidance"></p><div id="complement-fields"></div><button id="complement-add" type="button" class="button button-outline button-small">Acrescentar elemento</button><div id="complement-preview" class="solution-preview" tabindex="0" role="region" aria-label="Base proposta"></div><p id="complement-feedback" class="answer-feedback" role="status" hidden></p><div class="basis-answer-actions"><button id="check-complement" type="submit" class="button button-primary">Verificar primeiro suplementar</button><button id="complement-back" type="button" class="text-button" hidden>Rever primeiro suplementar</button></div></form>
+          <form id="basis-question" novalidate hidden><p id="basis-input-help" class="solution-guidance"></p><div id="basis-fields"></div><div id="basis-preview" class="solution-preview" tabindex="0" role="region" aria-label="Resposta proposta"></div><p id="basis-feedback" class="answer-feedback" role="status" hidden></p><div class="basis-answer-actions"><button id="check-basis" type="submit" class="button button-primary">Verificar resposta</button><button id="basis-back-weights" type="button" class="text-button" hidden>Rever combinação linear</button></div></form>
+          <form id="independence-question" novalidate hidden>
+            <div class="solution-types" role="group" aria-label="Classificação da família"><button type="button" data-independence-choice="independent" aria-pressed="false">Linearmente independente</button><button type="button" data-independence-choice="dependent" aria-pressed="false">Linearmente dependente</button></div>
+            <p id="independence-input-help" class="solution-guidance"></p>
+            <div id="independence-fields" class="unique-values"></div>
+            <div id="independence-preview" class="solution-preview" aria-label="Relação proposta" hidden></div>
+            <p id="independence-feedback" class="answer-feedback" role="status" hidden></p>
+            <button id="check-independence" type="submit" class="button button-primary" disabled>Verificar resposta</button>
+          </form>
+          <div id="dual-kernel" hidden></div>
+          <form id="dual-question" novalidate hidden>
+            <div class="solution-types" role="group" aria-label="Forma da resposta"><button type="button" data-dual-kind="equations" aria-pressed="true">Dar equações</button><button type="button" data-dual-kind="whole" aria-pressed="false">Todo o espaço ℝⁿ</button></div>
+            <p id="dual-input-help" class="solution-guidance">Introduz os coeficientes de equações homogéneas. Podes acrescentar ou remover equações; qualquer sistema equivalente é aceite.</p>
+            <div id="dual-equations"></div>
+            <button id="dual-add-equation" type="button" class="button button-outline button-small">Acrescentar equação</button>
+            <div id="dual-preview" class="solution-preview" tabindex="0" role="region" aria-label="Equações propostas"></div>
+            <p id="dual-feedback" class="answer-feedback" role="status" hidden></p>
+            <button id="check-dual" type="submit" class="button button-primary">Verificar equações</button>
           </form>
           <div id="exercise-complete" hidden><p id="completion-description"></p><div id="accepted-solution" class="solution-preview" tabindex="0" role="region" aria-label="Conjunto-solução correto"></div><button id="next-exercise" class="button button-primary">Novo exercício<svg class="icon"><use href="#i-arrow"/></svg></button></div>
         </section>
